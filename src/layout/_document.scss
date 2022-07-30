@@ -1,0 +1,103 @@
+html {
+  font-weight: var(--font-weight);
+  font-size: 62.5%;
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+}
+
+body {
+  position:relative;
+  width:100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--color-background);
+  color : var(--color-text);
+  font-size: clamp(1.5rem, 0.5vw + 1.4rem, 1.7rem);
+
+  > header,
+  > main,
+  > footer {
+    display:block;
+    position: relative;
+    //width: 100%;
+    //margin-right: auto;
+    //margin-left: auto;
+    //padding: var(--inner-v-spacing) var(--inner-h-spacing);
+  }
+
+  > footer {
+    margin-top: var(--block-spacing);
+    padding: var(--inner-v-spacing) var(--inner-h-spacing);
+
+  }
+
+  > main {
+    > header {
+      padding: var(--inner-v-spacing) var(--inner-h-spacing);
+      /* + * {
+         margin-top: var(--block-spacing);
+       }*/
+    }
+    > footer {
+      margin-top: var(--block-spacing);
+      padding: var(--inner-v-spacing) var(--inner-h-spacing);
+    }
+  }
+}
+
+ul li {
+  ul, ol {
+    margin-left: var(--spacing);
+  }
+}
+
+body, table, article, section,
+pre > code,
+select[multiple],
+.custom-scrollbar {
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-background);
+  scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar,
+article::-webkit-scrollbar,
+section::-webkit-scrollbar,
+table::-webkit-scrollbar,
+pre > code::-webkit-scrollbar,
+select::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track,
+article::-webkit-scrollbar-track,
+section::-webkit-scrollbar-track,
+table::-webkit-scrollbar-track,
+pre > code::-webkit-scrollbar-track,
+select::-webkit-scrollbar-track,
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb,
+article::-webkit-scrollbar-thumb,
+section::-webkit-scrollbar-thumb,
+table::-webkit-scrollbar-thumb,
+pre > code::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar-thumb,
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border: 2px solid var(--scrollbar-thumb-border);
+  border-radius: 6px;
+  background-clip: content-box;
+  background-color: var(--scrollbar-thumb) ;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

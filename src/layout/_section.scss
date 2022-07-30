@@ -1,0 +1,48 @@
+.section,
+section {
+  margin-top: var(--block-spacing);
+  width: 100%;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:not(:last-child) {
+    + *:is(:not(h1, h2, h3, h4, h5, h6)) {
+      margin-top: var(--block-spacing);
+    }
+  }
+
+  & .article,
+  & article {
+    margin-top: var(--block-half-spacing) !important;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.article,
+article {
+  width: 100%;
+  margin-top: var(--block-spacing);
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:not(:last-child) {
+    + *:is(:not(h1, h2, h3, h4, h5, h6)) {
+      margin-top: var(--block-half-spacing);
+    }
+  }
+
+  & .section,
+  & section {
+    margin-top: var(--block-half-spacing) !important;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

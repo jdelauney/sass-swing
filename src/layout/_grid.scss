@@ -1,0 +1,229 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/settings" as *;
+@use "../abstracts/mixins" as *;
+
+.grid {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  //grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  margin: 0;
+  // margin-top: calc(var(--flow-space-ratio)*1em);
+
+  & > * {
+    min-width: 0; // HACK for childs in overflow
+    margin-top:0;
+  }
+
+  //& + *:not(:is(section, article, footer)) {
+  // // margin-top: calc(var(--heading-flow-space-ratio) * 1em) !important;
+  //  margin-top:var(--block-spacing) !important;
+  //}
+
+  & + *:is(footer) {
+    margin-top:var(--block-half-spacing) !important;
+  }
+
+  > .justify {
+    &--right {
+      justify-self: end;
+    }
+    &--center {
+      justify-self: center;
+    }
+    &--left {
+      justify-self: start;
+    }
+    &--stretch {
+      justify-self: stretch;
+    }
+  }
+
+  > .align {
+    &--top {
+      align-self: start;
+    }
+    &--center {
+      align-self: center;
+    }
+    &--bottom {
+      align-self: start;
+    }
+    &--stretch {
+      align-self: stretch;
+    }
+  }
+
+}
+
+.subgrid {
+  display: grid;
+  grid-template-rows: subgrid;
+}
+
+.cols-auto {
+  //  grid-template-columns: repeat(12,minmax(300px, 1fr));
+  //min(var(--min-grid-col-width), 100%)
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-grid-col-width), 1fr));
+}
+
+.grid-content-center {
+  align-content: center;
+  justify-content: center;
+}
+
+.grid-items-center {
+  align-items: center;
+  justify-items: center;
+}
+
+
+
+//@each $bp, $bpv in $breakpoints {
+//@for $i from 1 through length($breakpoints) {
+//  $bpv : nth($breakpoints, $i);
+//  $bp  : nth($breakpoint-prefixes, $i);
+//  @media only screen and (min-width: #{$bpv}) {
+//    .grid-#{$bp} {
+//      display: grid !important;
+//    }
+//  }
+//}
+
+/* grid-template-columns classes */
+@for $i from 1 through $default-grid-columns {
+  .cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+@for $i from 1 through length($breakpoints) {
+  $bpv : nth($breakpoints, $i);
+  $bp  : nth($breakpoint-prefixes, $i);
+  @media only screen and (min-width: #{$bpv}) {
+    .#{$bp}\:cols-auto {
+      grid-template-columns: repeat(auto-fit, minmax(var(--min-grid-col-width), 1fr));
+    }
+    @for $j from 1 through $default-grid-columns {
+      .#{$bp}\:cols-#{$j} {
+        grid-template-columns: repeat(#{$j}, minmax(0, 1fr));
+      }
+    }
+  }
+}
+
+/* gap classes */
+@for $k from 1 through length($grid-spacers) {
+  $grid-spacerValue: nth($grid-spacers, $k);
+  $grid-spacerPrefix: nth($grid-spacer-prefixes, $k);
+
+  @if ($grid-spacerValue != auto) {
+    .gap-#{$k} {
+      gap: $grid-spacerValue;
+    }
+    .col-gap-#{$k} {
+      column-gap: $grid-spacerValue;
+    }
+    .row-gap-#{$k} {
+      row-gap: $grid-spacerValue;
+    }
+  }
+}
+
+@for $i from 1 through length($breakpoints) {
+  $bpv : nth($breakpoints, $i);
+  $bp  : nth($breakpoint-prefixes, $i);
+  @media (min-width: #{$bpv}) {
+    @for $k from 1 through length($grid-spacers) {
+      $grid-spacerValue : nth($grid-spacers, $k);
+      //$grid-spacerPrefix : nth($grid-spacer-prefixes, $k);
+
+      @if ($grid-spacerValue != auto) {
+        .#{$bp}\:gap-#{$k} {
+          gap: $grid-spacerValue;
+        }
+        .#{$bp}\:col-gap-#{$k} {
+          column-gap: $grid-spacerValue;
+        }
+        .#{$bp}\:row-gap-#{$k} {
+          row-gap: $grid-spacerValue;
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($breakpoints) {
+  $bpv : nth($breakpoints, $i);
+  $bp  : nth($breakpoint-prefixes, $i);
+  @media (min-width: #{$bpv}) {
+    @for $k from 1 through length($grid-align-values) {
+      $align-value : nth($grid-align-values, $k);
+      $justify-prefix : nth($grid-justify-prefixes, $k);
+      $align-prefix : nth($grid-align-prefixes, $k);
+      .grid > .#{$bp}\:justify--#{$justify-prefix} {
+        justify-self: #{$align-value};
+      }
+      .grid > .#{$bp}\:align--#{$align-prefix} {
+        align-self: #{$align-value};
+      }
+    }
+  }
+}
+
+/* grid-items classes */
+@for $i from 1 through $default-grid-columns {
+
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+  .col-span-full {
+    grid-column: 1 / -1;
+  }
+  .row-start-#{$i} {
+    grid-row-start: #{$i};
+  }
+  .row-end-#{$i} {
+    grid-row-end: #{$i};
+  }
+  .row-span-#{$i} {
+    grid-row: span #{$i} / span #{$i};
+  }
+}
+
+// loop for each breakpoint
+@for $i from 1 through length($breakpoints) {
+  $bpv : nth($breakpoints, $i);
+  $bp  : nth($breakpoint-prefixes, $i);
+  @media only screen and (min-width: #{$bpv}) {
+    @for $j from 1 through $default-grid-columns {
+      .#{$bp}\:col-start-#{$j} {
+        grid-column-start: #{$j};
+      }
+      .#{$bp}\:col-end-#{$j} {
+        grid-column-end: #{$j};
+      }
+      .#{$bp}\:col-span-#{$j} {
+        grid-column: span #{$j} / span #{$j};
+      }
+      .#{$bp}\:col-span-full {
+        grid-column: 1 / -1;
+      }
+      .#{$bp}\:row-start-#{$j} {
+        grid-row-start: #{$j};
+      }
+      .#{$bp}\:row-end-#{$j} {
+        grid-row-end: #{$j};
+      }
+      .#{$bp}\:row-span-#{$j} {
+        grid-row: span #{$j} / span #{$j};
+      }
+    }
+  }
+}
