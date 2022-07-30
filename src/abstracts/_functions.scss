@@ -1,0 +1,29 @@
+@use "sass:math";
+/** strip-Unit($number)
+ * Retourne un nombre sans les unités. Par exemple 16px devient 16
+ *
+ * @scope  Public
+ *
+ * @param  $number [INT] : Nombre avec unité à convertir
+ *
+ * @return [INT]
+ */
+@function strip-unit($number) {
+  @return math.div($number , ($number * 0  + 1));
+}
+
+$type-ratios: (
+        "minorSecond": 1.067,
+        "majorSecond": 1.125,
+        "minorThird": 1.2,
+        "majorThird": 1.25,
+        "perfectFourth": 1.333,
+        "augmentedFourth": 1.414,
+        "perfectFifth": 1.5,
+        "goldenRatio": 1.618,//033988749;
+        "goldenSquareRatio": 1.272 //01964951;
+);
+
+@function type-ratio($key) {
+  @return map-get($type-ratios, $key);
+}
