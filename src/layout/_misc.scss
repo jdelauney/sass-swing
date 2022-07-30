@@ -1,0 +1,20 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-top: -0.2rem;
+}
+
+/* pour cacher un élément de manière accessible */
+.sr-only {
+  font-size: 0;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  outline:0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  opacity:0;
+}
