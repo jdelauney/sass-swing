@@ -1,0 +1,55 @@
+progress {
+  display: inline-block;
+  appearance: none;
+  width: 100%;
+  height: var(--progress-height);
+  margin-top: var(--half-spacing);
+  overflow: hidden;
+  border: var(--border-width) solid var(--progress-border-color);
+  border-radius: var(--progress-border-radius);
+  background-color: var(--progress-background-color);
+  color: var(--progress-color);
+
+  &::-webkit-progress-bar {
+    border-radius:  var(--progress-border-radius);
+    background: transparent;
+  }
+  &[value]::-webkit-progress-value {
+    border-radius:  var(--progress-border-radius);
+    background-color: var(--progress-color);
+  }
+  &::-moz-progress-bar {
+    border-radius:  var(--progress-border-radius);
+    background-color: var(--progress-color);
+  }
+
+  &:indeterminate,
+  &[indeterminate="true"],
+  &:not([value]){
+    background:
+            var(--progress-background-color)
+            linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left / 150% 150% no-repeat;
+
+    animation: progressIndeterminate 2.5s linear infinite alternate;
+
+    &[value]::-webkit-progress-value {
+      background-color: transparent;
+    }
+    &::-moz-progress-bar {
+      background-color: transparent;
+    }
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+@keyframes progressIndeterminate {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
