@@ -1,0 +1,112 @@
+a,
+.link {
+  &,
+  &:visited {
+    --custom-background: transparent;
+    --custom-text:var(--primary-background);
+    --custom-decoration-color:var(--primary-background);
+    --custom-hover-background: transparent;
+    --custom-hover-text:var(--primary-hover);
+    --custom-hover-decoration-color:var(--primary-hover);
+
+    background-color:var(--custom-background);
+    color:var(--custom-text);
+    font-size: 1.1em;
+    text-decoration-color: var(--custom-decoration-color) !important;
+    transition: all .2s ease;
+  }
+
+  &:hover,
+  &:focus {
+    background-color:var(--custom-hover-background);
+    color:var(--custom-hover-text);
+    text-decoration-color: var(--custom-hover-decoration-color) !important;
+  }
+
+  &[aria-current] {
+    color:var(--primary-hover);
+    font-weight: 500;
+    pointer-events: none;
+  }
+
+  &.link--mark {
+    --custom-background: var(--primary-background);
+    --custom-text:var(--primary-text);
+    --custom-hover-background: var(--primary-hover);
+    --custom-hover-text:var(--primary-hover-text);
+
+    padding:0 0.4rem;
+  }
+}
+
+a.link--secondary {
+  --custom-text:var(--secondary-background);
+  --custom-decoration-color:var(--secondary-background);
+  --custom-hover-text:var(--secondary-hover);
+  --custom-hover-decoration-color:var(--secondary-hover);
+
+  &.link--mark {
+    --custom-background: var(--secondary-background);
+    --custom-text: var(--secondary-text);
+    --custom-hover-background: var(--secondary-hover);
+    --custom-hover-text: var(--secondary-hover-text);
+
+    padding: 0 0.4rem;
+  }
+}
+
+.link-underline {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--dashed {
+    text-decoration-style: dashed;
+    &:hover {
+      text-decoration-style: dashed;
+    }
+  }
+
+  &--dotted {
+    text-decoration-style: dotted;
+    &:hover {
+      text-decoration-style: dotted;
+    }
+  }
+
+  &--double {
+    text-decoration-style: double;
+    &:hover {
+      text-decoration-style: double;
+    }
+  }
+
+  &--wavy {
+    text-decoration-style: wavy;
+    &:hover{
+      text-decoration-style: wavy;
+    }
+  }
+
+  &--lineThrough {
+    text-decoration-line:line-through;
+    &:hover {
+      text-decoration-line:line-through;
+    }
+  }
+
+  &--overline {
+    text-decoration-line: overline;
+    &:hover {
+      text-decoration-line: overline;
+    }
+  }
+
+  &--around {
+    text-decoration-line: underline overline;
+    &:hover {
+      text-decoration-line: underline overline;
+    }
+  }
+}
