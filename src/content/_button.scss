@@ -1,0 +1,199 @@
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn {
+  //display: inline-block;
+  //text-align:center;
+  display: inline-flex;
+  position: relative;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  //margin-bottom: var(--spacing);
+  padding: .5rem 1.2rem;
+
+  background-clip: padding-box !important;
+  font-size:1em;
+  line-height: var(--line-height);
+  text-decoration: none;
+  cursor: pointer !important;
+  transition: all .2s ease-in-out;
+
+  &[disabled],
+  &[aria-disabled],
+  &:disabled {
+    box-shadow: none;
+    opacity: .15;
+    pointer-events: none;
+  }
+
+  &:not(:only-child):not(:last-child):not(:only-of-type) {
+    margin-right: 1rem;
+  }
+
+  svg {
+    width: .8em;
+    height: .8em;
+  }
+
+  /*  &:last-child {
+      margin-bottom: 0;
+    }*/
+}
+
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn,
+.btn--primary {
+  --custom-background:var(--primary-background);
+  --custom-border-color:var(--primary-border-color);
+  --custom-border-width: var(--border-width);
+  --custom-text:var(--primary-text);
+  --custom-active-background:var(--primary-focus);
+  --custom-active-text:var(--primary-text);
+  --custom-hover-background:var(--primary-hover);
+  --custom-hover-text:var(--primary-hover-text);
+  --custom-hover-border-color:var(--primary-border-color-hover);
+  --custom-border-radius:var(--border-radius);
+  --custom-shadow:var(--button-shadow);
+
+  background-color: var(--custom-background);
+  color: var(--custom-text);
+  border: var(--custom-border-width) solid var(--custom-border-color);
+  border-radius: var(--custom-border-radius);
+  box-shadow: var(--custom-shadow);
+
+  &:active,
+  &:focus {
+    background-color: var(--custom-active-background);
+    color: var(--custom-active-text);
+    outline: dotted var(--custom-border-color)  calc(var(--custom-border-width) * 3);
+    outline-offset: -0.35em;
+  }
+
+  &:hover {
+    border: var(--custom-border-width) solid var(--custom-hover-border-color);
+    background-color: var(--custom-hover-background);
+    box-shadow: var(--custom-shadow-hover);
+    color: var(--custom-hover-text);
+  }
+}
+
+
+
+input[type="reset"],
+button[type="reset"],
+.btn--secondary {
+  --custom-background:var(--secondary-background) !important;
+  --custom-border-color:var(--secondary-border-color) !important;
+  --custom-text:var(--secondary-text) !important;
+  --custom-active-background:var(--secondary-focus) !important;
+  --custom-active-text:var(--secondary-text) !important;
+  --custom-hover-background:var(--secondary-hover) !important;
+  --custom-hover-text:var(--secondary-hover-text) !important;
+  --custom-hover-border-color:var(--secondary-border-color-hover) !important;
+}
+
+.btn--outline {
+  border-style: solid;
+  background: transparent !important;
+  color: var(--custom-background) !important;
+
+  &:hover {
+    color: var(--custom-hover-background) !important;
+  }
+}
+
+.btn--pills {
+  border-radius: 2em !important;
+}
+
+.btn--noshadow {
+  box-shadow: none !important;
+
+  &:hover {
+    box-shadow: none !important;
+  }
+}
+
+.btn--noborder {
+  border-style: none !important;
+
+  &:hover {
+    border-style: none !important;
+  }
+}
+
+.btn--norounded {
+  border-radius: 0 !important;
+}
+
+.btn--circle {
+  border-radius: 50% !important;
+}
+
+.btn--block {
+  width: 100% !important; //98% because of the shadow
+  margin-bottom: var(--half-spacing);
+  margin-right: 0 !important;
+}
+
+.btn--big {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  font-size: 1.6em !important;
+}
+
+.btn--small {
+  padding: .4rem .8rem !important;
+  font-size: .8em !important;
+}
+
+.btn--info {
+  --custom-background:var(--info-background) !important;
+  --custom-border-color:var(--info-border-color) !important;
+  --custom-text:var(--info-text) !important;
+  --custom-active-background:var(--info-focus) !important;
+  --custom-active-text:var(--info-text) !important;
+  --custom-hover-background:var(--info-hover) !important;
+  --custom-hover-text:var(--info-hover-text) !important;
+  --custom-hover-border-color:var(--info-border-color-hover) !important;
+}
+
+.btn--success {
+  --custom-background:var(--success-background) !important;
+  --custom-border-color:var(--success-border-color) !important;
+  --custom-text:var(--success-text) !important;
+  --custom-active-background:var(--success-focus) !important;
+  --custom-active-text:var(--success-text) !important;
+  --custom-hover-background:var(--success-hover) !important;
+  --custom-hover-text:var(--success-hover-text) !important;
+  --custom-hover-border-color:var(--success-border-color-hover) !important;
+}
+
+.btn--warning {
+  --custom-background:var(--warning-background) !important;
+  --custom-border-color:var(--warning-border-color) !important;
+  --custom-text:var(--warning-text) !important;
+  --custom-active-background:var(--warning-focus) !important;
+  --custom-active-text:var(--warning-text) !important;
+  --custom-hover-background:var(--warning-hover) !important;
+  --custom-hover-text:var(--warning-hover-text) !important;
+  --custom-hover-border-color:var(--warning-border-color-hover) !important;
+}
+
+.btn--danger {
+  --custom-background:var(--danger-background) !important;
+  --custom-border-color:var(--danger-border-color) !important;
+  --custom-text:var(--danger-text) !important;
+  --custom-active-background:var(--danger-focus) !important;
+  --custom-active-text:var(--danger-text) !important;
+  --custom-hover-background:var(--danger-hover) !important;
+  --custom-hover-text:var(--danger-hover-text) !important;
+  --custom-hover-border-color:var(--danger-border-color-hover) !important;
+}
