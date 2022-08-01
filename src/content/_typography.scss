@@ -1,0 +1,398 @@
+@use "../abstracts/variables" as *;
+
+@use "sass:math";
+
+ol, ul {
+  -webkit-padding-start: var(--spacing);
+  -webkit-padding-end: 0;
+  padding-right: 0;
+  padding-left: var(--spacing);
+  padding-inline-start: var(--spacing);
+  padding-inline-end: 0;
+  margin-left: 1rem;
+}
+
+// https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/
+// https://spencermortensen.com/articles/typographic-scale/
+
+h1, .like-h1,
+h2, .like-h2,
+h3, .like-h3,
+h4, .like-h4,
+h5, .like-h5,
+h6, .like-h6 {
+  display: block;
+  width: 100%;
+  --color: var(--color-text);
+  --font-weight: var(--heading-font-weight);
+  // Recommendation courtesy of this brilliant work:
+  // @link https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
+  line-height: calc(2px + 2ex + 2px);
+  //line-height: var(--line-height-ratio);
+  // Set with `em` to be relative to current `font-size`
+  margin-bottom: 0.65em;
+
+  + * {
+    margin-top:0;
+  }
+
+  &:first-child {
+    margin-top: 0 !important;
+  }
+}
+
+h1, .like-h1 {
+  max-width: 40ch;
+}
+h2, .like-h2 {
+  max-width: 45ch;
+}
+h3, .like-h3 {
+  max-width: 60ch;
+}
+h4, .like-h4 {
+  max-width: 75ch;
+}
+h5, .like-h5,
+h6, .like-h6 {
+  max-width: 80ch;
+}
+
+// Create map with h[x] as key
+// and computed font-size as value
+//$type-styles: ();
+$level-size: $heading-base-font-size; //$type-base-size;
+
+@each $level in $type-levels {
+  $level-size: $level-size * $type-size-ratio;
+  //$type-styles: map-merge($type-styles, (#{"h"}$level: $level-size));
+
+  // Output heading styles
+  // Assign to element and create utility class
+  h#{$level},
+  .like-h#{$level} {
+    --color:var(--color-h#{$level});
+    // Fallback for browsers that don't support min / max
+    font-size: $level-size;
+
+    $level-unitless:  math.div($level-size , ($level-size * 0 + 1));
+    margin-top: calc((var(--heading-flow-space-ratio) * #{math.div( $level-unitless,2)}) * 1em);
+    // Limit in place based on testing -> smaller ratios are
+    // prematurely or unnecessarily reduced
+    @if ($type-size-ratio > 1.2) {
+      // Fluid type styles
+
+      // Remove unit for calculations
+
+
+      // Set minimum size to a percentage less than $level-size
+      // Reduction is greater for large font sizes (> 4rem) to help
+      // prevent overflow due to font-size on mobile devices
+      $fluid-reduction: if($level-size > 4, 0.6, 0.33);
+      $fluid-min: $level-unitless - ($fluid-reduction * $level-unitless);
+
+      // Prevent dropping lower than 1rem (body font-size)
+      $fluid-min: if($fluid-min > $heading-base-font-size, $fluid-min, 1);
+
+      // Adjust max modifier slightly per level to prevent "same" size
+      // or lower levels appaering larger than higher levels
+      // 4vw was selected by testing from $type-ratios map, YMMV 🙃
+      $fluid-scaler: ($level-unitless - $fluid-min) + 4vw;
+
+      font-size: clamp(
+              #{$fluid-min}em,
+              #{$fluid-scaler} + 1em,
+              #{$level-size}
+      );
+    }
+
+    /*    &:first-child {
+          margin-top:0;
+        }
+
+        &:only-child {
+          margin-bottom:0 !important;
+        }*/
+  }
+}
+
+h5, .like-h5 {
+  color:var(--color-h5);
+  font-size: var(--heading-font-size);
+}
+
+h6, .like-h6 {
+  color:var(--color-h6);
+  font-size: var(--heading-font-size);
+}
+
+h5, h6 {
+  margin-top: calc(var(--heading-flow-space-ratio) * 1em);
+
+  &:only-child {
+    margin-bottom:0 !important;
+  }
+}
+
+.like-h1, .like-h2, .like-h3, .like-h4, .like-h5, .like-h6 {
+  margin-top: unset;
+
+  &:only-child {
+    margin-bottom:0 !important;
+  }
+}
+
+p {
+  font-size: 1em;
+  margin-top: calc(var(--flow-space-ratio) * 1em);
+  line-height: calc(var(--line-height) * 1em);
+  max-width: 85ch;
+
+  & + *:is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article)) {
+    margin-top: calc(var(--flow-space-ratio) * 1em);
+  }
+
+  //& + *:not(:is(section, article, .section, .article)) {
+  //  margin-top: var(--block-spacing) !important;
+  //}
+
+  &:first-child {
+    margin-top:0;
+  }
+}
+
+mark {
+  padding: 0.125rem 0.25rem;
+  background-color: var(--mark-background);
+  color: var(--mark-text);
+  vertical-align: middle;
+}
+
+ins {
+  background-color: var(--ins-background);
+  color: var(--ins-text);
+  text-decoration: none;
+}
+
+del {
+  background-color: var(--del-background);
+  color: var(--del-text);
+  vertical-align: middle;
+}
+
+s {
+  vertical-align: middle;
+}
+
+u {
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: inherit;
+}
+
+i {
+  font-weight: 300;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+  cursor: help;
+}
+
+blockquote {
+  margin: 1.5em 1rem;
+  padding: 0.5em 1rem;
+  border-left: 10px solid var(--blockquote-border);
+  background: var(--blockquote-background);
+  box-shadow: var(--blockquote-shadow);
+  font-family: var(--font-family-alt);
+  max-width:85ch;
+
+  &:before {
+    position: relative;
+    top:.15em;
+    left:.15em;
+    margin-right: 0.25em;
+    content: "\201D"; //quotes:  "\201D"; "\201C"; "\2018"; "\2019";
+    color: var(--blockquote-glyph);
+    font-size: 4em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+  }
+
+  p {
+    display: inline;
+  }
+
+  cite {
+    color: var(--blockquote-cite);
+  }
+
+  footer {
+    margin-right: .25em;
+    text-align: right;
+  }
+}
+
+hr {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: var(--block-half-spacing) 0;
+  background: var(--divider-color);
+  border: 0;
+  overflow: visible;
+
+  + *:is(h1, h2, h3, h4, h5, h6) {
+    margin-top: calc(var(--flow-space-ratio) * 1em);
+  }
+  + table {
+    margin-top: 0;
+  }
+}
+
+time {
+  font-weight: 700;
+}
+
+strong, b {
+  font-size: 1.1em;
+}
+
+pre,
+code,
+kbd,
+samp,
+var,
+output {
+  font-size: 0.875em;
+  font-family: var(--font-family-mono);
+}
+
+output {
+  font-weight: 700;
+}
+
+pre,
+code,
+kbd {
+  border-radius: var(--border-radius);
+  font-family: var(--font-family-mono);
+  font-size: 1.4rem;
+  font-weight: var(--font-weight);
+  line-height: initial;
+}
+
+code,
+kbd {
+  display: inline-block;
+  padding: 0.375em 0.5em;
+  background: var(--code-background);
+  color: var(--code-text);
+}
+
+kbd {
+  background-color: var(--kbd-background);
+  color: var(--kbd-text);
+}
+
+samp > kbd {
+  border-radius: 0;
+  color: initial;
+  font-weight: 700;
+  background: initial;
+}
+
+//pre[class*=language-],
+pre {
+  // display: grid is a hack. Because if line are too big the overflow not working and all parents elements are over sized
+  display: grid;
+  grid-template-columns: 1fr;
+
+  position: relative;
+  margin: calc(var(--block-spacing) * .5) 0;
+  margin-bottom: 0;
+  padding: 0;
+  //background-color: var(--panel-background);
+  box-shadow: var(--panel-shadow);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  word-break: normal;
+  hyphens: none;
+  tab-size: 2;
+  width: 100%;
+
+  > code {
+    display: block;
+    padding: var(--inner-v-spacing) var(--inner-h-spacing);
+    background: var(--code-background);
+    line-height: normal;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  &:first-child {
+    margin-top:0;
+  }
+
+  &:last-child {
+    margin-bottom: calc(var(--block-spacing) * .5);
+  }
+
+  & + :is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article)) {
+    margin-top:  var(--block-half-spacing);
+  }
+}
+
+pre[data-lang]:not([data-lang=""]):before {
+  position: absolute;
+  content: attr(data-lang);
+  top: -0.2rem;
+  right: 0.4rem;
+  padding: 0.4rem;
+  background-color: var(--code-lang-background);
+  color: var(--code-lang-text);
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: .6em;
+  border-radius: var(--border-radius);
+}
+
+code {
+  // Tags
+  b {
+    font-size: 1em;
+    color: var(--code-tag-color);
+    font-weight: var(--font-weight);
+  }
+
+  // Properties
+  i {
+    color: var(--code-property-color);
+    font-style: normal;
+  }
+
+  // Values
+  u {
+    color: var(--code-value-color);
+    text-decoration: none;
+    border:none;
+  }
+
+  // Comments
+  em {
+    color: var(--code-comment-color);
+    font-style: normal;
+  }
+
+  var {
+    color: var(--code-var-color);
+    font-style: normal;
+    font-weight: 700;
+  }
+}
