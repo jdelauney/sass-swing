@@ -5,10 +5,14 @@ html {
   font-family: var(--font-family);
 }
 
+html, body {
+  min-height: 100vh;
+  min-height: var(--doc-height);
+}
+
 body {
   position:relative;
   width:100%;
-  min-height: 100vh;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background-color: var(--color-background);
