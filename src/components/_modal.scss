@@ -1,0 +1,94 @@
+dialog,
+.modal {
+  display:block ! important;
+  position: fixed;
+  inset: 0;
+  max-width: min(90vw, 85ch);
+  max-height: min(80vh, 100%);
+  margin:auto;
+  z-index: 5000;
+  padding:0;
+  overflow: hidden;
+  background: var(--color-background-alt);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--panel-border-color);
+  border-radius: var(--panel-border-radius);
+  box-shadow: 0 0 1em rgb(0 0 0 / .35);
+  transition: opacity .5s ease-in-out;
+
+  &:not([open]) {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &[open] {
+    opacity: 1;
+  }
+
+  &[loading] {
+    visibility: hidden;
+  }
+
+  &[modal-mode="simple"]::backdrop {
+    backdrop-filter: none;
+    background: unset;
+  }
+
+  &::backdrop {
+    background: rgb(0 0 0 / .35);
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: backdrop-filter .5s ease;
+  }
+
+  & header,
+  & footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-background-alt-active);
+    padding: var(--inner-h-spacing) var(--inner-v-spacing);
+
+    /*& > *:first-child {
+      margin-top: 0;
+    }*/
+  }
+
+  & header + footer {
+    margin-top: 0 !important;
+  }
+
+  & footer {
+    justify-content: space-between;
+  }
+
+  & footer {
+    justify-content: flex-end;
+  }
+
+  & > form {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: start;
+    max-height: 80vh;
+    max-block-size: 80vh;
+    padding:0;
+  }
+
+  & article {
+    margin-top: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    padding: var(--inner-h-spacing) var(--inner-v-spacing);
+    max-height: 60vh;
+    max-block-size: min(60vh, 100%);
+
+    > header {
+      padding:0;
+    }
+    + footer {
+      margin-top: 0 !important;
+    }
+  }
+}
