@@ -12,4 +12,5 @@ export const waitForDOMEvent = (item, event) => {
 		}
 		item.addEventListener(event, listener);
 	})
+
 }
