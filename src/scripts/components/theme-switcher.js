@@ -1,4 +1,4 @@
-import CustomComponent from "../core/CustomComponent";
+import CustomComponent from "../core/CustomComponent.js";
 
 export default class ThemeSwitcher extends CustomComponent{
 
