@@ -1,0 +1,133 @@
+@use "../abstracts/functions" as *;
+@use "colors" as *;
+
+// Famille des polices de caractères
+$font-family-monospace: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace !default;
+//consolas, 'Lucida Console', Monaco, courier, monospace !default;
+$font-family-serif: Georgia, Times, 'Times New Roman', serif !default;
+$font-family-sans: Roboto, Noto, "Segoe UI", 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$default-font-family: $font-family-sans !default;
+$default-font-family-alt: $font-family-serif !default;
+
+// La hauteur de la ligne est réglée sur le 'nombre d'or' pour une lisibilité optimale
+$default-line-height: #{type-ratio("goldenRatio")} !default;
+$default-line-height-ratio: 161.8033% !default;
+
+/* Taille 18.4px, basé sur la taille de la police du Body 16px  */
+$min-heading-font-size: 1em !default;
+$max-heading-font-size: 1.15em !default;
+
+$default-heading-font-weight:500 !default;
+$default-font-weight: 400 !default;
+
+$vertical-flow-space-ratio: type-ratio("goldenSquareRatio") !default;
+$vertical-heading-flow-space-ratio: type-ratio("goldenRatio") !default;
+
+$spacing : 1.2rem !default;
+$flow-spacing : 1.5rem !default;
+$block-spacing-vertical: 6.4rem !default;
+$min-block-spacing-vertical: 8vh !default;
+
+$min-grid-col-width: 0!default;
+
+$general-border-width:1px !default;
+$general-border-outline-width:2px !default;
+$general-border-color: $color-neutral-500 !default;
+$general-border-outline-color: $color-neutral-800 !default;
+$general-border-radius:.5rem !default;
+
+
+/* general color */
+$general-color-background-light: $color-neutral-100 !default;
+$general-color-background-alt-light: $color-White !default;
+$general-color-background-alt-active-light: $color-GhostWhite !default;;
+$general-color-text-light:$color-neutral-900  !default;;
+$general-color-text-alt-light:$color-neutral-800 !default;;
+
+/* primary color */
+$brand-color-light : #0af !default;
+
+$primary-color-light-lighten-ratio:0.4 !default;
+$primary-color-light-darken-ratio:0.4 !default;
+$primary-color-light-saturate-ratio:0.4 !default;
+$primary-color-light-desaturate-ratio:0.6 !default;
+
+$primary-color-light-text-l: 10% !default;
+$primary-color-light-text-alt-s: 30% !default;
+$primary-color-light-text-alt-l: 30% !default;
+$primary-color-light-surface-1-s:25% !default;
+$primary-color-light-surface-1-l:90% !default;
+$primary-color-light-surface-2-s:20% !default;
+$primary-color-light-surface-2-l:99% !default;
+$primary-color-light-surface-3-s:20% !default;
+$primary-color-light-surface-3-l:92% !default;
+$primary-color-light-surface-4-s:20% !default;
+$primary-color-light-surface-4-l:85% !default;
+
+/* Secondary color */
+$secondary-color-light : #0af !default;
+
+$secondary-color-light-lighten-ratio:0.4 !default;
+$secondary-color-light-darken-ratio:0.4 !default;
+$secondary-color-light-saturate-ratio:0.4 !default;
+$secondary-color-light-desaturate-ratio:0.6 !default;
+
+$secondary-color-light-text-l: 10% !default;
+$secondary-color-light-text-alt-s: 30% !default;
+$secondary-color-light-text-alt-l: 30% !default;
+$secondary-color-light-surface-1-s:25% !default;
+$secondary-color-light-surface-1-l:90% !default;
+$secondary-color-light-surface-2-s:20% !default;
+$secondary-color-light-surface-2-l:99% !default;
+$secondary-color-light-surface-3-s:20% !default;
+$secondary-color-light-surface-3-l:92% !default;
+$secondary-color-light-surface-4-s:20% !default;
+$secondary-color-light-surface-4-l:85% !default;
+
+/* Success color */
+$success-color-light : #0af !default;
+
+$success-color-lighten-ratio:0.4 !default;
+$success-color-darken-ratio:0.4 !default;
+$success-color-saturate-ratio:0.4 !default;
+$success-color-desaturate-ratio:0.6 !default;
+
+$success-color-text-l: 10% !default;
+$success-color-text-alt-s: 30% !default;
+$success-color-text-alt-l: 30% !default;
+
+/* Info color */
+$info-color-light : #0af !default;
+
+$info-color-lighten-ratio:0.4 !default;
+$info-color-darken-ratio:0.4 !default;
+$info-color-saturate-ratio:0.4 !default;
+$info-color-desaturate-ratio:0.6 !default;
+
+$info-color-text-l: 10% !default;
+$info-color-text-alt-s: 30% !default;
+$info-color-text-alt-l: 30% !default;
+
+/* Warning color */
+$warning-color-light : #0af !default;
+
+$warning-color-lighten-ratio:0.4 !default;
+$warning-color-darken-ratio:0.4 !default;
+$warning-color-saturate-ratio:0.4 !default;
+$warning-color-desaturate-ratio:0.6 !default;
+
+$warning-color-text-l: 10% !default;
+$warning-color-text-alt-s: 30% !default;
+$warning-color-text-alt-l: 30% !default;
+
+/* Danger color */
+$danger-color-light : #0af !default;
+
+$danger-color-lighten-ratio:0.4 !default;
+$danger-color-darken-ratio:0.4 !default;
+$danger-color-saturate-ratio:0.4 !default;
+$danger-color-desaturate-ratio:0.6 !default;
+
+$danger-color-text-l: 10% !default;
+$danger-color-text-alt-s: 30% !default;
+$danger-color-text-alt-l: 30% !default;
