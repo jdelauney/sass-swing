@@ -31,6 +31,8 @@
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+.idea/**/git_toolbox_prj.xml
+.idea/**/inspectionProfiles/Project_Default.xml
 
 # Gradle
 .idea/**/gradle.xml
@@ -199,4 +201,3 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-/.idea/git_toolbox_prj.xml
