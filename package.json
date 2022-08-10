@@ -47,7 +47,10 @@
     "css:optimize:doc": "postcss ./documentation/styles/css/**/*.css !./documentation/styles/css/**/*.min.css --dir ./documentation/styles/css --ext .min.css",
     "build:sassswing:doc": "npm-run-all scss:compile:doc css:optimize:doc --silent",
     "build:doc": "npm run build:sassswing:doc --silent",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "lint": "eslint --fix",
+    "pretty": "prettier --write ."
   },
   "browserslist": [
     ">= 0.5%",
@@ -55,10 +58,20 @@
     "not dead"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "autoprefixer": "^10.4.8",
     "cssnano": "^5.1.12",
     "cssnano-preset-default": "^5.2.12",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
@@ -66,6 +79,7 @@
     "postcss-preset-env": "^7.7.2",
     "postcss-scss": "^4.0.4",
     "postcss-sort-media-queries": "^4.2.1",
+    "prettier": "^2.7.1",
     "sass": "^1.54.0"
   }
 }
