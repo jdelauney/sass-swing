@@ -14,8 +14,8 @@ table {
   z-index: 1;
 
   thead {
-    background-color: var(--table-header-background);
-    color: var(--table-header-text);
+    background-color: var(--table-header-color-background, --muted-color-background);
+    color: var(--table-header-color-text, --muted-color-text);
     border-bottom: 2px solid currentColor;
     th {
       padding: .5em .8em;
@@ -32,14 +32,14 @@ table {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    background-color: var(--table-body-background);
-    color: var(--table-body-text);
+    background-color: hsla(var(--table-body-color-background, --general-color-background-alt), .5);
+    color: var(--table-body-color-text, --muted-color-text);
     white-space: nowrap;
   }
 
   tfoot {
-    background-color: var(--table-footer-background);
-    color: var(--table-footer-text);
+    background-color: var(--table-footer-color-background, --muted-color-background);
+    color: var(--table-footer-color-text, --muted-color-text);
   }
 
   tr{
@@ -52,14 +52,14 @@ table {
   }
 
   tr > th {
-    background-color: var(--table-header-background);
-    color: var(--table-header-text);
+    background-color: var(--table-header-color-background, --muted-color-background);
+    color: var(--table-header-color-text, --muted-color-text);
   }
 
   tbody > tr > td {
     display: table-cell;
     padding: .5em .8em;
-    border-bottom: var(--border-width) dotted var(--border-color);
+    border-bottom: var(--table-border-width, --general-border-width) dotted var(--table-color-border, --general-color-border);
 
     &:not(:last-child) {
       padding-right: 1.5em;
@@ -86,7 +86,7 @@ table {
   tbody tr{
     transition: all .2s ease-in-out;
     &:hover {
-      background-color: var(--table-row-hover-background);
+      background-color: var(--table-color-row-hover-background, hsla(var(--primary-color-lighten), .5));
     }
   }
 }
@@ -110,14 +110,14 @@ table {
 
   td:hover::after,
   th:hover::after {
-    background-color: var(--table-col-hover-background);
+    background-color: var(--table-color-col-hover-background, hsla(var(--primary-color-lighten), .5));
   }
 
 
   /* Focus stuff for mobile */
   td:focus::after,
   th:focus::after {
-    background-color: var(--table-col-hover-background);
+    background-color: var(--table-color-row-hover-background, hsla(var(--primary-color-lighten), .5));
   }
   td:focus::before,
   tbody th:focus::before {
@@ -127,30 +127,30 @@ table {
     left: -5000px;
     width: 10000px;
     height: 100%;
-    background-color: var(--table-col-hover-background);
+    background-color: var(--table-color-row-hover-background, hsla(var(--primary-color-lighten), .5));
     content: '';
   }
 }
 
 .table--cell-hover {
   tbody tr td:hover {
-    background-color: var(--table-cell-hover-background);
-    color:var(--table-cell-hover-text);
+    background-color: var(--table-color-hover-cell-background, var(--primary-color-darken));
+    color:var(--table-color-hover-cell-text, var(--primary-color-alt-text));
     cursor: pointer;
   }
 }
 
 .table--bordered {
   // border: 1px solid var(--clr-primary-200);
-
+  --_table-border : var(--table-border-width, --general-border-width) solid var(--table-color-border, --general-color-border);
   thead,
   tbody,
   tfoot, {
-    border: var(--table-border);
+    border:  var(--_table-border);
   }
 
   tr {
-    border-bottom: var(--table-border);
+    border-bottom:  var(--_table-border);
 
     &:last-of-type {
       border-bottom: none;
@@ -159,7 +159,7 @@ table {
 
   th,
   td {
-    border-right: var(--table-border);
+    border-right:  var(--_table-border);
   }
 }
 
@@ -213,6 +213,7 @@ table {
   }
 
   &.table--bordered {
+    --_table-border : var(--table-border-width, --general-border-width) solid var(--table-color-border, --general-color-border);
     thead,
     tbody {
       border-right: none;
@@ -220,7 +221,7 @@ table {
     //tr, .table_row,
     td {
       &:last-of-type {
-        border-right: var(--table-border);
+        border-right: var(--_table-border);
       }
     }
   }
@@ -278,7 +279,7 @@ table {
   .table--responsive.table--bordered {
     th {
       &:last-of-type {
-        border-right: var(--table-border);
+        border-right: var(--_table-border);
       }
     }
   }

@@ -76,6 +76,8 @@
   --primary-color-surface-4-s: #{$primary-color-light-surface-4-s};
   --primary-color-surface-4-l: #{$primary-color-light-surface-4-l};
   --primary-color-surface-4: hsl(var(--primary-color-h), var(--primary-color-surface-4-s), var(--primary-color-surface-4-l));
+  --primary-shadow: #{$primary-shadow};
+  --primary-shadow-alt: #{$primary-shadow-alt};
 
   --secondary-color-h:hue($secondary-color-light);
   --secondary-color-s:saturation($secondary-color-light);
@@ -197,9 +199,24 @@
 
 /* common theme schema settings */
 :root {
+
+  --general-shadow-alt: #{$general-shadow-alt};
   --scrollbar-color-background: var(--secondary-color);
   --scrollbar-color-thumb: var(--secondary-color-darken);
   --scrollbar-color-thumb-border: var(--secondary-color);
+
+  --color-h1: #{$color-neutral-100};
+  --color-h2: #{mix($color-neutral-100, $color-neutral-200 )};
+  --color-h3: #{$color-neutral-200};
+  --color-h4: #{mix($color-neutral-200, $color-neutral-300 )};
+  --color-h5: #{$color-neutral-300};
+  --color-h6: #{mix($color-neutral-300, $color-neutral-400 )};
+
+  --muted-color-background:#{$muted-color-background};
+  --muted-color-text:#{$muted-color-text};
+  --muted-color-border:#{$muted-color-border};
+
+  --divider-color:#{$divider-color};
 
   --code-color-background:#{$code-color-background};
   --code-color-lang-background: #{$code-color-lang-background};

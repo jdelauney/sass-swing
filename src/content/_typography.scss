@@ -23,7 +23,7 @@ h5, .like-h5,
 h6, .like-h6 {
   display: block;
   width: 100%;
-  --color: var(--color-text);
+  --color: var(--general-color-text);
   --font-weight: var(--heading-font-weight);
   // Recommendation courtesy of this brilliant work:
   // @link https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
@@ -163,20 +163,20 @@ p {
 
 mark {
   padding: 0.125rem 0.25rem;
-  background-color: var(--mark-background);
-  color: var(--mark-text);
+  background-color: var(--mark-color-background);
+  color: var(--mark-color-text);
   vertical-align: middle;
 }
 
 ins {
-  background-color: var(--ins-background);
-  color: var(--ins-text);
+  background-color: var(--ins-color-background);
+  color: var(--ins-color-text);
   text-decoration: none;
 }
 
 del {
-  background-color: var(--del-background);
-  color: var(--del-text);
+  background-color: var(--del-color-background);
+  color: var(--del-color-text);
   vertical-align: middle;
 }
 
@@ -204,9 +204,9 @@ abbr[title] {
 blockquote {
   margin: 1.5em 1rem;
   padding: 0.5em 1rem;
-  border-left: 10px solid var(--blockquote-border);
-  background: var(--blockquote-background);
-  box-shadow: var(--blockquote-shadow);
+  border-left: 10px solid var(--blockquote-color-border, --primary-color);
+  background: var(--blockquote--color-background, --general-color-background-alt);
+  box-shadow: var(--blockquote-shadow, --general-shadow);
   font-family: var(--font-family-alt);
   max-width:85ch;
 
@@ -216,7 +216,7 @@ blockquote {
     left:.15em;
     margin-right: 0.25em;
     content: "\201D"; //quotes:  "\201D"; "\201C"; "\2018"; "\2019";
-    color: var(--blockquote-glyph);
+    color: hsla(var(--blockquote-color-glyph, --primary-color), var(--blockquote-color-glyph-opacity,.25));
     font-size: 4em;
     line-height: 0.1em;
     vertical-align: -0.4em;
@@ -227,7 +227,7 @@ blockquote {
   }
 
   cite {
-    color: var(--blockquote-cite);
+    color: var(--blockquote-color-cite, --muted-color-text);
   }
 
   footer {
@@ -278,7 +278,7 @@ output {
 pre,
 code,
 kbd {
-  border-radius: var(--border-radius);
+  border-radius: var(--general-border-radius);
   font-family: var(--font-family-mono);
   font-size: 1.4rem;
   font-weight: var(--font-weight);
@@ -289,13 +289,13 @@ code,
 kbd {
   display: inline-block;
   padding: 0.375em 0.5em;
-  background: var(--code-background);
-  color: var(--code-text);
+  background: var(--code-color-background);
+  color: var(--code-color-text);
 }
 
 kbd {
-  background-color: var(--kbd-background);
-  color: var(--kbd-text);
+  background-color: var(--kbd-color-background);
+  color: var(--kbd-color-text);
 }
 
 samp > kbd {
@@ -316,7 +316,7 @@ pre {
   margin-bottom: 0;
   padding: 0;
   //background-color: var(--panel-background);
-  box-shadow: var(--panel-shadow);
+  box-shadow: var(--general-shadow-alt);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   word-break: normal;
@@ -327,7 +327,7 @@ pre {
   > code {
     display: block;
     padding: var(--inner-v-spacing) var(--inner-h-spacing);
-    background: var(--code-background);
+    background: var(--code-color-background);
     line-height: normal;
     -webkit-overflow-scrolling: touch;
     max-width: 100%;
@@ -353,45 +353,45 @@ pre[data-lang]:not([data-lang=""]):before {
   top: -0.2rem;
   right: 0.4rem;
   padding: 0.4rem;
-  background-color: var(--code-lang-background);
-  color: var(--code-lang-text);
+  background-color: var(--code-color-lang-background);
+  color: var(--code-color-lang-text);
   text-transform: uppercase;
   font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
   font-size: .6em;
-  border-radius: var(--border-radius);
+  border-radius: var(--general-border-radius);
 }
 
 code {
   // Tags
   b {
     font-size: 1em;
-    color: var(--code-tag-color);
+    color: var(--code-color-tag);
     font-weight: var(--font-weight);
   }
 
   // Properties
   i {
-    color: var(--code-property-color);
+    color: var(--code-color-property);
     font-style: normal;
   }
 
   // Values
   u {
-    color: var(--code-value-color);
+    color: var(--code-color-value);
     text-decoration: none;
     border:none;
   }
 
   // Comments
   em {
-    color: var(--code-comment-color);
+    color: var(--code-color-comment);
     font-style: normal;
   }
 
   var {
-    color: var(--code-var-color);
+    color: var(--code-color-var);
     font-style: normal;
     font-weight: 700;
   }

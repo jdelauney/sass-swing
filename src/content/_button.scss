@@ -50,37 +50,38 @@ input[type="submit"],
 input[type="reset"],
 .btn,
 .btn--primary {
-  --custom-background:var(--primary-background);
-  --custom-border-color:var(--primary-border-color);
-  --custom-border-width: var(--border-width);
-  --custom-text:var(--primary-text);
-  --custom-active-background:var(--primary-focus);
-  --custom-active-text:var(--primary-text);
-  --custom-hover-background:var(--primary-hover);
-  --custom-hover-text:var(--primary-hover-text);
-  --custom-hover-border-color:var(--primary-border-color-hover);
-  --custom-border-radius:var(--border-radius);
-  --custom-shadow:var(--button-shadow);
+  --button-color-background: --primary-color;
+  --button-color-hover-background: --primary-lighten;
+  //--border-color:var(--primary-border-color);
+  //--border-width: var(--border-width);
+  //--text:var(--primary-text);
+  //--active-background:var(--primary-focus);
+  //--active-text:var(--primary-text);
+  //--hover-background:var(--primary-hover);
+  //--hover-text:var(--primary-hover-text);
+  //--hover-border-color:var(--primary-border-color-hover);
+  //--border-radius:var(--border-radius);
+  //--shadow:var(--button-shadow);
 
-  background-color: var(--custom-background);
-  color: var(--custom-text);
-  border: var(--custom-border-width) solid var(--custom-border-color);
-  border-radius: var(--custom-border-radius);
-  box-shadow: var(--custom-shadow);
+  background-color: var(--button-color-background);
+  color: var(--button-color-text, --primary-color-text);
+  border: var(--button-border-width, --general-border-width) solid var(--button-border-color, --primary-color-darken);
+  border-radius: var(--button-border-radius, --general-border-radius);
+  box-shadow: var(--button-shadow, --primary-shadow);
 
   &:active,
   &:focus {
-    background-color: var(--custom-active-background);
-    color: var(--custom-active-text);
-    outline: dotted var(--custom-border-color)  calc(var(--custom-border-width) * 3);
+    background-color: var(--button-color-active-background, --primary-saturate);
+    color: var(--button-color-active-text, --primary-color-alt-text);
+    outline: dotted var(--button-border-color, --primary-color-darken)  calc(var(--button-border-width, --general-border-width) * 3);
     outline-offset: -0.35em;
   }
 
   &:hover {
-    border: var(--custom-border-width) solid var(--custom-hover-border-color);
-    background-color: var(--custom-hover-background);
-    box-shadow: var(--custom-shadow-hover);
-    color: var(--custom-hover-text);
+    border: var(--button-border-width, --general-border-width) solid var(--button-color-hover-border, --primary-color-saturate );
+    background-color: var(--button-color-hover-background);
+    box-shadow: var(--button-shadow-hover, --primary-shadow-alt);
+    color: var(--button-color-hover-text, --primary-color-alt-text);
   }
 }
 
@@ -89,23 +90,23 @@ input[type="reset"],
 input[type="reset"],
 button[type="reset"],
 .btn--secondary {
-  --custom-background:var(--secondary-background) !important;
-  --custom-border-color:var(--secondary-border-color) !important;
-  --custom-text:var(--secondary-text) !important;
-  --custom-active-background:var(--secondary-focus) !important;
-  --custom-active-text:var(--secondary-text) !important;
-  --custom-hover-background:var(--secondary-hover) !important;
-  --custom-hover-text:var(--secondary-hover-text) !important;
-  --custom-hover-border-color:var(--secondary-border-color-hover) !important;
+  --button-color-background:var(--secondary-color);
+  --button-color-border:var(--secondary-color-saturate);
+  --button-color-text:var(--secondary-color-text);
+  --button-color-active-background:var(--secondary-color-saturate);
+  --button-color-active-text:var(--secondary-color-alt-text);
+  --button-color-hover-background:var(--secondary-color-lighten);
+  --button-color-hover-text:var(--secondary-color-alt-text);
+  --button-color-hover-border:var(--secondary-color-saturate);
 }
 
 .btn--outline {
   border-style: solid;
   background: transparent !important;
-  color: var(--custom-background) !important;
+  color: var(--button-color-background) !important;
 
   &:hover {
-    color: var(--custom-hover-background) !important;
+    color: var(--button-color-hover-background) !important;
   }
 }
 
@@ -155,45 +156,45 @@ button[type="reset"],
 }
 
 .btn--info {
-  --custom-background:var(--info-background) !important;
-  --custom-border-color:var(--info-border-color) !important;
-  --custom-text:var(--info-text) !important;
-  --custom-active-background:var(--info-focus) !important;
-  --custom-active-text:var(--info-text) !important;
-  --custom-hover-background:var(--info-hover) !important;
-  --custom-hover-text:var(--info-hover-text) !important;
-  --custom-hover-border-color:var(--info-border-color-hover) !important;
+  --button-color-background:var(--info-color);
+  --button-color-border:var(--info-color-saturate);
+  --button-color-text:var(--info-color-text);
+  --button-color-active-background:var(--info-color-saturate);
+  --button-color-active-text:var(--info-color-alt-text);
+  --button-color-hover-background:var(--info-color-lighten);
+  --button-color-hover-text:var(--info-color-alt-text);
+  --button-color-hover-border:var(--info-color-saturate);
 }
 
 .btn--success {
-  --custom-background:var(--success-background) !important;
-  --custom-border-color:var(--success-border-color) !important;
-  --custom-text:var(--success-text) !important;
-  --custom-active-background:var(--success-focus) !important;
-  --custom-active-text:var(--success-text) !important;
-  --custom-hover-background:var(--success-hover) !important;
-  --custom-hover-text:var(--success-hover-text) !important;
-  --custom-hover-border-color:var(--success-border-color-hover) !important;
+  --button-color-background:var(--success-color);
+  --button-color-border:var(--success-color-saturate);
+  --button-color-text:var(--success-color-text);
+  --button-color-active-background:var(--success-color-saturate);
+  --button-color-active-text:var(--success-color-alt-text);
+  --button-color-hover-background:var(--success-color-lighten);
+  --button-color-hover-text:var(--success-color-alt-text);
+  --button-color-hover-border:var(--success-color-saturate);
 }
 
 .btn--warning {
-  --custom-background:var(--warning-background) !important;
-  --custom-border-color:var(--warning-border-color) !important;
-  --custom-text:var(--warning-text) !important;
-  --custom-active-background:var(--warning-focus) !important;
-  --custom-active-text:var(--warning-text) !important;
-  --custom-hover-background:var(--warning-hover) !important;
-  --custom-hover-text:var(--warning-hover-text) !important;
-  --custom-hover-border-color:var(--warning-border-color-hover) !important;
+  --button-color-background:var(--warning-color);
+  --button-color-border:var(--warning-color-saturate);
+  --button-color-text:var(--warning-color-text);
+  --button-color-active-background:var(--warning-color-saturate);
+  --button-color-active-text:var(--warning-color-alt-text);
+  --button-color-hover-background:var(--warning-color-lighten);
+  --button-color-hover-text:var(--warning-color-alt-text);
+  --button-color-hover-border:var(--warning-color-saturate);
 }
 
 .btn--danger {
-  --custom-background:var(--danger-background) !important;
-  --custom-border-color:var(--danger-border-color) !important;
-  --custom-text:var(--danger-text) !important;
-  --custom-active-background:var(--danger-focus) !important;
-  --custom-active-text:var(--danger-text) !important;
-  --custom-hover-background:var(--danger-hover) !important;
-  --custom-hover-text:var(--danger-hover-text) !important;
-  --custom-hover-border-color:var(--danger-border-color-hover) !important;
+  --button-color-background:var(--danger-color);
+  --button-color-border:var(--danger-color-saturate);
+  --button-color-text:var(--danger-color-text);
+  --button-color-active-background:var(--danger-color-saturate);
+  --button-color-active-text:var(--danger-color-alt-text);
+  --button-color-hover-background:var(--danger-color-lighten);
+  --button-color-hover-text:var(--danger-color-alt-text);
+  --button-color-hover-border:var(--danger-color-saturate);
 }

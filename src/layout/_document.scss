@@ -15,8 +15,8 @@ body {
   width:100%;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  background-color: var(--general-color-background);
-  color : var(--general-color-text);
+  background-color: var(--body-color-background, --general-color-background);
+  color : var(--body-color-text, --general-color-text);
   font-size: clamp(1.5rem, 0.5vw + 1.4rem, 1.7rem);
 
   > header,

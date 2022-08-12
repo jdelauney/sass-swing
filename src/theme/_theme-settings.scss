@@ -35,6 +35,11 @@ $general-border-outline-width:2px !default;
 
 $general-border-radius:.5rem !default;
 
+$primary-shadow: #{make-shadow("smooth")} !default;
+$primary-shadow-alt: #{make-shadow("smooth-light")};
+$general-shadow:#{make-shadow("smooth-light")};
+$general-shadow-alt:0 2px 6px rgba(0,0,0,.25),0 10px 12px rgba(0,0,0,.15);
+
 
 /* general light color */
 $general-color-background-light: $color-neutral-100 !default;
@@ -45,14 +50,21 @@ $general-color-text-alt-light:$color-neutral-800 !default;
 $general-color-border-light: $color-neutral-500 !default;
 $general-color-border-outline-light: $color-neutral-800 !default;
 
-/* primary light color */
-$brand-color-light : #0af !default;
+$muted-color-background:$color-neutral-200 !default;
+//$muted-background-alt:$color-neutral-400 !default;
+$muted-color-text:$color-neutral-500 !default;
+//$muted-text-alt:$color-neutral-600 !default;
+$muted-color-border:$color-neutral-400 !default;
 
+$divider-color: #{set-color-opacity($color-Black, 25)} !default;
+
+
+/* primary light color */
+$brand-color-light : $color-SteelBlue2 !default;
 $primary-color-light-lighten-ratio:0.4 !default;
 $primary-color-light-darken-ratio:0.4 !default;
 $primary-color-light-saturate-ratio:0.4 !default;
 $primary-color-light-desaturate-ratio:0.6 !default;
-
 $primary-color-light-text-l: 10% !default;
 $primary-color-light-text-alt-s: 30% !default;
 $primary-color-light-text-alt-l: 30% !default;
@@ -66,13 +78,11 @@ $primary-color-light-surface-4-s:20% !default;
 $primary-color-light-surface-4-l:85% !default;
 
 /* Secondary light color */
-$secondary-color-light : #0af !default;
-
+$secondary-color-light : $color-slate-500 !default;
 $secondary-color-light-lighten-ratio:0.4 !default;
 $secondary-color-light-darken-ratio:0.4 !default;
 $secondary-color-light-saturate-ratio:0.4 !default;
 $secondary-color-light-desaturate-ratio:0.6 !default;
-
 $secondary-color-light-text-l: 10% !default;
 $secondary-color-light-text-alt-s: 30% !default;
 $secondary-color-light-text-alt-l: 30% !default;
@@ -86,22 +96,20 @@ $secondary-color-light-surface-4-s:20% !default;
 $secondary-color-light-surface-4-l:85% !default;
 
 /* general dark color */
-$general-color-background-dark: $color-neutral-100 !default;
-$general-color-background-alt-dark: $color-White !default;
-$general-color-background-alt-active-dark: $color-GhostWhite !default;
-$general-color-text-dark:$color-neutral-900  !default;
-$general-color-text-alt-dark:$color-neutral-800 !default;
+$general-color-background-dark: $color-neutral-900 !default;
+$general-color-background-alt-dark: $color-neutral-700 !default;
+$general-color-background-alt-active-dark: $color-neutral-800 !default;
+$general-color-text-dark:$color-neutral-100  !default;
+$general-color-text-alt-dark:$color-GhostWhite !default;
 $general-color-border-dark: $color-neutral-500 !default;
-$general-color-border-outline-dark: $color-neutral-800 !default;
+$general-color-border-outline-dark: $color-neutral-600 !default;
 
 /* primary dark color */
-$brand-color-dark : #0af !default;
-
+$brand-color-dark : $color-Cerulean !default;
 $primary-color-dark-lighten-ratio:0.4 !default;
 $primary-color-dark-darken-ratio:0.4 !default;
 $primary-color-dark-saturate-ratio:0.4 !default;
 $primary-color-dark-desaturate-ratio:0.6 !default;
-
 $primary-color-dark-text-l: 10% !default;
 $primary-color-dark-text-alt-s: 30% !default;
 $primary-color-dark-text-alt-l: 30% !default;
@@ -114,14 +122,13 @@ $primary-color-dark-surface-3-l:92% !default;
 $primary-color-dark-surface-4-s:20% !default;
 $primary-color-dark-surface-4-l:85% !default;
 
-/* Secondary dark color */
-$secondary-color-dark : #0af !default;
 
+/* Secondary dark color */
+$secondary-color-dark : $color-slate-400 !default;
 $secondary-color-dark-lighten-ratio:0.4 !default;
 $secondary-color-dark-darken-ratio:0.4 !default;
 $secondary-color-dark-saturate-ratio:0.4 !default;
 $secondary-color-dark-desaturate-ratio:0.6 !default;
-
 $secondary-color-dark-text-l: 10% !default;
 $secondary-color-dark-text-alt-s: 30% !default;
 $secondary-color-dark-text-alt-l: 30% !default;
