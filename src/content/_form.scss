@@ -1,13 +1,14 @@
 @use "../abstracts/mixins" as *;
 
 form {
+  --_form-border : var(--form-border-width, --general-border-width) solid var(--form-color-border, --general-color-border);
   position: relative;
   padding:var(--form-inner-spacing);
-  border:var(--border-width) solid var(--border-color);
-  border-radius:var(--border-radius);
-  background-color: var(--form-background) ;
-  box-shadow: var(--form-shadow);
-  color:var(--form-text);
+  border:var(--_form-border);
+  border-radius:var(--form-border-radius, --general-border-radius);
+  background-color: var(--form-color-background, --general-color-background-alt) ;
+  box-shadow: var(--form-shadow, --general-shadow);
+  color:var(--form-color-text, --general-color-text);
 
   > footer {
     display: flex;
@@ -54,15 +55,17 @@ fieldset {
   }
 
   &.is-groupbox {
-    border: var(--border-width) solid var(--input-border-color);
-    border-radius: var(--border-radius);
+    --_form-border:var(--form-border-width, --general-border-width) solid var(--input-color-border, --primary-color-desaturate);
+    --_form_border-radius:var(--form-border-radius, --general-border-radius);
+    border: var(--_form-border);
+    border-radius: var(--_form-border-radius);
     padding: var(--inner-v-spacing) var(--half-spacing);
 
     > legend {
       padding: .35em .5em;
-      border: var(--border-width) solid var(--input-border-color);
-      border-radius: var(--border-radius);
-      color: var(--color-text);
+      border: var(--_form-border);
+      border-radius: var(--_form-border-radius);
+      color: var(--form-color-text, --general-color-text);
     }
 
     &+*:is(:not(h1,h2,h3,h4,h5,section, article)) {
@@ -111,31 +114,48 @@ select,
 textarea {
   &,
   &[aria-disabled="false"] {
+    --input-border-width:var(--general-border-width);
+    --input-border:var(--input-border-width) solid var(--input-color-border, --primary-color-desaturate);
+    --input-border-radius: calc(var(--general-border-radius) * .5);
+    --input-shadow: none;
+    --input-spacing-v: 0.75rem;
+    --input-spacing-h: 1rem;
+    --input-color-background: var(--general-color-background);
+    --input-color-grad-background:var(--primay-color-text);
+    --input-color-grad-background-alt:var(--primay-color);
+    --input-color-text: var(--general-color-text-alt);
+    --input-active-shadow: none;
+    --input-color-active-text: var(--general-color-text);
+    --input-outline-width:var(--general-border-outline-width);
+    --input-color-focus-border:var(--primary-color-saturate);
+    --input-color-hover-border:var(--primary-color-lighten);
+    --input-color-placeholder:var(--muted-color-text);
+
     appearance: none;
     padding: var(--input-spacing-v) var(--input-spacing-h);
-    border: var(--border-width) solid var(--input-border-color);
+    border: var(--input-border);
     border-radius: var(--input-border-radius);
     outline: 0;
 
-    background-color: var(--input-background);
+    background-color: var(--input-color-background);
     box-shadow: var(--input-shadow);
-    color: var(--input-text);
+    color: var(--input-color-text);
     transition: all .3s ease-in-out;
 
     &:active,
     &:focus {
-      border:  var(--border-width) solid var(--input-active-border-color);
-      background-color: var(--input-active-background);
+      border:  var(--input-border-width) solid var(--input-color-active-border, --primary-color-lighten);
+      background-color: var(--input-color-active-background, --general-color-background-alt);
       box-shadow: var(--input-active-shadow);
-      color: var(--input-active-text);
+      color: var(--input-color-active-text);
     }
 
     &:focus {
-      box-shadow: 0 0 0 var(--input-outline-width) var(--input-focus-border);
+      box-shadow: 0 0 0 var(--input-outline-width) var(--input-color-focus-border);
     }
 
     &:hover {
-      border:var(--border-width) solid  var(--input-border-color-hover);
+      border:var(--input-border-width) solid  var(--input-color-hover-border);
     }
   }
 }
@@ -145,16 +165,24 @@ select,
 textarea {
   &[aria-disabled="true"],
   &[disabled] {
+    --input-disabled-color-background: var(--muted-color-background);
+    --input-disabled-color-border:var(--muted-color-border);
+    --input-disabled-color-text: var(--muted-color-text);
+    --input-disabled-opacity: 0.5;
     //color:var(--input-disabled-text) !important;
-    border: var(--border-width) solid var(--input-disabled-border-color) !important;
-    background-color: var(--input-disabled) !important;
+    border: var(--input-border-width) solid var(--input-disabled-color-border) !important;
+    background-color: var(--input-disabled-color-background) !important;
     opacity: var(--input-disabled-opacity) !important;
   }
 
   &[aria-invalid="true"] {
+    --input-invalid-color-background:transparent;
+    --input-invalid-color-focus:hsla(var(--danger-color), .25);
+    --input-invalid-color-border: var(--danger-color);
+    --input-invalid-color-text:var(--danger-color-text);
     //color:var(--input-invalid-text);
-    border: var(--border-width) solid var(--input-invalid-border-color) !important;
-    background-color: var(--input-invalid) !important;
+    border: var(--input-border-width)  solid var(--input-invalid-color-border) !important;
+    background-color: var(--input-invalid-color-background) !important;
     padding-right:2.5em !important;
     background-position: center right 0.75rem;
     background-size: 1em auto;
@@ -162,14 +190,18 @@ textarea {
     background-image: var(--icon-danger);
 
     &:active, &:focus {
-      box-shadow: 0 0 0 var(--input-outline-width) var(--input-invalid-focus) !important;
+      box-shadow: 0 0 0 var(--input-outline-width) var(--input-invalid-color-focus) !important;
     }
   }
 
   &[aria-invalid="false"] {
+    --input-valid-color-background:transparent;
+    --input-valid-color-focus:hsla(var(--success-color), .25);
+    --input-valid-color-border: var(--success-color);
+    --input-valid-color-text:var(--success-color-text);
     //color:var(--input-valid-text) !important;
-    border: var(--border-width) solid var(--input-valid-border-color) !important;
-    background-color: var(--input-valid) !important;
+    border: var(--input-border-width) solid var(--input-valid-color-border) !important;
+    background-color: var(--input-valid-color-background) !important;
     padding-right:2.5em !important;
     background-position: center right 0.75rem;
     background-size: 1em auto;
@@ -177,7 +209,7 @@ textarea {
     background-image: var(--icon-success);
 
     &:active, &:focus {
-      box-shadow: 0 0 0 var(--input-outline-width) var(--input-valid-focus) !important;
+      box-shadow: 0 0 0 var(--input-outline-width) var(--input-valid-color-focus) !important;
     }
   }
 }
@@ -187,7 +219,7 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="f
     cursor: not-allowed !important;
 
     &:active, &:focus {
-      border: var(--border-width) solid  var(--input-border-color) !important;
+      border: var(--input-border) !important;
       outline:0 !important;
       box-shadow: none !important;
     }
@@ -199,7 +231,7 @@ input::-webkit-input-placeholder,
 textarea::placeholder,
 textarea::-webkit-input-placeholder,
 select:invalid {
-  color: var(--input-placeholder);
+  color: var(--input-color-placeholder);
   opacity: 1;
 }
 
@@ -210,14 +242,14 @@ select {
     padding-left: var(--input-spacing-h);
     padding-inline-start: var(--input-spacing-h);
     padding-inline-end: calc(var(--input-spacing-h) + 1.5rem);
-    background-image: linear-gradient(var(--primary-text) 0%, var(--primary-text) 100%),
-    linear-gradient(-135deg, transparent 50%, var(--primary-background) 50%),
-    linear-gradient(-225deg, transparent 50%, var(--primary-background) 50%),
-    linear-gradient(var(--primary-background) 42%, var(--primary-text) 42%);
+    background-image: linear-gradient(var(--input-color-grad-background) 0%, var(--input-color-grad-background) 100%),
+    linear-gradient(-135deg, transparent 50%, var(--input-color-grad-background-alt) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--input-color-grad-background-alt) 50%),
+    linear-gradient(var(--input-color-grad-background-alt) 42%, var(--input-color-grad-background) 42%);
     background-position: right 20px center, right bottom, right bottom, right bottom;
     background-size: 0 100%, 20px 30px, 20px 30px, 20px 100%;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-color: var(--input-background);
+    background-color: var(--input-color-grad-background);
     cursor: pointer;
 
     &:active, &:hover {

@@ -43,8 +43,8 @@
   --general-color-text-alt: #{$general-color-text-alt-light};
   --general-border-width: #{$general-border-width};
   --general-border-outline-width: #{$general-border-outline-width};
-  --general-border-color: #{$general-border-color};
-  --general-border-outline-color: #{$general-border-outline-color};
+  --general-border-color: #{$general-color-border-light};
+  --general-border-outline-color: #{$general-color-border-outline-light};
   --general-border-radius: #{$general-border-radius};
 
   --primary-color-h:hue($brand-color-light);
@@ -76,6 +76,8 @@
   --primary-color-surface-4-s: #{$primary-color-light-surface-4-s};
   --primary-color-surface-4-l: #{$primary-color-light-surface-4-l};
   --primary-color-surface-4: hsl(var(--primary-color-h), var(--primary-color-surface-4-s), var(--primary-color-surface-4-l));
+  --primary-shadow: #{$primary-shadow};
+  --primary-shadow-alt: #{$primary-shadow-alt};
 
   --secondary-color-h:hue($secondary-color-light);
   --secondary-color-s:saturation($secondary-color-light);
@@ -105,13 +107,84 @@
   --secondary-color-surface-3: hsl(var(--secondary-color-h), var(--secondary-color-surface-3-s), var(--secondary-color-surface-3-l));
   --secondary-color-surface-4-s: #{$secondary-color-light-surface-4-s};
   --secondary-color-surface-4-l: #{$secondary-color-light-surface-4-l};
-  --secondary-color-surface-4: hsl(var(--secondary-color-h), var(--secondary-color-surface-4-s), var(--secondary-color-surface-4-l));  
+  --secondary-color-surface-4: hsl(var(--secondary-color-h), var(--secondary-color-surface-4-s), var(--secondary-color-surface-4-l));
 
 }
 
 /* dark theme schema settings */
 @mixin dark {
   color-scheme: dark;
+
+  --general-color-background: #{$general-color-background-dark};
+  --general-color-background-alt: #{$general-color-background-alt-dark};
+  --general-color-background-alt-active: #{$general-color-background-alt-active-dark};
+  --general-color-text: #{$general-color-text-dark};
+  --general-color-text-alt: #{$general-color-text-alt-dark};
+  --general-border-width: #{$general-border-width};
+  --general-border-outline-width: #{$general-border-outline-width};
+  --general-border-color: #{$general-color-border-dark};
+  --general-border-outline-color: #{$general-color-border-outline-dark};
+  --general-border-radius: #{$general-border-radius};
+
+  --primary-color-h:hue($brand-color-dark);
+  --primary-color-s:saturation($brand-color-dark);
+  --primary-color-l:lightness($brand-color-dark);
+  --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
+  --primary-color-lighten-ratio: #{$primary-color-dark-lighten-ratio};
+  --primary-color-darken-ratio: #{$primary-color-dark-darken-ratio};
+  --primary-color-saturate-ratio: #{$primary-color-dark-saturate-ratio};
+  --primary-color-desaturate-ratio: #{$primary-color-dark-desaturate-ratio};
+  --primary-color-lighten: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) + (100% - var(--primary-color-l)) * var(--primary-color-lighten-ratio)));
+  --primary-color-darken: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) - var(--primary-color-l) * var(--primary-color-darken-ratio)));
+  --primary-color-saturate: hsl(var(--primary-color-h), calc(var(--primary-color-s) + (100% - var(--primary-color-s)) * var(--primary-color-saturate-ratio)), var(--primary-color-l));
+  --primary-color-desaturate: hsl(var(--primary-color-h), calc(var(--primary-color-s) - var(--primary-color-s) * var(--primary-color-desaturate-ratio)), var(--primary-color-l));
+  --primary-color-text-l: #{$primary-color-dark-text-l};
+  --primary-color-alt-text-s:  #{$primary-color-dark-text-alt-s};
+  --primary-color-alt-text-l:  #{$primary-color-dark-text-alt-l};
+  --primary-color-text: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-text-l));
+  --primary-color-alt-text: hsl(var(--primary-color-h), var(--primary-color-alt-text-s), var(--primary-color-alt-text-l));
+  --primary-color-surface-1-s: #{$primary-color-dark-surface-1-s};
+  --primary-color-surface-1-l: #{$primary-color-dark-surface-1-l};
+  --primary-color-surface-1: hsl(var(--primary-color-h), var(--primary-color-surface-1-s), var(--primary-color-surface-1-l));
+  --primary-color-surface-2-s: #{$primary-color-dark-surface-2-s};
+  --primary-color-surface-2-l: #{$primary-color-dark-surface-2-l};
+  --primary-color-surface-2: hsl(var(--primary-color-h), var(--primary-color-surface-2-s), var(--primary-color-surface-2-l));
+  --primary-color-surface-3-s: #{$primary-color-dark-surface-3-s};
+  --primary-color-surface-3-l: #{$primary-color-dark-surface-3-l};
+  --primary-color-surface-3: hsl(var(--primary-color-h), var(--primary-color-surface-3-s), var(--primary-color-surface-3-l));
+  --primary-color-surface-4-s: #{$primary-color-dark-surface-4-s};
+  --primary-color-surface-4-l: #{$primary-color-dark-surface-4-l};
+  --primary-color-surface-4: hsl(var(--primary-color-h), var(--primary-color-surface-4-s), var(--primary-color-surface-4-l));
+
+  --secondary-color-h:hue($secondary-color-dark);
+  --secondary-color-s:saturation($secondary-color-dark);
+  --secondary-color-l:lightness($secondary-color-dark);
+  --secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
+  --secondary-color-lighten-ratio: #{$secondary-color-dark-lighten-ratio};
+  --secondary-color-darken-ratio: #{$secondary-color-dark-darken-ratio};
+  --secondary-color-saturate-ratio: #{$secondary-color-dark-saturate-ratio};
+  --secondary-color-desaturate-ratio: #{$secondary-color-dark-desaturate-ratio};
+  --secondary-color-lighten: hsl(var(--secondary-color-h), var(--secondary-color-s), calc(var(--secondary-color-l) + (100% - var(--secondary-color-l)) * var(--secondary-color-lighten-ratio)));
+  --secondary-color-darken: hsl(var(--secondary-color-h), var(--secondary-color-s), calc(var(--secondary-color-l) - var(--secondary-color-l) * var(--secondary-color-darken-ratio)));
+  --secondary-color-saturate: hsl(var(--secondary-color-h), calc(var(--secondary-color-s) + (100% - var(--secondary-color-s)) * var(--secondary-color-saturate-ratio)), var(--secondary-color-l));
+  --secondary-color-desaturate: hsl(var(--secondary-color-h), calc(var(--secondary-color-s) - var(--secondary-color-s) * var(--secondary-color-desaturate-ratio)), var(--secondary-color-l));
+  --secondary-color-text-l: #{$secondary-color-dark-text-l};
+  --secondary-color-alt-text-s:  #{$secondary-color-dark-text-alt-s};
+  --secondary-color-alt-text-l:  #{$secondary-color-dark-text-alt-l};
+  --secondary-color-text: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-text-l));
+  --secondary-color-alt-text: hsl(var(--secondary-color-h), var(--secondary-color-alt-text-s), var(--secondary-color-alt-text-l));
+  --secondary-color-surface-1-s: #{$secondary-color-dark-surface-1-s};
+  --secondary-color-surface-1-l: #{$secondary-color-dark-surface-1-l};
+  --secondary-color-surface-1: hsl(var(--secondary-color-h), var(--secondary-color-surface-1-s), var(--secondary-color-surface-1-l));
+  --secondary-color-surface-2-s: #{$secondary-color-dark-surface-2-s};
+  --secondary-color-surface-2-l: #{$secondary-color-dark-surface-2-l};
+  --secondary-color-surface-2: hsl(var(--secondary-color-h), var(--secondary-color-surface-2-s), var(--secondary-color-surface-2-l));
+  --secondary-color-surface-3-s: #{$secondary-color-dark-surface-3-s};
+  --secondary-color-surface-3-l: #{$secondary-color-dark-surface-3-l};
+  --secondary-color-surface-3: hsl(var(--secondary-color-h), var(--secondary-color-surface-3-s), var(--secondary-color-surface-3-l));
+  --secondary-color-surface-4-s: #{$secondary-color-dark-surface-4-s};
+  --secondary-color-surface-4-l: #{$secondary-color-dark-surface-4-l};
+  --secondary-color-surface-4: hsl(var(--secondary-color-h), var(--secondary-color-surface-4-s), var(--secondary-color-surface-4-l));  
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -126,9 +199,24 @@
 
 /* common theme schema settings */
 :root {
+
+  --general-shadow-alt: #{$general-shadow-alt};
   --scrollbar-color-background: var(--secondary-color);
   --scrollbar-color-thumb: var(--secondary-color-darken);
   --scrollbar-color-thumb-border: var(--secondary-color);
+
+  --color-h1: #{$color-neutral-100};
+  --color-h2: #{mix($color-neutral-100, $color-neutral-200 )};
+  --color-h3: #{$color-neutral-200};
+  --color-h4: #{mix($color-neutral-200, $color-neutral-300 )};
+  --color-h5: #{$color-neutral-300};
+  --color-h6: #{mix($color-neutral-300, $color-neutral-400 )};
+
+  --muted-color-background:#{$muted-color-background};
+  --muted-color-text:#{$muted-color-text};
+  --muted-color-border:#{$muted-color-border};
+
+  --divider-color:#{$divider-color};
 
   --code-color-background:#{$code-color-background};
   --code-color-lang-background: #{$code-color-lang-background};
