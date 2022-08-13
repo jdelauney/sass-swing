@@ -37,109 +37,67 @@ $general-border-radius:.5rem !default;
 
 $primary-shadow: #{make-shadow("smooth")} !default;
 $primary-shadow-alt: #{make-shadow("smooth-light")};
-$general-shadow:#{make-shadow("smooth-light")};
-$general-shadow-alt:0 2px 6px rgba(0,0,0,.25),0 10px 12px rgba(0,0,0,.15);
 
 
-/* general light color */
-$general-color-background-light: $color-neutral-100 !default;
-$general-color-background-alt-light: $color-White !default;
-$general-color-background-alt-active-light: $color-GhostWhite !default;
-$general-color-text-light:$color-neutral-900  !default;
-$general-color-text-alt-light:$color-neutral-800 !default;
-$general-color-border-light: $color-neutral-500 !default;
-$general-color-border-outline-light: $color-neutral-800 !default;
-
-$muted-color-background:$color-neutral-200 !default;
-//$muted-background-alt:$color-neutral-400 !default;
-$muted-color-text:$color-neutral-500 !default;
-//$muted-text-alt:$color-neutral-600 !default;
-$muted-color-border:$color-neutral-400 !default;
-
-$divider-color: #{set-color-opacity($color-Black, 25)} !default;
-
+/* neutral light color */
+$neutral-light-color: $color-neutral-100 !default;
+$on-neutral-light-color-s:saturation($neutral-light-color) !default;
+$on-neutral-light-color-l:lightness($neutral-light-color) !default;
+$neutral-shadow: #{make-shadow("smooth-light")} !default;
+$neutral-shadow-alt:0 2px 6px rgba(0,0,0,.25),0 10px 12px rgba(0,0,0,.15) !default;
+$neutral-light-color-variation-1-s:saturation($neutral-light-color) !default;
+$neutral-light-color-variation-1-l:lightness($neutral-light-color) !default;
+$on-neutral-light-color-variation-1-s:saturation($neutral-light-color) !default;
+$on-neutral-light-color-variation-1-l:lightness($neutral-light-color) !default;
+$neutral-light-color-variation-2-s:saturation($neutral-light-color) !default;
+$neutral-light-color-variation-2-l:lightness($neutral-light-color) !default;
+$on-neutral-light-color-variation-2-s:saturation($neutral-light-color) !default;
+$on-neutral-light-color-variation-2-l:lightness($neutral-light-color) !default;
+$neutral-shadow-variation-1
+$neutral-light-color-variation-3-s:saturation($neutral-light-color) !default;
+$neutral-light-color-variation-3-l:lightness($neutral-light-color) !default;
+$on-neutral-light-color-variation-3-s:saturation($neutral-light-color) !default;
+$on-neutral-light-color-variation-3-l:lightness($neutral-light-color) !default;
 
 /* primary light color */
-$brand-color-light : $color-SteelBlue2 !default;
-$primary-color-light-lighten-ratio:0.4 !default;
-$primary-color-light-darken-ratio:0.4 !default;
-$primary-color-light-saturate-ratio:0.4 !default;
-$primary-color-light-desaturate-ratio:0.6 !default;
-$primary-color-light-text-l: 10% !default;
-$primary-color-light-text-alt-s: 30% !default;
-$primary-color-light-text-alt-l: 30% !default;
-$primary-color-light-surface-1-s:25% !default;
-$primary-color-light-surface-1-l:90% !default;
-$primary-color-light-surface-2-s:20% !default;
-$primary-color-light-surface-2-l:99% !default;
-$primary-color-light-surface-3-s:20% !default;
-$primary-color-light-surface-3-l:92% !default;
-$primary-color-light-surface-4-s:20% !default;
-$primary-color-light-surface-4-l:85% !default;
+$brand-color : $color-SteelBlue2 !default;
+$primary-shadow: none !default;
+$on-primary-light-color-s:saturation($brand-color) !default;
+$on-primary-light-color-l:lightness($brand-color) !default;
+$primary-light-color-variation-1-s:saturation($brand-color) !default;
+$primary-light-color-variation-1-l:lightness($brand-color) !default;
+$on-primary-light-color-variation-1-s:saturation($brand-color) !default;
+$on-primary-light-color-variation-1-l:lightness($brand-color) !default;
+$primary-shadow-variation-1: #{make-shadow("smooth")} !default;
+$primary-light-color-variation-2-s:saturation($brand-color) !default;
+$primary-light-color-variation-2-l:lightness($brand-color) !default;
+$on-primary-light-color-variation-2-s:saturation($brand-color) !default;
+$on-primary-light-color-variation-2-l:lightness($brand-color) !default;
+$primary-shadow-variation-2: #{make-shadow("smooth")} !default;
+$primary-light-color-variation-3-s:saturation($brand-color) !default;
+$primary-light-color-variation-3-l:lightness($brand-color) !default;
+$on-primary-light-color-variation-3-s:saturation($brand-color) !default;
+$on-primary-light-color-variation-3-l:lightness($brand-color) !default;
+$primary-shadow-variation-3: #{make-shadow("smooth-light")} !default;
 
 /* Secondary light color */
-$secondary-color-light : $color-slate-500 !default;
-$secondary-color-light-lighten-ratio:0.4 !default;
-$secondary-color-light-darken-ratio:0.4 !default;
-$secondary-color-light-saturate-ratio:0.4 !default;
-$secondary-color-light-desaturate-ratio:0.6 !default;
-$secondary-color-light-text-l: 10% !default;
-$secondary-color-light-text-alt-s: 30% !default;
-$secondary-color-light-text-alt-l: 30% !default;
-$secondary-color-light-surface-1-s:25% !default;
-$secondary-color-light-surface-1-l:90% !default;
-$secondary-color-light-surface-2-s:20% !default;
-$secondary-color-light-surface-2-l:99% !default;
-$secondary-color-light-surface-3-s:20% !default;
-$secondary-color-light-surface-3-l:92% !default;
-$secondary-color-light-surface-4-s:20% !default;
-$secondary-color-light-surface-4-l:85% !default;
-
-/* general dark color */
-$general-color-background-dark: $color-neutral-900 !default;
-$general-color-background-alt-dark: $color-neutral-700 !default;
-$general-color-background-alt-active-dark: $color-neutral-800 !default;
-$general-color-text-dark:$color-neutral-100  !default;
-$general-color-text-alt-dark:$color-GhostWhite !default;
-$general-color-border-dark: $color-neutral-500 !default;
-$general-color-border-outline-dark: $color-neutral-600 !default;
-
-/* primary dark color */
-$brand-color-dark : $color-Cerulean !default;
-$primary-color-dark-lighten-ratio:0.4 !default;
-$primary-color-dark-darken-ratio:0.4 !default;
-$primary-color-dark-saturate-ratio:0.4 !default;
-$primary-color-dark-desaturate-ratio:0.6 !default;
-$primary-color-dark-text-l: 10% !default;
-$primary-color-dark-text-alt-s: 30% !default;
-$primary-color-dark-text-alt-l: 30% !default;
-$primary-color-dark-surface-1-s:25% !default;
-$primary-color-dark-surface-1-l:90% !default;
-$primary-color-dark-surface-2-s:20% !default;
-$primary-color-dark-surface-2-l:99% !default;
-$primary-color-dark-surface-3-s:20% !default;
-$primary-color-dark-surface-3-l:92% !default;
-$primary-color-dark-surface-4-s:20% !default;
-$primary-color-dark-surface-4-l:85% !default;
-
-
-/* Secondary dark color */
-$secondary-color-dark : $color-slate-400 !default;
-$secondary-color-dark-lighten-ratio:0.4 !default;
-$secondary-color-dark-darken-ratio:0.4 !default;
-$secondary-color-dark-saturate-ratio:0.4 !default;
-$secondary-color-dark-desaturate-ratio:0.6 !default;
-$secondary-color-dark-text-l: 10% !default;
-$secondary-color-dark-text-alt-s: 30% !default;
-$secondary-color-dark-text-alt-l: 30% !default;
-$secondary-color-dark-surface-1-s:25% !default;
-$secondary-color-dark-surface-1-l:90% !default;
-$secondary-color-dark-surface-2-s:20% !default;
-$secondary-color-dark-surface-2-l:99% !default;
-$secondary-color-dark-surface-3-s:20% !default;
-$secondary-color-dark-surface-3-l:92% !default;
-$secondary-color-dark-surface-4-s:20% !default;
-$secondary-color-dark-surface-4-l:85% !default;
+$secondary-color : $color-slate-500 !default;
+$secondary-shadow: none !default;
+$secondary-light-variation-1-s:saturation($secondary-color) !default;
+$secondary-light-variation-1-l:lightness($secondary-color) !default;
+$on-secondary-light-variation-1-s:saturation($secondary-color) !default;
+$on-secondary-light-variation-1-l:lightness($secondary-color) !default;
+$secondary-shadow-variation-1: #{make-shadow("smooth")} !default;
+$secondary-light-variation-2-s:saturation($secondary-color) !default;
+$secondary-light-variation-2-l:lightness($secondary-color) !default;
+$on-secondary-light-variation-2-s:saturation($secondary-color) !default;
+$on-secondary-light-variation-2-l:lightness($secondary-color) !default;
+$secondary-shadow-variation-2: #{make-shadow("smooth")} !default;
+$secondary-light-variation-3-s:saturation($secondary-color) !default;
+$secondary-light-variation-3-l:lightness($secondary-color) !default;
+$on-secondary-light-variation-3-s:saturation($secondary-color) !default;
+$on-secondary-light-variation-3-l:lightness($secondary-color) !default;
+$secondary-shadow-variation-3: #{make-shadow("smooth-light")} !default;
 
 /* Success color */
 $success-color : $color-emerald-700 !default;
@@ -200,3 +158,5 @@ $ins-color-text: $color-green-700 !default;
 
 $del-color-background: transparent !default;
 $del-color-text: $color-red-700 !default;
+
+$divider-color: #{set-color-opacity($color-Black, 25)} !default;
