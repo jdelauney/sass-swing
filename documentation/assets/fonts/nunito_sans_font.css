@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/Nunito-Sans-300.eot'); /* IE9 */
+  src: url('../fonts/Nunito-Sans-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Nunito-Sans-300.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-300.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Nunito-Sans-300.svg#NunitoSans') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Nunito-Sans-Regular.eot'); /* IE9 */
+  src: url('../fonts/Nunito-Sans-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Nunito-Sans-Regular.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-Regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Nunito-Sans-Regular.svg#NunitoSans') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Nunito-Sans-700.eot'); /* IE9 */
+  src: url('../fonts/Nunito-Sans-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Nunito-Sans-700.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Nunito-Sans-700.svg#NunitoSans') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/Nunito-Sans-900.eot'); /* IE9 */
+  src: url('../fonts/Nunito-Sans-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Nunito-Sans-900.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-900.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Nunito-Sans-900.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Nunito-Sans-900.svg#NunitoSans') format('svg'); /* Legacy iOS */
+}

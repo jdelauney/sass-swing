@@ -1,0 +1,55 @@
+.back-to-top-wrapper {
+  z-index: 1000;
+  // uncomment to visualize "track"
+  // outline: 1px solid red;
+  position: absolute;
+  top: 100vh;
+  right: 0;
+  bottom: -5em;
+  width: 3em;
+  pointer-events: none;
+
+  > a {
+    display: inline-block;
+    position: sticky;
+    top: calc(100vh - 5rem);
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 0.25rem;
+
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background-color: var(--secondary-background);
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 80ms ease-in;
+
+    &:before {
+      position:absolute;
+      inset:30%;
+      transform:translateY(20%) rotate(-45deg);
+      border-top:5px solid var(--secondary-text);
+      border-right:5px solid var(--secondary-text);
+      content:"";
+      transition: all 80ms ease-in;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      background-color: var(--secondary-hover);
+      &:before {
+        border-color: var(--secondary-hover-text);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--secondary-hover);
+    }
+  }
+}
