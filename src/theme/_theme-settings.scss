@@ -1,157 +1,167 @@
-@use "../abstracts/functions" as *;
-@use "colors" as *;
+@use '../abstracts/functions' as *;
+@use 'colors' as *;
 
 // Famille des polices de caractères
-$font-family-monospace: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace !default;
+$font-family-monospace: Consolas, 'Andale Mono WT', 'Andale Mono',
+  'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+  'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
+  'Courier New', Courier, monospace !default;
 //consolas, 'Lucida Console', Monaco, courier, monospace !default;
 $font-family-serif: Georgia, Times, 'Times New Roman', serif !default;
-$font-family-sans: Roboto, Noto, "Segoe UI", 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-sans: Roboto, Noto, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial,
+  sans-serif !default;
 $default-font-family: $font-family-sans !default;
 $default-font-family-alt: $font-family-serif !default;
 
 // La hauteur de la ligne est réglée sur le 'nombre d'or' pour une lisibilité optimale
-$default-line-height: #{type-ratio("goldenRatio")} !default;
+$default-line-height: #{type-ratio('goldenRatio')} !default;
 $default-line-height-ratio: 161.8033% !default;
 
 /* Taille 18.4px, basé sur la taille de la police du Body 16px  */
 $min-heading-font-size: 1em !default;
 $max-heading-font-size: 1.15em !default;
 
-$default-heading-font-weight:500 !default;
+$default-heading-font-weight: 500 !default;
 $default-font-weight: 400 !default;
 
-$vertical-flow-space-ratio: type-ratio("goldenSquareRatio") !default;
-$vertical-heading-flow-space-ratio: type-ratio("goldenRatio") !default;
+$vertical-flow-space-ratio: type-ratio('goldenSquareRatio') !default;
+$vertical-heading-flow-space-ratio: type-ratio('goldenRatio') !default;
 
-$spacing : 1.2rem !default;
-$flow-spacing : 1.5rem !default;
+$spacing: 1.2rem !default;
+$flow-spacing: 1.5rem !default;
 $block-spacing-vertical: 6.4rem !default;
 $min-block-spacing-vertical: 8vh !default;
 
-$min-grid-col-width: 0!default;
+$min-grid-col-width: 0 !default;
 
-$general-border-width:1px !default;
-$general-border-outline-width:2px !default;
+$global-border-width: 1px !default;
+$global-outline-width: 2px !default;
+$global-border-radius: 0.5rem !default;
 
-$general-border-radius:.5rem !default;
-
-$primary-shadow: #{make-shadow("smooth")} !default;
-$primary-shadow-alt: #{make-shadow("smooth-light")};
-
+$primary-shadow: #{make-shadow('smooth')} !default;
+$primary-shadow-alt: #{make-shadow('smooth-light')};
 
 /* neutral light color */
 $neutral-light-color: $color-neutral-100 !default;
-$on-neutral-light-color-s:saturation($neutral-light-color) !default;
-$on-neutral-light-color-l:lightness($neutral-light-color) !default;
-$neutral-shadow: #{make-shadow("smooth-light")} !default;
-$neutral-shadow-alt:0 2px 6px rgba(0,0,0,.25),0 10px 12px rgba(0,0,0,.15) !default;
-$neutral-light-color-variation-1-s:saturation($neutral-light-color) !default;
-$neutral-light-color-variation-1-l:lightness($neutral-light-color) !default;
-$on-neutral-light-color-variation-1-s:saturation($neutral-light-color) !default;
-$on-neutral-light-color-variation-1-l:lightness($neutral-light-color) !default;
-$neutral-light-color-variation-2-s:saturation($neutral-light-color) !default;
-$neutral-light-color-variation-2-l:lightness($neutral-light-color) !default;
-$on-neutral-light-color-variation-2-s:saturation($neutral-light-color) !default;
-$on-neutral-light-color-variation-2-l:lightness($neutral-light-color) !default;
-$neutral-shadow-variation-1
-$neutral-light-color-variation-3-s:saturation($neutral-light-color) !default;
-$neutral-light-color-variation-3-l:lightness($neutral-light-color) !default;
-$on-neutral-light-color-variation-3-s:saturation($neutral-light-color) !default;
-$on-neutral-light-color-variation-3-l:lightness($neutral-light-color) !default;
+$on-neutral-light-color-s: saturation($neutral-light-color) !default;
+$on-neutral-light-color-l: lightness($neutral-light-color) !default;
+$neutral-shadow: #{make-shadow('smooth-light')} !default;
+$neutral-shadow-alt: 0 2px 6px rgba(0, 0, 0, 0.25),
+  0 10px 12px rgba(0, 0, 0, 0.15) !default;
+$neutral-light-color-variation-1-s: saturation($neutral-light-color) !default;
+$neutral-light-color-variation-1-l: lightness($neutral-light-color) !default;
+$on-neutral-light-color-variation-1-s: saturation(
+  $neutral-light-color
+) !default;
+$on-neutral-light-color-variation-1-l: lightness($neutral-light-color) !default;
+$neutral-light-color-variation-2-s: saturation($neutral-light-color) !default;
+$neutral-light-color-variation-2-l: lightness($neutral-light-color) !default;
+$on-neutral-light-color-variation-2-s: saturation(
+  $neutral-light-color
+) !default;
+$on-neutral-light-color-variation-2-l: lightness($neutral-light-color) !default;
+$neutral-light-color-variation-3-s: saturation($neutral-light-color) !default;
+$neutral-light-color-variation-3-l: lightness($neutral-light-color) !default;
+$on-neutral-light-color-variation-3-s: saturation(
+  $neutral-light-color
+) !default;
+$on-neutral-light-color-variation-3-l: lightness($neutral-light-color) !default;
 
 /* primary light color */
-$brand-color : $color-SteelBlue2 !default;
+$brand-color: $color-SteelBlue2 !default;
 $primary-shadow: none !default;
-$on-primary-light-color-s:saturation($brand-color) !default;
-$on-primary-light-color-l:lightness($brand-color) !default;
-$primary-light-color-variation-1-s:saturation($brand-color) !default;
-$primary-light-color-variation-1-l:lightness($brand-color) !default;
-$on-primary-light-color-variation-1-s:saturation($brand-color) !default;
-$on-primary-light-color-variation-1-l:lightness($brand-color) !default;
-$primary-shadow-variation-1: #{make-shadow("smooth")} !default;
-$primary-light-color-variation-2-s:saturation($brand-color) !default;
-$primary-light-color-variation-2-l:lightness($brand-color) !default;
-$on-primary-light-color-variation-2-s:saturation($brand-color) !default;
-$on-primary-light-color-variation-2-l:lightness($brand-color) !default;
-$primary-shadow-variation-2: #{make-shadow("smooth")} !default;
-$primary-light-color-variation-3-s:saturation($brand-color) !default;
-$primary-light-color-variation-3-l:lightness($brand-color) !default;
-$on-primary-light-color-variation-3-s:saturation($brand-color) !default;
-$on-primary-light-color-variation-3-l:lightness($brand-color) !default;
-$primary-shadow-variation-3: #{make-shadow("smooth-light")} !default;
+$on-primary-light-color-s: saturation($brand-color) !default;
+$on-primary-light-color-l: lightness($brand-color) !default;
+$primary-light-color-variation-1-s: saturation($brand-color) !default;
+$primary-light-color-variation-1-l: lightness($brand-color) !default;
+$on-primary-light-color-variation-1-s: saturation($brand-color) !default;
+$on-primary-light-color-variation-1-l: lightness($brand-color) !default;
+$primary-shadow-variation-1: #{make-shadow('smooth')} !default;
+$primary-light-color-variation-2-s: saturation($brand-color) !default;
+$primary-light-color-variation-2-l: lightness($brand-color) !default;
+$on-primary-light-color-variation-2-s: saturation($brand-color) !default;
+$on-primary-light-color-variation-2-l: lightness($brand-color) !default;
+$primary-shadow-variation-2: #{make-shadow('smooth-light')} !default;
+$primary-light-color-variation-3-s: saturation($brand-color) !default;
+$primary-light-color-variation-3-l: lightness($brand-color) !default;
+$on-primary-light-color-variation-3-s: saturation($brand-color) !default;
+$on-primary-light-color-variation-3-l: lightness($brand-color) !default;
+$primary-shadow-variation-3: #{make-shadow('diffuse')} !default;
 
 /* Secondary light color */
-$secondary-color : $color-slate-500 !default;
+$secondary-color: $color-slate-500 !default;
 $secondary-shadow: none !default;
-$secondary-light-variation-1-s:saturation($secondary-color) !default;
-$secondary-light-variation-1-l:lightness($secondary-color) !default;
-$on-secondary-light-variation-1-s:saturation($secondary-color) !default;
-$on-secondary-light-variation-1-l:lightness($secondary-color) !default;
-$secondary-shadow-variation-1: #{make-shadow("smooth")} !default;
-$secondary-light-variation-2-s:saturation($secondary-color) !default;
-$secondary-light-variation-2-l:lightness($secondary-color) !default;
-$on-secondary-light-variation-2-s:saturation($secondary-color) !default;
-$on-secondary-light-variation-2-l:lightness($secondary-color) !default;
-$secondary-shadow-variation-2: #{make-shadow("smooth")} !default;
-$secondary-light-variation-3-s:saturation($secondary-color) !default;
-$secondary-light-variation-3-l:lightness($secondary-color) !default;
-$on-secondary-light-variation-3-s:saturation($secondary-color) !default;
-$on-secondary-light-variation-3-l:lightness($secondary-color) !default;
-$secondary-shadow-variation-3: #{make-shadow("smooth-light")} !default;
+$on-secondary-light-color-s: saturation($secondary-color) !default;
+$on-secondary-light-color-l: lightness($secondary-color) !default;
+$secondary-light-color-variation-1-s: saturation($secondary-color) !default;
+$secondary-light-color-variation-1-l: lightness($secondary-color) !default;
+$on-secondary-light-color-variation-1-s: saturation($secondary-color) !default;
+$on-secondary-light-color-variation-1-l: lightness($secondary-color) !default;
+$secondary-shadow-variation-1: #{make-shadow('smooth')} !default;
+$secondary-light-color-variation-2-s: saturation($secondary-color) !default;
+$secondary-light-color-variation-2-l: lightness($secondary-color) !default;
+$on-secondary-light-color-variation-2-s: saturation($secondary-color) !default;
+$on-secondary-light-color-variation-2-l: lightness($secondary-color) !default;
+$secondary-shadow-variation-2: #{make-shadow('smooth-light')} !default;
+$secondary-light-color-variation-3-s: saturation($secondary-color) !default;
+$secondary-light-color-variation-3-l: lightness($secondary-color) !default;
+$on-secondary-light-color-variation-3-s: saturation($secondary-color) !default;
+$on-secondary-light-color-variation-3-l: lightness($secondary-color) !default;
+$secondary-shadow-variation-3: #{make-shadow('diffuse')} !default;
 
 /* Success color */
-$success-color : $color-emerald-700 !default;
-$success-color-lighten-ratio:0.4 !default;
-$success-color-darken-ratio:0.4 !default;
-$success-color-saturate-ratio:0.4 !default;
-$success-color-desaturate-ratio:0.6 !default;
+$success-color: $color-emerald-700 !default;
+$success-color-lighten-ratio: 0.4 !default;
+$success-color-darken-ratio: 0.4 !default;
+$success-color-saturate-ratio: 0.4 !default;
+$success-color-desaturate-ratio: 0.6 !default;
 $success-color-text-l: 10% !default;
 $success-color-text-alt-s: 60% !default;
 $success-color-text-alt-l: 85% !default;
 
 /* Info color */
-$info-color : $color-light-blue-800 !default;
-$info-color-lighten-ratio:0.4 !default;
-$info-color-darken-ratio:0.4 !default;
-$info-color-saturate-ratio:0.4 !default;
-$info-color-desaturate-ratio:0.6 !default;
+$info-color: $color-light-blue-800 !default;
+$info-color-lighten-ratio: 0.4 !default;
+$info-color-darken-ratio: 0.4 !default;
+$info-color-saturate-ratio: 0.4 !default;
+$info-color-desaturate-ratio: 0.6 !default;
 $info-color-text-l: 85% !default;
 $info-color-text-alt-s: 90% !default;
 $info-color-text-alt-l: 90% !default;
 
 /* Warning color */
-$warning-color : $color-amber-700 !default;
-$warning-color-lighten-ratio:0.4 !default;
-$warning-color-darken-ratio:0.4 !default;
-$warning-color-saturate-ratio:0.4 !default;
-$warning-color-desaturate-ratio:0.6 !default;
+$warning-color: $color-amber-700 !default;
+$warning-color-lighten-ratio: 0.4 !default;
+$warning-color-darken-ratio: 0.4 !default;
+$warning-color-saturate-ratio: 0.4 !default;
+$warning-color-desaturate-ratio: 0.6 !default;
 $warning-color-text-l: 5% !default;
 $warning-color-text-alt-s: 90% !default;
 $warning-color-text-alt-l: 85% !default;
 
 /* Danger color */
-$danger-color : $color-red-700 !default;
-$danger-color-lighten-ratio:0.4 !default;
-$danger-color-darken-ratio:0.4 !default;
-$danger-color-saturate-ratio:0.4 !default;
-$danger-color-desaturate-ratio:0.6 !default;
+$danger-color: $color-red-700 !default;
+$danger-color-lighten-ratio: 0.4 !default;
+$danger-color-darken-ratio: 0.4 !default;
+$danger-color-saturate-ratio: 0.4 !default;
+$danger-color-desaturate-ratio: 0.6 !default;
 $danger-color-text-l: 99% !default;
 $danger-color-text-alt-s: 100% !default;
 $danger-color-text-alt-l: 90% !default;
 
 /* misc colors */
-$code-color-background:#2d2d2d !default;
+$code-color-background: #2d2d2d !default;
 $code-color-text: #d4d4d4 !default;
-$code-color-tag:#569cd6 !default;
-$code-color-property:#9cdcfe !default;
+$code-color-tag: #569cd6 !default;
+$code-color-property: #9cdcfe !default;
 $code-color-value: #ce9178 !default;
-$code-color-var:#9cdcfe !default;
-$code-color-comment:#6a9955 !default;
+$code-color-var: #9cdcfe !default;
+$code-color-comment: #6a9955 !default;
 $code-color-lang-background: transparent !default;
-$code-color-lang-text:  $color-teal-500 !default;
+$code-color-lang-text: $color-teal-500 !default;
 
-$kbd-color-background:$color-neutral-300 !default;
-$kbd-color-text:$color-neutral-800 !default;
+$kbd-color-background: $color-neutral-300 !default;
+$kbd-color-text: $color-neutral-800 !default;
 
 $ins-color-background: transparent !default;
 $ins-color-text: $color-green-700 !default;
