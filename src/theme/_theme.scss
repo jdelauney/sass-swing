@@ -21,14 +21,8 @@
   --half-spacing: calc(var(--spacing) * 0.5);
 
   /* Resolving Margin Spacing For Zoom */
-  --block-spacing: min(
-    #{$block-spacing-vertical},
-    #{$min-block-spacing-vertical}
-  );
-  --block-half-spacing: min(
-    #{math.div($block-spacing-vertical, 2)},
-    #{math.div($min-block-spacing-vertical, 2)}
-  );
+  --block-spacing: min(#{$block-spacing-vertical}, #{$min-block-spacing-vertical});
+  --block-half-spacing: min(#{math.div($block-spacing-vertical, 2)}, #{math.div($min-block-spacing-vertical, 2)});
 
   --inner-spacing: calc(var(--spacing) * 2);
   --inner-v-spacing: var(--inner-spacing);
@@ -37,11 +31,11 @@
   --min-grid-col-width: #{$min-grid-col-width};
 
   --elem-border-width: #{$global-border-width};
-  --control-border-width: #{$global-border-width};
   --elem-border-radius: 0.5rem;
   --elem-outline-width: #{$global-outline-width};
-  //--control-border-radius:0.25rem;
-  //--control-input-height: 2rem;
+  --control-border-radius: 0.25rem;
+  --control-border-width: #{$global-border-width};
+  --control-input-height: 2rem;
 }
 
 /* light theme schema settings */
@@ -53,69 +47,37 @@
   --neutral-color-h: #{hue($neutral-light-color)};
   --neutral-color-s: #{saturation($neutral-light-color)};
   --neutral-color-l: #{lightness($neutral-light-color)};
-  --neutral-color: hsl(
-    var(--neutral-color-h),
-    var(--neutral-color-s),
-    var(--neutral-color-l)
-  );
+  --neutral-color: hsl(var(--neutral-color-h), var(--neutral-color-s), var(--neutral-color-l));
   --neutral-shadow: #{$neutral-shadow};
   --neutral-shadow-alt: #{$neutral-shadow-alt};
 
   --on-neutral-color-s: #{$on-neutral-light-color-s};
   --on-neutral-color-l: #{$on-neutral-light-color-l};
-  --on-neutral-color: hsl(
-    var(--neutral-color-h),
-    var(--on-neutral-color-s),
-    var(--on-neutral-color-l)
-  );
+  --on-neutral-color: hsl(var(--neutral-color-h), var(--on-neutral-color-s), var(--on-neutral-color-l));
 
   --neutral-color-variation-1-s: #{$neutral-light-color-variation-1-s};
   --neutral-color-variation-1-l: #{$neutral-light-color-variation-1-l};
-  --neutral-color-variation-1: hsl(
-    var(--neutral-color-h),
-    var(--neutral-color-variation-1-s),
-    var(--neutral-color-variation-1-l)
-  );
+  --neutral-color-variation-1: hsl(var(--neutral-color-h), var(--neutral-color-variation-1-s), var(--neutral-color-variation-1-l));
 
   --on-neutral-color-variation-1-s: #{$on-neutral-light-color-variation-1-s};
   --on-neutral-color-variation-1-l: #{$on-neutral-light-color-variation-1-l};
-  --on-neutral-color-variation-1: hsl(
-    var(--neutral-color-h),
-    var(--on-neutral-color-variation-1-s),
-    var(--on-neutral-color-variation-1-l)
-  );
+  --on-neutral-color-variation-1: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-1-s), var(--on-neutral-color-variation-1-l));
 
   --neutral-color-variation-2-s: #{$neutral-light-color-variation-2-s};
   --neutral-color-variation-2-l: #{$neutral-light-color-variation-2-l};
-  --neutral-color-variation-2: hsl(
-    var(--neutral-color-h),
-    var(--neutral-color-variation-2-s),
-    var(--neutral-color-variation-2-l)
-  );
+  --neutral-color-variation-2: hsl(var(--neutral-color-h), var(--neutral-color-variation-2-s), var(--neutral-color-variation-2-l));
 
   --on-neutral-color-variation-2-s: #{$on-neutral-light-color-variation-2-s};
   --on-neutral-color-variation-2-l: #{$on-neutral-light-color-variation-2-l};
-  --on-neutral-color-variation-2: hsl(
-    var(--neutral-color-h),
-    var(--on-neutral-color-variation-2-s),
-    var(--on-neutral-color-variation-2-l)
-  );
+  --on-neutral-color-variation-2: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-2-s), var(--on-neutral-color-variation-2-l));
 
   --neutral-color-variation-3-s: #{$neutral-light-color-variation-3-s};
   --neutral-color-variation-3-l: #{$neutral-light-color-variation-3-l};
-  --neutral-color-variation-3: hsl(
-    var(--neutral-color-h),
-    var(--neutral-color-variation-3-s),
-    var(--neutral-color-variation-3-l)
-  );
+  --neutral-color-variation-3: hsl(var(--neutral-color-h), var(--neutral-color-variation-3-s), var(--neutral-color-variation-3-l));
 
   --on-neutral-color-variation-3-s: #{$on-neutral-light-color-variation-3-s};
   --on-neutral-color-variation-3-l: #{$on-neutral-light-color-variation-3-l};
-  --on-neutral-color-variation-3: hsl(
-    var(--neutral-color-h),
-    var(--on-neutral-color-variation-3-s),
-    var(--on-neutral-color-variation-3-l)
-  );
+  --on-neutral-color-variation-3: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-3-s), var(--on-neutral-color-variation-3-l));
 
   /* Your main brand color */
   --brand-color-h: #{hue($brand-color)};
@@ -123,71 +85,39 @@
   --brand-color-l: #{lightness($brand-color)};
 
   /* Primary (brand) color should be used at 10%, principaly for your CTA, input elements, links */
-  --primary-color: hsl(
-    var(--brand-color-h),
-    var(--brand-color-s),
-    var(--brand-color-l)
-  );
+  --primary-color: hsl(var(--brand-color-h), var(--brand-color-s), var(--brand-color-l));
 
   --on-primary-color-s: #{$on-primary-light-color-s};
   --on-primary-color-l: #{$on-primary-light-color-l};
-  --on-primary-color: hsl(
-    var(--brand-color-h),
-    var(--on-primary-color-s),
-    var(--on-primary-color-l)
-  );
+  --on-primary-color: hsl(var(--brand-color-h), var(--on-primary-color-s), var(--on-primary-color-l));
   --primary-shadow: #{$primary-shadow};
 
   --primary-color-variation-1-s: #{$primary-light-color-variation-1-s};
   --primary-color-variation-1-l: #{$primary-light-color-variation-1-l};
-  --primary-color-variation-1: hsl(
-    var(--brand-color-h),
-    var(--primary-color-variation-1-s),
-    var(--primary-color-variation-1-l)
-  );
+  --primary-color-variation-1: hsl(var(--brand-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l));
   --primary-shadow-variation-1: #{$primary-shadow-variation-1};
 
   --on-primary-color-variation-1-s: #{$on-primary-light-color-variation-1-s};
   --on-primary-color-variation-1-l: #{$on-primary-light-color-variation-1-l};
-  --on-primary-color-variation-1: hsl(
-    var(--brand-color-h),
-    var(--on-primary-color-variation-1-s),
-    var(--on-primary-color-variation-1-l)
-  );
+  --on-primary-color-variation-1: hsl(var(--brand-color-h), var(--on-primary-color-variation-1-s), var(--on-primary-color-variation-1-l));
 
   --primary-color-variation-2-s: #{$primary-light-color-variation-2-s};
   --primary-color-variation-2-l: #{$primary-light-color-variation-2-l};
-  --primary-color-variation-2: hsl(
-    var(--brand-color-h),
-    var(--primary-color-variation-2-s),
-    var(--primary-color-variation-2-l)
-  );
+  --primary-color-variation-2: hsl(var(--brand-color-h), var(--primary-color-variation-2-s), var(--primary-color-variation-2-l));
   --primary-shadow-variation-2: #{$primary-shadow-variation-2};
 
   --on-primary-color-variation-2-s: #{$on-primary-light-color-variation-2-s};
   --on-primary-color-variation-2-l: #{$on-primary-light-color-variation-2-l};
-  --on-primary-color-variation-2: hsl(
-    var(--brand-color-h),
-    var(--on-primary-color-variation-2-s),
-    var(--on-primary-color-variation-2-l)
-  );
+  --on-primary-color-variation-2: hsl(var(--brand-color-h), var(--on-primary-color-variation-2-s), var(--on-primary-color-variation-2-l));
 
   --primary-color-variation-3-s: #{$primary-light-color-variation-3-s};
   --primary-color-variation-3-l: #{$primary-light-color-variation-3-l};
-  --primary-color-variation-3: hsl(
-    var(--brand-color-h),
-    var(--primary-color-variation-3-s),
-    var(--primary-color-variation-3-l)
-  );
+  --primary-color-variation-3: hsl(var(--brand-color-h), var(--primary-color-variation-3-s), var(--primary-color-variation-3-l));
   --primary-shadow-variation-3: #{$primary-shadow-variation-3};
 
   --on-primary-color-variation-3-s: #{$on-primary-light-color-variation-3-s};
   --on-primary-color-variation-3-l: #{$on-primary-light-color-variation-3-l};
-  --on-primary-color-variation-3: hsl(
-    var(--brand-color-h),
-    var(--on-primary-color-variation-3-s),
-    var(--on-primary-color-variation-3-l)
-  );
+  --on-primary-color-variation-3: hsl(var(--brand-color-h), var(--on-primary-color-variation-3-s), var(--on-primary-color-variation-3-l));
 
   /* Your secondary color */
   --secondary-color-h: #{hue($secondary-color)};
@@ -195,67 +125,35 @@
   --secondary-color-l: #{lightness($secondary-color)};
 
   /* Secondary color should be used at 30%  */
-  --secondary-color: hsl(
-    var(--secondary-color-h),
-    var(--secondary-color-s),
-    var(--secondary-color-l)
-  );
+  --secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
 
   --on-secondary-color-s: #{$on-secondary-light-color-s};
   --on-secondary-color-l: #{$on-secondary-light-color-l};
-  --on-secondary-color: hsl(
-    var(--secondary-color-h),
-    var(--on-secondary-color-s),
-    var(--on-secondary-color-l)
-  );
+  --on-secondary-color: hsl(var(--secondary-color-h), var(--on-secondary-color-s), var(--on-secondary-color-l));
 
   --secondary-color-variation-1-s: #{$secondary-light-color-variation-1-s};
   --secondary-color-variation-1-l: #{$secondary-light-color-variation-1-l};
-  --secondary-color-variation-1: hsl(
-    var(--secondary-color-h),
-    var(--secondary-color-variation-1-s),
-    var(--secondary-color-variation-1-l)
-  );
+  --secondary-color-variation-1: hsl(var(--secondary-color-h), var(--secondary-color-variation-1-s), var(--secondary-color-variation-1-l));
 
   --on-secondary-color-variation-1-s: #{$on-secondary-light-color-variation-1-s};
   --on-secondary-color-variation-1-l: #{$on-secondary-light-color-variation-1-l};
-  --on-secondary-color-variation-1: hsl(
-    var(--secondary-color-h),
-    var(--on-secondary-color-variation-1-s),
-    var(--on-secondary-color-variation-1-l)
-  );
+  --on-secondary-color-variation-1: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-1-s), var(--on-secondary-color-variation-1-l));
 
   --secondary-color-variation-2-s: #{$secondary-light-color-variation-2-s};
   --secondary-color-variation-2-l: #{$secondary-light-color-variation-2-l};
-  --secondary-color-variation-2: hsl(
-    var(--secondary-color-h),
-    var(--secondary-color-variation-2-s),
-    var(--secondary-color-variation-2-l)
-  );
+  --secondary-color-variation-2: hsl(var(--secondary-color-h), var(--secondary-color-variation-2-s), var(--secondary-color-variation-2-l));
 
   --on-secondary-color-variation-2-s: #{$on-secondary-light-color-variation-2-s};
   --on-secondary-color-variation-2-l: #{$on-secondary-light-color-variation-2-l};
-  --on-secondary-color-variation-2: hsl(
-    var(--secondary-color-h),
-    var(--on-secondary-color-variation-2-s),
-    var(--on-secondary-color-variation-2-l)
-  );
+  --on-secondary-color-variation-2: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-2-s), var(--on-secondary-color-variation-2-l));
 
   --secondary-color-variation-3-s: #{$secondary-light-color-variation-3-s};
   --secondary-color-variation-3-l: #{$secondary-light-color-variation-3-l};
-  --secondary-color-variation-3: hsl(
-    var(--secondary-color-h),
-    var(--secondary-color-variation-3-s),
-    var(--secondary-color-variation-3-l)
-  );
+  --secondary-color-variation-3: hsl(var(--secondary-color-h), var(--secondary-color-variation-3-s), var(--secondary-color-variation-3-l));
 
   --on-secondary-color-variation-3-s: #{$on-secondary-light-color-variation-3-s};
   --on-secondary-color-variation-3-l: #{$on-secondary-light-color-variation-3-l};
-  --on-secondary-color-variation-3: hsl(
-    var(--secondary-color-h),
-    var(--on-secondary-color-variation-3-s),
-    var(--on-secondary-color-variation-3-l)
-  );
+  --on-secondary-color-variation-3: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-3-s), var(--on-secondary-color-variation-3-l));
 }
 
 /* dark theme schema settings */
@@ -315,231 +213,72 @@
   --success-color-h: #{hue($success-color)};
   --success-color-s: #{saturation($success-color)};
   --success-color-l: #{lightness($success-color)};
-  --success-color: hsl(
-    var(--success-color-h),
-    var(--success-color-s),
-    var(--success-color-l)
-  );
+  --success-color: hsl(var(--success-color-h), var(--success-color-s), var(--success-color-l));
   --success-color-lighten-ratio: #{$success-color-lighten-ratio};
   --success-color-darken-ratio: #{$success-color-darken-ratio};
   --success-color-saturate-ratio: #{$success-color-saturate-ratio};
   --success-color-desaturate-ratio: #{$success-color-desaturate-ratio};
-  --success-color-lighten: hsl(
-    var(--success-color-h),
-    var(--success-color-s),
-    calc(
-      var(--success-color-l) + (100% - var(--success-color-l)) *
-        var(--success-color-lighten-ratio)
-    )
-  );
-  --success-color-darken: hsl(
-    var(--success-color-h),
-    var(--success-color-s),
-    calc(
-      var(--success-color-l) - var(--success-color-l) *
-        var(--success-color-darken-ratio)
-    )
-  );
-  --success-color-saturate: hsl(
-    var(--success-color-h),
-    calc(
-      var(--success-color-s) + (100% - var(--success-color-s)) *
-        var(--success-color-saturate-ratio)
-    ),
-    var(--success-color-l)
-  );
-  --success-color-desaturate: hsl(
-    var(--success-color-h),
-    calc(
-      var(--success-color-s) - var(--success-color-s) *
-        var(--success-color-desaturate-ratio)
-    ),
-    var(--success-color-l)
-  );
+  --success-color-lighten: hsl(var(--success-color-h), var(--success-color-s), calc(var(--success-color-l) + (100% - var(--success-color-l)) * var(--success-color-lighten-ratio)));
+  --success-color-darken: hsl(var(--success-color-h), var(--success-color-s), calc(var(--success-color-l) - var(--success-color-l) * var(--success-color-darken-ratio)));
+  --success-color-saturate: hsl(var(--success-color-h), calc(var(--success-color-s) + (100% - var(--success-color-s)) * var(--success-color-saturate-ratio)), var(--success-color-l));
+  --success-color-desaturate: hsl(var(--success-color-h), calc(var(--success-color-s) - var(--success-color-s) * var(--success-color-desaturate-ratio)), var(--success-color-l));
   --success-color-text-l: #{$success-color-text-l};
   --success-color-text-alt-s: #{$success-color-text-alt-s};
   --success-color-text-alt-l: #{$success-color-text-alt-l};
-  --success-color-text: hsl(
-    var(--success-color-h),
-    var(--success-color-s),
-    var(--success-color-text-l)
-  );
-  --success-color-text-alt: hsl(
-    var(--success-color-h),
-    var(--success-color-alt-text-s),
-    var(--success-color-alt-text-l)
-  );
+  --success-color-text: hsl(var(--success-color-h), var(--success-color-s), var(--success-color-text-l));
+  --success-color-text-alt: hsl(var(--success-color-h), var(--success-color-alt-text-s), var(--success-color-alt-text-l));
 
   --info-color-h: #{hue($info-color)};
   --info-color-s: #{saturation($info-color)};
   --info-color-l: #{lightness($info-color)};
-  --info-color: hsl(
-    var(--info-color-h),
-    var(--info-color-s),
-    var(--info-color-l)
-  );
+  --info-color: hsl(var(--info-color-h), var(--info-color-s), var(--info-color-l));
   --info-color-lighten-ratio: #{$info-color-lighten-ratio};
   --info-color-darken-ratio: #{$info-color-darken-ratio};
   --info-color-saturate-ratio: #{$info-color-saturate-ratio};
   --info-color-desaturate-ratio: #{$info-color-desaturate-ratio};
-  --info-color-lighten: hsl(
-    var(--info-color-h),
-    var(--info-color-s),
-    calc(
-      var(--info-color-l) + (100% - var(--info-color-l)) *
-        var(--info-color-lighten-ratio)
-    )
-  );
-  --info-color-darken: hsl(
-    var(--info-color-h),
-    var(--info-color-s),
-    calc(
-      var(--info-color-l) - var(--info-color-l) * var(--info-color-darken-ratio)
-    )
-  );
-  --info-color-saturate: hsl(
-    var(--info-color-h),
-    calc(
-      var(--info-color-s) + (100% - var(--info-color-s)) *
-        var(--info-color-saturate-ratio)
-    ),
-    var(--info-color-l)
-  );
-  --info-color-desaturate: hsl(
-    var(--info-color-h),
-    calc(
-      var(--info-color-s) - var(--info-color-s) *
-        var(--info-color-desaturate-ratio)
-    ),
-    var(--info-color-l)
-  );
+  --info-color-lighten: hsl(var(--info-color-h), var(--info-color-s), calc(var(--info-color-l) + (100% - var(--info-color-l)) * var(--info-color-lighten-ratio)));
+  --info-color-darken: hsl(var(--info-color-h), var(--info-color-s), calc(var(--info-color-l) - var(--info-color-l) * var(--info-color-darken-ratio)));
+  --info-color-saturate: hsl(var(--info-color-h), calc(var(--info-color-s) + (100% - var(--info-color-s)) * var(--info-color-saturate-ratio)), var(--info-color-l));
+  --info-color-desaturate: hsl(var(--info-color-h), calc(var(--info-color-s) - var(--info-color-s) * var(--info-color-desaturate-ratio)), var(--info-color-l));
   --info-color-text-l: #{$info-color-text-l};
   --info-color-text-alt-s: #{$info-color-text-alt-s};
   --info-color-text-alt-l: #{$info-color-text-alt-l};
-  --info-color-text: hsl(
-    var(--info-color-h),
-    var(--info-color-s),
-    var(--info-color-text-l)
-  );
-  --info-color-text-alt: hsl(
-    var(--info-color-h),
-    var(--info-color-alt-text-s),
-    var(--info-color-alt-text-l)
-  );
+  --info-color-text: hsl(var(--info-color-h), var(--info-color-s), var(--info-color-text-l));
+  --info-color-text-alt: hsl(var(--info-color-h), var(--info-color-alt-text-s), var(--info-color-alt-text-l));
 
   --warning-color-h: #{hue($warning-color)};
   --warning-color-s: #{saturation($warning-color)};
   --warning-color-l: #{lightness($warning-color)};
-  --warning-color: hsl(
-    var(--warning-color-h),
-    var(--warning-color-s),
-    var(--warning-color-l)
-  );
+  --warning-color: hsl(var(--warning-color-h), var(--warning-color-s), var(--warning-color-l));
   --warning-color-lighten-ratio: #{$warning-color-lighten-ratio};
   --warning-color-darken-ratio: #{$warning-color-darken-ratio};
   --warning-color-saturate-ratio: #{$warning-color-saturate-ratio};
   --warning-color-desaturate-ratio: #{$warning-color-desaturate-ratio};
-  --warning-color-lighten: hsl(
-    var(--warning-color-h),
-    var(--warning-color-s),
-    calc(
-      var(--warning-color-l) + (100% - var(--warning-color-l)) *
-        var(--warning-color-lighten-ratio)
-    )
-  );
-  --warning-color-darken: hsl(
-    var(--warning-color-h),
-    var(--warning-color-s),
-    calc(
-      var(--warning-color-l) - var(--warning-color-l) *
-        var(--warning-color-darken-ratio)
-    )
-  );
-  --warning-color-saturate: hsl(
-    var(--warning-color-h),
-    calc(
-      var(--warning-color-s) + (100% - var(--warning-color-s)) *
-        var(--warning-color-saturate-ratio)
-    ),
-    var(--warning-color-l)
-  );
-  --warning-color-desaturate: hsl(
-    var(--warning-color-h),
-    calc(
-      var(--warning-color-s) - var(--warning-color-s) *
-        var(--warning-color-desaturate-ratio)
-    ),
-    var(--warning-color-l)
-  );
+  --warning-color-lighten: hsl(var(--warning-color-h), var(--warning-color-s), calc(var(--warning-color-l) + (100% - var(--warning-color-l)) * var(--warning-color-lighten-ratio)));
+  --warning-color-darken: hsl(var(--warning-color-h), var(--warning-color-s), calc(var(--warning-color-l) - var(--warning-color-l) * var(--warning-color-darken-ratio)));
+  --warning-color-saturate: hsl(var(--warning-color-h), calc(var(--warning-color-s) + (100% - var(--warning-color-s)) * var(--warning-color-saturate-ratio)), var(--warning-color-l));
+  --warning-color-desaturate: hsl(var(--warning-color-h), calc(var(--warning-color-s) - var(--warning-color-s) * var(--warning-color-desaturate-ratio)), var(--warning-color-l));
   --warning-color-text-l: #{$warning-color-text-l};
   --warning-color-text-alt-s: #{$warning-color-text-alt-s};
   --warning-color-text-alt-l: #{$warning-color-text-alt-l};
-  --warning-color-text: hsl(
-    var(--warning-color-h),
-    var(--warning-color-s),
-    var(--warning-color-text-l)
-  );
-  --warning-color-text-alt: hsl(
-    var(--warning-color-h),
-    var(--warning-color-alt-text-s),
-    var(--warning-color-alt-text-l)
-  );
+  --warning-color-text: hsl(var(--warning-color-h), var(--warning-color-s), var(--warning-color-text-l));
+  --warning-color-text-alt: hsl(var(--warning-color-h), var(--warning-color-alt-text-s), var(--warning-color-alt-text-l));
 
   --danger-color-h: #{hue($danger-color)};
   --danger-color-s: #{saturation($danger-color)};
   --danger-color-l: #{lightness($danger-color)};
-  --danger-color: hsl(
-    var(--danger-color-h),
-    var(--danger-color-s),
-    var(--danger-color-l)
-  );
+  --danger-color: hsl(var(--danger-color-h), var(--danger-color-s), var(--danger-color-l));
   --danger-color-lighten-ratio: #{$danger-color-lighten-ratio};
   --danger-color-darken-ratio: #{$danger-color-darken-ratio};
   --danger-color-saturate-ratio: #{$danger-color-saturate-ratio};
   --danger-color-desaturate-ratio: #{$danger-color-desaturate-ratio};
-  --danger-color-lighten: hsl(
-    var(--danger-color-h),
-    var(--danger-color-s),
-    calc(
-      var(--danger-color-l) + (100% - var(--danger-color-l)) *
-        var(--danger-color-lighten-ratio)
-    )
-  );
-  --danger-color-darken: hsl(
-    var(--danger-color-h),
-    var(--danger-color-s),
-    calc(
-      var(--danger-color-l) - var(--danger-color-l) *
-        var(--danger-color-darken-ratio)
-    )
-  );
-  --danger-color-saturate: hsl(
-    var(--danger-color-h),
-    calc(
-      var(--danger-color-s) + (100% - var(--danger-color-s)) *
-        var(--danger-color-saturate-ratio)
-    ),
-    var(--danger-color-l)
-  );
-  --danger-color-desaturate: hsl(
-    var(--danger-color-h),
-    calc(
-      var(--danger-color-s) - var(--danger-color-s) *
-        var(--danger-color-desaturate-ratio)
-    ),
-    var(--danger-color-l)
-  );
+  --danger-color-lighten: hsl(var(--danger-color-h), var(--danger-color-s), calc(var(--danger-color-l) + (100% - var(--danger-color-l)) * var(--danger-color-lighten-ratio)));
+  --danger-color-darken: hsl(var(--danger-color-h), var(--danger-color-s), calc(var(--danger-color-l) - var(--danger-color-l) * var(--danger-color-darken-ratio)));
+  --danger-color-saturate: hsl(var(--danger-color-h), calc(var(--danger-color-s) + (100% - var(--danger-color-s)) * var(--danger-color-saturate-ratio)), var(--danger-color-l));
+  --danger-color-desaturate: hsl(var(--danger-color-h), calc(var(--danger-color-s) - var(--danger-color-s) * var(--danger-color-desaturate-ratio)), var(--danger-color-l));
   --danger-color-text-l: #{$danger-color-text-l};
   --danger-color-text-alt-s: #{$danger-color-text-alt-s};
   --danger-color-text-alt-l: #{$danger-color-text-alt-l};
-  --danger-color-text: hsl(
-    var(--danger-color-h),
-    var(--danger-color-s),
-    var(--danger-color-text-l)
-  );
-  --danger-color-text-alt: hsl(
-    var(--danger-color-h),
-    var(--danger-color-alt-text-s),
-    var(--danger-color-alt-text-l)
-  );
+  --danger-color-text: hsl(var(--danger-color-h), var(--danger-color-s), var(--danger-color-text-l));
+  --danger-color-text-alt: hsl(var(--danger-color-h), var(--danger-color-alt-text-s), var(--danger-color-alt-text-l));
 }
