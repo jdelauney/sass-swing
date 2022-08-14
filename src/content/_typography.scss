@@ -1,8 +1,9 @@
-@use "../abstracts/variables" as *;
+@use '../abstracts/variables' as *;
 
-@use "sass:math";
+@use 'sass:math';
 
-ol, ul {
+ol,
+ul {
   -webkit-padding-start: var(--spacing);
   -webkit-padding-end: 0;
   padding-right: 0;
@@ -15,15 +16,21 @@ ol, ul {
 // https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/
 // https://spencermortensen.com/articles/typographic-scale/
 
-h1, .like-h1,
-h2, .like-h2,
-h3, .like-h3,
-h4, .like-h4,
-h5, .like-h5,
-h6, .like-h6 {
+h1,
+.like-h1,
+h2,
+.like-h2,
+h3,
+.like-h3,
+h4,
+.like-h4,
+h5,
+.like-h5,
+h6,
+.like-h6 {
   display: block;
   width: 100%;
-  --color: var(--general-color-text);
+  --color: var(--on-neutral-color);
   --font-weight: var(--heading-font-weight);
   // Recommendation courtesy of this brilliant work:
   // @link https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
@@ -33,7 +40,7 @@ h6, .like-h6 {
   margin-bottom: 0.65em;
 
   + * {
-    margin-top:0;
+    margin-top: 0;
   }
 
   &:first-child {
@@ -41,20 +48,26 @@ h6, .like-h6 {
   }
 }
 
-h1, .like-h1 {
+h1,
+.like-h1 {
   max-width: 40ch;
 }
-h2, .like-h2 {
+h2,
+.like-h2 {
   max-width: 45ch;
 }
-h3, .like-h3 {
+h3,
+.like-h3 {
   max-width: 60ch;
 }
-h4, .like-h4 {
+h4,
+.like-h4 {
   max-width: 75ch;
 }
-h5, .like-h5,
-h6, .like-h6 {
+h5,
+.like-h5,
+h6,
+.like-h6 {
   max-width: 80ch;
 }
 
@@ -71,19 +84,20 @@ $level-size: $heading-base-font-size; //$type-base-size;
   // Assign to element and create utility class
   h#{$level},
   .like-h#{$level} {
-    --color:var(--color-h#{$level});
+    --color: var(--color-h#{$level});
     // Fallback for browsers that don't support min / max
     font-size: $level-size;
 
-    $level-unitless:  math.div($level-size , ($level-size * 0 + 1));
-    margin-top: calc((var(--heading-flow-space-ratio) * #{math.div( $level-unitless,2)}) * 1em);
+    $level-unitless: math.div($level-size, ($level-size * 0 + 1));
+    margin-top: calc(
+      (var(--heading-flow-space-ratio) * #{math.div($level-unitless, 2)}) * 1em
+    );
     // Limit in place based on testing -> smaller ratios are
     // prematurely or unnecessarily reduced
     @if ($type-size-ratio > 1.2) {
       // Fluid type styles
 
       // Remove unit for calculations
-
 
       // Set minimum size to a percentage less than $level-size
       // Reduction is greater for large font sizes (> 4rem) to help
@@ -99,11 +113,7 @@ $level-size: $heading-base-font-size; //$type-base-size;
       // 4vw was selected by testing from $type-ratios map, YMMV 🙃
       $fluid-scaler: ($level-unitless - $fluid-min) + 4vw;
 
-      font-size: clamp(
-              #{$fluid-min}em,
-              #{$fluid-scaler} + 1em,
-              #{$level-size}
-      );
+      font-size: clamp(#{$fluid-min}em, #{$fluid-scaler} + 1em, #{$level-size});
     }
 
     /*    &:first-child {
@@ -116,36 +126,44 @@ $level-size: $heading-base-font-size; //$type-base-size;
   }
 }
 
-h5, .like-h5 {
-  color:var(--color-h5);
+h5,
+.like-h5 {
+  color: var(--color-h5, initial);
   font-size: var(--heading-font-size);
 }
 
-h6, .like-h6 {
-  color:var(--color-h6);
+h6,
+.like-h6 {
+  color: var(--color-h6);
   font-size: var(--heading-font-size);
 }
 
-h5, h6 {
+h5,
+h6 {
   margin-top: calc(var(--heading-flow-space-ratio) * 1em);
 
   &:only-child {
-    margin-bottom:0 !important;
+    margin-bottom: 0 !important;
   }
 }
 
-.like-h1, .like-h2, .like-h3, .like-h4, .like-h5, .like-h6 {
+.like-h1,
+.like-h2,
+.like-h3,
+.like-h4,
+.like-h5,
+.like-h6 {
   margin-top: unset;
 
   &:only-child {
-    margin-bottom:0 !important;
+    margin-bottom: 0 !important;
   }
 }
 
 p {
   font-size: 1em;
   margin-top: calc(var(--flow-space-ratio) * 1em);
-  line-height: calc(var(--line-height) * 1em);
+  line-height: calc(var(--font-content-line-height) * 1em);
   max-width: 85ch;
 
   & + *:is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article)) {
@@ -157,7 +175,7 @@ p {
   //}
 
   &:first-child {
-    margin-top:0;
+    margin-top: 0;
   }
 }
 
@@ -202,21 +220,29 @@ abbr[title] {
 }
 
 blockquote {
+  --background-color: var(--neutral-color-variation-1);
+  --color: var(--on-neutral-color-variation-1);
+  --border-color: var(--primary-color);
+  --box-shadow: var(--neutral-shadow);
+  --glyph-color: var(--primary-color);
+  --glyph-opacity: 0.25;
+  --cite-color: var(--on-neutral-color-variation-3);
+
   margin: 1.5em 1rem;
   padding: 0.5em 1rem;
-  border-left: 10px solid var(--blockquote-color-border, --primary-color);
-  background: var(--blockquote--color-background, --general-color-background-alt);
-  box-shadow: var(--blockquote-shadow, --general-shadow);
+  background: var(--background-color);
+  border-left: 10px solid var(--border-color);
+  box-shadow: var(--box-shadow);
   font-family: var(--font-family-alt);
-  max-width:85ch;
+  max-width: 85ch;
 
   &:before {
     position: relative;
-    top:.15em;
-    left:.15em;
+    top: 0.15em;
+    left: 0.15em;
     margin-right: 0.25em;
-    content: "\201D"; //quotes:  "\201D"; "\201C"; "\2018"; "\2019";
-    color: hsla(var(--blockquote-color-glyph, --primary-color), var(--blockquote-color-glyph-opacity,.25));
+    content: '\201D'; //quotes:  "\201D"; "\201C"; "\2018"; "\2019";
+    color: hsla(var(--glyph-color), var(--glyph-opacity));
     font-size: 4em;
     line-height: 0.1em;
     vertical-align: -0.4em;
@@ -227,11 +253,11 @@ blockquote {
   }
 
   cite {
-    color: var(--blockquote-color-cite, --muted-color-text);
+    color: var(--cite-color);
   }
 
   footer {
-    margin-right: .25em;
+    margin-right: 0.25em;
     text-align: right;
   }
 }
@@ -257,7 +283,8 @@ time {
   font-weight: 700;
 }
 
-strong, b {
+strong,
+b {
   font-size: 1.1em;
 }
 
@@ -278,7 +305,7 @@ output {
 pre,
 code,
 kbd {
-  border-radius: var(--general-border-radius);
+  border-radius: var(--elem-border-radius);
   font-family: var(--font-family-mono);
   font-size: 1.4rem;
   font-weight: var(--font-weight);
@@ -312,11 +339,11 @@ pre {
   grid-template-columns: 1fr;
 
   position: relative;
-  margin: calc(var(--block-spacing) * .5) 0;
+  margin: calc(var(--block-spacing) * 0.5) 0;
   margin-bottom: 0;
   padding: 0;
   //background-color: var(--panel-background);
-  box-shadow: var(--general-shadow-alt);
+  box-shadow: var(--neutral-shadow-alt);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   word-break: normal;
@@ -335,19 +362,19 @@ pre {
   }
 
   &:first-child {
-    margin-top:0;
+    margin-top: 0;
   }
 
   &:last-child {
-    margin-bottom: calc(var(--block-spacing) * .5);
+    margin-bottom: calc(var(--block-spacing) * 0.5);
   }
 
   & + :is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article)) {
-    margin-top:  var(--block-half-spacing);
+    margin-top: var(--block-half-spacing);
   }
 }
 
-pre[data-lang]:not([data-lang=""]):before {
+pre[data-lang]:not([data-lang='']):before {
   position: absolute;
   content: attr(data-lang);
   top: -0.2rem;
@@ -359,8 +386,8 @@ pre[data-lang]:not([data-lang=""]):before {
   font-family: var(--font-family);
   font-style: normal;
   font-weight: 700;
-  font-size: .6em;
-  border-radius: var(--general-border-radius);
+  font-size: 0.6em;
+  border-radius: var(--elem-border-radius);
 }
 
 code {
@@ -381,7 +408,7 @@ code {
   u {
     color: var(--code-color-value);
     text-decoration: none;
-    border:none;
+    border: none;
   }
 
   // Comments

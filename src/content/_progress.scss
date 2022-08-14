@@ -1,32 +1,37 @@
 progress {
+  --background-color: var(--neutral-color-variation-1);
+  --border-width: var(--elem-border-width);
+  --border-color: var(--neutral-color-variation-2);
+  --border-radius: var(--elem-border-radius);
+  --color: var(--primary-color);
+
   display: inline-block;
   appearance: none;
   width: 100%;
-  height: var(--progress-height, 1rem);
+  height: var(--height, 1rem);
   margin-top: var(--half-spacing);
   overflow: hidden;
-  border: var(--progress-border-width, --general-border-width) solid var(--progress-color-border, --general-color-border);
-  border-radius: var(--progress-border-radius, --general-border-radius);
-  background-color: var(--progress-color-background,--general-color-background-alt);
-  color: var(--progress-color, --primary-color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  color: var(--color);
 
   &::-webkit-progress-bar {
-    border-radius:  var(--progress-border-radius, --general-border-radius);
+    border-radius: var(--border-radius);
     background: transparent;
   }
   &[value]::-webkit-progress-value,
-  &::-moz-progress-bar{
-    border-radius:  var(--progress-border-radius, --general-border-radius);
-    background-color: var(--progress-color, --primary-color);
+  &::-moz-progress-bar {
+    border-radius: var(--border-radius);
+    background-color: var(--color);
   }
 
   &:indeterminate,
-  &[indeterminate="true"],
-  &:not([value]){
-    --_color-background : var(--progress-color-background,--general-color-background-alt);
-    background:
-            var(--_color-background)
-            linear-gradient(to right, var(--progress-color, --primary-color) 30%, var(--_color-background) 30%) top left / 150% 150% no-repeat;
+  &[indeterminate='true'],
+  &:not([value]) {
+    background: var(--background-color),
+      linear-gradient(to right, var(--color) 30%, var(--background-color) 30%)
+        top left / 150% 150% no-repeat;
 
     animation: progressIndeterminate 2.5s linear infinite alternate;
 

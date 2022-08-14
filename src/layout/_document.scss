@@ -5,24 +5,30 @@ html {
   font-family: var(--font-family);
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
   min-height: var(--doc-height);
 }
 
 body {
-  position:relative;
-  width:100%;
+  --background-color: var(--neutral-color);
+  --color: var(--on-neutral-color);
+
+  text-rendering: optimizeSpeed;
+  position: relative;
+  width: 100%;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  background-color: var(--body-color-background, --general-color-background);
-  color : var(--body-color-text, --general-color-text);
+  background-color: var(--background-color);
+  color: var(--color);
   font-size: clamp(1.5rem, 0.5vw + 1.4rem, 1.7rem);
+  line-height: var(--font-content-line-height);
 
   > header,
   > main,
   > footer {
-    display:block;
+    display: block;
     position: relative;
     //width: 100%;
     //margin-right: auto;
@@ -33,7 +39,6 @@ body {
   > footer {
     margin-top: var(--block-spacing);
     padding: var(--inner-v-spacing) var(--inner-h-spacing);
-
   }
 
   > main {
@@ -51,17 +56,22 @@ body {
 }
 
 ul li {
-  ul, ol {
+  ul,
+  ol {
     margin-left: var(--spacing);
   }
 }
 
-body, table, article, section,
+body,
+table,
+article,
+section,
 pre > code,
 select[multiple],
 .custom-scrollbar {
   scrollbar-gutter: stable;
-  scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-background);
+  scrollbar-color: var(--scrollbar-color-thumb)
+    var(--scrollbar-color-background);
   scrollbar-width: thin;
 }
 
@@ -96,7 +106,7 @@ select::-webkit-scrollbar-thumb,
   border: 2px solid var(--scrollbar-color-thumb-border);
   border-radius: 6px;
   background-clip: content-box;
-  background-color: var(--scrollbar-color-thumb) ;
+  background-color: var(--scrollbar-color-thumb);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
