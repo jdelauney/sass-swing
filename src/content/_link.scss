@@ -12,7 +12,7 @@ a,
     background-color: var(--background-color);
     color: var(--color);
     font-size: 1.1em;
-    text-decoration-color: var(--decoration-color) !important;
+    text-decoration-color: var(--decoration-color);
     transition: all 0.2s ease;
   }
 
@@ -20,7 +20,7 @@ a,
   &:focus {
     background-color: var(--hover-background-color);
     color: var(--hover-color);
-    text-decoration-color: var(--hover-decoration-color) !important;
+    text-decoration-color: var(--hover-decoration-color);
   }
 
   &[aria-current] {
@@ -30,7 +30,7 @@ a,
   }
 
   &.link--mark {
-    --background-background: var(--primary-color);
+    --background-color: var(--primary-color);
     --color: var(--on-primary-color);
     --hover-background-color: var(--primary-color-variation-1);
     --hover-color: var(--on-primary-color-variation-1);
@@ -41,14 +41,14 @@ a,
 a.link--secondary {
   --color: var(--secondary-color);
   --decoration-color: var(--secondary-color);
-  --hover-color: var(--on-secondary-color-variation-1);
-  --hover-decoration-color: var(--secondary-color-variation-1);
+  --hover-color: var(--on-secondary-color-variation-2);
+  --hover-decoration-color: var(--secondary-color-variation-2);
 
   &.link--mark {
-    --background-background: var(--secondary-color);
+    --background-color: var(--secondary-color);
     --color: var(--on-secondary-color);
-    --hover-background-color: var(--secondary-color-variation-1);
-    --hover-color: var(--on-secondary-color-variation-1);
+    --hover-background-color: var(--secondary-color-variation-2);
+    --hover-color: var(--on-secondary-color-variation-2);
 
     padding: 0 0.4rem;
   }

@@ -54,7 +54,7 @@ input[type='reset'],
   --color: var(--on-primary-color);
   --border-color: var(--primary-color-variation-2);
   --border-width: var(--control-border-width);
-  //--border-radius:var(--border-radius);
+  --border-radius: var(--control-border-radius);
   //--box-shadow:var(--button-shadow);
 
   --hover-background-color: var(--primary-color-variation-1);
@@ -73,7 +73,7 @@ input[type='reset'],
   background-color: var(--background-color);
   color: var(--color);
   border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius, initial);
+  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow, none);
 
   &:active,
