@@ -33,7 +33,7 @@
   --elem-border-width: #{$global-border-width};
   --elem-border-radius: 0.5rem;
   --elem-outline-width: #{$global-outline-width};
-  --control-border-radius: 0.25rem;
+  --control-border-radius: #{$global-border-radius};
   --control-border-width: #{$global-border-width};
   --control-input-height: 2rem;
 }
@@ -226,7 +226,7 @@
   --success-color-text-alt-s: #{$success-color-text-alt-s};
   --success-color-text-alt-l: #{$success-color-text-alt-l};
   --success-color-text: hsl(var(--success-color-h), var(--success-color-s), var(--success-color-text-l));
-  --success-color-text-alt: hsl(var(--success-color-h), var(--success-color-alt-text-s), var(--success-color-alt-text-l));
+  --success-color-text-alt: hsl(var(--success-color-h), var(--success-color-text-alt-s), var(--success-color-text-alt-l));
 
   --info-color-h: #{hue($info-color)};
   --info-color-s: #{saturation($info-color)};
@@ -244,7 +244,7 @@
   --info-color-text-alt-s: #{$info-color-text-alt-s};
   --info-color-text-alt-l: #{$info-color-text-alt-l};
   --info-color-text: hsl(var(--info-color-h), var(--info-color-s), var(--info-color-text-l));
-  --info-color-text-alt: hsl(var(--info-color-h), var(--info-color-alt-text-s), var(--info-color-alt-text-l));
+  --info-color-text-alt: hsl(var(--info-color-h), var(--info-color-text-alt-s), var(--info-color-text-alt-l));
 
   --warning-color-h: #{hue($warning-color)};
   --warning-color-s: #{saturation($warning-color)};
@@ -262,7 +262,7 @@
   --warning-color-text-alt-s: #{$warning-color-text-alt-s};
   --warning-color-text-alt-l: #{$warning-color-text-alt-l};
   --warning-color-text: hsl(var(--warning-color-h), var(--warning-color-s), var(--warning-color-text-l));
-  --warning-color-text-alt: hsl(var(--warning-color-h), var(--warning-color-alt-text-s), var(--warning-color-alt-text-l));
+  --warning-color-text-alt: hsl(var(--warning-color-h), var(--warning-color-text-alt-s), var(--warning-color-text-alt-l));
 
   --danger-color-h: #{hue($danger-color)};
   --danger-color-s: #{saturation($danger-color)};
@@ -280,5 +280,5 @@
   --danger-color-text-alt-s: #{$danger-color-text-alt-s};
   --danger-color-text-alt-l: #{$danger-color-text-alt-l};
   --danger-color-text: hsl(var(--danger-color-h), var(--danger-color-s), var(--danger-color-text-l));
-  --danger-color-text-alt: hsl(var(--danger-color-h), var(--danger-color-alt-text-s), var(--danger-color-alt-text-l));
+  --danger-color-text-alt: hsl(var(--danger-color-h), var(--danger-color-text-alt-s), var(--danger-color-text-alt-l));
 }

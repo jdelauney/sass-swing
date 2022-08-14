@@ -32,7 +32,7 @@ $min-grid-col-width: 0 !default;
 
 $global-border-width: 1px !default;
 $global-outline-width: 2px !default;
-$global-border-radius: 0.5rem !default;
+$global-border-radius: 0.35rem !default;
 
 $primary-shadow: #{make-shadow('smooth')} !default;
 $primary-shadow-alt: #{make-shadow('smooth-light')};
@@ -63,12 +63,12 @@ $on-neutral-light-color-variation-3-l: 60% !default;
 $brand-color: $color-SteelBlue2 !default;
 $primary-shadow: none !default;
 $on-primary-light-color-s: saturation($brand-color) !default;
-$on-primary-light-color-l: 90% !default;
+$on-primary-light-color-l: 95% !default;
 
 $primary-light-color-variation-1-s: saturation($brand-color) !default;
 $primary-light-color-variation-1-l: 50% !default;
 $on-primary-light-color-variation-1-s: saturation($brand-color) !default;
-$on-primary-light-color-variation-1-l: 8% !default;
+$on-primary-light-color-variation-1-l: 90% !default;
 $primary-shadow-variation-1: #{make-shadow('smooth')} !default;
 
 $primary-light-color-variation-2-s: 100% !default;

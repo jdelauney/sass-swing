@@ -68,7 +68,7 @@ input[type='reset'],
   //--active-box-shadow:var(--button-shadow);
 
   --focus-outline-width: calc(var(--border-width) * 3);
-  --focus-outline-color: var(--primary-color-variation-3);
+  --focus-outline-color: var(--on-primary-color-variation-1);
 
   background-color: var(--background-color);
   color: var(--color);
@@ -108,16 +108,15 @@ button[type='reset'],
   --active-color: var(--on-secondary-color-variation-2);
   --active-border-color: var(--secondary-color-variation-1);
 
-  --focus-outline-color: var(--secondary-color-variation-3);
+  --focus-outline-color: var(--on-secondary-color-variation-1);
 }
 
 .btn--outline {
+  --border-color: var(--background-color);
+  --color: var(--background-color);
+  --hover-color: var(--hover-background-color);
+  --hover-border-color: var(--hover-background-color);
   background: transparent !important;
-  color: var(--background-color) !important;
-
-  &:hover {
-    color: var(--hover-background-color) !important;
-  }
 }
 
 .btn--pills {
@@ -127,17 +126,17 @@ button[type='reset'],
 .btn--noshadow {
   box-shadow: none !important;
 
-  &:hover {
-    box-shadow: none !important;
-  }
+  //&:hover {
+  //  box-shadow: none !important;
+  //}
 }
 
 .btn--noborder {
   border-style: none !important;
 
-  &:hover {
-    border-style: none !important;
-  }
+  //&:hover {
+  //  border-style: none !important;
+  //}
 }
 
 .btn--norounded {
