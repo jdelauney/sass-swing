@@ -65,8 +65,8 @@
   --on-neutral-color-l: #{$on-neutral-light-color-l};
   --on-neutral-color: hsl(
     var(--neutral-color-h),
-    var(--neutral-color-s),
-    var(--neutral-color-l)
+    var(--on-neutral-color-s),
+    var(--on-neutral-color-l)
   );
 
   --neutral-color-variation-1-s: #{$neutral-light-color-variation-1-s};
