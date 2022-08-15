@@ -9,12 +9,12 @@ form {
   --box-shadow: var(--primary-shadow);
 
   position: relative;
-  padding: var(--form-inner-spacing);
+  padding: var(--padding, var(--inner-spacing));
+  background-color: var(--background-color);
+  color: var(--color);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
-  background-color: var(--background-color);
   box-shadow: var(--box-shadow);
-  color: var(--color);
 
   > footer {
     display: flex;
@@ -137,14 +137,15 @@ textarea {
     --border: var(--border-width) solid var(--border-color);
     --box-shadow: var(--primary-shadow);
 
-    --active-background-color: var(--neutral-color-variation-1);
+    --active-background-color: var(--neutral-color);
     --active-color: var(--on-neutral-color);
     --active-border-color: var(--primary-color-variation-3);
     --active-box-shadow: var(--primary-shadow-variation-1);
 
-    --hover-background-color: var(--primary-color-variation-1);
-    --hover-color: var(--on-primary-color-variation-1);
-    --hover-border-color: var(--primary-color-variation-3);
+    --hover-background-color: var(--neutral-color-variation-1);
+    --hover-color: var(--primary-color);
+    --hover-border-color: var(--primary-color-variation-1);
+
     --placeholder-color: var(--on-neutral-color-variation-3);
     --focus-outline-width: var(--elem-outline-width);
     --focus-border-color: var(--primary-color-variation-1);
@@ -162,10 +163,10 @@ textarea {
 
     &:active,
     &:focus {
-      border: var(--border-width) solid var(--active-border-color);
       background-color: var(--active-background-color);
-      box-shadow: var(--active-box-shadow);
       color: var(--active-color);
+      border: var(--border-width) solid var(--active-border-color);
+      box-shadow: var(--active-box-shadow);
     }
 
     &:focus {
@@ -173,6 +174,8 @@ textarea {
     }
 
     &:hover {
+      background-color: var(--hover-background-color);
+      color: var(--hover-color);
       border: var(--border-width) solid var(--hover-border-color);
     }
   }
@@ -261,26 +264,9 @@ select {
     padding-left: var(--input-spacing-h);
     padding-inline-start: var(--input-spacing-h);
     padding-inline-end: calc(var(--input-spacing-h) + 1.5rem);
-    background-image: linear-gradient(
-        var(--input-color-grad-background) 0%,
-        var(--input-color-grad-background) 100%
-      ),
-      linear-gradient(
-        -135deg,
-        transparent 50%,
-        var(--input-color-grad-background-alt) 50%
-      ),
-      linear-gradient(
-        -225deg,
-        transparent 50%,
-        var(--input-color-grad-background-alt) 50%
-      ),
-      linear-gradient(
-        var(--input-color-grad-background-alt) 42%,
-        var(--input-color-grad-background) 42%
-      );
-    background-position: right 20px center, right bottom, right bottom,
-      right bottom;
+    background-image: linear-gradient(var(--input-color-grad-background) 0%, var(--input-color-grad-background) 100%), linear-gradient(-135deg, transparent 50%, var(--input-color-grad-background-alt) 50%),
+      linear-gradient(-225deg, transparent 50%, var(--input-color-grad-background-alt) 50%), linear-gradient(var(--input-color-grad-background-alt) 42%, var(--input-color-grad-background) 42%);
+    background-position: right 20px center, right bottom, right bottom, right bottom;
     background-size: 0 100%, 20px 30px, 20px 30px, 20px 100%;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-color: var(--input-color-grad-background);
@@ -288,12 +274,7 @@ select {
 
     &:active,
     &:hover {
-      background-image: linear-gradient(
-          var(--primary-hover) 0%,
-          var(--primary-hover) 100%
-        ),
-        linear-gradient(-135deg, transparent 50%, var(--primary-hover) 50%),
-        linear-gradient(-225deg, transparent 50%, var(--primary-hover) 50%),
+      background-image: linear-gradient(var(--primary-hover) 0%, var(--primary-hover) 100%), linear-gradient(-135deg, transparent 50%, var(--primary-hover) 50%), linear-gradient(-225deg, transparent 50%, var(--primary-hover) 50%),
         linear-gradient(var(--primary-hover) 42%, var(--primary-hover-text) 42%);
     }
   }
@@ -491,8 +472,7 @@ input[type='checkbox'][role='switch'] {
     background-color: var(--input-switch-background-checked);
     &:before {
       margin-left: calc(1.9em + (var(--input-switch-border-width) * 2));
-      border: var(--border-width) solid
-        var(--input-switch-inner-border-color-checked);
+      border: var(--border-width) solid var(--input-switch-inner-border-color-checked);
       background-color: var(--input-switch-checked);
     }
     &:after {
@@ -511,8 +491,7 @@ input[type='checkbox'][role='switch'] {
 // Range
 input[type='range'] {
   --range-thumb-color: var(--input-range-thumb);
-  --range-thumb-border: var(--border-width) solid
-    var(--input-range-thumb-border-color);
+  --range-thumb-border: var(--border-width) solid var(--input-range-thumb-border-color);
   --range-track-border-color: var(--input-range-track);
   appearance: none;
   position: relative;
@@ -572,15 +551,13 @@ input[type='range'] {
   &:focus {
     --range-track-border-color: var(--input-range-track-active);
     --range-thumb-color: var(--input-range-thumb-hover);
-    --range-thumb-border: calc(var(--border-width) * 2) solid
-      var(--input-range-thumb-border-color-hover);
+    --range-thumb-border: calc(var(--border-width) * 2) solid var(--input-range-thumb-border-color-hover);
   }
 
   &:active {
     --range-track-border-color: var(--input-range-track-active);
     --range-thumb-color: var(--input-range-thumb-active);
-    --range-thumb-border: calc(var(--border-outline-width) * 2) solid
-      var(--input-range-thumb-active-border-color);
+    --range-thumb-border: calc(var(--border-outline-width) * 2) solid var(--input-range-thumb-active-border-color);
 
     &::-webkit-slider-thumb {
       transform: scale(1.25);
