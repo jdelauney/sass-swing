@@ -401,8 +401,8 @@ input[type='checkbox'] {
 input[type='checkbox'][role='switch'] {
   --radius-size: calc(1.25em - (var(--border-width) * 4));
   --background-color: var(--neutral-color-variation-1);
-  --background-color-checked: var(--primary-color);
-  --switch-color: var(--primary-color-variation-1);
+  --switch-color-checked: var(--primary-color-variation-1);
+  --switch-color: var(--primary-color);
   --color: var(--primary-color);
   --label-on-color: var(--on-primary-color-variation-1);
   --label-off-color: var(--on-neutral-color-variation-1);
@@ -466,11 +466,11 @@ input[type='checkbox'][role='switch'] {
 
   &:checked {
     border: var(--border-width) solid var(--inner-border-color);
-    background-color: var(--background-color-checked);
+    background-color: var(--switch-color);
     &:before {
       margin-left: calc(1.9em + (var(--border-width) * 2));
-      border: var(--border-width) solid var(--inner-border-color);
-      background-color: var(--background-color-checked);
+      //border: var(--border-width) solid var(--inner-border-color);
+      background-color: var(--switch-color-checked);
     }
     &:after {
       right: unset;
@@ -557,7 +557,7 @@ input[type='range'] {
   &:focus {
     --track-border-color: var(--primary-color-variation-1);
     --thumb-color: var(--primary-color-variation-1);
-    --thumb-border: calc(var(--border-width) * 2) solid var(--primary-color-variation-2);
+    --thumb-border: calc(var(--border-width) * 2) solid var(--primary-color-variation-1);
   }
 
   &:active {
