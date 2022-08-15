@@ -105,7 +105,7 @@ $on-secondary-light-color-variation-3-l: 85% !default;
 $secondary-shadow-variation-3: #{make-shadow('diffuse')} !default;
 
 /* Success color */
-$success-color: $color-emerald-700 !default;
+$success-color: $color-emerald-400 !default;
 $success-color-lighten-ratio: 0.4 !default;
 $success-color-darken-ratio: 0.4 !default;
 $success-color-saturate-ratio: 0.4 !default;
@@ -115,7 +115,7 @@ $success-color-text-alt-s: 60% !default;
 $success-color-text-alt-l: 85% !default;
 
 /* Info color */
-$info-color: $color-light-blue-800 !default;
+$info-color: $color-light-blue-500 !default;
 $info-color-lighten-ratio: 0.4 !default;
 $info-color-darken-ratio: 0.4 !default;
 $info-color-saturate-ratio: 0.4 !default;
@@ -125,7 +125,7 @@ $info-color-text-alt-s: 90% !default;
 $info-color-text-alt-l: 90% !default;
 
 /* Warning color */
-$warning-color: $color-amber-700 !default;
+$warning-color: $color-amber-400 !default;
 $warning-color-lighten-ratio: 0.4 !default;
 $warning-color-darken-ratio: 0.4 !default;
 $warning-color-saturate-ratio: 0.4 !default;
@@ -135,7 +135,7 @@ $warning-color-text-alt-s: 90% !default;
 $warning-color-text-alt-l: 85% !default;
 
 /* Danger color */
-$danger-color: $color-red-700 !default;
+$danger-color: $color-red-alt-500 !default;
 $danger-color-lighten-ratio: 0.4 !default;
 $danger-color-darken-ratio: 0.4 !default;
 $danger-color-saturate-ratio: 0.4 !default;

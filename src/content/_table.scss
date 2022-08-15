@@ -1,6 +1,13 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 table {
+  --background-color: var(--neutral-color-variation-1);
+  --color: var(--on-neutral-color-variation-1);
+  --header-background-color: var(--neutral-color-variation-3);
+  --header-color: var(--on-neutral-color-variation-3);
+  --border-width: var(--elem-border-width);
+  --border-color: var(--on-neutral-color-variation-1);
+
   display: block;
   position: relative;
   overflow-x: auto;
@@ -14,11 +21,11 @@ table {
   z-index: 1;
 
   thead {
-    background-color: var(--table-header-color-background, --muted-color-background);
-    color: var(--table-header-color-text, --muted-color-text);
+    background-color: var(--header-background-color);
+    color: var(--header-color);
     border-bottom: 2px solid currentColor;
     th {
-      padding: .5em .8em;
+      padding: 0.5em 0.8em;
       text-align: left;
       font-weight: 700;
       &:not(:last-child) {
@@ -32,44 +39,42 @@ table {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    background-color: hsla(var(--table-body-color-background, --general-color-background-alt), .5);
-    color: var(--table-body-color-text, --muted-color-text);
+    background-color: hsla(var(--neutral-color-h), var(--neutral-color-variation-1-s), var(--neutral-color-variation-1-l) 0.5);
+    color: var(--color);
     white-space: nowrap;
   }
 
   tfoot {
-    background-color: var(--table-footer-color-background, --muted-color-background);
-    color: var(--table-footer-color-text, --muted-color-text);
+    background-color: var(--header-background-color);
+    color: var(--header-color);
   }
 
-  tr{
+  tr {
     //display: table-row;
     //display: block;
     margin: 0;
     vertical-align: top;
-
-
   }
 
   tr > th {
-    background-color: var(--table-header-color-background, --muted-color-background);
-    color: var(--table-header-color-text, --muted-color-text);
+    background-color: var(--header-background-color);
+    color: var(--header-color);
   }
 
   tbody > tr > td {
     display: table-cell;
-    padding: .5em .8em;
-    border-bottom: var(--table-border-width, --general-border-width) dotted var(--table-color-border, --general-color-border);
+    padding: 0.5em 0.8em;
+    border-bottom: var(--border-width) dotted var(--border-color);
 
     &:not(:last-child) {
       padding-right: 1.5em;
     }
   }
 
-  td, th {
+  td,
+  th {
     position: relative;
   }
-
 }
 
 .table--sticky-header {
@@ -83,16 +88,15 @@ table {
 }
 
 .table--row-hover {
-  tbody tr{
-    transition: all .2s ease-in-out;
+  tbody tr {
+    transition: all 0.2s ease-in-out;
     &:hover {
-      background-color: var(--table-color-row-hover-background, hsla(var(--primary-color-lighten), .5));
+      background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
     }
   }
 }
 
 .table--col-hover {
-
   overflow-y: hidden;
 
   td:hover::after,
@@ -110,14 +114,13 @@ table {
 
   td:hover::after,
   th:hover::after {
-    background-color: var(--table-color-col-hover-background, hsla(var(--primary-color-lighten), .5));
+    background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
   }
-
 
   /* Focus stuff for mobile */
   td:focus::after,
   th:focus::after {
-    background-color: var(--table-color-row-hover-background, hsla(var(--primary-color-lighten), .5));
+    background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
   }
   td:focus::before,
   tbody th:focus::before {
@@ -127,30 +130,30 @@ table {
     left: -5000px;
     width: 10000px;
     height: 100%;
-    background-color: var(--table-color-row-hover-background, hsla(var(--primary-color-lighten), .5));
+    background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
     content: '';
   }
 }
 
 .table--cell-hover {
   tbody tr td:hover {
-    background-color: var(--table-color-hover-cell-background, var(--primary-color-darken));
-    color:var(--table-color-hover-cell-text, var(--primary-color-alt-text));
+    background-color: var(--primary-color-variation-2);
+    color: var(--on-primary-color-variation-2);
     cursor: pointer;
   }
 }
 
 .table--bordered {
   // border: 1px solid var(--clr-primary-200);
-  --_table-border : var(--table-border-width, --general-border-width) solid var(--table-color-border, --general-color-border);
+  --_table-border: var(--border-width) solid var(--border-color);
   thead,
   tbody,
-  tfoot, {
-    border:  var(--_table-border);
+  tfoot {
+    border: var(--_table-border);
   }
 
   tr {
-    border-bottom:  var(--_table-border);
+    border-bottom: var(--_table-border);
 
     &:last-of-type {
       border-bottom: none;
@@ -159,7 +162,7 @@ table {
 
   th,
   td {
-    border-right:  var(--_table-border);
+    border-right: var(--_table-border);
   }
 }
 
@@ -182,7 +185,10 @@ table {
     overflow: hidden;
   }
 
-  tbody, tr, th, td {
+  tbody,
+  tr,
+  th,
+  td {
     display: block;
   }
 
@@ -193,7 +199,8 @@ table {
     }
   }
 
-  th, td {
+  th,
+  td {
     padding: 0.5em;
     vertical-align: middle;
   }
@@ -213,7 +220,7 @@ table {
   }
 
   &.table--bordered {
-    --_table-border : var(--table-border-width, --general-border-width) solid var(--table-color-border, --general-color-border);
+    --_table-border: var(--border-width) solid var(--border-color);
     thead,
     tbody {
       border-right: none;
@@ -239,7 +246,7 @@ table {
 
 @include mq(tablet-medium) {
   .table--responsive {
-    width:auto;
+    width: auto;
     thead {
       clip: initial;
       display: table-header-group;
@@ -255,9 +262,10 @@ table {
       vertical-align: top;
     }
 
-    td,th {
+    td,
+    th {
       display: table-cell;
-      padding: .4rem .8rem;
+      padding: 0.4rem 0.8rem;
     }
 
     td {
