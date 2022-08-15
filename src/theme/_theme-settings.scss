@@ -34,9 +34,6 @@ $global-border-width: 1px !default;
 $global-outline-width: 2px !default;
 $global-border-radius: 0.35rem !default;
 
-$primary-shadow: #{make-shadow('smooth')} !default;
-$primary-shadow-alt: #{make-shadow('smooth-light')};
-
 /* neutral light color */
 $neutral-light-color: $color-neutral-100 !default;
 $on-neutral-light-color-s: saturation($neutral-light-color) !default;
@@ -45,12 +42,12 @@ $neutral-shadow: #{make-shadow('smooth-light')} !default;
 $neutral-shadow-alt: 0 2px 6px rgba(0, 0, 0, 0.25), 0 10px 12px rgba(0, 0, 0, 0.15) !default;
 
 $neutral-light-color-variation-1-s: saturation($neutral-light-color) !default;
-$neutral-light-color-variation-1-l: 85% !default;
+$neutral-light-color-variation-1-l: 97% !default;
 $on-neutral-light-color-variation-1-s: saturation($neutral-light-color) !default;
 $on-neutral-light-color-variation-1-l: 10% !default;
 
 $neutral-light-color-variation-2-s: saturation($neutral-light-color) !default;
-$neutral-light-color-variation-2-l: 75% !default;
+$neutral-light-color-variation-2-l: 92% !default;
 $on-neutral-light-color-variation-2-s: saturation($neutral-light-color) !default;
 $on-neutral-light-color-variation-2-l: 15% !default;
 
