@@ -557,7 +557,7 @@ input[type='range'] {
   &:focus {
     --track-border-color: var(--primary-color-variation-1);
     --thumb-color: var(--primary-color-variation-1);
-    --thumb-border: calc(var(--border-width) * 2) solid var(--primary-color-variation-2);
+    --thumb-border: calc(var(--border-width) * 2) solid var(--primary-color-variation-1);
   }
 
   &:active {
