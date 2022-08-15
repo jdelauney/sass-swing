@@ -8,7 +8,7 @@ progress {
   display: inline-block;
   appearance: none;
   width: 100%;
-  height: var(--height, 1.6rem);
+  height: var(--height, 1em);
   margin-top: var(--half-spacing);
   overflow: hidden;
   border: var(--border-width) solid var(--border-color);
@@ -20,7 +20,12 @@ progress {
     background: transparent;
     border-radius: var(--border-radius);
   }
-  &[value]::-webkit-progress-value,
+
+  &[value]::-webkit-progress-value {
+    background-color: var(--color);
+    border-radius: var(--border-radius);
+  }
+
   &::-moz-progress-bar {
     background-color: var(--color);
     border-radius: var(--border-radius);
@@ -29,7 +34,7 @@ progress {
   &:indeterminate,
   &[indeterminate='true'],
   &:not([value]) {
-    background: var(--background-color), linear-gradient(to right, var(--color) 30%, var(--background-color) 30%) top left / 150% 150% no-repeat;
+    background: linear-gradient(to right, var(--color) 30%, var(--background-color) 30%) top left / 150% 150% no-repeat;
 
     animation: progressIndeterminate 2.5s linear infinite alternate;
 

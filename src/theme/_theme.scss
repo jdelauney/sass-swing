@@ -1,6 +1,7 @@
 @use 'theme-settings' as *;
 @use 'colors' as *;
 @use 'sass:math';
+@use '../abstracts/functions' as *;
 /* common layout settings */
 :root {
   --font-content-line-height: #{$default-line-height};
@@ -281,4 +282,10 @@
   --danger-color-text-alt-l: #{$danger-color-text-alt-l};
   --danger-color-text: hsl(var(--danger-color-h), var(--danger-color-s), var(--danger-color-text-l));
   --danger-color-text-alt: hsl(var(--danger-color-h), var(--danger-color-text-alt-s), var(--danger-color-text-alt-l));
+
+  --icon-success: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg fill='none' stroke='#{color-yiq($success-color)}' stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath stroke-width='1.016' d='M73.699 91.713l2.57 2.158 4.082-4.57'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' stroke-width='.508' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-warning: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath fill='none' stroke='#{color-yiq($warning-color)}' stroke-width='1.016' d='M6.444 8.621l-.062-5.03'/%3E%3Cpath fill='none' stroke='#{color-yiq($warning-color)}' stroke-width='.508' d='M12.415 12.394L.317 12.363 6.444.317z' paint-order='stroke fill markers'/%3E%3Cpath d='M7.2 10.635a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-danger: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg fill='none' stroke='#{color-yiq($danger-color)}' stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath stroke-width='1.016' d='M79.238 93.844l-4.857-4.768'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' stroke-width='.508' paint-order='stroke fill markers'/%3E%3Cpath stroke-width='1.016' d='M74.425 93.889l4.77-4.857'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-info: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath fill='none' stroke='#{color-yiq($info-color)}' stroke-width='1.016' d='M76.841 93.087l-.062-5.03'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' fill='none' stroke='%23000' stroke-width='.508' paint-order='stroke fill markers'/%3E%3Cpath d='M77.597 95.101a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10' cy='10' r='8'%3E%3C/circle%3E%3Cline x1='23' y1='23' x2='15' y2='15'%3E%3C/line%3E%3C/svg%3E");
 }
