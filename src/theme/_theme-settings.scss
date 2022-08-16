@@ -122,7 +122,7 @@ $on-success-color-variation-2-l: 90% !default;
 /* Info color */
 $info-color: $color-light-blue-500 !default;
 $on-info-color-s: saturation($info-color) !default;
-$on-info-color-l: 85% !default;
+$on-info-color-l: 95% !default;
 
 $info-color-variation-1-s: saturation($info-color) !default;
 $info-color-variation-1-l: 80% !default;
@@ -157,12 +157,12 @@ $on-danger-color-l: 95% !default;
 $danger-color-variation-1-s: saturation($danger-color) !default;
 $danger-color-variation-1-l: 80% !default;
 $on-danger-color-variation-1-s: saturation($danger-color) !default;
-$on-danger-color-variation-1-l: 20% !default;
+$on-danger-color-variation-1-l: 10% !default;
 
 $danger-color-variation-2-s: 35% !default;
 $danger-color-variation-2-l: 30% !default;
 $on-danger-color-variation-2-s: saturation($danger-color) !default;
-$on-danger-color-variation-2-l: 90% !default;
+$on-danger-color-variation-2-l: 95% !default;
 
 /* misc colors */
 $code-color-background: #2d2d2d !default;
