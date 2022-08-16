@@ -45,6 +45,17 @@
   //:not([data-theme="dark"])
   color-scheme: light;
 
+  --scrollbar-color-background: var(--secondary-color-variation-2);
+  --scrollbar-color-thumb: var(--secondary-color-variation-1);
+  --scrollbar-color-thumb-border: var(--secondary-color);
+
+  --color-h1: #{$color-neutral-900};
+  --color-h2: #{mix($color-neutral-900, $color-neutral-800)};
+  --color-h3: #{$color-neutral-800};
+  --color-h4: #{mix($color-neutral-800, $color-neutral-700)};
+  --color-h5: #{$color-neutral-700};
+  --color-h6: #{mix($color-neutral-700, $color-neutral-600)};
+
   --neutral-color-h: #{hue($neutral-light-color)};
   --neutral-color-s: #{saturation($neutral-light-color)};
   --neutral-color-l: #{lightness($neutral-light-color)};
@@ -174,17 +185,6 @@
 
 /* common theme schema settings */
 :root {
-  --scrollbar-color-background: var(--secondary-color-variation-2);
-  --scrollbar-color-thumb: var(--secondary-color-variation-1);
-  --scrollbar-color-thumb-border: var(--secondary-color);
-
-  --color-h1: #{$color-neutral-100};
-  --color-h2: #{mix($color-neutral-100, $color-neutral-200)};
-  --color-h3: #{$color-neutral-200};
-  --color-h4: #{mix($color-neutral-200, $color-neutral-300)};
-  --color-h5: #{$color-neutral-300};
-  --color-h6: #{mix($color-neutral-300, $color-neutral-400)};
-
   --divider-color: #{$divider-color};
 
   --code-color-background: #{$code-color-background};
