@@ -174,9 +174,9 @@
 
 /* common theme schema settings */
 :root {
-  --scrollbar-color-background: var(--secondary-color);
-  --scrollbar-color-thumb: var(--secondary-color-variation-2);
-  --scrollbar-color-thumb-border: var(--on-secondary-color);
+  --scrollbar-color-background: var(--secondary-color-variation-2);
+  --scrollbar-color-thumb: var(--secondary-color-variation-1);
+  --scrollbar-color-thumb-border: var(--secondary-color);
 
   --color-h1: #{$color-neutral-100};
   --color-h2: #{mix($color-neutral-100, $color-neutral-200)};
