@@ -300,7 +300,7 @@ input[type='radio'] {
     --color: var(--primary-color);
     --border-width: var(--control-border-width);
     --border-color: var(--primary-color-variation-2);
-    --hover-border-color: var(--primary-color);
+    --hover-border-color: var(--primary-color-variation-1);
     --outline-width: var(--elem-outline-width);
     --focus-border-color: var(--primary-color-variation-1);
 
@@ -640,10 +640,10 @@ input[type='color'] {
 }
 
 input[type='search'] {
-  padding-left: calc(var(--input-spacing-h) + 1.75rem) !important;
+  padding-left: calc(var(--spacing-h) + 1.25em) !important;
   border-radius: 5em !important;
   background-image: var(--icon-search);
-  background-position: center left 1.125rem;
+  background-position: center left 0.75em;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 
