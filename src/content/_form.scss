@@ -281,14 +281,6 @@ select {
 
 input[type='checkbox'],
 input[type='radio'] {
-  --background-color: var(--primary-color);
-  --color: var(--primary-color);
-  --border-width: var(--control-border-width);
-  --border-color: var(--primary-color-variation-2);
-  --hover-border-color: var(--primary-color-variation-1);
-  --outline-width: var(--elem-outline-width);
-  --focus-border-color: var(--primary-color-variation-1);
-
   clip: rect(0 0 0 0);
   appearance: none;
   width: 0;
@@ -304,6 +296,14 @@ input[type='radio'] {
   opacity: 0;
 
   & + label {
+    --background-color: var(--primary-color);
+    --color: var(--primary-color);
+    --border-width: var(--control-border-width);
+    --border-color: var(--primary-color-variation-2);
+    --hover-border-color: var(--primary-color-variation-1);
+    --outline-width: var(--elem-outline-width);
+    --focus-border-color: var(--primary-color-variation-1);
+
     display: inline-flex;
     align-items: center;
     position: relative;
