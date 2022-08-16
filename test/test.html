@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Sass Swing test</title>
+	<meta name="Description" content="Sass Swing test"/>
+
+	<meta name="robots" content="index, follow">
+
+	<link rel="stylesheet" href="./styles/css/style.css">
+</head>
+<body>
+	<main class="container">
+		<h1 style="--ta:center;">SASS SWING TEST</h1>
+		<section>
+			<hr>
+			<h2>LINKS</h2>
+			<h3>DEFAULT/PRIMARY</h3>
+			<a href="#">Primary</a>&nbsp;
+			<a href="#" class="link-underline" >Underline</a>&nbsp;
+			<a href="#" class="link-underline link-underline--dashed">Dashed</a>&nbsp;
+			<a href="#" class="link-underline link-underline--dotted">Dotted</a>&nbsp;
+			<a href="#" class="link-underline link-underline--overline">Overline</a>&nbsp;
+			<a href="#" class="link-underline link-underline--around">Around</a>&nbsp;
+			<a href="#" class="link-underline link-underline--lineThrough">LineThrough</a>&nbsp;
+			<a href="#" class="link-underline link-underline--wavy">Wavy</a>&nbsp;
+			<a href="#" class="link--mark">Mark</a>
+			<a role="button" href="#">Primary</a>
+			<h3>SECONDARY</h3>
+			<a href="#" class="link--secondary">Secondary</a>&nbsp;
+			<a href="#" class="link--secondary link-underline">Underline</a>&nbsp;
+			<a href="#" class="link--secondary link-underline link-underline--dashed">Dashed</a>&nbsp;
+			<a href="#" class="link--secondary link-underline link-underline--dotted">Dotted</a>&nbsp;
+			<a href="#" class="link--secondary link-underline link-underline--overline">Overline</a>&nbsp;
+			<a href="#" class="link--secondary link-underline link-underline--around">Around</a>&nbsp;
+			<a href="#" class="link--secondary link-underline link-underline--lineThrough">LineThrough</a>&nbsp;
+			<a href="#" class="link--secondary link-underline link-underline--wavy">Wavy</a>&nbsp;
+			<a href="#" class="link--secondary link--mark" >Mark</a>
+			<a role="button" href="#" class="btn--secondary">Secondary</a>
+		</section>
+		<section>
+			<hr>
+			<h2>BUTTONS</h2>
+			<button>Primary</button>
+			<article>
+				<button class="btn--secondary">Secondary</button>
+				<button class="btn--info">Info</button>
+				<button class="btn--success">Success</button>
+				<button class="btn--warning">Warning</button>
+				<button class="btn--danger">Danger</button>
+			</article>
+			<article>
+				<button class="btn--outline">Outline Primary</button>
+				<button class="btn--secondary btn--outline">Outline Secondary</button>
+				<button class="btn--pills">Pills</button>
+				<button class="btn--circle">Circle</button>
+			</article>
+			<article>
+				<button class="btn--small">Small</button>
+				<button class="btn--big">Big</button>
+				<button class="btn--noshadow">No shadow</button>
+				<button class="btn--noborder">No border</button>
+				<button class="btn--norounded">No rounded</button>
+			</article>
+		</section>
+		<section>
+			<hr>
+			<h2>FORM</h2>
+			<form>
+				<div class="grid gap-1">
+					<label for="firstname">
+						Firstname :
+						<input type="text" id="firstname">
+					</label>
+					<label for="pwd">
+						Mot de passe :
+						<input type="password" id="pwd" placeholder="mot de passe">
+					</label>
+					<div class="input-group-inline">
+						<label for="pseudo">Pseudo :</label>
+						<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" aria-describedby="pseudoHelp" autocomplete="off" required>
+						<small id="pseudoHelp">Spécials characters are not allowed</small>
+					</div>
+					<input type="text" placeholder="Valid" aria-invalid="false">
+					<input type="text" placeholder="Invalid" aria-invalid="true">
+					<input type="text" placeholder="Disabled" disabled>
+					<input type="text" value="Readonly" readonly>
+					<label for="combobox">
+						Role
+						<select id="combobox" required>
+							<option value="" selected>Select a role…</option>
+							<option value="1" data-color="#ff0000">Administrator</option>
+							<option value="2">Moderator</option>
+							<option value="3">Premium member</option>
+							<option value="4">Member</option>
+						</select>
+					</label>
+					<fieldset>
+						<legend>Size</legend>
+						<input type="radio" id="small" name="size" value="small" checked>
+						<label for="small">Small</label>
+						<input type="radio" id="medium" name="size" value="medium">
+						<label for="medium">Medium</label>
+						<input type="radio" id="large" name="size" value="large">
+						<label for="large">Large</label>
+					</fieldset>
+					<fieldset>
+						<input type="checkbox" id="terms" name="terms">
+						<label for="terms">J'accepte les termes et conditions</label>
+					</fieldset>
+
+					<fieldset>
+						<label for="switch">
+							<input type="checkbox" id="switch" name="switch" role="switch">
+							Publier mon profil
+						</label>
+					</fieldset>
+
+					<fieldset>
+						<label for="switch1">
+							Suivre les commentaires
+							<input type="checkbox" id="switch1" name="switch1" role="switch" data-on-label="OUI" data-off-label="NON">
+						</label>
+					</fieldset>
+					<label for="numner">Nombre
+						<input type="number" id="number" name="number" value="100">
+					</label>
+					<label for="range">Range slider
+						<input type="range" min="0" max="100" value="50" id="range" name="range">
+					</label>
+					<label for="color">Color
+						<input type="color" id="color" name="color" value="#0eaaaa">
+					</label>
+					<label for="search">Search
+						<input type="search" id="search" name="search">
+					</label>
+					<label for="date">Date
+						<input type="date" id="date" name="date">
+					</label>
+					<label for="time">Time
+						<input type="time" id="time" name="time">
+					</label>
+					<label for="file">Choisir un fichier
+						<input type="file" id="file" name="file">
+					</label>
+					<label for="customfile" class="btn btn--secondary">Choisir un fichier
+						<input type="file" id="customfile" name="customfile" hidden>
+					</label>
+				</div>
+			</form>
+		</section>
+		<section>
+			<hr>
+			<h2>PROGRESS</h2>
+			<progress value="25" max="100"></progress>
+			<progress value="50" max="100"></progress>
+			<progress value="0" max="100" indeterminate="true"></progress>
+			<progress></progress>
+		</section>
+		<section>
+			<hr>
+			<h2>BLOCKQUOTE</h2>
+			<blockquote>
+				<p>
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+				</p>
+				<footer>
+					<cite>Lorem Ipsum</cite>
+				</footer>
+			</blockquote>
+			<blockquote>
+				<p>
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+				</p>
+				<cite>Lorem Ipsum</cite>
+			</blockquote>
+		</section>
+		<section>
+			<hr>
+			<h2>INLINE TAGS</h2>
+			<div class="grid md:cols-auto gap-3">
+				<div>
+					<p>
+						<abbr title="abbréviation">Abbr</abbr> <code>abbr</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/abbr" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>abbr</b> <i>title</i>=<u>&quot;abbr&eacute;viation&quot;</u>&gt;Abbr&lt;<b>/abbr</b>&gt;</code>
+					</p>
+					<p>
+						<time datetime="2022-07-07">7 Juillet</time> <code>time</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/time" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>time</b> <i>datetime</i>=<u>&quot;2022-07-07&quot;</u>&gt;7 Juillet&lt;<b>/time</b>&gt;</code>
+					</p>
+					<p>
+						<strong>Bold</strong> <code>strong</code> <code>b</code>  <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/strong" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>strong</b>&gt;Bold&lt;<b>/strong</b>&gt;</code>
+					</p>
+					<p>
+						<em>italic</em> <code>em</code>&nbsp;<code>i</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/em" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>em</b>&gt;italic&lt;<b>/em</b>&gt;</code>
+					</p>
+					<p>
+						<u>souligné</u> <code>u</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/u" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>u</b>&gt;soulign&eacute;&lt;<b>/u</b>&gt;</code>
+					</p>
+					<p>
+						<s>barré</s> <code>s</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/s" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>s</b>&gt;barr&eacute;&lt;<b>/s</b>&gt;</code>
+					</p>
+					<p>
+						<mark class="mark--default-primary">surligné</mark> <code>mark</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/mark" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>mark</b>&gt;surlign&eacute;&lt;<b>/mark</b>&gt;</code>
+					</p>
+					<p>
+						<small>Petit</small> <code>small</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/small" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>small</b>&gt;Petit&lt;<b>/small</b>&gt;</code>
+					</p>
+				</div>
+				<div>
+					<p>
+						Indice<sub>sub</sub> <code>sub</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/sub" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>Indice&lt;<b>sub</b>&gt;sub&lt;<b>/sub</b>&gt;</code>
+					</p>
+					<p>
+						Exposant<sup>sup</sup> <code>sup</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/sup" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>Exposant&lt;<b>sup</b>&gt;sup&lt;<b>/sup</b>&gt;</code>
+					</p>
+					<p>
+						<del>Supprimé</del> <code>del</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/del" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>del</b>&gt;Supprim&eacute;&lt;<b>/del</b>&gt;</code>
+					</p>
+					<p>
+						<ins>Inséré</ins> <code>ins</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/ins" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>ins</b>&gt;Ins&eacute;r&eacute;&lt;<b>/ins</b>&gt;</code>
+					</p>
+					<p>
+						<var>variable</var> <code>var</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/var" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>var</b>&gt;variable&lt;<b>/var</b>&gt;</code>
+					</p>
+					<p>
+						<output name="result" value="60">60</output> <code>output</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/output" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>output</b> <i>name</i>=<u>&quot;result&quot;</u> <i>value</i>=<u>&quot;60&quot;</u>&gt;60&lt;<b>/output</b>&gt;</code>
+					</p>
+					<p>
+						<samp>Clavier non trouvé</samp> <code>samp</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/samp" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>samp</b>&gt;Clavier non trouvé&lt;<b>/samp</b>&gt;</code>
+					</p>
+					<p>
+						<kbd>Clavier</kbd> <code>kbd</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/kbd" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+						<code>&lt;<b>kbd</b>&gt;Ins&eacute;r&eacute;&lt;<b>/kbd</b>&gt;</code>
+					</p>
+
+				</div>
+			</div>
+		</section>
+		<section>
+			<hr>
+			<h2>TABLE</h2>
+			<h3>Basique</h3>
+			<table>
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				</tbody>
+			</table>
+			<hr>
+			<h3>Bordered</h3>
+			<table class="table--bordered">
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				</tbody>
+			</table>
+      <hr>
+			<h3>Interactive</h3>
+			<table class="table--bordered table--row-hover">
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				</tbody>
+			</table>
+			<hr>
+			<h3>Col hover</h3>
+			<table class="table--bordered table--col-hover">
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				</tbody>
+			</table>
+			<hr>
+			<h3>Col, row and cell hover</h3>
+			<table class="table--bordered table--row-hover table--col-hover table--cell-hover">
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+					<th scope="col">Heading</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+					<td>Cell</td>
+				</tr>
+				</tbody>
+			</table>
+			<h3>Adaptative</h3>
+			<table class="table--responsive table--bordered table--cell-hover">
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Heading 1</th>
+					<th scope="col">Heading 2</th>
+					<th scope="col">Heading 3</th>
+					<th scope="col">Heading 4</th>
+					<th scope="col">Heading 5</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td data-label="Heading 1">Cell</td>
+					<td data-label="Heading 2">Cell</td>
+					<td data-label="Heading 3">Cell</td>
+					<td data-label="Heading 4">Cell</td>
+					<td data-label="Heading 5">Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td data-label="Heading 1">Cell</td>
+					<td data-label="Heading 2">Cell</td>
+					<td data-label="Heading 3">Cell</td>
+					<td data-label="Heading 4">Cell</td>
+					<td data-label="Heading 5">Cell</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td data-label="Heading 1">Cell</td>
+					<td data-label="Heading 2">Cell</td>
+					<td data-label="Heading 3">Cell</td>
+					<td data-label="Heading 4">Cell</td>
+					<td data-label="Heading 5">Cell</td>
+				</tr>
+				</tbody>
+			</table>
+			<hr>
+		</section>
+
+	</main>
+	<footer>
+		(c) Sass Swing 2022
+	</footer>
+</body>
+</html>
