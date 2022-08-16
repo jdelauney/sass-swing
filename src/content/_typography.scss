@@ -84,14 +84,14 @@ $level-size: $heading-base-font-size; //$type-base-size;
   // Assign to element and create utility class
   h#{$level},
   .like-h#{$level} {
-    --color: var(--color-h#{$level});
+    --color: var(--color-h#{$level}, inherit);
+
+    color: var(--color);
     // Fallback for browsers that don't support min / max
     font-size: $level-size;
 
     $level-unitless: math.div($level-size, ($level-size * 0 + 1));
-    margin-top: calc(
-      (var(--heading-flow-space-ratio) * #{math.div($level-unitless, 2)}) * 1em
-    );
+    margin-top: calc((var(--heading-flow-space-ratio) * #{math.div($level-unitless, 2)}) * 1em);
     // Limit in place based on testing -> smaller ratios are
     // prematurely or unnecessarily reduced
     @if ($type-size-ratio > 1.2) {
@@ -128,13 +128,13 @@ $level-size: $heading-base-font-size; //$type-base-size;
 
 h5,
 .like-h5 {
-  color: var(--color-h5, initial);
+  color: var(--color-h5, inherit);
   font-size: var(--heading-font-size);
 }
 
 h6,
 .like-h6 {
-  color: var(--color-h6);
+  color: var(--color-h6, inherit);
   font-size: var(--heading-font-size);
 }
 
