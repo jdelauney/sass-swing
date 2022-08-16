@@ -124,6 +124,7 @@ table {
   }
   td:focus::before,
   tbody th:focus::before {
+    content: '';
     z-index: -1;
     position: absolute;
     top: 0;
@@ -131,7 +132,6 @@ table {
     width: 10000px;
     height: 100%;
     background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
-    content: '';
   }
 }
 
