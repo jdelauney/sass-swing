@@ -91,12 +91,13 @@ table {
   tbody tr {
     transition: all 0.2s ease-in-out;
     &:hover {
-      background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
+      background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l), 0.5);
     }
   }
 }
 
 .table--col-hover {
+  --col-hover-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l), 0.5);
   overflow-y: hidden;
 
   td:hover::after,
@@ -112,15 +113,20 @@ table {
     content: '';
   }
 
+  th,
+  td {
+    transition: all 0.2s ease-in-out;
+  }
+
   td:hover::after,
   th:hover::after {
-    background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
+    background-color: var(--col-hover-color);
   }
 
   /* Focus stuff for mobile */
   td:focus::after,
   th:focus::after {
-    background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
+    background-color: var(--col-hover-color);
   }
   td:focus::before,
   tbody th:focus::before {
@@ -131,7 +137,7 @@ table {
     left: -5000px;
     width: 10000px;
     height: 100%;
-    background-color: hsla(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l) 0.5);
+    background-color: var(--col-hover-color);
   }
 }
 
