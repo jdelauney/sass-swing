@@ -58,7 +58,7 @@ $on-neutral-light-color-variation-3-l: 60% !default;
 
 /* primary light color */
 $brand-color: $color-SteelBlue2 !default;
-$primary-shadow: none !default;
+$primary-shadow: #{make-shadow('smooth-light')} !default;
 $on-primary-light-color-s: saturation($brand-color) !default;
 $on-primary-light-color-l: 96% !default;
 
@@ -66,43 +66,43 @@ $primary-light-color-variation-1-s: saturation($brand-color) !default;
 $primary-light-color-variation-1-l: 55% !default;
 $on-primary-light-color-variation-1-s: saturation($brand-color) !default;
 $on-primary-light-color-variation-1-l: 98% !default;
-$primary-shadow-variation-1: #{make-shadow('smooth')} !default;
+$primary-shadow-variation-1: none !default;
 
 $primary-light-color-variation-2-s: 100% !default;
 $primary-light-color-variation-2-l: 25% !default;
 $on-primary-light-color-variation-2-s: saturation($brand-color) !default;
 $on-primary-light-color-variation-2-l: 85% !default;
-$primary-shadow-variation-2: #{make-shadow('smooth-light')} !default;
+$primary-shadow-variation-2: #{make-shadow('diffuse')} !default;
 
 $primary-light-color-variation-3-s: saturation($brand-color) !default;
 $primary-light-color-variation-3-l: 20% !default;
 $on-primary-light-color-variation-3-s: saturation($brand-color) !default;
 $on-primary-light-color-variation-3-l: 80% !default;
-$primary-shadow-variation-3: #{make-shadow('diffuse')} !default;
+$primary-shadow-variation-3: #{make-shadow('smooth')} !default;
 
 /* Secondary light color */
 $secondary-color: $color-slate-500 !default;
 $on-secondary-light-color-s: saturation($secondary-color) !default;
 $on-secondary-light-color-l: 85% !default;
-$secondary-shadow: none !default;
+$secondary-shadow: #{make-shadow('smooth-light')} !default;
 
 $secondary-light-color-variation-1-s: saturation($secondary-color) !default;
 $secondary-light-color-variation-1-l: 50% !default;
 $on-secondary-light-color-variation-1-s: saturation($secondary-color) !default;
 $on-secondary-light-color-variation-1-l: 95% !default;
-$secondary-shadow-variation-1: #{make-shadow('smooth')} !default;
+$secondary-shadow-variation-1: none !default;
 
 $secondary-light-color-variation-2-s: saturation($secondary-color) !default;
 $secondary-light-color-variation-2-l: 25% !default;
 $on-secondary-light-color-variation-2-s: saturation($secondary-color) !default;
 $on-secondary-light-color-variation-2-l: 80% !default;
-$secondary-shadow-variation-2: #{make-shadow('smooth-light')} !default;
+$secondary-shadow-variation-2: #{make-shadow('diffuse')} !default;
 
 $secondary-light-color-variation-3-s: saturation($secondary-color) !default;
 $secondary-light-color-variation-3-l: 20% !default;
 $on-secondary-light-color-variation-3-s: saturation($secondary-color) !default;
 $on-secondary-light-color-variation-3-l: 85% !default;
-$secondary-shadow-variation-3: #{make-shadow('diffuse')} !default;
+$secondary-shadow-variation-3: #{make-shadow('smooth')} !default;
 
 /* Success color */
 $success-color: $color-emerald-400 !default;
@@ -122,7 +122,7 @@ $on-success-color-variation-2-l: 90% !default;
 /* Info color */
 $info-color: $color-light-blue-500 !default;
 $on-info-color-s: saturation($info-color) !default;
-$on-info-color-l: 85% !default;
+$on-info-color-l: 95% !default;
 
 $info-color-variation-1-s: saturation($info-color) !default;
 $info-color-variation-1-l: 80% !default;
@@ -157,12 +157,12 @@ $on-danger-color-l: 95% !default;
 $danger-color-variation-1-s: saturation($danger-color) !default;
 $danger-color-variation-1-l: 80% !default;
 $on-danger-color-variation-1-s: saturation($danger-color) !default;
-$on-danger-color-variation-1-l: 20% !default;
+$on-danger-color-variation-1-l: 10% !default;
 
 $danger-color-variation-2-s: 35% !default;
 $danger-color-variation-2-l: 30% !default;
 $on-danger-color-variation-2-s: saturation($danger-color) !default;
-$on-danger-color-variation-2-l: 90% !default;
+$on-danger-color-variation-2-l: 95% !default;
 
 /* misc colors */
 $code-color-background: #2d2d2d !default;

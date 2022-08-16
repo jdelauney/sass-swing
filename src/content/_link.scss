@@ -41,14 +41,14 @@ a,
 a.link--secondary {
   --color: var(--secondary-color);
   --decoration-color: var(--secondary-color);
-  --hover-color: var(--on-secondary-color-variation-2);
-  --hover-decoration-color: var(--secondary-color-variation-2);
+  --hover-color: var(--on-secondary-color-variation-1);
+  --hover-decoration-color: var(--secondary-color-variation-1);
 
   &.link--mark {
     --background-color: var(--secondary-color);
     --color: var(--on-secondary-color);
-    --hover-background-color: var(--secondary-color-variation-2);
-    --hover-color: var(--on-secondary-color-variation-2);
+    --hover-background-color: var(--secondary-color-variation-1);
+    --hover-color: var(--on-secondary-color-variation-1);
 
     padding: 0 0.4rem;
   }
