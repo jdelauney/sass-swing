@@ -87,7 +87,7 @@ $on-secondary-light-color-l: 85% !default;
 $secondary-shadow: #{make-shadow('smooth-light')} !default;
 
 $secondary-light-color-variation-1-s: saturation($secondary-color) !default;
-$secondary-light-color-variation-1-l: 50% !default;
+$secondary-light-color-variation-1-l: 40% !default;
 $on-secondary-light-color-variation-1-s: saturation($secondary-color) !default;
 $on-secondary-light-color-variation-1-l: 95% !default;
 $secondary-shadow-variation-1: none !default;
