@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 /** strip-Unit($number)
  * Retourne un nombre sans les unités. Par exemple 16px devient 16
@@ -10,27 +10,25 @@
  * @return [INT]
  */
 @function strip-unit($number) {
-  @return math.div($number , ($number * 0  + 1));
+  @return math.div($number, ($number * 0 + 1));
 }
 
 $type-ratios: (
-        "minorSecond": 1.067,
-        "majorSecond": 1.125,
-        "minorThird": 1.2,
-        "majorThird": 1.25,
-        "perfectFourth": 1.333,
-        "augmentedFourth": 1.414,
-        "perfectFifth": 1.5,
-        "goldenRatio": 1.618,//033988749;
-        "goldenSquareRatio": 1.272 //01964951;
+  'minorSecond': 1.067,
+  'majorSecond': 1.125,
+  'minorThird': 1.2,
+  'majorThird': 1.25,
+  'perfectFourth': 1.333,
+  'augmentedFourth': 1.414,
+  'perfectFifth': 1.5,
+  'goldenRatio': 1.618,
+  //033988749;
+  'goldenSquareRatio': 1.272 //01964951;,,
 );
 
 @function type-ratio($key) {
   @return map-get($type-ratios, $key);
 }
-
-@use "sass:math";
-@use "../abstracts/functions" as *;
 
 /* set-color-opacity($color, $opacity)
  * Modifie l'opacité d'une couleur RGB ou RGBA
@@ -48,7 +46,7 @@ $type-ratios: (
     @return $color;
   }
 
-  @return rgba($color, math.div(strip-unit($opacity) , 100));
+  @return rgba($color, math.div(strip-unit($opacity), 100));
 }
 
 /* color-luminance($color)
@@ -66,9 +64,9 @@ $type-ratios: (
 
   @for $i from 1 through 3 {
     $rgb: nth($rgba, $i);
-    $rgb: $rgb / 255;
+    $rgb: math.div($rgb, 255);
 
-    $rgb: if($rgb < 0.03928, $rgb / 12.92, math.pow(($rgb + 0.055) / 1.055, 2.4));
+    $rgb: if($rgb < 0.03928, math.div($rgb, 12.92), math.pow(math.div(($rgb + 0.055), 1.055), 2.4));
 
     $rgba2: append($rgba2, $rgb);
   }
@@ -86,13 +84,12 @@ $type-ratios: (
  *
  *  * @return [STRING] : retourne la couleur en hexadécimale
  */
-@function color-yiq($color, $threshold : 0.40) {
-  $lum : color-luminance($color);
+@function color-yiq($color, $threshold: 0.4) {
+  $lum: color-luminance($color);
 
   @if ($lum > $threshold) {
     @return darken($color, 50%);
-  }
-  @else {
+  } @else {
     @return lighten($color, 50%);
   }
 }
@@ -113,27 +110,22 @@ $type-ratios: (
   @if (is-warm($color)) {
     @if is-warm(complement($color)) {
       @return mix(complement($color), $color, 20%);
-    }
-    @else {
+    } @else {
       @return mix(complement($color), $color, 15%);
     }
-  }
-  @else if (is-warm($color)) {
+  } @else if (is-warm($color)) {
     @if is-warm(complement($color)) {
       @return mix(complement($color), $color, 30%);
-    }
-    @else {
+    } @else {
       @return mix(complement($color), $color, 25%);
     }
-  }
-  @else {
+  } @else {
     @if is-warmest(complement($color)) {
       @return mix(complement($color), $color, 30%);
     }
     @if is-warm(complement($color)) {
       @return mix(complement($color), $color, 25%);
-    }
-    @else {
+    } @else {
       @return mix(complement($color), $color, 20%);
     }
   }
@@ -143,27 +135,22 @@ $type-ratios: (
   @if (is-warmest($color)) {
     @if is-warm(complement($color)) {
       @return desaturate($color, 20%);
-    }
-    @else {
+    } @else {
       @return desaturate($color, 15%);
     }
-  }
-  @else if (is-warmest($color)) {
+  } @else if (is-warmest($color)) {
     @if is-warm(complement($color)) {
       @return desaturate($color, 30%);
-    }
-    @else {
+    } @else {
       @return desaturate($color, 25%);
     }
-  }
-  @else {
+  } @else {
     @if is-warmest(complement($color)) {
       @return desaturate($color, 30%);
     }
     @if is-warm(complement($color)) {
       @return desaturate($color, 25%);
-    }
-    @else {
+    } @else {
       @return desaturate($color, 20%);
     }
   }
@@ -184,83 +171,119 @@ $type-ratios: (
 *
 * @return []
 */
-@function make-shadow($preset:"custom", $color:#000, $inset:false, $left:0, $top:1, $blur:1, $spread:0, $unit:"px") {
-  $shadowParams : "";
-  @if ($inset == true) { $shadowParams : "inset ";}
-  @if ($preset == "custom") {
-    $shadowParams: $shadowParams + "#{$left}#{$unit} #{$top}#{$unit} #{$blur}#{$unit} #{$spread}#{$unit} #{$color}";
+@function make-shadow($preset: 'custom', $color: #000, $inset: false, $left: 0, $top: 1, $blur: 1, $spread: 0, $unit: 'px') {
+  $shadowParams: '';
+  @if ($inset == true) {
+    $shadowParams: 'inset ';
   }
-  @else if ($preset == "realistic") {
-    $shadowParams: $shadowParams +   "0 1px 1px "   + set-color-opacity($color, 15)
-                                 + ", 0 2px 2px "   + set-color-opacity($color, 15)
-                                 + ", 0 4px 4px "   + set-color-opacity($color, 15)
-                                 + ", 0 8px 8px "   + set-color-opacity($color, 15)
-                                 + ", 0 16px 16px " + set-color-opacity($color, 15);
-  }
-  @else if ($preset == "smooth") {
-    $shadowParams: $shadowParams +   "0 1px 1px "  + set-color-opacity($color, 12)
-                                 + ", 0 2px 2px "  + set-color-opacity($color, 12)
-                                 + ", 0 4px 4px "  + set-color-opacity($color, 12)
-                                 + ", 0 8px 8px "  + set-color-opacity($color, 12)
-                                 + ",0 16px 16px " + set-color-opacity($color, 12);
-  }
-  @else if ($preset == "smooth-light") {
+  @if ($preset == 'custom') {
+    $shadowParams: $shadowParams + '#{$left}#{$unit} #{$top}#{$unit} #{$blur}#{$unit} #{$spread}#{$unit} #{$color}';
+  } @else if ($preset == 'realistic') {
+    $shadowParams: $shadowParams +
+      '0 1px 1px ' +
+      set-color-opacity($color, 15) +
+      ', 0 2px 2px ' +
+      set-color-opacity($color, 15) +
+      ', 0 4px 4px ' +
+      set-color-opacity($color, 15) +
+      ', 0 8px 8px ' +
+      set-color-opacity($color, 15) +
+      ', 0 16px 16px ' +
+      set-color-opacity($color, 15);
+  } @else if ($preset == 'smooth') {
+    $shadowParams: $shadowParams +
+      '0 1px 1px ' +
+      set-color-opacity($color, 12) +
+      ', 0 2px 2px ' +
+      set-color-opacity($color, 12) +
+      ', 0 4px 4px ' +
+      set-color-opacity($color, 12) +
+      ', 0 8px 8px ' +
+      set-color-opacity($color, 12) +
+      ',0 16px 16px ' +
+      set-color-opacity($color, 12);
+  } @else if ($preset == 'smooth-light') {
     /*    $shadowParams: $shadowParams +   "0px 6px 12px -2px "  + set-color-opacity($color, 25)
                                      + ", 0px 3px  7px -3px; " + set-color-opacity($color, 30);   */
-    $shadowParams: $shadowParams +   "0 1px 1px "  + set-color-opacity($color, 5)
-                                 + ", 0 2px 2px "  + set-color-opacity($color, 5)
-                                 + ", 0 4px 4px "  + set-color-opacity($color, 5)
-                                 + ", 0 8px 8px "  + set-color-opacity($color, 6)
-                                 + ",0 16px 16px " + set-color-opacity($color, 6);
-  }
-  @else if ($preset == "medium") {
-    $shadowParams: $shadowParams +   "0 1px 1px "  + set-color-opacity($color, 15)
-                                 + ", 0 2px 2px "  + set-color-opacity($color, 15)
-                                 + ", 0 4px 4px "  + set-color-opacity($color, 15)
-                                 + ", 0 8px 8px "  + set-color-opacity($color, 15);
-  }
-  @else if ($preset == "long") {
-    $shadowParams: $shadowParams +   "0 1px 1px "   + set-color-opacity($color, 11)
-                                 + ", 0 2px 2px "   + set-color-opacity($color, 11)
-                                 + ", 0 4px 4px "   + set-color-opacity($color, 11)
-                                 + ", 0 8px 8px "   + set-color-opacity($color, 11)
-                                 + ", 0 16px 16px " + set-color-opacity($color, 11)
-                                 + ", 0 32px 32px " + set-color-opacity($color, 11);
-  }
-  @else if ($preset == "diffuse") {
-    $shadowParams: $shadowParams +   "0 1px 1px " + set-color-opacity($color, 8)
-                                 + ", 0 2px 2px " + set-color-opacity($color, 12)
-                                 + ", 0 4px 4px " + set-color-opacity($color, 16)
-                                 + ", 0 8px 8px " + set-color-opacity($color, 20)
-  }
-  @else if ($preset == "sharp") {
-    $shadowParams: $shadowParams +   "0 1px 1px "   + set-color-opacity($color, 25)
-                                 + ", 0 2px 2px "   + set-color-opacity($color, 20)
-                                 + ", 0 4px 4px "   + set-color-opacity($color, 15)
-                                 + ", 0 8px 8px "   + set-color-opacity($color, 10)
-                                 + ", 0 16px 16px " + set-color-opacity($color, 5)
-  }
-  @else if ($preset == "dreamy") {
-    $shadowParams: $shadowParams +   "0 1px 2px "   + set-color-opacity($color, 7)
-                                 + ", 0 2px 4px "   + set-color-opacity($color, 7)
-                                 + ", 0 4px 8px "   + set-color-opacity($color, 7)
-                                 + ", 0 8px 16px "  + set-color-opacity($color, 7)
-                                 + ", 0 16px 32px " + set-color-opacity($color, 7)
-                                 + ", 0 32px 64px " + set-color-opacity($color, 7);
-  }
-  @else if ($preset == "shorter") {
-    $shadowParams: $shadowParams +   "0 1px 1px "  + set-color-opacity($color, 11)
-                                 + ", 0 2px 2px "  + set-color-opacity($color, 11)
-                                 + ", 0 4px 4px "  + set-color-opacity($color, 11)
-                                 + ", 0 6px 8px "  + set-color-opacity($color, 11)
-                                 + ", 0 8px 16px " + set-color-opacity($color, 11);
-  }
-  @else if ($preset == "longer") {
-    $shadowParams: $shadowParams +   "0 2px 1px "   + set-color-opacity($color, 9)
-                                 + ", 0 4px 2px "   + set-color-opacity($color, 9)
-                                 + ", 0 8px 4px "   + set-color-opacity($color, 9)
-                                 + ", 0 16px 8px "  + set-color-opacity($color, 9)
-                                 + ", 0 32px 16px " + set-color-opacity($color, 9)
+    $shadowParams: $shadowParams +
+      '0 1px 1px ' +
+      set-color-opacity($color, 5) +
+      ', 0 2px 2px ' +
+      set-color-opacity($color, 5) +
+      ', 0 4px 4px ' +
+      set-color-opacity($color, 5) +
+      ', 0 8px 8px ' +
+      set-color-opacity($color, 6) +
+      ',0 16px 16px ' +
+      set-color-opacity($color, 6);
+  } @else if ($preset == 'medium') {
+    $shadowParams: $shadowParams + '0 1px 1px ' + set-color-opacity($color, 15) + ', 0 2px 2px ' + set-color-opacity($color, 15) + ', 0 4px 4px ' + set-color-opacity($color, 15) + ', 0 8px 8px ' + set-color-opacity($color, 15);
+  } @else if ($preset == 'long') {
+    $shadowParams: $shadowParams +
+      '0 1px 1px ' +
+      set-color-opacity($color, 11) +
+      ', 0 2px 2px ' +
+      set-color-opacity($color, 11) +
+      ', 0 4px 4px ' +
+      set-color-opacity($color, 11) +
+      ', 0 8px 8px ' +
+      set-color-opacity($color, 11) +
+      ', 0 16px 16px ' +
+      set-color-opacity($color, 11) +
+      ', 0 32px 32px ' +
+      set-color-opacity($color, 11);
+  } @else if ($preset == 'diffuse') {
+    $shadowParams: $shadowParams + '0 1px 1px ' + set-color-opacity($color, 8) + ', 0 2px 2px ' + set-color-opacity($color, 12) + ', 0 4px 4px ' + set-color-opacity($color, 16) + ', 0 8px 8px ' + set-color-opacity($color, 20);
+  } @else if ($preset == 'sharp') {
+    $shadowParams: $shadowParams +
+      '0 1px 1px ' +
+      set-color-opacity($color, 25) +
+      ', 0 2px 2px ' +
+      set-color-opacity($color, 20) +
+      ', 0 4px 4px ' +
+      set-color-opacity($color, 15) +
+      ', 0 8px 8px ' +
+      set-color-opacity($color, 10) +
+      ', 0 16px 16px ' +
+      set-color-opacity($color, 5);
+  } @else if ($preset == 'dreamy') {
+    $shadowParams: $shadowParams +
+      '0 1px 2px ' +
+      set-color-opacity($color, 7) +
+      ', 0 2px 4px ' +
+      set-color-opacity($color, 7) +
+      ', 0 4px 8px ' +
+      set-color-opacity($color, 7) +
+      ', 0 8px 16px ' +
+      set-color-opacity($color, 7) +
+      ', 0 16px 32px ' +
+      set-color-opacity($color, 7) +
+      ', 0 32px 64px ' +
+      set-color-opacity($color, 7);
+  } @else if ($preset == 'shorter') {
+    $shadowParams: $shadowParams +
+      '0 1px 1px ' +
+      set-color-opacity($color, 11) +
+      ', 0 2px 2px ' +
+      set-color-opacity($color, 11) +
+      ', 0 4px 4px ' +
+      set-color-opacity($color, 11) +
+      ', 0 6px 8px ' +
+      set-color-opacity($color, 11) +
+      ', 0 8px 16px ' +
+      set-color-opacity($color, 11);
+  } @else if ($preset == 'longer') {
+    $shadowParams: $shadowParams +
+      '0 2px 1px ' +
+      set-color-opacity($color, 9) +
+      ', 0 4px 2px ' +
+      set-color-opacity($color, 9) +
+      ', 0 8px 4px ' +
+      set-color-opacity($color, 9) +
+      ', 0 16px 8px ' +
+      set-color-opacity($color, 9) +
+      ', 0 32px 16px ' +
+      set-color-opacity($color, 9);
   }
   @return $shadowParams;
 }
