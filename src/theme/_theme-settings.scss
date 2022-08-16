@@ -121,33 +121,48 @@ $on-success-color-variation-2-l: 90% !default;
 
 /* Info color */
 $info-color: $color-light-blue-500 !default;
-$info-color-lighten-ratio: 0.4 !default;
-$info-color-darken-ratio: 0.4 !default;
-$info-color-saturate-ratio: 0.4 !default;
-$info-color-desaturate-ratio: 0.6 !default;
-$info-color-text-l: 90% !default;
-$info-color-text-alt-s: 90% !default;
-$info-color-text-alt-l: 90% !default;
+$on-info-color-s: saturation($info-color) !default;
+$on-info-color-l: 85% !default;
+
+$info-color-variation-1-s: saturation($info-color) !default;
+$info-color-variation-1-l: 80% !default;
+$on-info-color-variation-1-s: saturation($info-color) !default;
+$on-info-color-variation-1-l: 20% !default;
+
+$info-color-variation-2-s: 35% !default;
+$info-color-variation-2-l: 30% !default;
+$on-info-color-variation-2-s: saturation($info-color) !default;
+$on-info-color-variation-2-l: 90% !default;
 
 /* Warning color */
 $warning-color: $color-amber-400 !default;
-$warning-color-lighten-ratio: 0.4 !default;
-$warning-color-darken-ratio: 0.4 !default;
-$warning-color-saturate-ratio: 0.4 !default;
-$warning-color-desaturate-ratio: 0.6 !default;
-$warning-color-text-l: 90% !default;
-$warning-color-text-alt-s: 90% !default;
-$warning-color-text-alt-l: 85% !default;
+$on-warning-color-s: saturation($warning-color) !default;
+$on-warning-color-l: 15% !default;
+
+$warning-color-variation-1-s: saturation($warning-color) !default;
+$warning-color-variation-1-l: 80% !default;
+$on-warning-color-variation-1-s: saturation($warning-color) !default;
+$on-warning-color-variation-1-l: 20% !default;
+
+$warning-color-variation-2-s: 35% !default;
+$warning-color-variation-2-l: 30% !default;
+$on-warning-color-variation-2-s: saturation($warning-color) !default;
+$on-warning-color-variation-2-l: 90% !default;
 
 /* Danger color */
 $danger-color: $color-red-alt-500 !default;
-$danger-color-lighten-ratio: 0.4 !default;
-$danger-color-darken-ratio: 0.4 !default;
-$danger-color-saturate-ratio: 0.4 !default;
-$danger-color-desaturate-ratio: 0.6 !default;
-$danger-color-text-l: 99% !default;
-$danger-color-text-alt-s: 100% !default;
-$danger-color-text-alt-l: 95% !default;
+$on-danger-color-s: saturation($danger-color) !default;
+$on-danger-color-l: 95% !default;
+
+$danger-color-variation-1-s: saturation($danger-color) !default;
+$danger-color-variation-1-l: 80% !default;
+$on-danger-color-variation-1-s: saturation($danger-color) !default;
+$on-danger-color-variation-1-l: 20% !default;
+
+$danger-color-variation-2-s: 35% !default;
+$danger-color-variation-2-l: 30% !default;
+$on-danger-color-variation-2-s: saturation($danger-color) !default;
+$on-danger-color-variation-2-l: 90% !default;
 
 /* misc colors */
 $code-color-background: #2d2d2d !default;
