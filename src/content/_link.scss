@@ -41,7 +41,7 @@ a,
 a.link--secondary {
   --color: var(--secondary-color);
   --decoration-color: var(--secondary-color);
-  --hover-color: var(--on-secondary-color-variation-1);
+  --hover-color: var(--secondary-color-variation-1);
   --hover-decoration-color: var(--secondary-color-variation-1);
 
   &.link--mark {
