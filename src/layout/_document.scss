@@ -70,8 +70,7 @@ pre > code,
 select[multiple],
 .custom-scrollbar {
   scrollbar-gutter: stable;
-  scrollbar-color: var(--scrollbar-color-thumb)
-    var(--scrollbar-color-background);
+  scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-background);
   scrollbar-width: thin;
 }
 

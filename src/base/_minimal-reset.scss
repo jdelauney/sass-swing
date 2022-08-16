@@ -4,9 +4,11 @@
 // ––––––––––––––––––––
 
 *,
-*:after, *:before,
-*::after, *::before {
-  box-sizing: border-box;
+*:after,
+*:before,
+*::after,
+*::before {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
@@ -22,6 +24,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-text-size-adjust: 100%;
+  box-sizing: border-box;
   text-rendering: optimizeLegibility;
   cursor: default;
   scroll-behavior: smooth;
@@ -36,17 +39,39 @@ body {
   text-rendering: optimizeSpeed;
 }
 
-nav, header, footer, div, span,
-h1, h2, h3, h4, h5, p,
-a, img,
-ul, li,
-table, form, label, input, textarea, select, button {
-  font-size:1em;
+nav,
+header,
+footer,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+img,
+ul,
+li,
+table,
+form,
+label,
+input,
+textarea,
+select,
+button {
+  font-size: 1em;
   font-family: inherit;
 }
 
 /* Preventing Text Overflow */
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -64,20 +89,29 @@ a {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-inline-start: 0;
   margin-inline-end: 0;
   margin-block-start: 0;
   margin-block-end: 0;
-  padding:0;
+  padding: 0;
 }
 
-img, video, svg, picture {
+img,
+video,
+svg,
+picture {
   display: block;
   max-width: 100%;
 }
 
-img, video {
+img,
+video {
   width: 100%;
   height: auto;
 }
@@ -101,7 +135,7 @@ ul ul {
 }
 
 em {
-  font-weight:300;
+  font-weight: 300;
 }
 
 b,
@@ -110,7 +144,7 @@ strong {
 }
 
 small {
-  font-size:.6em !important;
+  font-size: 0.6em !important;
 }
 
 // Prevent `sub` and `sup` elements from affecting the line height in all browsers
@@ -135,17 +169,17 @@ sup {
 }
 
 // Change the cursor on disabled, not-editable, or otherwise inoperable elements in all browsers (opinionated)
-[aria-disabled="true"],
+[aria-disabled='true'],
 [disabled] {
   cursor: not-allowed;
 }
 
 // Change the display on visually hidden accessible elements in all browsers (opinionated)
-[aria-hidden="false"][hidden] {
+[aria-hidden='false'][hidden] {
   display: initial;
 }
 
-[aria-hidden="false"][hidden]:not(:focus) {
+[aria-hidden='false'][hidden]:not(:focus) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
@@ -168,8 +202,10 @@ textarea,
   }
 
   *,
-  *:before, *:after,
-  *::before, *::after {
+  *:before,
+  *:after,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
