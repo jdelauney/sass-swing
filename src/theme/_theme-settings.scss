@@ -107,25 +107,17 @@ $secondary-shadow-variation-3: #{make-shadow('diffuse')} !default;
 /* Success color */
 $success-color: $color-emerald-400 !default;
 $on-success-color-s: saturation($success-color) !default;
-$on-success-color-l: 55% !default;
+$on-success-color-l: 15% !default;
 
 $success-color-variation-1-s: saturation($success-color) !default;
-$success-color-variation-1-l: 85% !default;
-$on-success-color-variation-1-s: 60% !default;
-$on-success-color-variation-1-l: 85% !default;
+$success-color-variation-1-l: 80% !default;
+$on-success-color-variation-1-s: saturation($success-color) !default;
+$on-success-color-variation-1-l: 20% !default;
 
-$success-color-variation-2-s: saturation($success-color) !default;
-$success-color-variation-2-l: 25% !default;
+$success-color-variation-2-s: 35% !default;
+$success-color-variation-2-l: 30% !default;
 $on-success-color-variation-2-s: saturation($success-color) !default;
-$on-success-color-variation-2-l: 80% !default;
-
-$success-color-lighten-ratio: 0.4 !default;
-$success-color-darken-ratio: 0.4 !default;
-$success-color-saturate-ratio: 0.4 !default;
-$success-color-desaturate-ratio: 0.6 !default;
-$success-color-text-l: 80% !default;
-$success-color-text-alt-s: 60% !default;
-$success-color-text-alt-l: 85% !default;
+$on-success-color-variation-2-l: 90% !default;
 
 /* Info color */
 $info-color: $color-light-blue-500 !default;
