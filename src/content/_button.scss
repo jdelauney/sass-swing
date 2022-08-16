@@ -55,17 +55,17 @@ input[type='reset'],
   --border-color: var(--primary-color-variation-2);
   --border-width: var(--control-border-width);
   --border-radius: var(--control-border-radius);
-  //--box-shadow:var(--button-shadow);
+  --box-shadow: var(--primary-shadow);
 
   --hover-background-color: var(--primary-color-variation-1);
   --hover-color: var(--on-primary-color-variation-1);
   --hover-border-color: var(--primary-color-variation-3);
-  //--hover-box-shadow:var(--button-shadow);
+  --hover-box-shadow: var(--primary-shadow-variation-1);
 
   --active-background-color: var(--primary-color-variation-2);
   --active-color: var(--on-primary-color-variation-2);
   --active-border-color: var(--primary-color-variation-1);
-  //--active-box-shadow:var(--button-shadow);
+  --active-box-shadow: var(--primary-shadow-variation-2);
 
   --focus-outline-width: calc(var(--border-width) * 3);
   --focus-outline-color: var(--on-primary-color-variation-1);
@@ -74,7 +74,7 @@ input[type='reset'],
   color: var(--color);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow, none);
+  box-shadow: var(--box-shadow);
 
   &:active,
   &:focus {
