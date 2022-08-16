@@ -9,12 +9,12 @@ form {
   --box-shadow: var(--primary-shadow);
 
   position: relative;
-  padding: var(--form-inner-spacing);
+  padding: var(--padding, var(--inner-spacing));
+  background-color: var(--background-color);
+  color: var(--color);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
-  background-color: var(--background-color);
   box-shadow: var(--box-shadow);
-  color: var(--color);
 
   > footer {
     display: flex;
@@ -129,22 +129,23 @@ textarea {
     --spacing-v: 0.75rem;
     --spacing-h: 1rem;
 
-    --background-color: var(--neutral-color-variation-2);
+    --background-color: var(--neutral-color);
     --color: var(--on-neutral-color-variation-1);
     --border-width: var(--control-border-width);
     --border-color: var(--primary-color-variation-2);
     --border-radius: calc(var(--elem-border-radius) * 0.5);
     --border: var(--border-width) solid var(--border-color);
-    --box-shadow: var(--primary-shadow);
+    --box-shadow: none;
 
-    --active-background-color: var(--neutral-color-variation-1);
-    --active-color: var(--on-neutral-color);
-    --active-border-color: var(--primary-color-variation-3);
-    --active-box-shadow: var(--primary-shadow-variation-1);
+    //--active-background-color: var(--neutral-color);
+    //--active-color: var(--on-neutral-color);
+    //--active-border-color: var(--primary-color);
+    --active-box-shadow: var(--neutral-shadow);
 
-    --hover-background-color: var(--primary-color-variation-1);
-    --hover-color: var(--on-primary-color-variation-1);
-    --hover-border-color: var(--primary-color-variation-3);
+    --hover-background-color: var(--neutral-color-variation-1);
+    --hover-color: var(--primary-color);
+    --hover-border-color: var(--primary-color-variation-1);
+
     --placeholder-color: var(--on-neutral-color-variation-3);
     --focus-outline-width: var(--elem-outline-width);
     --focus-border-color: var(--primary-color-variation-1);
@@ -160,20 +161,23 @@ textarea {
     color: var(--color);
     transition: all 0.3s ease-in-out;
 
-    &:active,
+    // &:active,
     &:focus {
-      border: var(--border-width) solid var(--active-border-color);
       background-color: var(--active-background-color);
-      box-shadow: var(--active-box-shadow);
       color: var(--active-color);
+      border: var(--border-width) solid var(--active-border-color);
+      //box-shadow: var(--active-box-shadow);
     }
 
     &:focus {
-      box-shadow: 0 0 0 var(--focus-outline-width) var(--focus-border-color);
+      box-shadow: var(--active-box-shadow), 0 0 0 var(--focus-outline-width) var(--focus-border-color);
     }
 
     &:hover {
+      background-color: var(--hover-background-color);
+      color: var(--hover-color);
       border: var(--border-width) solid var(--hover-border-color);
+      box-shadow: var(--hover-box-shadow, inherit);
     }
   }
 }
@@ -183,52 +187,36 @@ select,
 textarea {
   &[aria-disabled='true'],
   &[disabled] {
-    --disabled-background-color: var(--neutral-color-variation-3);
-    --disabled-border-color: var(--neutral-color-variation-2);
-    --disabled-color: var(--on-primary-color-variation-3);
-    --disabled-opacity: 0.5;
-    //color:var(--input-disabled-text) !important;
-    border: var(--border-width) solid var(--disabled-border-color) !important;
-    background-color: var(--disabled-background-color) !important;
-    opacity: var(--disabled-opacity) !important;
+    --background-color: var(--neutral-color-variation-3) !important;
+    --border-color: var(--neutral-color-variation-2) !important;
+    --color: var(--on-primary-color-variation-3) !important;
+    --opacity: 0.5;
+    opacity: var(--opacity);
   }
 
   &[aria-invalid='true'] {
-    --background-color: transparent;
-    --focus-border-color: hsla(var(--danger-color), 0.25);
-    --border-color: var(--danger-color);
-    --color: var(--danger-color-text);
-    //color:var(--input-invalid-text);
-    //border: var(--border-width)  solid var(--invalid-border-color) !important;
-    //background-color: var(--background) !important;
+    --focus-border-color: var(--danger-color) !important;
+    --border-color: var(--danger-color) !important;
+    --color: var(--danger-color-text) !important;
+
     padding-right: 2.5em !important;
     background-position: center right 0.75rem;
     background-size: 1em auto;
     background-repeat: no-repeat;
     background-image: var(--icon-danger);
-
-    //&:active, &:focus {
-    //  box-shadow: 0 0 0 var(--outline-width) var(--invalid-focus-border-color) !important;
-    //}
   }
 
   &[aria-invalid='false'] {
-    --background-color: transparent;
-    --focus-border-color: hsla(var(--success-color), 0.25);
-    --border-color: var(--success-color);
-    --color: var(--success-color-text);
-    //color:var(--input-valid-text) !important;
-    //border: var(--input-border-width) solid var(--input-valid-color-border) !important;
-    //background-color: var(--input-valid-color-background) !important;
+    --focus-border-color: var(--success-color) !important;
+    --border-color: var(--success-color) !important;
+    --focus-border-color: var(--success-color) !important;
+    --color: var(--success-color-text) !important;
+
     padding-right: 2.5em !important;
     background-position: center right 0.75rem;
     background-size: 1em auto;
     background-repeat: no-repeat;
     background-image: var(--icon-success);
-
-    //&:active, &:focus {
-    //  box-shadow: 0 0 0 var(--input-outline-width) var(--input-valid-color-focus) !important;
-    //}
   }
 }
 
@@ -238,7 +226,6 @@ input:not([type='submit']):not([type='button']):not([type='reset']):not([type='f
 
     &:active,
     &:focus {
-      border: var(--input-border) !important;
       outline: 0 !important;
       box-shadow: none !important;
     }
@@ -261,55 +248,33 @@ select {
     padding-left: var(--input-spacing-h);
     padding-inline-start: var(--input-spacing-h);
     padding-inline-end: calc(var(--input-spacing-h) + 1.5rem);
-    background-image: linear-gradient(
-        var(--input-color-grad-background) 0%,
-        var(--input-color-grad-background) 100%
-      ),
-      linear-gradient(
-        -135deg,
-        transparent 50%,
-        var(--input-color-grad-background-alt) 50%
-      ),
-      linear-gradient(
-        -225deg,
-        transparent 50%,
-        var(--input-color-grad-background-alt) 50%
-      ),
-      linear-gradient(
-        var(--input-color-grad-background-alt) 42%,
-        var(--input-color-grad-background) 42%
-      );
-    background-position: right 20px center, right bottom, right bottom,
-      right bottom;
+    background-image: linear-gradient(var(--background-color) 0%, var(--background-color) 100%), linear-gradient(-135deg, transparent 50%, var(--color) 50%), linear-gradient(-225deg, transparent 50%, var(--color) 50%),
+      linear-gradient(var(--color) 42%, var(--background-color) 42%);
+    background-position: right 20px center, right bottom, right bottom, right bottom;
     background-size: 0 100%, 20px 30px, 20px 30px, 20px 100%;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-color: var(--input-color-grad-background);
+    background-color: var(--background-color);
     cursor: pointer;
 
     &:active,
     &:hover {
-      background-image: linear-gradient(
-          var(--primary-hover) 0%,
-          var(--primary-hover) 100%
-        ),
-        linear-gradient(-135deg, transparent 50%, var(--primary-hover) 50%),
-        linear-gradient(-225deg, transparent 50%, var(--primary-hover) 50%),
-        linear-gradient(var(--primary-hover) 42%, var(--primary-hover-text) 42%);
+      background-image: linear-gradient(var(--primary-color-variation-1) 0%, var(--primary-color-variation-1) 100%), linear-gradient(-135deg, transparent 50%, var(--primary-color-variation-1) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--primary-color-variation-1) 50%), linear-gradient(var(--on-primary-color-variation-1) 42%, var(--on-primary-color-variation-1) 42%);
     }
   }
 
   & option {
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: var(--background-color);
+    color: var(--color);
 
     &:hover {
-      background-color: var(--primary-hover);
-      color: var(--primary-hover-text);
+      background-color: var(--primary-color-variation-1);
+      color: var(--on-primary-color-variation-1);
     }
 
     &:checked {
-      background-color: var(--primary-focus);
-      color: var(--primary-hover-text);
+      background-color: var(--primary-color);
+      color: var(--on-primary-color);
     }
   }
 }
@@ -335,7 +300,7 @@ input[type='radio'] {
     --color: var(--primary-color);
     --border-width: var(--control-border-width);
     --border-color: var(--primary-color-variation-2);
-    --active-border-color: var(--primary-color-variation-3);
+    --hover-border-color: var(--primary-color-variation-1);
     --outline-width: var(--elem-outline-width);
     --focus-border-color: var(--primary-color-variation-1);
 
@@ -377,7 +342,7 @@ input[type='radio'] {
     left: 0;
     width: 1.2em;
     height: 1.2em;
-    border: var(--border-width) solid var(--active-border-color);
+    border: var(--border-width) solid var(--hover-border-color);
   }
 
   &:checked + label::after {
@@ -435,14 +400,28 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox'][role='switch'] {
-  --radius-size: calc(1.25em - (var(--input-switch-border-width) * 4));
+  --radius-size: calc(1.25em - (var(--border-width) * 4));
+  --background-color: var(--neutral-color-variation-1);
+  --switch-color-checked: var(--primary-color-variation-1);
+  --switch-color: var(--primary-color);
+  --color: var(--primary-color);
+  --label-on-color: var(--on-primary-color-variation-1);
+  --label-off-color: var(--on-neutral-color-variation-1);
+  --border-width: var(--control-border-width);
+  --border-color: var(--primary-color-variation-2);
+  --hover-border-color: var(--primary-color-variation-1);
+  --inner-border-color: var(--primary-color-variation-3);
+  //--active-border-color: var(--primary-color-variation-1);
+  --outline-width: var(--elem-outline-width);
+  --focus-border-color: var(--primary-color-variation-1);
+
   clip: unset;
   position: relative;
   width: 3.25em;
   height: 1.25em;
   border: var(--border-width) solid var(--border-color);
   border-radius: 1.25em;
-  background-color: var(--input-switch-background);
+  background-color: var(--background-color);
   font-size: inherit;
   line-height: 1.25em;
   vertical-align: text-bottom;
@@ -450,59 +429,58 @@ input[type='checkbox'][role='switch'] {
   transition: all 0.2s ease-in-out;
 
   &:before {
+    content: '';
     display: block;
     width: var(--radius-size);
     height: var(--radius-size);
-    margin-top: var(--input-switch-border-width);
-    margin-left: calc(var(--input-switch-border-width) * 2);
-    border: var(--border-width) solid var(--input-switch-inner-border-color);
+    margin-top: var(--border-width);
+    margin-left: calc(var(--border-width) * 2);
+    border: var(--border-width) solid var(--inner-border-color);
     border-radius: 50%;
-    background-color: var(--input-switch);
-    content: '';
+    background-color: var(--switch-color);
     transition: all 0.2s ease-in-out;
   }
 
   &:after {
+    content: attr(data-off-label);
     display: flex;
     position: absolute;
     top: 0;
-    right: calc((var(--input-switch-border-width) * 2));
+    right: calc((var(--border-width) * 2));
     align-items: center;
     justify-content: center;
     width: 3.25em;
     //padding-right: calc((var(--spacing) * .25) + (var(--input-switch-border-width) * 2));
-    content: attr(data-off-label);
-    color: var(--input-switch-label-off);
+    color: var(--label-off-color);
     font-size: 0.6em;
     transition: all 0.2s ease-in-out;
   }
 
-  &:active,
+  //&:active,
   &:hover {
-    border: var(--border-width) solid var(--input-active-border-color);
+    border: var(--border-width) solid var(--hover-border-color);
   }
 
   &:focus {
-    box-shadow: 0 0 0 var(--input-outline-width) var(--input-focus-border);
+    box-shadow: 0 0 0 var(--outline-width) var(--focus-border-color);
   }
 
   &:checked {
-    border: var(--border-width) solid var(--input-switch-border-color-checked);
-    background-color: var(--input-switch-background-checked);
+    border: var(--border-width) solid var(--inner-border-color);
+    background-color: var(--switch-color);
     &:before {
-      margin-left: calc(1.9em + (var(--input-switch-border-width) * 2));
-      border: var(--border-width) solid
-        var(--input-switch-inner-border-color-checked);
-      background-color: var(--input-switch-checked);
+      margin-left: calc(1.9em + (var(--border-width) * 2));
+      //border: var(--border-width) solid var(--inner-border-color);
+      background-color: var(--switch-color-checked);
     }
     &:after {
       right: unset;
-      left: calc(var(--input-switch-border-width) * 2);
+      left: calc(var(--border-width) * 2);
       /*justify-content: flex-start;
       padding-right:0;
       padding-left: calc((var(--spacing) * .25) + (var(--input-switch-border-width) * 2));*/
       content: attr(data-on-label);
-      color: var(--input-switch-label-on);
+      color: var(--label-on-color);
       font-weight: 700;
     }
   }
@@ -510,24 +488,32 @@ input[type='checkbox'][role='switch'] {
 
 // Range
 input[type='range'] {
-  --range-thumb-color: var(--input-range-thumb);
-  --range-thumb-border: var(--border-width) solid
-    var(--input-range-thumb-border-color);
-  --range-track-border-color: var(--input-range-track);
+  --background-color: var(--neutral-color-variation-1);
+  --color: var(--on-neutral-color-variation-1);
+  --border-width: var(--control-border-width);
+  --border-color: var(--primary-color-variation-1);
+  --border-radius: calc(var(--elem-border-radius) * 0.5);
+  --border: var(--border-width) solid var(--border-color);
+  --box-shadow: var(--primary-shadow);
+
+  --thumb-color: var(--primary-color);
+  --thumb-border: var(--border-width) solid var(--primary-color-variation-3);
+  --track-border-color: var(--neutral-color-variation-2);
+
   appearance: none;
   position: relative;
   width: 100%;
   height: 0.25em;
   margin: 0;
   padding: 0;
-  background-color: transparent;
+  background-color: var(--background-color);
 
   // Slider Track
   @mixin slider-track {
     width: 100%;
     height: 0.25em;
-    border-radius: var(--input-range-border-radius);
-    background-color: var(--range-track-border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--track-border-color);
     transition: all 0.2s ease-in-out;
   }
 
@@ -537,9 +523,9 @@ input[type='range'] {
     width: 1.25em;
     height: 1.25em;
     margin-top: calc(-0.625em + 0.125em);
-    border: var(--range-thumb-border);
+    border: var(--thumb-border);
     border-radius: 50%;
-    background-color: var(--range-thumb-color);
+    background-color: var(--thumb-color);
     cursor: ew-resize;
     transition: all 0.2s ease-in-out;
   }
@@ -570,17 +556,15 @@ input[type='range'] {
 
   &:hover,
   &:focus {
-    --range-track-border-color: var(--input-range-track-active);
-    --range-thumb-color: var(--input-range-thumb-hover);
-    --range-thumb-border: calc(var(--border-width) * 2) solid
-      var(--input-range-thumb-border-color-hover);
+    --track-border-color: var(--primary-color-variation-1);
+    --thumb-color: var(--primary-color-variation-1);
+    --thumb-border: calc(var(--border-width) * 2) solid var(--primary-color);
   }
 
   &:active {
-    --range-track-border-color: var(--input-range-track-active);
-    --range-thumb-color: var(--input-range-thumb-active);
-    --range-thumb-border: calc(var(--border-outline-width) * 2) solid
-      var(--input-range-thumb-active-border-color);
+    --track-border-color: var(--primary-color-variation-1);
+    --thumb-color: var(--primary-color);
+    --thumb-border: calc(var(--outline-width) * 2) solid var(--primary-color-variation-1);
 
     &::-webkit-slider-thumb {
       transform: scale(1.25);
@@ -639,7 +623,9 @@ input[type='range'] {
 }
 
 input[type='color'] {
-  height: var(--input-color-picker-height);
+  --height: calc(var(--control-input-height) * 2);
+
+  height: var(--height);
 
   &::-moz-focus-inner,
   &::-webkit-color-swatch-wrapper {
@@ -649,15 +635,15 @@ input[type='color'] {
   &::-moz-color-swatch,
   &::-webkit-color-swatch {
     border: none;
-    border-radius: var(--input-border-radius);
+    border-radius: var(--border-radius);
   }
 }
 
 input[type='search'] {
-  padding-left: calc(var(--input-spacing-h) + 1.75rem) !important;
+  padding-left: calc(var(--spacing-h) + 1.25em) !important;
   border-radius: 5em !important;
   background-image: var(--icon-search);
-  background-position: center left 1.125rem;
+  background-position: center left 0.75em;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 
@@ -682,6 +668,17 @@ label input[type='file'][aria-hidden] {
 }
 
 input[type='file']:not([hidden]) {
+  --background-color: var(--primary-color);
+  --color: var(--on-primary-color);
+  --border-color: var(--primary-color-variation-2);
+  --border-width: var(--control-border-width);
+  --border-radius: var(--control-border-radius);
+  //--box-shadow:var(--button-shadow);
+
+  --hover-background-color: var(--primary-color-variation-1);
+  --hover-color: var(--on-primary-color-variation-1);
+  --hover-border-color: var(--primary-color-variation-3);
+
   @mixin file-selector-button-primary {
     display: inline-flex;
     z-index: 1000;
@@ -689,12 +686,12 @@ input[type='file']:not([hidden]) {
     justify-content: center;
     margin-bottom: 0;
     padding: 0.5rem 1.2rem;
-    border: var(--border-width) solid var(--primary-border-color);
-    border-radius: var(--button-border-radius);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
     background-clip: padding-box !important;
-    background-color: var(--primary-background);
-    box-shadow: var(--button-shadow);
-    color: var(--primary-text);
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    color: var(--color);
     font-size: 1em;
     line-height: var(--line-height);
     text-decoration: none;
@@ -703,15 +700,15 @@ input[type='file']:not([hidden]) {
 
     &:active,
     &:focus {
-      background-color: var(--primary-focus);
-      color: var(--primary-text);
+      background-color: var(--hover-background-color);
+      color: var(--hover-color);
     }
 
     &:hover {
-      border: var(--border-width) solid var(--primary-border-color-hover);
-      background-color: var(--primary-hover);
-      box-shadow: var(--button-shadow-hover);
-      color: var(--primary-hover-text);
+      border: var(--border-width) solid var(--hover-border-color);
+      background-color: var(--hover-background-color);
+      //box-shadow: var(--hover-box-shadow);
+      color: var(--hover-color);
     }
   }
 
@@ -735,5 +732,5 @@ textarea + small {
   width: 100%;
   margin: calc(var(--spacing) * 0.5) 0.4rem;
   margin-bottom: var(--spacing);
-  color: var(--muted);
+  color: var(--neutral-color-variation-3);
 }
