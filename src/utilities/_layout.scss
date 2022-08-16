@@ -1,0 +1,183 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+
+.iflex {
+  display:inline-flex;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex,
+.flex--column {
+  &:where(:not(.flex--row)).flex--top {
+    justify-content: flex-start;
+  }
+
+  &:where(:not(.flex--row)).flex--bottom {
+    justify-content: flex-end;
+  }
+
+  &:where(:not(.flex--row)).flex--right {
+    align-items: flex-end;
+  }
+
+  &:where(:not(.flex--row)).flex--v-center {
+    justify-content: center;
+  }
+
+  &:where(:not(.flex--row)).flex--center {
+    align-items: center;
+  }
+}
+
+.iflex,
+.flex--row {
+  flex-flow: row wrap;
+
+  &.flex--top {
+    align-items: flex-start;
+  }
+
+  &.flex--bottom {
+    align-items: flex-end;
+  }
+
+  &.flex--right {
+    justify-content: flex-end;
+  }
+
+  &.flex--center {
+    justify-content: center;
+  }
+  &.flex--v-center {
+    align-items: center;
+  }
+}
+
+.flex--top {
+  align-items: flex-start;
+}
+
+.flex--bottom {
+  align-items: flex-end;
+}
+
+.flex--left {
+  justify-content: flex-start;
+}
+
+.flex--right {
+  justify-content: flex-end;
+}
+
+.flex--v-center {
+  align-items: center;
+}
+
+.flex--center {
+  justify-content: center;
+}
+
+.flex--center-all {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--space-evenly {
+  justify-content: space-evenly ;
+}
+
+.flex--space-around {
+  justify-content: space-around;
+}
+
+.flex--space-between {
+  justify-content: space-between;
+}
+
+//.full-width {
+//  width: 100%;
+//}
+
+.full-screen {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+[style*="--w:"] {
+  width: var(--w) !important;
+}
+
+[style*="--mw:"] {
+  max-width: var(--mw) !important;
+}
+
+[style*="--minw:"] {
+  min-width: var(--mw) !important;
+}
+
+[style*="--h:"] {
+  height: var(--h) !important;
+}
+
+[style*="--minh:"] {
+  min-height: var(--mh) !important;
+}
+
+[style*="--mh:"] {
+  max-height: var(--mh) !important;
+}
+
+[style*="--gap:"] {
+  gap: var(--gap) !important;
+}
+
+[style*="--cg:"] {
+  column-gap: var(--cg) !important;
+}
+
+[style*="--rg:"] {
+  row-gap: var(--rg) !important;
+}
+
+[style*="--zi:"] {
+  z-index: var(--zi) !important;
+}
+
+/*[style*="--idx:"] {
+  order: var(--idx) !important;
+}*/
+/*[style*="--gtc:"] {
+  grid-template-columns: var(--gtc) !important;
+}*/
+
+[style*="--lc:"] {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--lc);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+[style*="--ta:"] {
+  text-align: var(--ta) !important;
+}
+
+[style*="--lh:"] {
+  line-height: var(--lh) !important;
+}
+
+.disabled-scroll {
+  overflow: hidden;
+}
+
+.full-size {
+  display:block;
+  width: 100%;
+  height: 100%;
+}

@@ -34,7 +34,6 @@
     "postbuild": "echo '[@sass-swing/sass-swing] Sass Swing build done.'",
     "prescss:compile:sassswing": "echo '[@sass-swing/sass-swing] Compile Sass Swing .scss files'",
     "precss:optimize:sassswing": "echo '[@sass-swing/sass-swing] Optimize Sass Swing .css files'",
-    "precss:compress:sassswing": "echo '[@sass-swing/sass-swing] Compress Sass Swing .css files with Brotli'",
     "scss:compile:sassswing": "sass --style expanded --embed-sources --no-error-css src/:dist/css/",
     "css:optimize:sassswing": "postcss dist/css/**/*.css !dist/css/**/*.min.css --dir dist/css/ --ext .min.css",
     "build:sassswing": "npm-run-all scss:compile:sassswing css:optimize:sassswing --silent",
@@ -42,14 +41,16 @@
     "prebuild:doc": "echo [@sass-swing/sass-swing] Build Sass Swing documentation",
     "prejs:doc:build": "echo '[@sass-swing/sass-swing] Bundle and minify documentation .js files'",
     "prescss:compile:doc": "echo '[@sass-swing/sass-swing] Compile documentation .scss files'",
-    "precss:purge:doc": "echo '[@sass-swing/sass-swing] Purge documentation .css files'",
     "precss:optimize:doc": "echo '[@sass-swing/sass-swing] Optimize documentation .css files'",
     "postcss:optimize:doc": "echo [@sass-swing/sass-swing] Sass Swing documentation build done.",
     "scss:compile:doc": "sass --no-source-map --no-error-css ./documentation/styles/scss/:./documentation/styles/css",
-    "css:purge:doc": "postcss  ./documentation/styles/css/**/*.css !documentation/styles/css/**/*.min.css --replace",
     "css:optimize:doc": "postcss ./documentation/styles/css/**/*.css !./documentation/styles/css/**/*.min.css --dir ./documentation/styles/css --ext .min.css",
     "build:sassswing:doc": "npm-run-all scss:compile:doc css:optimize:doc --silent",
-    "build:doc": "npm run build:sassswing:doc --silent"
+    "build:doc": "npm run build:sassswing:doc --silent",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "lint": "eslint --fix",
+    "pretty": "prettier --write ."
   },
   "browserslist": [
     ">= 0.5%",
@@ -57,9 +58,20 @@
     "not dead"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "autoprefixer": "^10.4.8",
     "cssnano": "^5.1.12",
     "cssnano-preset-default": "^5.2.12",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
@@ -67,6 +79,7 @@
     "postcss-preset-env": "^7.7.2",
     "postcss-scss": "^4.0.4",
     "postcss-sort-media-queries": "^4.2.1",
+    "prettier": "^2.7.1",
     "sass": "^1.54.0"
   }
 }

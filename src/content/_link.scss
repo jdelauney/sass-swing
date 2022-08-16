@@ -1,0 +1,111 @@
+a,
+.link {
+  &,
+  &:visited {
+    --background-color: transparent;
+    --color: var(--primary-color);
+    --decoration-color: var(--primary-color);
+    --hover-background-color: transparent;
+    --hover-color: var(--primary-color-variation-1);
+    --hover-decoration-color: var(--primary-color-variation-1);
+
+    background-color: var(--background-color);
+    color: var(--color);
+    font-size: 1.1em;
+    text-decoration-color: var(--decoration-color);
+    transition: all 0.2s ease;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--hover-background-color);
+    color: var(--hover-color);
+    text-decoration-color: var(--hover-decoration-color);
+  }
+
+  &[aria-current] {
+    color: var(--hover-color);
+    font-weight: 500;
+    pointer-events: none;
+  }
+
+  &.link--mark {
+    --background-color: var(--primary-color);
+    --color: var(--on-primary-color);
+    --hover-background-color: var(--primary-color-variation-1);
+    --hover-color: var(--on-primary-color-variation-1);
+    padding: 0 0.4rem;
+  }
+}
+
+a.link--secondary {
+  --color: var(--secondary-color);
+  --decoration-color: var(--secondary-color);
+  --hover-color: var(--secondary-color-variation-1);
+  --hover-decoration-color: var(--secondary-color-variation-1);
+
+  &.link--mark {
+    --background-color: var(--secondary-color);
+    --color: var(--on-secondary-color);
+    --hover-background-color: var(--secondary-color-variation-1);
+    --hover-color: var(--on-secondary-color-variation-1);
+
+    padding: 0 0.4rem;
+  }
+}
+
+.link-underline {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--dashed {
+    text-decoration-style: dashed;
+    &:hover {
+      text-decoration-style: dashed;
+    }
+  }
+
+  &--dotted {
+    text-decoration-style: dotted;
+    &:hover {
+      text-decoration-style: dotted;
+    }
+  }
+
+  &--double {
+    text-decoration-style: double;
+    &:hover {
+      text-decoration-style: double;
+    }
+  }
+
+  &--wavy {
+    text-decoration-style: wavy;
+    &:hover {
+      text-decoration-style: wavy;
+    }
+  }
+
+  &--lineThrough {
+    text-decoration-line: line-through;
+    &:hover {
+      text-decoration-line: line-through;
+    }
+  }
+
+  &--overline {
+    text-decoration-line: overline;
+    &:hover {
+      text-decoration-line: overline;
+    }
+  }
+
+  &--around {
+    text-decoration-line: underline overline;
+    &:hover {
+      text-decoration-line: underline overline;
+    }
+  }
+}

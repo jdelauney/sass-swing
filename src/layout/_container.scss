@@ -1,0 +1,77 @@
+@use '../abstracts/mixins' as *;
+
+.flow-container {
+  width: 100%;
+  max-width: var(--max-container-char-width);
+
+  > * + * {
+    margin-block-start: var(--flow-spacing);
+  }
+}
+
+.container {
+  --container-padding: 1em;
+  --container-margin: 0;
+  //display: block;
+  margin-right: var(--container-margin) !important;
+  margin-left: var(--container-margin) !important;
+
+  padding-right: var(--container-padding);
+  padding-left: var(--container-padding);
+
+  max-width: 100vw;
+}
+
+.container-fluid {
+  --container-padding: 1em;
+  --container-margin: 0;
+  //display: block;
+
+  width: 100% !important;
+  max-width: 100vw;
+  //max-width: 97vw;
+  padding-right: calc(
+    var(--container-margin) + var(--container-padding)
+  ) !important;
+  padding-left: calc(
+    var(--container-margin) + var(--container-padding)
+  ) !important;
+}
+
+@include mq(tablet) {
+  .container,
+  .container-fluid {
+    --container-margin: 2vw;
+  }
+}
+
+@include mq(tablet-medium) {
+  .container,
+  .container-fluid {
+    --container-padding: 1em;
+    --container-margin: 5vw;
+  }
+}
+
+@include mq(desktop) {
+  .container,
+  .container-fluid {
+    --container-padding: 1.5em;
+    --container-margin: 7vw;
+  }
+}
+
+@include mq(desktop-lg) {
+  .container,
+  .container-fluid {
+    --container-padding: 2em;
+    --container-margin: 10vw;
+  }
+}
+
+@include mq(desktop-xlg) {
+  .container,
+  .container-fluid {
+    --container-margin: 15vw;
+  }
+}

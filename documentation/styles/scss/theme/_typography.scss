@@ -1,0 +1,29 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-alt);
+}
+
+.like-h1,
+.like-h2,
+.like-h3,
+.like-h4,
+.like-h5,
+.like-h6 {
+  font-family: var(--font-family);
+}
+
+.text-primary-alt {
+  color:var(--primary-color-lighten);
+}
+
+.text-primary {
+  color:var(--primary-color);
+}
+
+.text-em {
+  font-style: italic;
+}

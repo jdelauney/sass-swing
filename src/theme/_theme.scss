@@ -1,0 +1,319 @@
+@use 'theme-settings' as *;
+@use 'colors' as *;
+@use 'sass:math';
+@use '../abstracts/functions' as *;
+/* common layout settings */
+:root {
+  --font-content-line-height: #{$default-line-height};
+  --line-height-ratio: #{$default-line-height-ratio};
+  --font-family: #{$default-font-family};
+  --font-family-mono: #{$font-family-monospace};
+  --font-family-alt: #{$default-font-family-alt};
+  --font-content-weight: #{$default-font-weight};
+
+  --heading-font-size: 1em; //clamp(#{$min-heading-font-size},.5vw,#{$max-heading-font-size});
+  --heading-font-weight: #{$default-heading-font-weight};
+
+  --flow-space-ratio: #{$vertical-flow-space-ratio};
+  --heading-flow-space-ratio: #{$vertical-heading-flow-space-ratio};
+
+  --spacing: #{$spacing};
+  --flow-spacing: #{$flow-spacing};
+  --half-spacing: calc(var(--spacing) * 0.5);
+
+  /* Resolving Margin Spacing For Zoom */
+  --block-spacing: min(#{$block-spacing-vertical}, #{$min-block-spacing-vertical});
+  --block-half-spacing: min(#{math.div($block-spacing-vertical, 2)}, #{math.div($min-block-spacing-vertical, 2)});
+
+  --inner-spacing: calc(var(--spacing) * 2);
+  --inner-v-spacing: var(--inner-spacing);
+  --inner-h-spacing: var(--inner-spacing);
+
+  --min-grid-col-width: #{$min-grid-col-width};
+
+  --elem-border-width: #{$global-border-width};
+  --elem-border-radius: 0.5rem;
+  --elem-outline-width: #{$global-outline-width};
+  --control-border-radius: #{$global-border-radius};
+  --control-border-width: #{$global-border-width};
+  --control-input-height: 2rem;
+}
+
+/* light theme schema settings */
+[data-theme='light'],
+:root {
+  //:not([data-theme="dark"])
+  color-scheme: light;
+
+  --scrollbar-color-background: var(--secondary-color-variation-2);
+  --scrollbar-color-thumb: var(--secondary-color-variation-1);
+  --scrollbar-color-thumb-border: var(--secondary-color);
+
+  --color-h1: #{$color-neutral-900};
+  --color-h2: #{mix($color-neutral-900, $color-neutral-800)};
+  --color-h3: #{$color-neutral-800};
+  --color-h4: #{mix($color-neutral-800, $color-neutral-700)};
+  --color-h5: #{$color-neutral-700};
+  --color-h6: #{mix($color-neutral-700, $color-neutral-600)};
+
+  --neutral-color-h: #{hue($neutral-light-color)};
+  --neutral-color-s: #{saturation($neutral-light-color)};
+  --neutral-color-l: #{lightness($neutral-light-color)};
+  --neutral-color: hsl(var(--neutral-color-h), var(--neutral-color-s), var(--neutral-color-l));
+  --neutral-shadow: #{$neutral-shadow};
+  --neutral-shadow-alt: #{$neutral-shadow-alt};
+
+  --on-neutral-color-s: #{$on-neutral-light-color-s};
+  --on-neutral-color-l: #{$on-neutral-light-color-l};
+  --on-neutral-color: hsl(var(--neutral-color-h), var(--on-neutral-color-s), var(--on-neutral-color-l));
+
+  --neutral-color-variation-1-s: #{$neutral-light-color-variation-1-s};
+  --neutral-color-variation-1-l: #{$neutral-light-color-variation-1-l};
+  --neutral-color-variation-1: hsl(var(--neutral-color-h), var(--neutral-color-variation-1-s), var(--neutral-color-variation-1-l));
+
+  --on-neutral-color-variation-1-s: #{$on-neutral-light-color-variation-1-s};
+  --on-neutral-color-variation-1-l: #{$on-neutral-light-color-variation-1-l};
+  --on-neutral-color-variation-1: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-1-s), var(--on-neutral-color-variation-1-l));
+
+  --neutral-color-variation-2-s: #{$neutral-light-color-variation-2-s};
+  --neutral-color-variation-2-l: #{$neutral-light-color-variation-2-l};
+  --neutral-color-variation-2: hsl(var(--neutral-color-h), var(--neutral-color-variation-2-s), var(--neutral-color-variation-2-l));
+
+  --on-neutral-color-variation-2-s: #{$on-neutral-light-color-variation-2-s};
+  --on-neutral-color-variation-2-l: #{$on-neutral-light-color-variation-2-l};
+  --on-neutral-color-variation-2: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-2-s), var(--on-neutral-color-variation-2-l));
+
+  --neutral-color-variation-3-s: #{$neutral-light-color-variation-3-s};
+  --neutral-color-variation-3-l: #{$neutral-light-color-variation-3-l};
+  --neutral-color-variation-3: hsl(var(--neutral-color-h), var(--neutral-color-variation-3-s), var(--neutral-color-variation-3-l));
+
+  --on-neutral-color-variation-3-s: #{$on-neutral-light-color-variation-3-s};
+  --on-neutral-color-variation-3-l: #{$on-neutral-light-color-variation-3-l};
+  --on-neutral-color-variation-3: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-3-s), var(--on-neutral-color-variation-3-l));
+
+  /* Your main brand color */
+  --primary-color-h: #{hue($brand-color)};
+  --primary-color-s: #{saturation($brand-color)};
+  --primary-color-l: #{lightness($brand-color)};
+
+  /* Primary (brand) color should be used at 10%, principally for your CTA, input elements, links */
+  --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
+
+  --on-primary-color-s: #{$on-primary-light-color-s};
+  --on-primary-color-l: #{$on-primary-light-color-l};
+  --on-primary-color: hsl(var(--primary-color-h), var(--on-primary-color-s), var(--on-primary-color-l));
+  --primary-shadow: #{$primary-shadow};
+
+  --primary-color-variation-1-s: #{$primary-light-color-variation-1-s};
+  --primary-color-variation-1-l: #{$primary-light-color-variation-1-l};
+  --primary-color-variation-1: hsl(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l));
+  --primary-shadow-variation-1: #{$primary-shadow-variation-1};
+
+  --on-primary-color-variation-1-s: #{$on-primary-light-color-variation-1-s};
+  --on-primary-color-variation-1-l: #{$on-primary-light-color-variation-1-l};
+  --on-primary-color-variation-1: hsl(var(--primary-color-h), var(--on-primary-color-variation-1-s), var(--on-primary-color-variation-1-l));
+
+  --primary-color-variation-2-s: #{$primary-light-color-variation-2-s};
+  --primary-color-variation-2-l: #{$primary-light-color-variation-2-l};
+  --primary-color-variation-2: hsl(var(--primary-color-h), var(--primary-color-variation-2-s), var(--primary-color-variation-2-l));
+  --primary-shadow-variation-2: #{$primary-shadow-variation-2};
+
+  --on-primary-color-variation-2-s: #{$on-primary-light-color-variation-2-s};
+  --on-primary-color-variation-2-l: #{$on-primary-light-color-variation-2-l};
+  --on-primary-color-variation-2: hsl(var(--primary-color-h), var(--on-primary-color-variation-2-s), var(--on-primary-color-variation-2-l));
+
+  --primary-color-variation-3-s: #{$primary-light-color-variation-3-s};
+  --primary-color-variation-3-l: #{$primary-light-color-variation-3-l};
+  --primary-color-variation-3: hsl(var(--primary-color-h), var(--primary-color-variation-3-s), var(--primary-color-variation-3-l));
+  --primary-shadow-variation-3: #{$primary-shadow-variation-3};
+
+  --on-primary-color-variation-3-s: #{$on-primary-light-color-variation-3-s};
+  --on-primary-color-variation-3-l: #{$on-primary-light-color-variation-3-l};
+  --on-primary-color-variation-3: hsl(var(--primary-color-h), var(--on-primary-color-variation-3-s), var(--on-primary-color-variation-3-l));
+
+  /* Your secondary color */
+  --secondary-color-h: #{hue($secondary-color)};
+  --secondary-color-s: #{saturation($secondary-color)};
+  --secondary-color-l: #{lightness($secondary-color)};
+
+  /* Secondary color should be used at 30%  */
+  --secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
+
+  --on-secondary-color-s: #{$on-secondary-light-color-s};
+  --on-secondary-color-l: #{$on-secondary-light-color-l};
+  --on-secondary-color: hsl(var(--secondary-color-h), var(--on-secondary-color-s), var(--on-secondary-color-l));
+
+  --secondary-color-variation-1-s: #{$secondary-light-color-variation-1-s};
+  --secondary-color-variation-1-l: #{$secondary-light-color-variation-1-l};
+  --secondary-color-variation-1: hsl(var(--secondary-color-h), var(--secondary-color-variation-1-s), var(--secondary-color-variation-1-l));
+
+  --on-secondary-color-variation-1-s: #{$on-secondary-light-color-variation-1-s};
+  --on-secondary-color-variation-1-l: #{$on-secondary-light-color-variation-1-l};
+  --on-secondary-color-variation-1: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-1-s), var(--on-secondary-color-variation-1-l));
+
+  --secondary-color-variation-2-s: #{$secondary-light-color-variation-2-s};
+  --secondary-color-variation-2-l: #{$secondary-light-color-variation-2-l};
+  --secondary-color-variation-2: hsl(var(--secondary-color-h), var(--secondary-color-variation-2-s), var(--secondary-color-variation-2-l));
+
+  --on-secondary-color-variation-2-s: #{$on-secondary-light-color-variation-2-s};
+  --on-secondary-color-variation-2-l: #{$on-secondary-light-color-variation-2-l};
+  --on-secondary-color-variation-2: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-2-s), var(--on-secondary-color-variation-2-l));
+
+  --secondary-color-variation-3-s: #{$secondary-light-color-variation-3-s};
+  --secondary-color-variation-3-l: #{$secondary-light-color-variation-3-l};
+  --secondary-color-variation-3: hsl(var(--secondary-color-h), var(--secondary-color-variation-3-s), var(--secondary-color-variation-3-l));
+
+  --on-secondary-color-variation-3-s: #{$on-secondary-light-color-variation-3-s};
+  --on-secondary-color-variation-3-l: #{$on-secondary-light-color-variation-3-l};
+  --on-secondary-color-variation-3: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-3-s), var(--on-secondary-color-variation-3-l));
+}
+
+/* dark theme schema settings */
+@mixin dark {
+  color-scheme: dark;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include dark;
+  }
+}
+
+[data-theme='dark'] {
+  @include dark;
+}
+
+/* common theme schema settings */
+:root {
+  --divider-color: #{$divider-color};
+
+  --code-color-background: #{$code-color-background};
+  --code-color-lang-background: #{$code-color-lang-background};
+  --code-color-lang-text: #{$code-color-lang-text};
+  --code-color-text: #{$code-color-text};
+  --code-color-tag: #{$code-color-tag};
+  --code-color-value: #{$code-color-value};
+  --code-color-property: #{$code-color-property};
+  --code-color-comment: #{$code-color-comment};
+  --code-color-var: #{$code-color-var};
+  --kbd-color-background: #{$kbd-color-background};
+  --kbd-color-text: #{$kbd-color-text};
+
+  --ins-color-background: #{$ins-color-background};
+  --ins-color-text: #{$ins-color-text};
+
+  --del-color-background: #{$del-color-background};
+  --del-color-text: #{$del-color-text};
+
+  --mark-color-background: var(--primary-color);
+  --mark-color-text: var(--on-primary-color);
+
+  --selection-color-background: var(--primary-color-variation-2);
+  --selection-color-text: var(--on-primary-color-variation-2);
+
+  --success-color-h: #{hue($success-color)};
+  --success-color-s: #{saturation($success-color)};
+  --success-color-l: #{lightness($success-color)};
+  --success-color: hsl(var(--success-color-h), var(--success-color-s), var(--success-color-l));
+
+  --on-success-color-s: #{$on-success-color-s};
+  --on-success-color-l: #{$on-success-color-l};
+  --on-success-color: hsl(var(--success-color-h), var(--on-success-color-s), var(--on-success-color-l));
+
+  --success-color-variation-1-s: #{$success-color-variation-1-s};
+  --success-color-variation-1-l: #{$success-color-variation-1-l};
+  --success-color-variation-1: hsl(var(--success-color-h), var(--success-color-variation-1-s), var(--success-color-variation-1-l));
+
+  --on-success-color-variation-1-s: #{$on-success-color-variation-1-s};
+  --on-success-color-variation-1-l: #{$on-success-color-variation-1-l};
+  --on-success-color-variation-1: hsl(var(--success-color-h), var(--on-success-color-variation-1-s), var(--on-success-color-variation-1-l));
+
+  --success-color-variation-2-s: #{$success-color-variation-2-s};
+  --success-color-variation-2-l: #{$success-color-variation-2-l};
+  --success-color-variation-2: hsl(var(--success-color-h), var(--success-color-variation-2-s), var(--success-color-variation-2-l));
+
+  --on-success-color-variation-2-s: #{$on-success-color-variation-2-s};
+  --on-success-color-variation-2-l: #{$on-success-color-variation-2-l};
+  --on-success-color-variation-2: hsl(var(--success-color-h), var(--on-success-color-variation-2-s), var(--on-success-color-variation-2-l));
+
+  --info-color-h: #{hue($info-color)};
+  --info-color-s: #{saturation($info-color)};
+  --info-color-l: #{lightness($info-color)};
+  --info-color: hsl(var(--info-color-h), var(--info-color-s), var(--info-color-l));
+
+  --on-info-color-s: #{$on-info-color-s};
+  --on-info-color-l: #{$on-info-color-l};
+  --on-info-color: hsl(var(--info-color-h), var(--on-info-color-s), var(--on-info-color-l));
+
+  --info-color-variation-1-s: #{$info-color-variation-1-s};
+  --info-color-variation-1-l: #{$info-color-variation-1-l};
+  --info-color-variation-1: hsl(var(--info-color-h), var(--info-color-variation-1-s), var(--info-color-variation-1-l));
+
+  --on-info-color-variation-1-s: #{$on-info-color-variation-1-s};
+  --on-info-color-variation-1-l: #{$on-info-color-variation-1-l};
+  --on-info-color-variation-1: hsl(var(--info-color-h), var(--on-info-color-variation-1-s), var(--on-info-color-variation-1-l));
+
+  --info-color-variation-2-s: #{$info-color-variation-2-s};
+  --info-color-variation-2-l: #{$info-color-variation-2-l};
+  --info-color-variation-2: hsl(var(--info-color-h), var(--info-color-variation-2-s), var(--info-color-variation-2-l));
+
+  --on-info-color-variation-2-s: #{$on-info-color-variation-2-s};
+  --on-info-color-variation-2-l: #{$on-info-color-variation-2-l};
+  --on-info-color-variation-2: hsl(var(--info-color-h), var(--on-info-color-variation-2-s), var(--on-info-color-variation-2-l));
+
+  --warning-color-h: #{hue($warning-color)};
+  --warning-color-s: #{saturation($warning-color)};
+  --warning-color-l: #{lightness($warning-color)};
+  --warning-color: hsl(var(--warning-color-h), var(--warning-color-s), var(--warning-color-l));
+
+  --on-warning-color-s: #{$on-warning-color-s};
+  --on-warning-color-l: #{$on-warning-color-l};
+  --on-warning-color: hsl(var(--warning-color-h), var(--on-warning-color-s), var(--on-warning-color-l));
+
+  --warning-color-variation-1-s: #{$warning-color-variation-1-s};
+  --warning-color-variation-1-l: #{$warning-color-variation-1-l};
+  --warning-color-variation-1: hsl(var(--warning-color-h), var(--warning-color-variation-1-s), var(--warning-color-variation-1-l));
+
+  --on-warning-color-variation-1-s: #{$on-warning-color-variation-1-s};
+  --on-warning-color-variation-1-l: #{$on-warning-color-variation-1-l};
+  --on-warning-color-variation-1: hsl(var(--warning-color-h), var(--on-warning-color-variation-1-s), var(--on-warning-color-variation-1-l));
+
+  --warning-color-variation-2-s: #{$warning-color-variation-2-s};
+  --warning-color-variation-2-l: #{$warning-color-variation-2-l};
+  --warning-color-variation-2: hsl(var(--warning-color-h), var(--warning-color-variation-2-s), var(--warning-color-variation-2-l));
+
+  --on-warning-color-variation-2-s: #{$on-warning-color-variation-2-s};
+  --on-warning-color-variation-2-l: #{$on-warning-color-variation-2-l};
+  --on-warning-color-variation-2: hsl(var(--warning-color-h), var(--on-warning-color-variation-2-s), var(--on-warning-color-variation-2-l));
+
+  --danger-color-h: #{hue($danger-color)};
+  --danger-color-s: #{saturation($danger-color)};
+  --danger-color-l: #{lightness($danger-color)};
+  --danger-color: hsl(var(--danger-color-h), var(--danger-color-s), var(--danger-color-l));
+
+  --on-danger-color-s: #{$on-danger-color-s};
+  --on-danger-color-l: #{$on-danger-color-l};
+  --on-danger-color: hsl(var(--danger-color-h), var(--on-danger-color-s), var(--on-danger-color-l));
+
+  --danger-color-variation-1-s: #{$danger-color-variation-1-s};
+  --danger-color-variation-1-l: #{$danger-color-variation-1-l};
+  --danger-color-variation-1: hsl(var(--danger-color-h), var(--danger-color-variation-1-s), var(--danger-color-variation-1-l));
+
+  --on-danger-color-variation-1-s: #{$on-danger-color-variation-1-s};
+  --on-danger-color-variation-1-l: #{$on-danger-color-variation-1-l};
+  --on-danger-color-variation-1: hsl(var(--danger-color-h), var(--on-danger-color-variation-1-s), var(--on-danger-color-variation-1-l));
+
+  --danger-color-variation-2-s: #{$danger-color-variation-2-s};
+  --danger-color-variation-2-l: #{$danger-color-variation-2-l};
+  --danger-color-variation-2: hsl(var(--danger-color-h), var(--danger-color-variation-2-s), var(--danger-color-variation-2-l));
+
+  --on-danger-color-variation-2-s: #{$on-danger-color-variation-2-s};
+  --on-danger-color-variation-2-l: #{$on-danger-color-variation-2-l};
+  --on-danger-color-variation-2: hsl(var(--danger-color-h), var(--on-danger-color-variation-2-s), var(--on-danger-color-variation-2-l));
+
+  --icon-success: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg fill='none' stroke='#{set-color-opacity($success-color, 75)}' stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath stroke-width='1.016' d='M73.699 91.713l2.57 2.158 4.082-4.57'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' stroke-width='.508' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-warning: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath fill='none' stroke='#{set-color-opacity($warning-color, 75)}' stroke-width='1.016' d='M6.444 8.621l-.062-5.03'/%3E%3Cpath fill='none' stroke='#{set-color-opacity($warning-color, 75)}' stroke-width='.508' d='M12.415 12.394L.317 12.363 6.444.317z' paint-order='stroke fill markers'/%3E%3Cpath d='M7.2 10.635a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-danger: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg fill='none' stroke='#{set-color-opacity($danger-color, 75)}' stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath stroke-width='1.016' d='M79.238 93.844l-4.857-4.768'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' stroke-width='.508' paint-order='stroke fill markers'/%3E%3Cpath stroke-width='1.016' d='M74.425 93.889l4.77-4.857'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-info: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath fill='none' stroke='#{set-color-opacity($info-color, 75)}' stroke-width='1.016' d='M76.841 93.087l-.062-5.03'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' fill='none' stroke='%23000' stroke-width='.508' paint-order='stroke fill markers'/%3E%3Cpath d='M77.597 95.101a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10' cy='10' r='8'%3E%3C/circle%3E%3Cline x1='23' y1='23' x2='15' y2='15'%3E%3C/line%3E%3C/svg%3E");
+}

@@ -1,0 +1,17 @@
+.collapsable-toggler {
+  display:none;
+
+  &:not(:checked) + .collapsable {
+    visibility: collapse;
+    height: 0;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  &:checked + .collapsable {
+    visibility: visible;
+    height: auto;
+    max-height: 1000em;
+    opacity: 1;
+  }
+}
