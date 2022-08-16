@@ -342,7 +342,7 @@ input[type='radio'] {
     left: 0;
     width: 1.2em;
     height: 1.2em;
-    border: var(--border-width) solid var(--active-border-color);
+    border: var(--border-width) solid var(--hover-border-color);
   }
 
   &:checked + label::after {
