@@ -1,20 +1,26 @@
 dialog,
 .modal {
-  display:block ! important;
+  --background-color: var(--neutral-color-variation-3);
+  --color: var(--on-neutral-color-variation-3);
+  --border-width: var(--elem-border-width);
+  --border-color: var(--neutral-color-variation-2);
+  --border-radius: var(--elem-border-radius);
+
+  display: block !important;
   position: fixed;
   inset: 0;
   max-width: min(90vw, 85ch);
   max-height: min(80vh, 100%);
-  margin:auto;
+  margin: auto;
   z-index: 5000;
-  padding:0;
+  padding: 0;
   overflow: hidden;
-  background: var(--color-background-alt);
-  color: var(--color-text);
-  border: var(--border-width) solid var(--panel-border-color);
-  border-radius: var(--panel-border-radius);
-  box-shadow: 0 0 1em rgb(0 0 0 / .35);
-  transition: opacity .5s ease-in-out;
+  background: var(--background-color);
+  color: var(--color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.35);
+  transition: opacity 0.5s ease-in-out;
 
   &:not([open]) {
     pointer-events: none;
@@ -29,24 +35,26 @@ dialog,
     visibility: hidden;
   }
 
-  &[modal-mode="simple"]::backdrop {
+  &[modal-mode='simple']::backdrop {
     backdrop-filter: none;
     background: unset;
   }
 
   &::backdrop {
-    background: rgb(0 0 0 / .35);
+    background: rgb(0 0 0 / 0.35);
     pointer-events: none;
     backdrop-filter: blur(5px);
-    transition: backdrop-filter .5s ease;
+    transition: backdrop-filter 0.5s ease;
   }
 
   & header,
   & footer {
+    --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-2-s), var(--neutral-color-variation-2-l) / 0.15);
+
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: var(--color-background-alt-active);
+    background-color: var(--background-color);
     padding: var(--inner-h-spacing) var(--inner-v-spacing);
 
     /*& > *:first-child {
@@ -72,7 +80,7 @@ dialog,
     align-items: start;
     max-height: 80vh;
     max-block-size: 80vh;
-    padding:0;
+    padding: 0;
   }
 
   & article {
@@ -85,7 +93,7 @@ dialog,
     max-block-size: min(60vh, 100%);
 
     > header {
-      padding:0;
+      padding: 0;
     }
     + footer {
       margin-top: 0 !important;
