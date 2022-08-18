@@ -1,15 +1,15 @@
 .breadcrumb-nav {
-  padding:.5em 1em;
+  padding: 0.5em 1em;
   background-color: unset;
 
-  & ol{
+  & ol {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     height: 1.5em;
     font-size: 0.8em;
     overflow-y: hidden;
@@ -30,7 +30,7 @@
     }
 
     li {
-      padding:0;
+      padding: 0;
     }
 
     li:first-child {
@@ -44,11 +44,10 @@
     }
 
     li + li:before {
-      color:var(--muted-text);
-      content: var(--divider, "\00BB \00A0");
-      margin-left: .5em;
-      margin-right: .25em;
+      color: var(--on-neutral-color-variation-3);
+      content: var(--divider, '\00BB \00A0');
+      margin-left: 0.5em;
+      margin-right: 0.25em;
     }
-
   }
 }
