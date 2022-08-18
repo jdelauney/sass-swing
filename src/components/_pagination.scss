@@ -10,33 +10,40 @@
   }
 
   & li {
-    padding:0;
+    padding: 0;
     display: grid;
     place-content: center;
     cursor: unset;
     margin: 0 1px;
 
     > a {
-      --link-background: var(--navbar-background);;
-      --link-hover-background: var(--color-background);
+      --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-2-s) var(--neutral-color-variation-2-l) / 0.7);
+      --color: var(--neutral-color-variation-1);
+      --border-width: var(--elem-border-width);
+      --border-color: var(--neutral-color-variation-1);
+      --hover-background-color: var(--background-color);
+      --border-radius: var(--control-border-radius);
+
       width: 100%;
       height: 100%;
       line-height: 1;
       padding: 0.25em;
-      border: var(--border-width) solid var(--muted-border-color);
+      border: var(--border-width) solid var(--border-color);
       border-radius: 0.25em;
-      transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
 
       &:not([aria-current]):hover {
-        border-color: var(--muted-text);
+        --border-color: var(--on-neutral-color-variation-3);
+        //border-color: var(--border-color);
         transform: scale(1.05);
       }
 
       &[disabled] {
-        --link-background:transparent;
+        --background-color: transparent;
+
         width: 0;
-        border:none;
-        padding:0;
+        border: none;
+        padding: 0;
         pointer-events: none;
 
         > * {
@@ -47,20 +54,23 @@
   }
 
   & li.divider {
-    border:none;
+    border: none;
     pointer-events: none;
     margin-inline: var(--half-spacing);
     span {
-      color: var(--muted-text);
+      --color: var(--on-neutral-color-variation-3);
+      color: var(--color);
     }
-
   }
 
   & [aria-current] {
+    --border-color: var(--on-neutral-color-variation-3);
+    --background-color: var(--neutral-color-variation-2);
+
     cursor: none;
     pointer-events: none;
     font-weight: 700;
-    border-color: var(--muted-text);
-    background-color: var(--color-background-alt-active);
+    //border-color: var(--muted-text);
+    //background-color: var(--color-background-alt-active);
   }
 }
