@@ -1,57 +1,50 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 .card,
-.card-panel {
-  --custom-background : var(--panel-background);
-  --custom-text: var(--panel-text);
-  --custom-border-color: var(--panel-border-color);
-  --custom-border-width: var(--border-width);
-  --custom-border-radius:var(--panel-border-radius);
-  --custom-shadow:var(--panel-shadow);
+.panel {
+  --background-color: var(--neutral-color-variation-1);
+  --custom-text: var(--on-neutral-color-variation-1);
+  --border-width: var(--elem-border-width);
+  --border-color: var(--neutral-color-variation-2);
+  --border-radius: var(--elem-border-radius);
+  --box-shadow: var(--neutral-shadow);
 
-  display:flex;
+  display: flex;
   flex-direction: column;
   //padding: var(--inner-v-spacing) var(--inner-h-spacing);
   //overflow: auto;
-  border: var(--custom-border-width) solid var(--custom-border-color);
-  border-radius: var(--custom-border-radius);
+  background-color: var(--background);
   background-clip: border-box;
-  background-color: var(--custom-background);
-  box-shadow: var(--custom-shadow);
-  color:var(--custom-text);
-  //margin:var(--spacing) 0;
+  color: var(--color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 
   &:first-child {
     margin-top: 0;
   }
 
-  & + *:is(:not(h1,h2,h3,h4,h5,h6, section, article,.section, .article, .card, footer)) {
-    margin-top:var(--block-half-spacing)
+  & + *:is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article, .card, footer)) {
+    margin-top: var(--block-half-spacing);
   }
-
-  //> header,
-  //> footer {
-  //  //margin: calc(var(--inner-v-spacing) * -1) calc(var(--inner-h-spacing) * -1);
-  //  padding: var(--inner-v-spacing) var(--inner-h-spacing);
-  //}
 
   > header,
   > footer {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
   > header {
-    border-top-right-radius: var(--custom-border-radius);
-    border-top-left-radius: var(--custom-border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
   }
 
   > footer {
     margin-top: auto;
     //padding-top:calc(var(--inner-v-spacing) + (var(--spacing) * 2));
-    border-bottom-right-radius: var(--custom-border-radius);
-    border-bottom-left-radius: var(--custom-border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
   }
 
   > figure:first-child,
@@ -61,8 +54,8 @@
   > header figure:first-child img,
   > img:first-child {
     //margin: calc(var(--inner-v-spacing)*-1) calc(var(--inner-h-spacing)*-1);
-    border-top-right-radius: var(--custom-border-radius);
-    border-top-left-radius: var(--custom-border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
   }
 
   > figure:last-child,
@@ -71,9 +64,9 @@
   > footer figure:last-child,
   > footer figure:last-child img,
   > img:last-child {
-    margin-top:0;
-    border-bottom-right-radius: var(--custom-border-radius);
-    border-bottom-left-radius: var(--custom-border-radius);
+    margin-top: 0;
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
   }
 
   &--collapsable {
@@ -81,16 +74,15 @@
 
     &,
     &[hidden],
-    &[aria-hidden="true"] {
+    &[aria-hidden='true'] {
       visibility: collapse;
       height: 0;
       max-height: 0;
       opacity: 0;
     }
 
-
     &:not([hidden]),
-    &[aria-hidden="false"],
+    &[aria-hidden='false'],
     &.expanded {
       visibility: visible;
       height: auto;
@@ -100,23 +92,21 @@
   }
 }
 
-.card-panel {
-  display:block;
+.panel {
+  display: block;
   padding: var(--inner-v-spacing) var(--half-spacing);
   border: none;
-  background-color: unset;
   box-shadow: none;
-  color: unset;
 }
 
 @include mq(mobile) {
-  .card-panel {
+  .panel {
     padding: var(--inner-v-spacing) var(--spacing);
   }
 }
 
 @include mq(tablet) {
-  .card-panel {
+  .panel {
     padding: var(--inner-v-spacing) var(--inner-h-spacing);
   }
 }
