@@ -1,8 +1,8 @@
-$font-family-sans: #{"Nunito Sans", Roboto, Noto, "Segoe UI", 'Helvetica Neue', Helvetica, Arial, sans-serif};
-$font-family-serif: #{"Varela Round", Georgia, Times, 'Times New Roman', serif};
-@use "../../../src/theme/theme";
 @use "theme/fonts";
-@use "../../../src/sass-swing";
+@use "../../../src/sass-swing"  with (
+  $font-family-sans: #{"Nunito Sans", Roboto, Noto, "Segoe UI", 'Helvetica Neue', Helvetica, Arial, sans-serif},
+  $font-family-serif: #{"Varela Round", Georgia, Times, 'Times New Roman', serif}
+);
 
 @use "layout";
 @use "components";
