@@ -54,16 +54,16 @@
 	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
 	<div class="sidebar__wrapper">
 		<nav class="custom-scrollbar" aria-label="Table des matières">
-			<a href="../index.html" class="menu-title link--default" aria-current="page">Présentation</a>
+			<a href="./index.html" class="menu-title link--default">Présentation</a>
 
 			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
 				<span class="menu-title">Commencer</span>
 			</label>
-			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler" checked>
 			<ul id="collapsable-menu-1" class="collapsable">
-				<li><a href="../usage.html" class="link--secondary">Usage</a></li>
-				<li><a href="../themes.html" class="link--secondary">Themes</a></li>
-				<li><a href="../customize.html" class="link--secondary">Personnalisation</a></li>
+				<li><a href="./usage.html" class="link--secondary" aria-current="page">Usage</a></li>
+				<li><a href="./themes.html" class="link--secondary">Themes</a></li>
+				<li><a href="./customize.html" class="link--secondary">Personnalisation</a></li>
 				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
 			</ul>
 
@@ -72,9 +72,9 @@
 			</label>
 			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
 			<ul id="collapsable-menu-2" class="collapsable">
-				<li><a href="./containers.html" class="link--secondary">Conteneurs</a></li>
-				<li><a href="./grid.html" class="link--secondary">Grille</a></li>
-				<li><a href="./breakpoints.html" class="link--secondary">Point d'arrêts</a></li>
+				<li><a href="./layout/containers.html" class="link--secondary">Conteneurs</a></li>
+				<li><a href="./layout/grid.html" class="link--secondary">Grille</a></li>
+				<li><a href="./layout/breakpoints.html" class="link--secondary">Point d'arrêts</a></li>
 			</ul>
 
 			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
@@ -82,12 +82,12 @@
 			</label>
 			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler">
 			<ul id="collapsable-menu-3" class="collapsable">
-				<li><a href="../content/typography.html" class="link--secondary">Typographie</a></li>
-				<li><a href="../content/buttons.html" class="link--secondary">Boutons</a></li>
-				<li><a href="../content/form.html" class="link--secondary">Formulaires</a></li>
-<!--				<li><a href="../content/medias.html" class="link&#45;&#45;secondary">Médias</a></li>-->
-				<li><a href="../content/table.html" class="link--secondary">Tableaux</a></li>
-				<li><a href="../content/progress.html" class="link--secondary">Progression</a></li>
+				<li><a href="./content/typography.html" class="link--secondary">Typographie</a></li>
+				<li><a href="./content/buttons.html" class="link--secondary">Boutons</a></li>
+				<li><a href="./content/form.html" class="link--secondary">Formulaires</a></li>
+				<!--				<li><a href="../content/medias.html" class="link&#45;&#45;secondary">Médias</a></li>-->
+				<li><a href="./content/table.html" class="link--secondary">Tableaux</a></li>
+				<li><a href="./content/progress.html" class="link--secondary">Progression</a></li>
 				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
 			</ul>
 
@@ -96,28 +96,28 @@
 			</label>
 			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
 			<ul id="collapsable-menu-4" class="collapsable">
-				<li><a href="../component/navigation.html" class="link--secondary">Navigation</a></li>
-				<li><a href="../component/heading.html" class="link--secondary">En-tête</a></li>
-				<li><a href="../component/cards.html" class="link--secondary">Cartes</a></li>
-				<li><a href="../component/details.html" class="link--secondary">Détails</a></li>
-				<li><a href="../component/breadcrumb.html" class="link--secondary">Fil d'arianne</a></li>
-				<li><a href="../component/pagination.html" class="link--secondary">Pagination</a></li>
-				<li><a href="../components/modal.html" class="link--secondary">Boite de dialogue</a></li>
-				<li><a href="../component/collapsable.html" class="link--secondary">Collapsable</a></li>
+				<li><a href="./component/navigation.html" class="link--secondary">Navigation</a></li>
+				<li><a href="./component/heading.html" class="link--secondary">En-tête</a></li>
+				<li><a href="./component/cards.html" class="link--secondary">Cartes</a></li>
+				<li><a href="./component/details.html" class="link--secondary">Détails</a></li>
+				<li><a href="./component/breadcrumb.html" class="link--secondary">Fil d'arianne</a></li>
+				<li><a href="./component/pagination.html" class="link--secondary">Pagination</a></li>
+				<li><a href="./components/modal.html" class="link--secondary">Boite de dialogue</a></li>
+				<li><a href="./component/collapsable.html" class="link--secondary">Collapsable</a></li>
 				<li>
 					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
 						<span class="menu-title">Extras</span>
 					</label>
 					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
 					<ul id="collapsable-menu-4a" class="collapsable">
-						<li><a href="../addons/badge.html" class="link--secondary">Badge</a></li>
-						<li><a href="../addons/tooltip.html" class="link--secondary">Info bulle</a></li>
-						<!--						<li><a href="../addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
-						<li><a href="../addons/dropdown.html" class="link--secondary">Dropdown</a></li>
-						<li><a href="../addons/tabs.html" class="link--secondary">Boite à onglets</a></li>
-						<!--						<li><a href="../addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
-						<li><a href="../addons/notification.html" class="link--secondary">Notification</a></li>
-						<li><a href="../addons/slider.html" class="link--secondary">Slider</a></li>
+						<li><a href="./components/addons/badge.html" class="link--secondary">Badge</a></li>
+						<li><a href="./components/addons/tooltip.html" class="link--secondary">Info bulle</a></li>
+						<!--						<li><a href="../components/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
+						<li><a href="./components/addons/dropdown.html" class="link--secondary">Dropdown</a></li>
+						<li><a href="./components/addons/tabs.html" class="link--secondary">Boite à onglets</a></li>
+						<!--						<li><a href="../components/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="./components/addons/notification.html" class="link--secondary">Notification</a></li>
+						<li><a href="./components/addons/slider.html" class="link--secondary">Slider</a></li>
 						<!--						<li><a href="./revealer.html" class="link&#45;&#45;secondary">Revealer</a></li>-->
 						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
 						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
