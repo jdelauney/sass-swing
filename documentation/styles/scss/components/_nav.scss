@@ -8,6 +8,10 @@
   }
 }
 
+.navbar__menu {
+  --background-color: var(--neutral-color-variation-1);
+}
+
 @include mq(tablet-medium) {
   .navbar__menu {
     background-color: transparent;

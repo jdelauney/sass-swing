@@ -7013,6 +7013,7 @@ body > main {
   will-change: transform;
 }
 .sidebar__wrapper nav {
+  --background-color: var(--neutral-color-variation-1);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7354,6 +7355,10 @@ dialog .close > svg {
 
 .navigation nav {
   backdrop-filter: saturate(180%) blur(20px);
+}
+
+.navbar__menu {
+  --background-color: var(--neutral-color-variation-1);
 }
 
 @media only screen and (min-width: 56.25em) {
