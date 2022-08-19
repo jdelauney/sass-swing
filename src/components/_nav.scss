@@ -1,7 +1,9 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
-.navbar, .navbar ul,
-nav, nav ul {
+.navbar,
+.navbar ul,
+nav,
+nav ul {
   display: flex;
 }
 
@@ -11,40 +13,43 @@ nav, nav ul {
   position: relative;
   align-items: center;
   justify-content: space-between;
-  width:100%;
+  width: 100%;
   //background-color: var(--navbar-background);
 
   &--fixed {
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 
     + * {
-      margin-top:5.8rem;
+      margin-top: 5.8rem;
     }
   }
 
   &--sticky {
     position: sticky;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
   }
 }
 
 .navbar,
 nav {
-  $ref: ".navbar";
+  $ref: '.navbar';
+
+  --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.7);
+
   position: relative;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: var(--navbar-background);
+  background-color: var(--background-color);
 
   ul {
     align-items: center;
     height: 100%;
     margin-bottom: 0;
-    margin-left:0;
+    margin-left: 0;
     padding: 0;
     list-style: none;
   }
@@ -64,11 +69,11 @@ nav {
       align-items: inherit;
 
       & > .dropdown__menu,
-      & > ul  {
-        position:relative;
+      & > ul {
+        position: relative;
         visibility: collapse;
-        top:0;
-        left:0;
+        top: 0;
+        left: 0;
 
         display: flex;
         flex-direction: column;
@@ -77,7 +82,7 @@ nav {
 
         min-width: max-content;
         max-height: 0;
-        height:0;
+        height: 0;
         margin: 0;
         padding: 0;
         z-index: 5500;
@@ -86,9 +91,8 @@ nav {
         opacity: 0;
         transition: all 0.25s ease-in;
 
-        width:100%;
+        width: 100%;
         box-shadow: none;
-
       }
     }
 
@@ -104,9 +108,9 @@ nav {
 
     & > ul li.dropdown > ul,
     & > ul li.dropdown > .dropdown__menu {
-      left:0;
+      left: 0;
 
-      &.dropdown__menu--left{
+      &.dropdown__menu--left {
         left: 0;
       }
     }
@@ -116,7 +120,7 @@ nav {
     display: block;
   }
 
-  > input[type="checkbox"] {
+  > input[type='checkbox'] {
     display: none;
   }
 }
@@ -128,71 +132,79 @@ nav {
 
   &__item-push-right {
     margin-right: var(--inner-h-spacing);
-    margin-left:auto;
+    margin-left: auto;
   }
 
   &__toggler {
     z-index: 2500;
     width: 4rem;
     height: 4rem;
-    margin-top:0 !important;
-    margin-right: .5em;
+    margin-top: 0 !important;
+    margin-right: 0.5em;
     text-align: center;
     cursor: pointer;
 
     &__icon {
+      --background-color: var(--primary-color);
+      --hover-background-color: var(--primary-color-variation-1);
+
       display: inline-block;
       position: relative;
       width: 2.5rem;
       height: 2px;
       margin-top: 2rem;
-      border:none;
-      background-color: var(--navbar-menu-burger-icon);
-      transition: all .2s ease-in-out;
+      border: none;
+      background-color: var(--background-color);
+      transition: all 0.2s ease-in-out;
 
-      &:before, &:after {
+      &:before,
+      &:after {
         display: inline-block;
         position: absolute;
         left: 0;
         width: 2.5rem;
         height: 2px;
-        background-color: var(--navbar-menu-burger-icon);
-        content: "";
-        transition: all .2s ease-in-out;
+        background-color: var(--background-color);
+        content: '';
+        transition: all 0.2s ease-in-out;
       }
       &:before {
-        top: -.8rem
+        top: -0.8rem;
       }
       &:after {
-        top: .8rem
+        top: 0.8rem;
       }
     }
 
     &:hover {
       & .navbar__toggler__icon {
-        background-color: var(--navbar-menu-burger-icon-hover);
+        background-color: var(--hover-background-color);
 
-        &:before, &:after {
-          background-color: var(--navbar-menu-burger-icon-hover);
+        &:before,
+        &:after {
+          background-color: var(--hover-background-color);
         }
       }
     }
   }
 
   &__menu {
+    --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.7);
+    --box-shadow: var(--neutral-shadow-alt);
+
     display: flex;
     position: absolute;
-    top:100%;
-    left:0;
+    top: 100%;
+    left: 0;
     width: 100%;
-    padding-top: calc(var(--inner-v-spacing) * .5);
+    padding-top: calc(var(--inner-v-spacing) * 0.5);
     padding-bottom: var(--inner-v-spacing);
-    background-color: var(--navbar-menu-background);
-    box-shadow: var(--navbar-menu-shadow);
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
     opacity: 0;
     transform: scaleY(0);
     transform-origin: top;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     ul {
       flex-direction: column;
@@ -205,15 +217,15 @@ nav {
     }
 
     &__item {
-      display:flex;
+      display: flex;
       position: relative;
       flex-grow: 0;
       align-items: center;
       justify-content: center;
-      height:100%;
-      padding: 0 .8rem;
-      cursor:pointer;
-      transition: all .2s ease-in-out;
+      height: 100%;
+      padding: 0 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
 
       /*  &:hover + a {
           background-color: var(--navbar-menu-item-background-hover);
@@ -222,50 +234,44 @@ nav {
   }
 
   &--vertical {
-
   }
-
-
 }
 
-.navigation > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon,
-.navbar > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon,
-nav > input[type="checkbox"]:checked~.navbar__toggler .navbar__toggler__icon {
+.navigation > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon,
+.navbar > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon,
+nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon {
   background: transparent;
 }
 
-.navigation > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon:before,
-.navbar > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon:before,
-nav > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon:before {
+.navigation > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:before,
+.navbar > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:before,
+nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:before {
   top: 0;
   height: 3px;
   transform: rotate(135deg);
 }
 
-.navigation > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon:after,
-.navbar > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon:after,
-nav > input[type="checkbox"]:checked ~ .navbar__toggler .navbar__toggler__icon:after {
+.navigation > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:after,
+.navbar > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:after,
+nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:after {
   top: 0;
   height: 3px;
   transform: rotate(-135deg);
 }
 
-.navigation > input[type="checkbox"]:checked ~ .navbar .navbar__menu,
-.navigation > input[type="checkbox"]:checked ~ nav .navbar__menu,
-.navbar > input[type="checkbox"]:checked ~ .navbar__menu,
-nav > input[type="checkbox"]:checked ~ .navbar__menu {
+.navigation > input[type='checkbox']:checked ~ .navbar .navbar__menu,
+.navigation > input[type='checkbox']:checked ~ nav .navbar__menu,
+.navbar > input[type='checkbox']:checked ~ .navbar__menu,
+nav > input[type='checkbox']:checked ~ .navbar__menu {
   transform: scale(1);
   opacity: 1;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 @include mq(tablet) {
   .t\:navigation-toggle {
     & .navbar__toggler {
       display: none;
     }
-
-
-
 
     & .navbar__menu {
       position: inherit;
@@ -309,12 +315,15 @@ nav > input[type="checkbox"]:checked ~ .navbar__menu {
 
         & > .dropdown__menu,
         & > ul {
+          --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.7);
+          --box-shadow: var(--neutral-shadow-alt);
+
           position: absolute;
           top: 100%;
           left: 0;
           padding: var(--half-spacing) 0;
-          background-color: var(--navbar-menu-background);
-          box-shadow: var(--navbar-menu-shadow);
+          background-color: var(--background-color);
+          box-shadow: var(--box-shadow);
 
           & li {
             width: auto;
@@ -322,14 +331,14 @@ nav > input[type="checkbox"]:checked ~ .navbar__menu {
         }
 
         & > ul li.dropdown > ul {
-          top:0;
+          top: 0;
           left: 100%;
         }
 
         & > .dropdown__menu--left {
           //--offset:calc(-100% - var(--half-spacing));
           //transform : translateX(var(--offset));
-          left:calc(-100% - var(--spacing)) !important;
+          left: calc(-100% - var(--spacing)) !important;
         }
       }
     }
@@ -368,25 +377,25 @@ nav > input[type="checkbox"]:checked ~ .navbar__menu {
     & nav,
     & .navbar {
       & .dropdown {
-
         & ul,
         & ul li ul {
-          position:absolute;
-          top:100%;
+          --box-shadow: var(--neutral-shadow-alt);
+
+          position: absolute;
+          top: 100%;
           width: max-content;
-          box-shadow: var(--navbar-menu-shadow);
+          box-shadow: var(--box-shadow);
         }
 
         & ul li > ul {
-          left:100%;
+          left: 100%;
         }
 
-        &__menu--left{
+        &__menu--left {
           left: calc(-100% - var(--half-spacing));
         }
       }
     }
-
 
     & .navbar__menu {
       position: inherit;
@@ -422,20 +431,21 @@ nav > input[type="checkbox"]:checked ~ .navbar__menu {
     & nav,
     & .navbar {
       & .dropdown {
-
         & ul,
         & ul li ul {
-          position:absolute;
-          top:100%;
+          --box-shadow: var(--neutral-shadow-alt);
+
+          position: absolute;
+          top: 100%;
           width: max-content;
-          box-shadow: var(--navbar-menu-shadow);
+          box-shadow: var(--box-shadow);
         }
 
         & ul li > ul {
-          left:100% ;
+          left: 100%;
         }
 
-        &__menu--left{
+        &__menu--left {
           left: calc(-100% - var(--half-spacing));
         }
       }
@@ -475,20 +485,21 @@ nav > input[type="checkbox"]:checked ~ .navbar__menu {
     & nav,
     & .navbar {
       & .dropdown {
-
         & ul,
         & ul li ul {
-          position:absolute;
-          top:100%;
+          --box-shadow: var(--neutral-shadow-alt);
+
+          position: absolute;
+          top: 100%;
           width: max-content;
-          box-shadow: var(--navbar-menu-shadow);
+          box-shadow: var(--box-shadow);
         }
 
         & ul li > ul {
-          left:100%;
+          left: 100%;
         }
 
-        &__menu--left{
+        &__menu--left {
           left: calc(-100% - var(--half-spacing));
         }
       }
@@ -528,20 +539,21 @@ nav > input[type="checkbox"]:checked ~ .navbar__menu {
     & nav,
     & .navbar {
       & .dropdown {
-
         & ul,
         & ul li ul {
-          position:absolute;
-          top:100%;
+          --box-shadow: var(--neutral-shadow-alt);
+
+          position: absolute;
+          top: 100%;
           width: max-content;
-          box-shadow: var(--navbar-menu-shadow);
+          box-shadow: var(--box-shadow);
         }
 
         & ul li > ul {
-          left:100%;
+          left: 100%;
         }
 
-        &__menu--left{
+        &__menu--left {
           left: calc(-100% - var(--half-spacing));
         }
       }
@@ -581,20 +593,21 @@ nav > input[type="checkbox"]:checked ~ .navbar__menu {
     & nav,
     & .navbar {
       & .dropdown {
-
         & ul,
         & ul li ul {
-          position:absolute;
-          top:100%;
+          --box-shadow: var(--neutral-shadow-alt);
+
+          position: absolute;
+          top: 100%;
           width: max-content;
-          box-shadow: var(--navbar-menu-shadow);
+          box-shadow: var(--box-shadow);
         }
 
         & ul li > ul {
-          left:100%;
+          left: 100%;
         }
 
-        &__menu--left{
+        &__menu--left {
           left: calc(-100% - var(--half-spacing));
         }
       }
