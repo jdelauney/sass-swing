@@ -1,0 +1,149 @@
+.tabs {
+  --box-shadow: var(--neutral-shadow);
+  --border-radius: var(--elem-border-radius);
+
+  position: relative;
+  margin-top: var(--spacing);
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  & section {
+    --background-color: var(--neutral-color-variation-1);
+    --color: var(--on-neutral-color-variation-1);
+    --border-width: var(--elem-border-width);
+    --border-color: var(--neutral-color-variation-2);
+    --border-radius: var(--elem-border-radius);
+
+    position: relative;
+    margin-top: 0 !important;
+    background-color: var(--background-color);
+    color: var(--color);
+    border: var(--border-width) solid var(--border-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+[role='tablist'] {
+  --background-color: var(--neutral-color-variation-1);
+  --border-radius: var(--elem-border-radius);
+
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+[role='tab'] {
+  --background-color: var(--neutral-color-variation-2);
+  --color: var(--on-neutral-color-variation-2);
+  --hover-background-color: var(--primary-color);
+  --hover-color: var(--on-primary-color);
+  --border-width: var(--elem-border-width);
+  --border-color: var(--neutral-color-variation-2);
+  --border-radius: var(--elem-border-radius);
+  --selected-background-color: var(--primary-color-variation-1);
+  --selected-color: var(--on-primary-color-variation-1);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.2rem;
+  background-clip: padding-box !important;
+  background-color: var(--background-color);
+  color: var(--color) !important;
+  border: var(--border-width) solid var(--border-color);
+  border-bottom: 0;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  //&:hover::before,
+  //&:focus::before,
+  //&[aria-selected="true"]::before {
+  //
+  //}
+  //
+  //&[aria-selected="true"]:not(:focus):not(:hover)::before {
+  //
+  //}
+  //
+  //&[aria-selected="true"]::after {
+  //
+  //}
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--hover-background-color);
+    color: var(--hover-color);
+  }
+
+  &:focus,
+  &:active {
+    cursor: none;
+  }
+
+  &[aria-selected='true'] {
+    background-color: var(--selected-background-color);
+    color: var(--selected-color);
+  }
+
+  //&:hover::before,
+  //&:focus::before {
+  //
+  //}
+}
+
+[role='tabpanel'] {
+  --border-radius: var(--elem-border-radius);
+
+  display: none;
+  width: 100%;
+  position: relative;
+  padding: var(--inner-v-spacing) var(--inner-h-spacing);
+  /* visibility: collapse;
+   height:0;
+   max-height: 0;
+   padding:0;
+   opacity:0;
+   clip: rect(0 0 0 0);
+   overflow: hidden;*/
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  //transition: all .2s ease-in-out;
+
+  &[aria-expanded='true'],
+  &[aria-hidden='false'] {
+    display: block;
+    /* visibility: visible;
+     height:auto;
+     max-height: 5000em;
+
+     opacity:1;
+     clip:unset;
+     overflow: visible;*/
+    //transition: all .2s ease-in-out;
+  }
+
+  &:focus {
+  }
+
+  &:focus::after {
+  }
+}
