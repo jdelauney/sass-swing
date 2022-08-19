@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<title>Documentation Sass Swing - Mise en page : Media-queries et breakpoints</title>
+	<meta name="Description" content="Un design propre, progressif et contrôlé sur toutes les dimensions d'écran."/>
+
+	<meta name="robots" content="index, follow">
+
+	<meta name="color-scheme" content="dark light">
+
+	<!--<link rel="stylesheet" href="styles/sasswing.doc.css">-->
+	<link rel="stylesheet" href="../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../styles/css/sass-swing.doc.min.css"/>
+	<link rel="shortcut icon" href="../assets/icons/favicon.svg" type="image/svg"/>
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu">
+			<ul>
+				<li><a href="../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="./usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="./models.html" class="link--default">Modèles</a></li>
+				<li><a href="./supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sassswing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="24px">
+							<path fill="currentColor"
+							      d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Change theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="custom-scrollbar" aria-label="Table des matières">
+			<a href="../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="../usage.html" class="link--secondary">Usage</a></li>
+				<li><a href="../themes.html" class="link--secondary">Themes</a></li>
+				<li><a href="../customize.html" class="link--secondary">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="./containers.html" class="link--secondary">Conteneurs</a></li>
+				<li><a href="./grid.html" class="link--secondary">Grille</a></li>
+				<li><a href="./breakpoints.html" class="link--secondary" aria-current="page">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler">
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="../content/typography.html" class="link--secondary">Typographie</a></li>
+				<li><a href="../content/buttons.html" class="link--secondary">Boutons</a></li>
+				<li><a href="../content/form.html" class="link--secondary">Formulaires</a></li>
+<!--				<li><a href="../content/medias.html" class="link&#45;&#45;secondary">Médias</a></li>-->
+				<li><a href="../content/table.html" class="link--secondary">Tableaux</a></li>
+				<li><a href="../content/progress.html" class="link--secondary">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="../component/navigation.html" class="link--secondary">Navigation</a></li>
+				<li><a href="../component/heading.html" class="link--secondary">En-tête</a></li>
+				<li><a href="../component/cards.html" class="link--secondary">Cartes</a></li>
+				<li><a href="../component/details.html" class="link--secondary">Détails</a></li>
+				<li><a href="../component/breadcrumb.html" class="link--secondary">Fil d'arianne</a></li>
+				<li><a href="../component/pagination.html" class="link--secondary">Pagination</a></li>
+				<li><a href="../components/modal.html" class="link--secondary">Boite de dialogue</a></li>
+				<li><a href="../component/collapsable.html" class="link--secondary">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="../components/addons/badge.html" class="link--secondary">Badge</a></li>
+						<li><a href="../components/addons/tooltip.html" class="link--secondary">Info bulle</a></li>
+						<!--						<li><a href="../components/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
+						<li><a href="../components/addons/dropdown.html" class="link--secondary">Dropdown</a></li>
+						<li><a href="../components/addons/tabs.html" class="link--secondary">Boite à onglets</a></li>
+						<!--						<li><a href="../components/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="../components/addons/notification.html" class="link--secondary">Notification</a></li>
+						<li><a href="../components/addons/slider.html" class="link--secondary">Slider</a></li>
+						<!--						<li><a href="./revealer.html" class="link&#45;&#45;secondary">Revealer</a></li>-->
+						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../helpers/layout.html" class="link--secondary">Agencement</a></li>
+				<li><a href="../helpers/design.html" class="link--secondary">Design</a></li>
+				<li><a href="../helpers/animation.html" class="link--secondary">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Media-queries et breakpoints</h1>
+				<span class="like-h4 text-em">Un design propre, progressif et contrôlé sur toutes les dimensions d'écran.</span>
+				<hr>
+			</header>
+			<h2 class="text-swing">Adaptation progressive</h2>
+			<p>
+				Les <abbr title="breakpoints">points d'arrêt</abbr> sont des variables indispensables pour la conception réactive de vos applications.
+				Utilisez-les pour structurer vos propriétés CSS, afin de contrôler quand votre mise en page peut être adaptée à une taille de fenêtre ou d'appareil particulière.
+			</p>
+			<h3 id="breakpoints">Les "breakpoints" disponibles</h3>
+			<div class="flex flow-container flex--center">
+				<table>
+					<thead>
+					<tr>
+						<th>Breakpoint</th>
+						<th>Prefix de classe</th>
+						<th>Dimensions</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Petit Mobile</td>
+						<td><em>Aucun</em></td>
+						<td>&lt;400px</td>
+					</tr>
+					<tr>
+						<td>Mobile</td>
+						<td><code><i>m:</i></code></td>
+						<td>≥400px & &lt;600px</td>
+					</tr>
+					<tr>
+						<td>Tablette portrait</td>
+						<td><code><i>t:</i></code></td>
+						<td>≥600px & &lt;900px</td>
+					</tr>
+					<tr>
+						<td>Moyen <i>(Tablette paysage)</i></td>
+						<td><code><i>md:</i></code></td>
+						<td>≥900px & &lt;1200px</td>
+					</tr>
+					<tr>
+						<td>Desktop</td>
+						<td><code><i>d:</i></code></td>
+						<td>≥1200px & &lt;1440px</td>
+					</tr>
+					<tr>
+						<td>Desktop moyen</td>
+						<td><code><i>dm:</i></code></td>
+						<td>≥1440px & &lt;1600px</td>
+					</tr>
+					<tr>
+						<td>Desktop large</td>
+						<td><code><i>lg:</i></code></td>
+						<td>≥1600px & &lt;1800px</td>
+					</tr>
+					<tr>
+						<td>Desktop extra large</td>
+						<td><code><i>xl:</i></code></td>
+						<td>≥1800px & &lt;2560px</td>
+					</tr>
+					<tr>
+						<td>Desktop extra extra large</td>
+						<td><code><i>xxl:</i></code></td>
+						<td>≥2560px</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>
+				Certaine classes de SassSwing comme les <a class="link--default" href="grid.html">grilles</a> utilisent les media-queries. Pour les utiliser dans le code source HTML, il suffit de faire précéder le nom de la classe avec le préfixe adéquat.
+			</p>
+			<h2 class="text-swing">Outil SASS</h2>
+			<p>
+				La version SASS de SassSwing fournit un mixins, qui vous permettra de contrôler la mise en place de vos classes CSS pour différents points d'arrêts facilement.
+			</p>
+		</section>
+	</div>
+	<footer class="d:col-start-2">
+		<hr>
+		<h2>Supportez <span class="text-swing-alt">Sass Swing</span></h2>
+	</footer>
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+</main>
+<footer class="container-full">
+	&reg;&nbsp;Sass Swing 2022
+</footer>
+<script src="../scripts/vendors/prism.js"></script>
+<script type="module" src="../scripts/script.js"></script>
+</body>
+</html>
