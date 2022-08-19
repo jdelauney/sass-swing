@@ -121,7 +121,6 @@ body {
     padding-left: var(--spacing);
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    background-color: var(--navbar-menu-background);
     //overflow-y: auto;
     box-shadow: 4px 0 4px -3px rgba(0,0,0,.15);
     font-size:.9em;
@@ -196,7 +195,7 @@ body {
   /* border-top: var(--border-width) solid var(--border-color);
    border-bottom-right-radius: var(--border-radius);
    border-bottom-left-radius: var(--border-radius);*/
-  background-color: var(--color-background-alt-active);
+  background-color: var(--neutral-color-variation-1);
 }
 
 @include mq(desktop) {
@@ -232,25 +231,25 @@ body {
 }
 
 .btn--swing {
-  --custom-background:var(--color-swing) !important;
-  --custom-border-color:var(--color-swing-dark) !important;
-  --custom-text:var(--color-swing-text) !important;
-  --custom-active-background:var(--color-swing-hover) !important;
-  --custom-active-text:var(--color-swing-hover-text) !important;
-  --custom-hover-background:var(--color-swing-hover) !important;
-  --custom-hover-text:var(--color-swing-hover-text) !important;
-  --custom-hover-border-color:var(--color-swing-light) !important;
+  --background-color:var(--color-swing) !important;
+  --border-color:var(--color-swing-dark) !important;
+  --color:var(--color-swing-text) !important;
+  --active-background-color:var(--color-swing-hover) !important;
+  --active-color:var(--color-swing-hover-text) !important;
+  --hover-background-color:var(--color-swing-hover) !important;
+  --hover-color:var(--color-swing-hover-text) !important;
+  --hover-border-color:var(--color-swing-light) !important;
 }
 
 .btn--custom {
-  --custom-background: #A1887F;
-  --custom-border-color:#3E2723;
-  --custom-text:#1B2631;
-  --custom-active-background:#4E342E;
-  --custom-active-text:#D7CCC8;
-  --custom-hover-background:#4E342E;
-  --custom-hover-text:#D7CCC8;
-  --custom-hover-border-color:#795548;
+  --background-color: #A1887F;
+  --border-color:#3E2723;
+  --color:#1B2631;
+  --active-background-color:#4E342E;
+  --active-color:#D7CCC8;
+  --hover-background-color:#4E342E;
+  --hover-color:#D7CCC8;
+  --hover-border-color:#795548;
 }
 
 //.btn--default-primary {
@@ -267,10 +266,10 @@ body {
 
 
 a.link--default {
-  --custom-text: var(--color-swing);
-  --custom-decoration-color: var(--color-swing);
-  --custom-hover-text: var(--color-swing-hover);
-  --custom-hover-decoration-color: var(--color-swing-hover);
+  --color: var(--color-swing);
+  --decoration-color: var(--color-swing);
+  --hover-color: var(--color-swing-hover);
+  --hover-decoration-color: var(--color-swing-hover);
 
   &[aria-current] {
     color:var(--color-swing-hover);
@@ -288,10 +287,10 @@ a.link--secondary[aria-current] {
 }
 
 .link--custom {
-  --custom-text: #4E342E;
-  --custom-decoration-color: #4E342E;
-  --custom-hover-text: #795548;
-  --custom-hover-decoration-color: #795548;
+  --color: #4E342E;
+  --decoration-color: #4E342E;
+  --hover-color: #795548;
+  --hover-decoration-color: #795548;
 }
 
 //.mark--default-primary {
@@ -398,9 +397,9 @@ dialog .close {
   width: 8em;
   height: 8em;
   overflow: hidden;
-  border: .5em solid var(--color-background-alt-active);
+  border: .5em solid var(--neutral-color-variation-2);
   border-radius: 50%;
-  background-color: var(--color-background-alt-active);
+  background-color: var(--neutral-color-variation-1);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -421,9 +420,9 @@ dialog .close {
 
 .colorBox {
   justify-content: center;
-  border: 1px solid var(--input-border-color);
+  border: 1px solid var(--neutral-color-variation-2);
   border-radius: .5em;
-  background-color: var(--input-background);
+  background-color: var(--neutral-color-variation-1);
 
   & > [data-tooltip] {
     border-bottom: unset !important;
@@ -515,8 +514,8 @@ dialog .close {
   min-width:4em;
   min-height:4em;
   padding:.5em;
-  background-color: var(--primary-background);
-  color:var(--primary-text);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--primary-border-color);
+  background-color: var(--primary-color);
+  color:var(--on-primary-color);
+  border-radius: var(--elem-border-radius);
+  border: var(--elem-border-width) solid var(--primary-color-variation-3);
 }
