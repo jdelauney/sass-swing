@@ -2,19 +2,85 @@
 <html lang="fr">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 	<meta charset="UTF-8">
 	<title>Documentation Sass Swing - Mise en page : les conteneurs</title>
-	<meta name="Description" content="Conteneur"/>
+	<meta name="Description" content="Agencez vos pages avec les conteneurs adaptatifs du framework scss/css Sass Swing"/>
 
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass Swing - Mise en page : les conteneurs">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Agencez vos pages avec les conteneurs adaptatifs du framework scss/css Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/layout/containers.html">
 	<meta name="robots" content="index, follow">
 
-	<meta name="color-scheme" content="dark light">
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
 
-	<!--<link rel="stylesheet" href="styles/sasswing.doc.css">-->
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Mise en page : les conteneurs"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/layout/containers.html">
+	<meta property="og:title" content="Documentation Sass Swing - Mise en page : les conteneurs">
+	<meta property="og:description" content="Agencez vos pages avec les conteneurs adaptatifs du framework scss/css Sass Swing">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/documentation/layout/containers.html">
+	<meta property="twitter:title" content="Documentation Sass Swing - Mise en page : les conteneurs">
+	<meta property="twitter:description" content="Agencez vos pages avec les conteneurs adaptatifs du framework scss/css Sass Swing">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../styles/css/sass-swing.doc.min.css" as="style">
 	<link rel="stylesheet" href="../styles/css/prism.min.css"/>
 	<link rel="stylesheet" href="../styles/css/sass-swing.doc.min.css"/>
-	<link rel="shortcut icon" href="../assets/icons/favicon.svg" type="image/svg"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
 </head>
 <body>
 <header class="navigation navigation--sticky md:navigation-toggle">
@@ -31,7 +97,7 @@
 				<li><a href="../models.html" class="link--default">Modèles</a></li>
 				<li><a href="../supportus.html" class="link--default">Supportez nous</a></li>
 				<li>
-					<a href="https://github.com/jdelauney/sassswing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+					<a href="https://github.com/jdelauney/sass-swing" aria-label="Sass Swing GitHub repository" class="icon link--default">
 						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="24px">
 							<path fill="currentColor"
 							      d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
@@ -98,11 +164,11 @@
 			<ul id="collapsable-menu-4" class="collapsable">
 				<li><a href="../component/navigation.html" class="link--secondary">Navigation</a></li>
 				<li><a href="../component/heading.html" class="link--secondary">En-tête</a></li>
-				<li><a href="../component/cards.html" class="link--secondary">Cartes</a></li>
+				<li><a href="../component/cards.html" class="link--secondary">Carte</a></li>
 				<li><a href="../component/details.html" class="link--secondary">Détails</a></li>
-				<li><a href="../component/breadcrumb.html" class="link--secondary">Fil d'arianne</a></li>
+				<li><a href="../component/breadcrumb.html" class="link--secondary">Fil d'ariane</a></li>
 				<li><a href="../component/pagination.html" class="link--secondary">Pagination</a></li>
-				<li><a href="../components/modal.html" class="link--secondary">Boite de dialogue</a></li>
+				<li><a href="../component/modal.html" class="link--secondary">Boite de dialogue</a></li>
 				<li><a href="../component/collapsable.html" class="link--secondary">Collapsable</a></li>
 				<li>
 				<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
@@ -110,14 +176,14 @@
 					</label>
 				<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
 				<ul id="collapsable-menu-4a" class="collapsable">
-						<li><a href="../components/addons/badge.html" class="link--secondary">Badge</a></li>
-						<li><a href="../components/addons/tooltip.html" class="link--secondary">Info bulle</a></li>
-<!--						<li><a href="../components/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
-						<li><a href="../components/addons/dropdown.html" class="link--secondary">Dropdown</a></li>
-					  <li><a href="../components/addons/tabs.html" class="link--secondary">Boite à onglets</a></li>
-<!--						<li><a href="../components/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
-						<li><a href="../components/addons/notification.html" class="link--secondary">Notification</a></li>
-						<li><a href="../components/addons/slider.html" class="link--secondary">Slider</a></li>
+						<li><a href="../component/addons/badge.html" class="link--secondary">Badge</a></li>
+						<li><a href="../component/addons/tooltip.html" class="link--secondary">Info bulle</a></li>
+<!--						<li><a href="../component/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
+						<li><a href="../component/addons/dropdown.html" class="link--secondary">Menu déroulant</a></li>
+					  <li><a href="../component/addons/tabs.html" class="link--secondary">Boite à onglets</a></li>
+<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="../component/addons/notification.html" class="link--secondary">Notification</a></li>
+						<li><a href="../component/addons/slider.html" class="link--secondary">Slider</a></li>
 <!--						<li><a href="./revealer.html" class="link&#45;&#45;secondary">Revealer</a></li>-->
 <!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
 <!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->

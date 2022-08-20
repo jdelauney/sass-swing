@@ -2,19 +2,85 @@
 <html lang="fr">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta charset="UTF-8">
-	<title>Sass Swing modern and efficient css/scss framework - Introduction</title>
-	<meta name="Description" content="Sass Swing le framework css/scss moderne, facile à utiliser. Créez des pages Web optimisées avec une accessibilité améliorée pour les technologies d'assistance."/>
 
+	<meta charset="UTF-8">
+	<title>Documentation Sass Swing - Présentation</title>
+	<meta name="Description" content="Présentation du framework SCSS / CSS Sass Swing. Le framework pour booster vos sites web. Moderne, accessible, élégant, simple et cohérent"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass Swing - Présentation">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Présentation du framework SCSS / CSS Sass Swing. Le framework pour booster vos sites web. Moderne, accessible, élégant, simple et cohérent"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/presentation.html">
 	<meta name="robots" content="index, follow">
 
-	<meta name="color-scheme" content="dark light">
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
 
-	<!--<link rel="stylesheet" href="styles/sasswing.doc.css">-->
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Présentation"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/presentation.html">
+	<meta property="og:title" content="Documentation Sass Swing - Présentation">
+	<meta property="og:description" content="Présentation du framework SCSS / CSS Sass Swing. Le framework pour booster vos sites web. Moderne, accessible, élégant, simple et cohérent">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/">
+	<meta property="twitter:title" content="Documentation Sass Swing - Présentation">
+	<meta property="twitter:description" content="Présentation du framework SCSS / CSS Sass Swing. Le framework pour booster vos sites web. Moderne, accessible, élégant, simple et cohérent">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="./styles/css/prism.min.css" as="style">
+	<link rel="preload" href="./styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="./styles/css/prism.min.css"/>
 	<link rel="stylesheet" href="./styles/css/sass-swing.doc.min.css"/>
 
-	<link rel="shortcut icon" href="./assets/icons/favicon.svg" type="image/svg"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
 </head>
 <body>
 <header class="navigation navigation--sticky md:navigation-toggle">
@@ -97,12 +163,11 @@
 			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
 			<ul id="collapsable-menu-4" class="collapsable">
 				<li><a href="./component/navigation.html" class="link--secondary">Navigation</a></li>
-				<li><a href="./component/heading.html" class="link--secondary">En-tête</a></li>
-				<li><a href="./component/cards.html" class="link--secondary">Cartes</a></li>
+				<li><a href="./component/card.html" class="link--secondary">Carte</a></li>
 				<li><a href="./component/details.html" class="link--secondary">Détails</a></li>
-				<li><a href="./component/breadcrumb.html" class="link--secondary">Fil d'arianne</a></li>
+				<li><a href="./component/breadcrumb.html" class="link--secondary">Fil d'ariane</a></li>
 				<li><a href="./component/pagination.html" class="link--secondary">Pagination</a></li>
-				<li><a href="./components/modal.html" class="link--secondary">Boite de dialogue</a></li>
+				<li><a href="./component/modal.html" class="link--secondary">Boite de dialogue</a></li>
 				<li><a href="./component/collapsable.html" class="link--secondary">Collapsable</a></li>
 				<li>
 					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
@@ -110,14 +175,14 @@
 					</label>
 					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
 					<ul id="collapsable-menu-4a" class="collapsable">
-						<li><a href="./components/addons/badge.html" class="link--secondary">Badge</a></li>
-						<li><a href="./components/addons/tooltip.html" class="link--secondary">Info bulle</a></li>
-						<!--						<li><a href="../components/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
-						<li><a href="./components/addons/dropdown.html" class="link--secondary">Dropdown</a></li>
-						<li><a href="./components/addons/tabs.html" class="link--secondary">Boite à onglets</a></li>
-						<!--						<li><a href="../components/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
-						<li><a href="./components/addons/notification.html" class="link--secondary">Notification</a></li>
-						<li><a href="./components/addons/slider.html" class="link--secondary">Slider</a></li>
+						<li><a href="./component/addons/badge.html" class="link--secondary">Badge</a></li>
+						<li><a href="./component/addons/tooltip.html" class="link--secondary">Info bulle</a></li>
+						<!--						<li><a href="../component/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
+						<li><a href="./component/addons/dropdown.html" class="link--secondary">Menu déroulant</a></li>
+						<li><a href="./component/addons/tabs.html" class="link--secondary">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="./component/addons/notification.html" class="link--secondary">Notification</a></li>
+						<li><a href="./component/addons/slider.html" class="link--secondary">Slider</a></li>
 						<!--						<li><a href="./revealer.html" class="link&#45;&#45;secondary">Revealer</a></li>-->
 						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
 						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
@@ -130,9 +195,9 @@
 			</label>
 			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
 			<ul id="collapsable-menu-5" class="collapsable">
-				<li><a href="../helpers/layout.html" class="link--secondary">Agencement</a></li>
-				<li><a href="../helpers/design.html" class="link--secondary">Design</a></li>
-				<li><a href="../helpers/animation.html" class="link--secondary">Animation</a></li>
+				<li><a href="./helpers/layout.html" class="link--secondary">Agencement</a></li>
+				<li><a href="./helpers/design.html" class="link--secondary">Design</a></li>
+				<li><a href="./helpers/animation.html" class="link--secondary">Animation</a></li>
 			</ul>
 
 		</nav>
