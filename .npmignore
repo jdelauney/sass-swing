@@ -1,0 +1,5 @@
+src/scripts/**/*
+documentation/**/*
+brand/*
+.husky/**/*
+.github/**/*

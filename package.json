@@ -1,9 +1,29 @@
 {
-  "name": "sass-swing",
-  "version": "1.0.0",
+  "name": "@sass-swing/core",
+  "version": "1.0.0-beta",
   "description": "Sass Swing is a modern, efficiant and consistent css/scss framework with js ready-to-use components, to build optimized responsive web page easy-to-use, quickly and improved accessibility for assistive technologies",
   "author": "J.Delauney",
-  "main": "dist/css/sassswing.min.css",
+  "main": "dist/js/sass-swing.esm.min.js",
+  "umd:main": "dist/js/sass-swing.min.js",
+  "module": "dist/js/sass-swing.esm.min.js",
+  "browser": "dist/js/sass-swing.min.js",
+  "style": "dist/css/sass-swing.min.css",
+  "sass": "src/sass-swing.scss",
+  "files": [
+    "dist/**/*",
+    "dist/js/**/*.{js,map}",
+    "src/scss/**/*.scss"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "semantic-release-gitmoji",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -36,7 +56,9 @@
     "precss:optimize:sassswing": "echo '[@sass-swing/sass-swing] Optimize Sass Swing .css files'",
     "scss:compile:sassswing": "sass --style expanded --embed-sources --no-error-css src/:dist/css/",
     "css:optimize:sassswing": "postcss dist/css/**/*.css !dist/css/**/*.min.css --dir dist/css/ --ext .min.css",
-    "build:sassswing": "npm-run-all scss:compile:sassswing css:optimize:sassswing --silent",
+    "prebuid:js": "echo '[@sass-swing/sass-swing] Bundle javascript'",
+    "build:js": "rollup -c",
+    "build:sassswing": "npm-run-all scss:compile:sassswing css:optimize:sassswing build:js --silent",
     "build": "npm-run-all build:sassswing --silent",
     "prebuild:doc": "echo [@sass-swing/sass-swing] Build Sass Swing documentation",
     "prejs:doc:build": "echo '[@sass-swing/sass-swing] Bundle and minify documentation .js files'",
@@ -80,6 +102,8 @@
     "postcss-scss": "^4.0.4",
     "postcss-sort-media-queries": "^4.2.1",
     "prettier": "^2.7.1",
-    "sass": "^1.54.0"
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.54.0",
+    "semantic-release": "^19.0.3"
   }
 }
