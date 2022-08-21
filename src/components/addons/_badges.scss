@@ -1,0 +1,56 @@
+.badge {
+  --background-color: var(--neutral-color-variation-1);
+  --color: var(--on-neutral-color-variation-1);
+  --hover-background-color: var(--neutral-color-variation-2);
+  --hover-color: var(--on-neutral-color-variation-2);
+
+  display: inline-grid;
+  place-content: center;
+  position: relative;
+  padding: 0.35em 0.35em 0.25em 0.35em;
+
+  background-color: var(--background-color);
+  color: var(--color);
+  border: none !important;
+  border-radius: 0.25rem;
+
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+
+  &:not(:last-child) {
+    margin-right: 0.5em;
+  }
+
+  &[href]:hover {
+    background-color: var(--hover-background-color);
+    color: var(--hover-color);
+  }
+
+  &--pill {
+    border-radius: 2em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+  }
+
+  &--circle {
+    border-radius: 50%;
+    padding: 0.5em;
+    min-width: 2em;
+    min-height: 2em;
+    aspect-ratio: 1/1;
+  }
+
+  &--floating {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+    z-index: 5000;
+  }
+}
