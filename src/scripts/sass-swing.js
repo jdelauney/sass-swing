@@ -9,8 +9,8 @@ export const fixDocumentHeight = () => {
   doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
 };
 
-export { Notify } from './components/notify.js';
-export { default } from './components/modalify.js';
+export { notify } from './components/notify.js';
+export { Modalify } from './components/modalify.js';
 
 // Sass Swing initialization entry point
 (() => {

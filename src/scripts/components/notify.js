@@ -330,6 +330,4 @@ export class Notify {
  * Variable globale déclarant un object Notify
  * @type {Notify}
  */
-const notify = new Notify();
-
-export default notify;
+export const notify = new Notify();

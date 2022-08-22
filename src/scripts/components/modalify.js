@@ -1,7 +1,7 @@
 import { waitForDOMEvent } from '../core/helpers/domUtils.js';
 import CustomComponent from '../core/CustomComponent.js';
 
-export default class Modalify extends CustomComponent {
+export class Modalify extends CustomComponent {
   /**
    * Paramètres des notifications cf _defaultConfig
    * @type {Object}
