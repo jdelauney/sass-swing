@@ -1,4 +1,4 @@
-import CustomComponent from '../core/customcomponent.js';
+import CustomComponent from '../core/CustomComponent.js';
 /**
  * Gestion d'un composant de type "dropdown", au click ou au survol suivant les options passées en paramètre
  *

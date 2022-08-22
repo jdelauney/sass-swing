@@ -1,4 +1,4 @@
-import CustomComponent from '../core/customcomponent.js';
+import CustomComponent from '../core/CustomComponent.js';
 
 export default class Tabify extends CustomComponent {
   constructor(element) {
