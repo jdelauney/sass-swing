@@ -165,7 +165,7 @@
 				<li><a href="./component/navigation.html" class="link--secondary">Navigation</a></li>
 				<li><a href="./component/card.html" class="link--secondary">Carte</a></li>
 				<li><a href="./component/details.html" class="link--secondary">Détails</a></li>
-				<li><a href="./component/breadcrumb.html" class="link--secondary">Fil d'ariane</a></li>
+				<li><a href="./component/breadcrumb.html" class="link--secondary">Fil d'Ariane</a></li>
 				<li><a href="./component/pagination.html" class="link--secondary">Pagination</a></li>
 				<li><a href="./component/modal.html" class="link--secondary">Boite de dialogue</a></li>
 				<li><a href="./component/collapsable.html" class="link--secondary">Collapsable</a></li>
@@ -207,11 +207,11 @@
 		<section>
 			<header class="heading">
 				<h1 class="text-swing-alt">Usage</h1>
-				<span class="like-h4 text-em">Découvrez comment utiliser facilement SassSwing pour créer des sites web responsive.</span>
+				<span class="like-h4 text-em">Découvrez comment utiliser facilement Sass Swing pour créer des sites web responsive.</span>
 				<hr>
 			</header>
 			<h2 class="text-swing">Téléchargement</h2>
-			<p>SassSwing se présente sous deux formes différentes.<br>
+			<p>Sass Swing se présente sous deux formes différentes.<br>
 				Sélectionnez ci-dessous, la version que vous souhaitez en fonction de vos préférences.
 			</p>
 			<div class="grid md:cols-auto gap-4">
@@ -236,11 +236,11 @@
 					</header>
 					<div class="panel">
 						<p>
-							Vous avez deux possibilités. Elles contiennent les fichiers source SCSS. En choisissant une de ces deux version,vous pourrez choisir les composants à inclure et vous aurez un controle total sur la personnalisation.<br>
+							Vous avez deux possibilités. Elles contiennent les fichiers sources SCSS. En choisissant une de ces deux versions, vous pourrez choisir les composants à inclure et vous aurez un controle total sur la personnalisation.<br>
 						</p>
 						<p>
-							Générez un modèle, à partir de notre <b>"Starter Kit"</b> pour commencer à utiliser SassSwing directement pour construire votre site web <i>(nécessite un compte Github)</i><br>
-							Téléchargez ou clonez les sources pour nous aider et contribuer au développement de SassSwing <i>(contient les fichiers source de cette documentation)</i>.
+							Générez un modèle, à partir de notre <b>"Starter Kit"</b> pour commencer à utiliser Sass Swing directement pour construire votre site web <i>(nécessite un compte Github)</i><br>
+							Téléchargez ou clonez les sources pour nous aider et contribuer au développement de Sass Swing <i>(contient les fichiers source de cette documentation)</i>.
 						</p>
 						<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>git </b><i>clone </i><u>https://github.com/sass-swing/sass-swing.git</u></code></pre>
 					</div>
@@ -250,20 +250,20 @@
 				</div>
 			</div>
 			<h3 class="text-swing-alt">CDN</h3>
-			<p>Vous pouvez utiliser SassSwing directement dans vos productions via le serveur CDN unpkg ou js-deliver</p>
+			<p>Vous pouvez utiliser Sass Swing directement dans vos productions via le serveur CDN unpkg ou js-deliver</p>
 			<pre data-lang="html"><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@sass-swing/dist/css"</u>&gt;</code></pre>
 			<h3 class="text-swing-alt">NPM</h3>
-			<p>Vous pouvez également installer les sources de SassSwing via NPM</p>
+			<p>Vous pouvez également installer les sources de Sass Swing via NPM</p>
 			<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>npm </b><i>install </i><u>sass-swing</u></code></pre>
 		</section>
 		<section>
 			<div class="heading">
 				<h2 class="text-swing">Mise en place CSS</h2>
-				<span class="like-h5 text-em"> Cette section est pertinente que si vous avez choisi de télécharger la version CSS de SassSwing</span>
+				<span class="like-h5 text-em"> Cette section est pertinente que si vous avez choisi de télécharger la version CSS de Sass Swing</span>
 			</div>
 			<h3>Structure du projet</h3>
 			<p>
-				Si vous avez téléchargé, les fichiers <abbr title="Cascading Style Sheet">CSS</abbr>, il vous faut extraire les fichiers dans le dossier ou est situé votre projet.<br><br>
+				Si vous avez téléchargé, les fichiers <abbr title="Cascading Style Sheet">CSS</abbr>, il vous faut extraire les fichiers dans le dossier où est situé votre projet.<br><br>
 				La structure de votre dossier devrait ressembler à ceci :
 			</p>
 			<pre>
@@ -290,7 +290,7 @@
 			</p>
 			<h3>Configuration HTML</h3>
 			<p>
-				Il vous suffit de vous assurer de lier correctement les fichiers dans votre page Web. Il est recommandé d'importer les fichiers javascript à la fin afin de réduire le temps de chargement de la page.<br>
+				Il vous suffit de vous assurer que les fichiers soient correctement liés à votre page Web. Il est recommandé d'importer les fichiers javascript en bas de page (avant la balise fermante <code>&lt;/body&gt;</code>) afin de réduire le temps de chargement de la page.<br>
 				<br>Suivez l'exemple ci-dessous :
 			</p>
 			<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;!doctype html&gt;
@@ -317,11 +317,11 @@
 		<section>
 			<div class="heading">
 				<h2 class="text-swing">Mise en place SASS</h2>
-				<span class="like-h5">Cette section est pertinente que si vous avez choisi de télécharger une des versions SASS de SassSwing</span>
+				<span class="like-h5">Cette section est pertinente que si vous avez choisi de télécharger une des versions SASS de Sass Swing</span>
 			</div>
-			<p>Si vous avez choisi de de générer le model, vous devrez impérativement cloner votre dépôt Github en local sur votre ordinateur</p>
+			<p>Si vous avez choisi de générer le model, vous devrez impérativement cloner votre dépôt Github en local sur votre ordinateur</p>
 			<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>git </b><i>clone </i><u>https://github.com/username/repository</u></code></pre>
-			<p>Ensuite, que vous ayez choisir une des deux version SASS de SassSwing, vous devez installer les dépendances NPM pour pouvoir compiler les fichiers SCSS en fichiers CSS exploitables pas vos pages HTML avec les commandes adequats</p>
+			<p>Après avoir choisi, une des deux versions SASS de Sass Swing, vous devez installer les dépendances NPM pour pouvoir compiler les fichiers SCSS en fichiers CSS exploitables par vos pages HTML avec les commandes adequates ou avec votre bundler préférer (Webpack, Parcel, Vite...)</p>
 			<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>npm </b><i>install </i><u>sass-swing</u></code></pre>
 			<h3>Le modèle de projet</h3>
 			<h4>Structure du projet</h4>
@@ -349,7 +349,7 @@
 	  |  |--index.html
 	          </code>
 					</pre>
-			<p>Les fichiers sources de SassSwing que vous allez utiliser, se trouvent dans les dossiers vendors/sass-swing.<br>
+			<p>Les fichiers sources de Sass Swing que vous allez utiliser, se trouvent dans les dossiers vendors/sass-swing.<br>
 				Le dossier <code>./dist</code> contiendra vos fichiers compilés</p>
 			<h4>Commandes disponibles</h4>
 			<ul>
@@ -383,7 +383,7 @@
 			<h4>Commandes disponibles</h4>
 			<ul>
 				<li>
-					<h5>Compilation de SassSwing</h5>
+					<h5>Compilation de Sass Swing</h5>
 					<p>Les fichiers compilés et compressés se trouveront dans le dossier <code>./dist</code></p>
 					<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>npm </b><i>run </i><u>build</u></code></pre>
 				</li>
@@ -397,7 +397,7 @@
 		<section>
 			<h2 class="text-swing">Modèles de page</h2>
 			<p>
-				Nous avons créé des modèles de démarrage afin que vous puissiez facilement er rapidement commencer à concevoir votre site Web avec un temps de configuration minimal. Ceux-ci sont basés sur la version SASS (modèle) de SassSwing
+				Nous avons créé des modèles de démarrage afin que vous puissiez facilement er rapidement commencer à concevoir votre site Web avec un temps de configuration minimal. Ceux-ci sont basés sur la version SASS (modèle) de Sass Swing
 			</p>
 			<a href="#" role="button" class="btn--swing btn--block">Découvrez tous nos modèles de page</a>
 		</section>

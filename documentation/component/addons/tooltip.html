@@ -18,7 +18,7 @@
 	<meta name="msapplication-TileColor" content="#1f2225">
 	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
 	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
-	<meta name="application-name" content="SassSwing Documentation">
+	<meta name="application-name" content="Sass Swing Documentation">
 
 	<!-- SEO -->
 	<script type='application/ld+json'>
@@ -166,7 +166,7 @@
 				<!--				<li><a href="./heading.html" class="link&#45;&#45;secondary">En-tête</a></li>-->
 				<li><a href="../card.html" class="link--secondary">Carte</a></li>
 				<li><a href="../details.html" class="link--secondary">Détails</a></li>
-				<li><a href="../breadcrumb.html" class="link--secondary">Fil d'ariane</a></li>
+				<li><a href="../breadcrumb.html" class="link--secondary">Fil d'Ariane</a></li>
 				<li><a href="../pagination.html" class="link--secondary">Pagination</a></li>
 				<li><a href="../modal.html" class="link--secondary">Boite de dialogue</a></li>
 				<li><a href="../collapsable.html" class="link--secondary">Collapsable</a></li>
@@ -224,7 +224,7 @@
 				Le délai d'apparition est configurable via la variable CSS locale <code><i>--tooltip-delay</i></code>. Par défaut le temps d'attente est de 1 seconde.
 			</p>
 			<article class="card">
-				<div class="card-panel flex flex--column flex--center" style="--gap:1em">
+				<div class="panel flex flex--column flex--center" style="--gap:1em">
 					<span aria-label="Tooltip top" data-tooltip="top">top</span>
 					<span aria-label="Tooltip left" data-tooltip="left" style="--tooltip-delay:0;">left</span>
 					<span aria-label="Tooltip right" data-tooltip="right" style="--tooltip-delay:3s;">right</span>
@@ -262,7 +262,7 @@
 				</li>
 			</ul>
 			<article class="card">
-				<div class="card-panel flex flex--row flex--space-evenly" style="--gap:1em">
+				<div class="panel flex flex--row flex--space-evenly" style="--gap:1em">
 					<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="top">Normal</span>
 					<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="fit" data-tooltip="top">Info-bulle : fit</span>
 					<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="small" data-tooltip="bottom">Info-bulle : small</span>
@@ -285,7 +285,7 @@
 				Les info-bulles peuvent être affichée en permanence, il suffit d'ajouter l'attribut <code><i>data-tooltip-visible</i></code>
 			</p>
 			<article class="card">
-				<div class="card-panel flex flex--row flex--center">
+				<div class="panel flex flex--row flex--center">
 					<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="right"  data-tooltip-size="fit" data-tooltip-visible>toujours visible</span>
 				</div>
 				<footer class="footer__code">
@@ -301,7 +301,7 @@
 				Pour palier à cette problématique, le contenu devra être englobé dans un élément enfant désigné par le role <code><i>role</i>=<u>"tooltip"</u></code>.
 			</p>
 			<p>
-				En sus, <span class="text-swing-alt">SassSwing</span> met à disposition des classes CSS équivalente aux attributs pour gérer l'affichage.
+				En sus, <span class="text-swing-alt">Sass Swing</span> met à disposition des classes CSS équivalente aux attributs pour gérer l'affichage.
 			</p>
 			<ul>
 				<li>La classe <code><i>.tooltip</i></code> pour définir l'élément propriétaire de l'info-bulle.</li>
@@ -316,7 +316,7 @@
 			</p>
 
 			<article class="card">
-				<div class="card-panel flex flex--row flex--center" style="--gap:1em;">
+				<div class="panel flex flex--row flex--center" style="--gap:1em;">
 					<div role="button" class="tooltip tooltip--top tooltip--large" style="--tooltip-size-large: 240px" aria-describedby="tooltipContent1" tabindex="0">
 						Lorem picsum
 						<div id="tooltipContent1" role="tooltip" class="flex flex--column flex--center" style="--p:.5em">
