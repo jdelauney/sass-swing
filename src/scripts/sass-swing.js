@@ -12,6 +12,7 @@ export const fixDocumentHeight = () => {
 export { Notify } from './components/notify.js';
 export { default } from './components/modalify.js';
 
+// Sass Swing initialization entry point
 (() => {
   document.addEventListener('resize', debounce(fixDocumentHeight));
   window.addEventListener('DOMContentLoaded', () => {
