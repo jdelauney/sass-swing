@@ -1,24 +1,25 @@
 @use '../abstracts/mixins' as *;
 
 .card,
-.panel {
-  --background-color: var(--neutral-color-variation-1);
-  --custom-text: var(--on-neutral-color-variation-1);
-  --border-width: var(--elem-border-width);
-  --border-color: var(--neutral-color-variation-2);
-  --border-radius: var(--elem-border-radius);
-  --box-shadow: var(--neutral-shadow);
+.card-panel {
+  --custom-background: var(--panel-background);
+  --custom-text: var(--panel-text);
+  --custom-border-color: var(--panel-border-color);
+  --custom-border-width: var(--border-width);
+  --custom-border-radius: var(--panel-border-radius);
+  --custom-shadow: var(--panel-shadow);
 
   display: flex;
   flex-direction: column;
   //padding: var(--inner-v-spacing) var(--inner-h-spacing);
   //overflow: auto;
-  background-color: var(--background);
+  border: var(--custom-border-width) solid var(--custom-border-color);
+  border-radius: var(--custom-border-radius);
   background-clip: border-box;
-  color: var(--color);
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  background-color: var(--custom-background);
+  box-shadow: var(--custom-shadow);
+  color: var(--custom-text);
+  //margin:var(--spacing) 0;
 
   &:first-child {
     margin-top: 0;
@@ -28,6 +29,12 @@
     margin-top: var(--block-half-spacing);
   }
 
+  //> header,
+  //> footer {
+  //  //margin: calc(var(--inner-v-spacing) * -1) calc(var(--inner-h-spacing) * -1);
+  //  padding: var(--inner-v-spacing) var(--inner-h-spacing);
+  //}
+
   > header,
   > footer {
     display: flex;
@@ -36,15 +43,15 @@
   }
 
   > header {
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--custom-border-radius);
+    border-top-left-radius: var(--custom-border-radius);
   }
 
   > footer {
     margin-top: auto;
     //padding-top:calc(var(--inner-v-spacing) + (var(--spacing) * 2));
-    border-bottom-right-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--custom-border-radius);
+    border-bottom-left-radius: var(--custom-border-radius);
   }
 
   > figure:first-child,
@@ -54,8 +61,8 @@
   > header figure:first-child img,
   > img:first-child {
     //margin: calc(var(--inner-v-spacing)*-1) calc(var(--inner-h-spacing)*-1);
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--custom-border-radius);
+    border-top-left-radius: var(--custom-border-radius);
   }
 
   > figure:last-child,
@@ -65,8 +72,8 @@
   > footer figure:last-child img,
   > img:last-child {
     margin-top: 0;
-    border-bottom-right-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--custom-border-radius);
+    border-bottom-left-radius: var(--custom-border-radius);
   }
 
   &--collapsable {
@@ -92,21 +99,23 @@
   }
 }
 
-.panel {
+.card-panel {
   display: block;
   padding: var(--inner-v-spacing) var(--half-spacing);
   border: none;
+  background-color: unset;
   box-shadow: none;
+  color: unset;
 }
 
 @include mq(mobile) {
-  .panel {
+  .card-panel {
     padding: var(--inner-v-spacing) var(--spacing);
   }
 }
 
 @include mq(tablet) {
-  .panel {
+  .card-panel {
     padding: var(--inner-v-spacing) var(--inner-h-spacing);
   }
 }
