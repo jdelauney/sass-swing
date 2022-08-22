@@ -19,11 +19,13 @@ export default {
 	],
 	output: [
 		{
+			name: 'sass-swing',
 			file: pkg.browser,
 			format: 'umd',
 			sourcemap:false
 		},
 		{
+			name: 'sass-swing',
 			file: pkg.module,
 			format: 'esm',
 			sourcemap:false
