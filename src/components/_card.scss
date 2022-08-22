@@ -1,15 +1,15 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 .card,
 .card-panel {
-  --custom-background : var(--panel-background);
+  --custom-background: var(--panel-background);
   --custom-text: var(--panel-text);
   --custom-border-color: var(--panel-border-color);
   --custom-border-width: var(--border-width);
-  --custom-border-radius:var(--panel-border-radius);
-  --custom-shadow:var(--panel-shadow);
+  --custom-border-radius: var(--panel-border-radius);
+  --custom-shadow: var(--panel-shadow);
 
-  display:flex;
+  display: flex;
   flex-direction: column;
   //padding: var(--inner-v-spacing) var(--inner-h-spacing);
   //overflow: auto;
@@ -18,15 +18,15 @@
   background-clip: border-box;
   background-color: var(--custom-background);
   box-shadow: var(--custom-shadow);
-  color:var(--custom-text);
+  color: var(--custom-text);
   //margin:var(--spacing) 0;
 
   &:first-child {
     margin-top: 0;
   }
 
-  & + *:is(:not(h1,h2,h3,h4,h5,h6, section, article,.section, .article, .card, footer)) {
-    margin-top:var(--block-half-spacing)
+  & + *:is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article, .card, footer)) {
+    margin-top: var(--block-half-spacing);
   }
 
   //> header,
@@ -37,7 +37,7 @@
 
   > header,
   > footer {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
@@ -71,7 +71,7 @@
   > footer figure:last-child,
   > footer figure:last-child img,
   > img:last-child {
-    margin-top:0;
+    margin-top: 0;
     border-bottom-right-radius: var(--custom-border-radius);
     border-bottom-left-radius: var(--custom-border-radius);
   }
@@ -81,16 +81,15 @@
 
     &,
     &[hidden],
-    &[aria-hidden="true"] {
+    &[aria-hidden='true'] {
       visibility: collapse;
       height: 0;
       max-height: 0;
       opacity: 0;
     }
 
-
     &:not([hidden]),
-    &[aria-hidden="false"],
+    &[aria-hidden='false'],
     &.expanded {
       visibility: visible;
       height: auto;
@@ -101,7 +100,7 @@
 }
 
 .card-panel {
-  display:block;
+  display: block;
   padding: var(--inner-v-spacing) var(--half-spacing);
   border: none;
   background-color: unset;
