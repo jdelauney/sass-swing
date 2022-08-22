@@ -1,5 +1,5 @@
-import CustomComponent from '../core/CustomComponent';
-import { clamp } from '../core/helpers/mathUtils';
+import CustomComponent from '../core/CustomComponent.js';
+import { clamp } from '../core/helpers/mathUtils.js';
 
 export default class Slidify extends CustomComponent {
   constructor(element) {
