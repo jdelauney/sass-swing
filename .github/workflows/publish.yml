@@ -1,14 +1,10 @@
-name: Package release and publish
+name: Publish to NPM
 on:
-  push:
-    branches:
-      - main
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  release:
+    types: [created]
 jobs:
   build:
-    name: Release
+    name: Publish
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,7 +22,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Release
-        run: npx semantic-release
       - name: Publish
         run: npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
