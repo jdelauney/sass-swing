@@ -52,20 +52,25 @@
     "plugins": [
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
-      ["@semantic-release/npm",
+      [
+        "@semantic-release/npm",
         {
           "npmPublish": false
         }
       ],
       "@semantic-release/github",
-      ["@semantic-release/changelog",
+      [
+        "@semantic-release/changelog",
         {
           "changelogFile": "./CHANGELOG.md"
         }
       ],
-      ["@semantic-release/git",
+      [
+        "@semantic-release/git",
         {
-          "assets": ["./CHANGELOG.md"],
+          "assets": [
+            "./CHANGELOG.md"
+          ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ]
@@ -82,7 +87,6 @@
     "build:js": "rollup -c",
     "build:sassswing": "npm-run-all scss:compile:sassswing css:optimize:sassswing --silent",
     "build": "npm-run-all build:sassswing  build:js --silent",
-
     "prebuild:doc": "echo [@sass-swing/sass-swing] Build Sass Swing documentation",
     "prejs:doc:build": "echo '[@sass-swing/sass-swing] Bundle and minify documentation .js files'",
     "prescss:compile:doc": "echo '[@sass-swing/sass-swing] Compile documentation .scss files'",
@@ -92,7 +96,6 @@
     "css:optimize:doc": "postcss ./documentation/styles/css/**/*.css !./documentation/styles/css/**/*.min.css --dir ./documentation/styles/css --ext .min.css",
     "build:sassswing:doc": "npm-run-all scss:compile:doc css:optimize:doc --silent",
     "build:doc": "npm run build:sassswing:doc --silent",
-
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "lint": "eslint --fix",
@@ -106,6 +109,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "autoprefixer": "^10.4.8",
     "cssnano": "^5.1.12",
     "cssnano-preset-default": "^5.2.12",
