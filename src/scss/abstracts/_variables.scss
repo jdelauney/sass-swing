@@ -1,11 +1,11 @@
-@use "functions" as *;
+@use 'functions' as *;
 
 // Taille des espacements de base (10px)
 $spacer-size-base: 1rem !default;
 
 // Espaces pour les marges internes et externes
 // tiny, small, default, medium, big, huge + valeur globale "auto"
-$grid-spacers : (0.5em, 1em, 1.5em, 2em, 4em, 8em, auto) !default;
+$grid-spacers: (0.5em, 1em, 1.5em, 2em, 4em, 8em, auto) !default;
 
 // Référence pour les breakpoints en em. Ici EM fait toujours référence à la taille définie par le navigateur soit majoritairement 16px
 // **  de 0 à < 400px
@@ -18,13 +18,13 @@ $grid-spacers : (0.5em, 1em, 1.5em, 2em, 4em, 8em, auto) !default;
 // ** ecran large       de 1600px  à 1800px    BP = 1600px = 100em   = 1600px/16px
 // ** ecran extra large > 1800px               BP = 1800px = 112.5em = 1800px/16px
 // ** ecran extra extra large > 2560px         BP = 2560px = 160em   = 2560px/16px
-$breakpoints : 25em, 37.5em, 56.25em, 75em, 90em, 100em, 112.5em, 160em !default;
+$breakpoints: 25em, 37.5em, 56.25em, 75em, 90em, 100em, 112.5em, 160em !default;
 
-$default-grid-columns : 8 !default;
+$default-grid-columns: 8 !default;
 $heading-base-font-size: 1em !default;
 
 /* réglée sur la racine carré du 'nombre d'or' */
 //$default-heading-scale: type-ratio("goldenRatio") !default;
-$type-size-ratio: type-ratio("minorThird") !default;
+$type-size-ratio: type-ratio('minorThird') !default;
 // List in descending order to prevent extra sort function. Limited to high-touch heading styles
 $type-levels: 4, 3, 2, 1;
