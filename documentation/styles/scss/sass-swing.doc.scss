@@ -1,5 +1,5 @@
 @use "theme/fonts";
-@use "../../../src/sass-swing"  with (
+@use "../../../src/scss/sass-swing"  with (
   $font-family-sans: #{"Nunito Sans", Roboto, Noto, "Segoe UI", 'Helvetica Neue', Helvetica, Arial, sans-serif},
   $font-family-serif: #{"Varela Round", Georgia, Times, 'Times New Roman', serif}
 );

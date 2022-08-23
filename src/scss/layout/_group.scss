@@ -1,7 +1,7 @@
 .group {
   display: inline-flex;
   justify-self: flex-start;
-  margin: .5rem 1rem .5rem 0;
+  margin: 0.5rem 1rem 0.5rem 0;
 
   &--vertical {
     flex-direction: column;
@@ -19,7 +19,6 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
-
   }
 
   & > * {
@@ -40,6 +39,5 @@
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-
   }
 }

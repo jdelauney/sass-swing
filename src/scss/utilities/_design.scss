@@ -152,84 +152,79 @@
   }
 }
 
-[style*="--bdr:"] {
+[style*='--bdr:'] {
   border: var(--bdr) !important;
 }
-[style*="--bdrt:"] {
+[style*='--bdrt:'] {
   border-top: var(--bdrt) !important;
 }
-[style*="--bdrb:"] {
+[style*='--bdrb:'] {
   border-bottom: var(--bdrb) !important;
 }
-[style*="--bdrl:"] {
+[style*='--bdrl:'] {
   border-left: var(--bdrl) !important;
 }
-[style*="--bdrr:"] {
+[style*='--bdrr:'] {
   border-right: var(--bdrr) !important;
 }
-[style*="--bdrw:"] {
+[style*='--bdrw:'] {
   border-width: var(--bdrw) !important;
 }
-[style*="--bdrs:"] {
+[style*='--bdrs:'] {
   border-style: var(--bdrs) !important;
 }
-[style*="--bdrc:"] {
+[style*='--bdrc:'] {
   border-color: var(--bdrc) !important;
 }
 
-[style*="--br:"] {
+[style*='--br:'] {
   border-radius: var(--br) !important;
 }
 
-[style*="--btlr:"] {
+[style*='--btlr:'] {
   border-top-left-radius: var(--btlr) !important;
 }
 
-[style*="--btrr:"] {
+[style*='--btrr:'] {
   border-top-right-radius: var(--btlr) !important;
 }
 
-[style*="--bblr:"] {
+[style*='--bblr:'] {
   border-bottom-left-radius: var(--btlr) !important;
 }
 
-[style*="--bbrr:"] {
+[style*='--bbrr:'] {
   border-bottom-right-radius: var(--btlr) !important;
 }
 
-[style*="--bg:"] {
+[style*='--bg:'] {
   background-color: var(--bg) !important;
 }
 
-[style*="--bgi:"] {
+[style*='--bgi:'] {
   background-image: var(--bgi) !important;
 }
 
-[style*="--txt:"] {
+[style*='--txt:'] {
   color: var(--txt) !important;
 }
 
-[style*="--fs:"] {
+[style*='--fs:'] {
   font-size: var(--fs) !important;
 }
 
-[style*="--fw:"] {
+[style*='--fw:'] {
   font-weight: var(--fw) !important;
 }
 
-[style*="--op:"] {
+[style*='--op:'] {
   opacity: var(--op) !important;
 }
 
-[style*="--crs:"] {
+[style*='--crs:'] {
   cursor: var(--crs) !important;
 }
 
 .shadow {
-  box-shadow:
-          var(--ho, 0)
-          var(--vo, 0)
-          var(--blur, 1rem)
-          var(--spread, 0)
-          var(--clr, rgb(0 0 0 / var(--op, .25)));
+  box-shadow: var(--ho, 0) var(--vo, 0) var(--blur, 1rem) var(--spread, 0) var(--clr, rgb(0 0 0 / var(--op, 0.25)));
 }

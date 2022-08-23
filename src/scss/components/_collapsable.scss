@@ -1,5 +1,5 @@
 .collapsable-toggler {
-  display:none;
+  display: none;
 
   &:not(:checked) + .collapsable {
     visibility: collapse;
