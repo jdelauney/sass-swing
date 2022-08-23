@@ -1,6 +1,6 @@
 @use "sass:color" as *;
-@use "../../../../src/abstracts/mixins" as *;
-@use "../../../../src/theme/colors" as *;
+@use "../../../../src/scss/abstracts/mixins" as *;
+@use "../../../../src/scss/theme/colors" as *;
 
 :root {
   --color-swing: #{$color-pink-400};

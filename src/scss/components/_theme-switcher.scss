@@ -1,0 +1,111 @@
+.theme-switcher {
+  display: block;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border: none !important;
+  background-color: #333 !important;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgb(0 0 0 / 0.35);
+  cursor: pointer;
+  transition: all 0.35s ease-in-out;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    width: 1.5em;
+    height: 1.5em;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transition: all 0.35s ease-in-out;
+  }
+
+  &:before {
+    --s: 1.5em; /* length */
+    --o: 0.625em; /* offset */
+    --w: 6deg; /* thickness */
+    --n: 8; /* numbers*/
+    --c: #fff; /* color */
+    background-image: radial-gradient(circle at center center, #fff 0%, #fff 40%, #333 50%, transparent 55%),
+      repeating-conic-gradient(from calc(-1 * var(--w) / 2), var(--c) 0 calc(var(--w) - 2deg), transparent calc(var(--w)) calc(360deg / var(--n) - 2deg), var(--c) calc(360deg / var(--n)));
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--s)), #fff calc(100% - var(--s)));
+    mask: radial-gradient(farthest-side, transparent calc(100% - var(--s)), #fff calc(100% - var(--s)));
+    box-shadow: 1px 1px 3px 0 rgb(0 0 0 / 0.5);
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  &:after {
+    background-color: transparent;
+    box-shadow: inset -0.35em -0.35em 0 0 #fff, 2px 2px 3px 0 rgb(0 0 0 / 0.75);
+    transform: scale(0) translate(-40%, -40%);
+    opacity: 0;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #333 !important;
+
+    &:before {
+      transform: scale(0) translate(-40%, -40%);
+      opacity: 0;
+    }
+
+    &:after {
+      transform: scale(1) translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .theme-switcher {
+    &:before {
+      transform: scale(0) translate(-40%, -40%);
+      opacity: 0;
+    }
+    &:after {
+      transform: scale(1) translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    &:hover {
+      &:before {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+      }
+      &:after {
+        transform: scale(0) translate(-40%, -40%);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .theme-switcher {
+    &:before {
+      transform: scale(0) translate(-40%, -40%);
+      opacity: 0;
+    }
+
+    &:after {
+      transform: scale(1) translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    &:hover {
+      &:before {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+      }
+
+      &:after {
+        transform: scale(0) translate(-40%, -40%);
+        opacity: 0;
+      }
+    }
+  }
+}

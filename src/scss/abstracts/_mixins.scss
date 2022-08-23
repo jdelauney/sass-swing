@@ -1,0 +1,115 @@
+@use 'variables' as var;
+@use 'functions' as func;
+@use 'sass:list';
+
+/* =====[ Utilitaires responsive ]============================================================================ */
+// mf = mobile-first
+// df = desktop-first
+
+@mixin mq($breakpoint, $mode: mf) {
+  @if $mode == mf {
+    @if $breakpoint == mobile {
+      @media only screen and (min-width: list.nth(var.$breakpoints,1)) {
+        @content;
+      } //400px
+    }
+    @if $breakpoint == tablet {
+      @media only screen and (min-width: list.nth(var.$breakpoints,2)) {
+        @content;
+      } //600px
+    }
+    @if $breakpoint == tablet-medium {
+      @media only screen and (min-width: list.nth(var.$breakpoints,3)) {
+        @content;
+      } //900px
+    }
+    @if $breakpoint == desktop {
+      @media only screen and (min-width: list.nth(var.$breakpoints,4)) {
+        @content;
+      } //1200px
+    }
+    @if $breakpoint == desktop-medium {
+      @media only screen and (min-width: list.nth(var.$breakpoints,5)) {
+        @content;
+      } //1440px
+    }
+    @if $breakpoint == desktop-lg {
+      @media only screen and (min-width: list.nth(var.$breakpoints,6)) {
+        @content;
+      } //1600px
+    }
+    @if $breakpoint == desktop-xlg {
+      @media only screen and (min-width: list.nth(var.$breakpoints,7)) {
+        @content;
+      } //1800px
+    }
+    @if $breakpoint == desktop-xxlg {
+      @media only screen and (min-width: list.nth(var.$breakpoints,8)) {
+        @content;
+      } //2560px
+    }
+  } @else {
+    @if $breakpoint == mobile {
+      @media only screen and (max-width: list.nth(var.$breakpoints,1)) {
+        @content;
+      } //400px
+    }
+    @if $breakpoint == tablet {
+      @media only screen and (max-width: list.nth(var.$breakpoints,2)) {
+        @content;
+      } //600px
+    }
+    @if $breakpoint == tablet-medium {
+      @media only screen and (max-width: list.nth(var.$breakpoints,3)) {
+        @content;
+      } //900px
+    }
+    @if $breakpoint == desktop {
+      @media only screen and (max-width: list.nth(var.$breakpoints,4)) {
+        @content;
+      } //1200px
+    }
+    @if $breakpoint == desktop-medium {
+      @media only screen and (max-width: list.nth(var.$breakpoints,5)) {
+        @content;
+      } //1440px
+    }
+    @if $breakpoint == desktop-lg {
+      @media only screen and (max-width: list.nth(var.$breakpoints,6)) {
+        @content;
+      } //1600px
+    }
+    @if $breakpoint == desktop-xlg {
+      @media only screen and (max-width: list.nth(var.$breakpoints,7)) {
+        @content;
+      } //1800
+    }
+    @if $breakpoint == desktop-xxlg {
+      @media only screen and (max-width: list.nth(var.$breakpoints,8)) {
+        @content;
+      } //2560
+    }
+  }
+}
+
+@mixin mq-up($size) {
+  $size: func.strip-unit($size);
+  @media (min-width: $size * 1px) {
+    @content;
+  }
+}
+
+@mixin mq-down($size) {
+  $size: func.strip-unit($size);
+  @media (max-width: $size * 1px) {
+    @content;
+  }
+}
+
+@mixin mq-between($down, $up) {
+  $down: func.strip-unit($down);
+  $up: func.strip-unit($up);
+  @media (min-width: $down * 1px) and (max-width: $up * 1px) {
+    @content;
+  }
+}

@@ -1,5 +1,5 @@
 figcaption {
-  display:inline-flex;
+  display: inline-flex;
   flex-wrap: wrap;
   width: 100%;
   padding: var(--half-spacing) var(--spacing);
@@ -7,50 +7,49 @@ figcaption {
 
 figure {
   &.figcaption-inner {
-    position:relative;
+    position: relative;
     & figcaption {
       position: absolute;
     }
 
-    &--top-left figcaption{
+    &--top-left figcaption {
       left: 0;
       top: 0;
     }
 
-    &--top-center figcaption{
+    &--top-center figcaption {
       left: 0;
       top: 0;
       justify-content: center;
     }
 
-    &--center figcaption{
+    &--center figcaption {
       left: 50%;
       top: 50%;
-      transform:translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       justify-content: center;
     }
 
-    &--top-right figcaption{
+    &--top-right figcaption {
       right: 0;
       top: var(--half-spacing);
     }
 
-    &--bottom-left figcaption{
+    &--bottom-left figcaption {
       left: 0;
       bottom: 0;
     }
 
-    &--bottom-center figcaption{
+    &--bottom-center figcaption {
       left: 0;
       bottom: 0;
       justify-content: center;
     }
 
-    &--bottom-right figcaption{
+    &--bottom-right figcaption {
       left: 0;
       bottom: 0;
     }
-
   }
 }
 

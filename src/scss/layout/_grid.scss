@@ -1,6 +1,6 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/settings" as *;
-@use "../abstracts/mixins" as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/settings' as *;
+@use '../abstracts/mixins' as *;
 
 .grid {
   display: grid !important;
@@ -11,7 +11,7 @@
 
   & > * {
     min-width: 0; // HACK for childs in overflow
-    margin-top:0;
+    margin-top: 0;
   }
 
   //& + *:not(:is(section, article, footer)) {
@@ -20,7 +20,7 @@
   //}
 
   & + *:is(footer) {
-    margin-top:var(--block-half-spacing) !important;
+    margin-top: var(--block-half-spacing) !important;
   }
 
   > .justify {
@@ -52,7 +52,6 @@
       align-self: stretch;
     }
   }
-
 }
 
 .subgrid {
@@ -76,8 +75,6 @@
   justify-items: center;
 }
 
-
-
 //@each $bp, $bpv in $breakpoints {
 //@for $i from 1 through length($breakpoints) {
 //  $bpv : nth($breakpoints, $i);
@@ -97,8 +94,8 @@
 }
 
 @for $i from 1 through length($breakpoints) {
-  $bpv : nth($breakpoints, $i);
-  $bp  : nth($breakpoint-prefixes, $i);
+  $bpv: nth($breakpoints, $i);
+  $bp: nth($breakpoint-prefixes, $i);
   @media only screen and (min-width: #{$bpv}) {
     .#{$bp}\:cols-auto {
       grid-template-columns: repeat(auto-fit, minmax(var(--min-grid-col-width), 1fr));
@@ -130,11 +127,11 @@
 }
 
 @for $i from 1 through length($breakpoints) {
-  $bpv : nth($breakpoints, $i);
-  $bp  : nth($breakpoint-prefixes, $i);
+  $bpv: nth($breakpoints, $i);
+  $bp: nth($breakpoint-prefixes, $i);
   @media (min-width: #{$bpv}) {
     @for $k from 1 through length($grid-spacers) {
-      $grid-spacerValue : nth($grid-spacers, $k);
+      $grid-spacerValue: nth($grid-spacers, $k);
       //$grid-spacerPrefix : nth($grid-spacer-prefixes, $k);
 
       @if ($grid-spacerValue != auto) {
@@ -153,13 +150,13 @@
 }
 
 @for $i from 1 through length($breakpoints) {
-  $bpv : nth($breakpoints, $i);
-  $bp  : nth($breakpoint-prefixes, $i);
+  $bpv: nth($breakpoints, $i);
+  $bp: nth($breakpoint-prefixes, $i);
   @media (min-width: #{$bpv}) {
     @for $k from 1 through length($grid-align-values) {
-      $align-value : nth($grid-align-values, $k);
-      $justify-prefix : nth($grid-justify-prefixes, $k);
-      $align-prefix : nth($grid-align-prefixes, $k);
+      $align-value: nth($grid-align-values, $k);
+      $justify-prefix: nth($grid-justify-prefixes, $k);
+      $align-prefix: nth($grid-align-prefixes, $k);
       .grid > .#{$bp}\:justify--#{$justify-prefix} {
         justify-self: #{$align-value};
       }
@@ -172,7 +169,6 @@
 
 /* grid-items classes */
 @for $i from 1 through $default-grid-columns {
-
   .col-start-#{$i} {
     grid-column-start: #{$i};
   }
@@ -199,8 +195,8 @@
 
 // loop for each breakpoint
 @for $i from 1 through length($breakpoints) {
-  $bpv : nth($breakpoints, $i);
-  $bp  : nth($breakpoint-prefixes, $i);
+  $bpv: nth($breakpoints, $i);
+  $bp: nth($breakpoint-prefixes, $i);
   @media only screen and (min-width: #{$bpv}) {
     @for $j from 1 through $default-grid-columns {
       .#{$bp}\:col-start-#{$j} {

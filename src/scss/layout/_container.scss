@@ -30,12 +30,8 @@
   width: 100% !important;
   max-width: 100vw;
   //max-width: 97vw;
-  padding-right: calc(
-    var(--container-margin) + var(--container-padding)
-  ) !important;
-  padding-left: calc(
-    var(--container-margin) + var(--container-padding)
-  ) !important;
+  padding-right: calc(var(--container-margin) + var(--container-padding)) !important;
+  padding-left: calc(var(--container-margin) + var(--container-padding)) !important;
 }
 
 @include mq(tablet) {
