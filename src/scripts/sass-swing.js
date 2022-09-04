@@ -3,8 +3,9 @@ import ThemeSwitcher from './components/theme-switcher.js';
 import Slidify from './components/slidify.js';
 import Tabify from './components/tabify.js';
 import Dropdownify from './components/dropdownify.js';
+// import {Modalify} from "./components/modalify.js";
 
-export const fixDocumentHeight = () => {
+const fixDocumentHeight = () => {
   const doc = document.documentElement;
   doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
 };

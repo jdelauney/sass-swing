@@ -40,6 +40,7 @@ export class Modalify extends CustomComponent {
   }
 
   _buttonHandlerClick(evt) {
+    evt.preventDefault();
     const target = evt.currentTarget;
     this._modalResult = '';
     if (target.hasAttribute('value')) {
@@ -102,3 +103,7 @@ export class Modalify extends CustomComponent {
     }
   }
 }
+
+/* export const createModal = (selector) => {
+  return new Modalify(selector);
+} */

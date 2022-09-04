@@ -6,79 +6,131 @@ export default class Slidify extends CustomComponent {
     super(element);
 
     this.options = this._parseAttributs();
-    this.visibleSlides = getComputedStyle(this.element).getPropertyValue('--slides-visible');
 
-    this.onButtonPrevClick = this._prevButtonClickHandler.bind(this);
-    this.onButtonNextClick = this._nextButtonClickHandler.bind(this);
-    this.onSliderMouseenter = this._sliderEnterEventHandler.bind(this);
-    this.onSliderMouseleave = this._sliderLeaveEventHandler.bind(this);
-    this.onSliderfocusin = this._sliderEnterEventHandler.bind(this);
-    this.onSliderfocusout = this._sliderLeaveEventHandler.bind(this);
-    this.onActionButtonClick = this._actionButtonClickHandler.bind(this);
-    this.onTransitionEnd = this._updateSlides.bind(this);
-    this.dragAnimBind = this._dragAnim.bind(this);
-    /*		this.onSlideMousedown = this._dragStartHandler.bind(this);
-				this.onSlideTouchstart  = this._dragStartHandler.bind(this);
-				this.onSlideTouchend = this._dragEndHandler.bind(this);
-				this.onSlideTouchmove = this._dragActionHandler.bind(this); */
+    this.slidesPerPage = Number(getComputedStyle(this.element).getPropertyValue('--slides-per-page'));
+
+    this.slidesContainer = this.element.querySelector('.slider__slides-wrapper > .slider__slides-inner > .slider__slides');
+    this.slides = this.slidesContainer.querySelectorAll('.slider__slide');
+    this.totalSlide = this.slides.length;
+    this.element.style.setProperty('--slide-count', `"${this.totalSlide}"`);
 
     this.btnPrev = this.element.querySelector('.slider__controls-prev');
     this.btnNext = this.element.querySelector('.slider__controls-next');
+    this.hasButtonControls = this.btnPrev !== null && this.btnNext !== null;
 
-    this.hasButtonControls = this.btnPrev !== undefined && this.btnNext !== undefined;
-
-    // this.slidesWrapper = this.element.querySelector(".slider__slides");
-    this.slidesContainer = this.element.querySelector('.slider__slides');
-
-    if (this.options.center) {
-      this.visibleSlides = 2;
-      this.element.style.setProperty('--slides-visible', '2');
-    }
-
-    this.slideSizeInpx = this.slidesContainer.offsetWidth / this.visibleSlides;
-
-    this.slides = this.slidesContainer.querySelectorAll('.slide');
-
-    this.totalSlide = this.slides.length;
-    this.totalPages = this.totalSlide / this.visibleSlides;
-
-    // this.stepping = 100 / this.totalSlide;
-
-    this.navButtons = [];
-    this.setFocus = false;
-    this.animated = false;
-    this.animationSuspended = true;
-    this._dragStartPos = 0;
-
-    this._prevTranslate = -1;
-    this._currentTranslate = 0;
-    this._dragThreshold = 100;
-    this._isDragging = false;
-    this._dragRAFRef = null;
+    this._indicators = [];
+    this.setFocus = this.options.showFocus;
 
     this.timer = null;
+    this.animated = false;
+    this.animationSuspended = true;
 
-    this._init();
-  }
+    this._elementWidth = this.element.offsetWidth;
+    this._dragStartPos = 0;
+    this._dragThreshold = 0.2;
+    this._dragDelta = 0;
+    this._isDragging = false;
+    this._dragRAFRef = null;
+    this._grabElement = null;
 
-  _getMousePositionX(event) {
-    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    this.onButtonPrevClick = this._prevButtonClickHandler.bind(this);
+    this.onButtonNextClick = this._nextButtonClickHandler.bind(this);
+    this.onTransitionEnd = this._updateSlides.bind(this);
+    this.onActionButtonClick = this._actionButtonClickHandler.bind(this);
+    this.onSliderMouseenter = this._sliderMouseEnterEventHandler.bind(this);
+    this.onSliderMouseleave = this._sliderMouseLeaveEventHandler.bind(this);
+    this.onSliderfocusin = this._sliderMouseEnterEventHandler.bind(this);
+    this.onSliderfocusout = this._sliderMouseLeaveEventHandler.bind(this);
+    this.onTouchStart = this._touchStartHandler.bind(this);
+    this.onTouchMove = this._touchMoveHandler.bind(this);
+    this.onTouchEnd = this._touchEndHandler.bind(this);
+
+    this.dragAnimBind = this._dragAnim.bind(this);
+
+    if (this.hasButtonControls) {
+      this.btnPrev.addEventListener('click', this.onButtonPrevClick);
+      this.btnNext.addEventListener('click', this.onButtonNextClick);
+    }
+    this.slidesContainer.addEventListener('transitionend', this.onTransitionEnd);
+
+    /* START INIT */
+    this._nbIndicators = this.totalSlide;
+    if (this.options.infinite) {
+      this._cloneSlides();
+    }
+
+    this.options.slideByPage = this.slidesPerPage > 1 ? this.options.slideByPage : false;
+    if (this.options.slideByPage) {
+      this.totalSlide = Math.floor(this.totalSlide / this.slidesPerPage);
+      this._nbIndicators = this.options.infinite ? this.totalSlide - 2 : this.totalSlide;
+      this.slidesContainer.style.setProperty('--translate-slide-width', '100%');
+    }
+
+    if (this.options.showIndicators) {
+      this._createIndicators();
+    }
+    this._createLiveRegion();
+
+    let minSlide = 0;
+    let maxSlide = this.totalSlide - 1;
+    if (this.options.slideByPage) {
+      if (this.options.infinite) {
+        minSlide = 1;
+        maxSlide = this.totalSlide - 2;
+      }
+    } else {
+      if (this.options.infinite) {
+        minSlide = this.slidesPerPage;
+        maxSlide = this.totalSlide - this.slidesPerPage - 1;
+      }
+    }
+    this.currentSlide = clamp(this.options.startIndex, minSlide, maxSlide);
+
+    this.slides.forEach((slide) => {
+      slide.addEventListener('mouseenter', this.onSliderMouseenter);
+      slide.addEventListener('mouseleave', this.onSliderMouseleave);
+
+      slide.addEventListener('touchstart', this.onTouchStart);
+      slide.addEventListener('touchmove', this.onTouchMove);
+      slide.addEventListener('touchend', this.onTouchEnd);
+      // mouse events
+      slide.addEventListener('mousedown', this.onTouchStart);
+      slide.addEventListener('mousemove', this.onTouchMove);
+      slide.addEventListener('mouseup', this.onTouchEnd);
+      slide.addEventListener('mouseleave', this.onTouchEnd);
+    });
+
+    // this.element.addEventListener("focusin", this.onSliderfocusin);
+    // this.element.addEventListener("focusout", this.onSliderfocusout);
+
+    this.slidesContainer.style.transition = 'none';
+    this._gotoSlide(this.currentSlide, this.setFocus);
+    setTimeout(() => {
+      this.slidesContainer.style.transition = `all ${this.options.transitionSpeedInMs}ms ${this.options.transitionTimingFunc}`;
+    });
+
+    /* END INIT */
+
+    if (this.options.autoplay) {
+      this._startAnimation();
+    }
   }
 
   _parseAttributs() {
     const defaultOptions = {
-      showNavigation: true,
-      showButtonAction: true,
-      intervalInMs: 5000,
-      direction: 1,
-      startingSlide: 0,
-      slidePerPage: 1,
-      slidePage: true,
-      transitionSpeedInMs: 300,
-      transitionTimingFunc: 'ease-out',
+      showIndicators: true,
+      indicatorsPosition: 'bottom',
+      showButtonAction: false,
+      showFocus: false,
+      slideByPage: false,
       infinite: true,
-      autoplay: true,
-      center: false,
+      autoplay: false,
+      // centerActiveSlide:false,
+      direction: 1,
+      startIndex: 0,
+      intervalInMs: 5000,
+      transitionSpeedInMs: 300,
+      transitionTimingFunc: 'ease-in-out',
     };
     if (this.element.dataset.jsSlider.startsWith('{')) {
       return {
@@ -87,6 +139,27 @@ export default class Slidify extends CustomComponent {
       };
     }
     return { ...defaultOptions };
+  }
+
+  _cloneSlides() {
+    for (let i = 0; i < this.slidesPerPage; i++) {
+      const firstClone = this.slides[i].cloneNode(true);
+      const lastClone = this.slides[this.slides.length - 1 - i].cloneNode(true);
+
+      this.slidesContainer.append(firstClone);
+      this.slidesContainer.prepend(lastClone);
+    }
+    this.slides = this.slidesContainer.querySelectorAll('.slider__slide');
+    this.totalSlide = this.options.slidePage ? this.totalSlide + 2 : this.slides.length;
+    this.element.style.setProperty('--slide-count', this.totalSlide);
+  }
+
+  _createLiveRegion() {
+    this.liveRegion = document.createElement('div');
+    this.liveRegion.setAttribute('aria-live', 'polite');
+    this.liveRegion.setAttribute('aria-atomic', 'true');
+    this.liveRegion.setAttribute('class', 'slider__liveRegion sr-only');
+    this.element.appendChild(this.liveRegion);
   }
 
   _createActionButton() {
@@ -109,9 +182,9 @@ export default class Slidify extends CustomComponent {
     return btnAction;
   }
 
-  _createNavigation() {
+  _createIndicators() {
     const nav = document.createElement('ul');
-    nav.className = 'slider__navigation';
+    nav.className = 'slider__indicators';
     if (this.options.showButtonAction) {
       const li = document.createElement('li');
       this.btnAction = this._createActionButton();
@@ -119,70 +192,153 @@ export default class Slidify extends CustomComponent {
       nav.appendChild(li);
     }
 
-    for (let i = 0; i < this.slides.length; i++) {
+    for (let i = 0; i < this._nbIndicators; i++) {
       const li = document.createElement('li');
       const btn = document.createElement('button');
       const span = document.createElement('span');
       span.className = 'sr-only';
-      span.textContent = 'Item ' + i.toString() + ' sur ' + this.slides.length.toString();
+      span.textContent = 'Item ' + i.toString() + ' sur ' + this._nbIndicators.toString();
       btn.appendChild(span);
       btn.addEventListener('click', () => {
-        this._gotoSlide(i + 1, true);
+        const index = this.options.slideByPage ? i + 1 : this.options.infinite ? i + this.slidesPerPage : i;
+        this._gotoSlide(index, true);
       });
-      this.navButtons.push(btn);
+      this._indicators.push(btn);
       li.appendChild(btn);
       nav.appendChild(li);
-
-      this.element.appendChild(nav);
+    }
+    if (this.options.indicatorsPosition === 'top') {
+      this.element.prepend(nav);
+    } else {
+      this.element.append(nav);
     }
   }
 
-  _createLiveRegion() {
-    this.liveRegion = document.createElement('div');
-    this.liveRegion.setAttribute('aria-live', 'polite');
-    this.liveRegion.setAttribute('aria-atomic', 'true');
-    this.liveRegion.setAttribute('class', 'slider__liveRegion sr-only');
-    this.element.appendChild(this.liveRegion);
+  /**
+   * @param {number} activeIndex
+   * @private
+   */
+  _updateIndicators(activeIndex) {
+    this._indicators.forEach((btn) => {
+      btn.removeAttribute('aria-current');
+    });
+
+    if (this.options.infinite) {
+      if (activeIndex > 0) {
+        if (activeIndex === this._nbIndicators + 1) {
+          activeIndex = 0;
+        } else {
+          --activeIndex;
+        }
+      }
+    }
+    this._indicators[activeIndex].setAttribute('aria-current', 'true');
   }
 
-  _updateLiveRegionTextContent() {
+  _updateLiveRegion() {
     this.liveRegion.textContent = 'Item ' + this.currentSlide + ' sur ' + (this.totalSlide - 2);
   }
 
-  _updateNavigation() {
-    this.navButtons.forEach((btn) => {
-      btn.removeAttribute('aria-current');
-    });
-    // const currentIndex =  (this.options.center === true) ? this.currentSlide : this.currentSlide - 1;
-    const currentIndex = this.currentSlide - 1;
-    this.navButtons[currentIndex].setAttribute('aria-current', 'true');
-  }
-
-  _gotoSlide(index, setFocus = false) {
-    index = clamp(index, this.totalSlide - 1, 0);
-    this.setFocus = setFocus;
-
+  /**
+   * @param {number } index
+   * @param {boolean} setFocus
+   * @private
+   */
+  _setSlideIndex(index, setFocus) {
+    console.log('SLIDE INDEX = ', index);
     this.slides.forEach((slide) => {
-      slide.className = 'slide';
       slide.removeAttribute('aria-current');
       slide.setAttribute('aria-hidden', 'true');
     });
 
-    this.slides[index].setAttribute('aria-hidden', 'false');
-    this.slides[index].setAttribute('aria-current', 'true');
+    const slide = this.slides[index];
+    this.slidesContainer.style.setProperty('--slide-index', index.toString());
+    slide.setAttribute('aria-hidden', 'false');
+    slide.setAttribute('aria-current', 'true');
 
-    this._currentTranslate = -(index * this.slideSizeInpx);
-    if (this.options.slidePage) {
-      this._currentTranslate *= this.options.slidePerPage;
-    }
-    if (this.options.center) {
-      this._currentTranslate -= this.slideSizeInpx / 2;
+    if (setFocus) {
+      slide.setAttribute('tabindex', '-1');
+      slide.focus();
     }
 
-    this._prevTranslate = this._currentTranslate;
-    this.slidesContainer.style.transform = `translateX(${this._currentTranslate}px)`;
+    if (this.options.showIndicators) {
+      this._updateIndicators(index);
+    }
+    this._updateLiveRegion();
 
     this.currentSlide = index;
+  }
+
+  /**
+   * @param {number} index
+   * @param {boolean} setFocus
+   * @private
+   */
+  _gotoSlide(index, setFocus = false) {
+    const newIndex = clamp(index, 0, this.totalSlide - 1);
+    this._setSlideIndex(newIndex, setFocus);
+  }
+
+  /**
+   * @param {number} direction -1 slide to left, +1 slide to right
+   * @param setFocus
+   * @private
+   */
+  _shiftSlide(direction, setFocus = false) {
+    const nextIndex = this.currentSlide + direction;
+
+    let newIndex = clamp(nextIndex, 0, this.totalSlide - 1);
+
+    if (this.animated && this.options.infinite) {
+      newIndex = clamp(nextIndex, -1, this.totalSlide);
+    } else if (!this.animated && !this.options.infinite) {
+      if (nextIndex < 0) {
+        newIndex = this.totalSlide - 1;
+      } else if (nextIndex > this.totalSlide - 1) {
+        newIndex = 0;
+      }
+    }
+
+    this._gotoSlide(newIndex, setFocus);
+  }
+
+  /**
+   * @param {boolean} setFocus
+   * @private
+   */
+  _gotoPreviousSlide(setFocus = false) {
+    this._shiftSlide(-1, setFocus);
+  }
+
+  /**
+   * @param {boolean} setFocus
+   * @private
+   */
+  _gotoNextSlide(setFocus = false) {
+    this._shiftSlide(+1, setFocus);
+  }
+
+  _updateSlides() {
+    if (this.options.infinite) {
+      const minSlide = this.options.slideByPage ? 0 : this.slidesPerPage - 1;
+      const maxSlide = this.options.slideByPage ? this.totalSlide - 1 : this.totalSlide - this.slidesPerPage;
+      if (this.currentSlide === minSlide) {
+        this.slidesContainer.style.transition = 'none';
+        const newIndex = this.options.slideByPage ? this.totalSlide - 2 : this.totalSlide - this.slidesPerPage - 1;
+        this._gotoSlide(newIndex, this.setFocus && !this.animated);
+      } else if (this.currentSlide === maxSlide) {
+        this.slidesContainer.style.transition = 'none';
+        const newIndex = this.options.slideByPage ? 1 : this.slidesPerPage;
+        this._gotoSlide(newIndex, this.setFocus && !this.animated);
+      }
+    }
+    // const targetIndex = (this.options.slideByPage) ? (this.currentSlide * this.slidesPerPage) : this.currentSlide;
+
+    if (this.options.infinite) {
+      setTimeout(() => {
+        this.slidesContainer.style.transition = `all ${this.options.transitionSpeedInMs}ms ${this.options.transitionTimingFunc}`;
+      });
+    }
   }
 
   _animate() {
@@ -200,54 +356,9 @@ export default class Slidify extends CustomComponent {
     }
   }
 
-  _shiftSlide(direction, setFocus = false) {
-    const newIndex = clamp(this.currentSlide + direction, this.totalSlide - 1, 0);
-
-    if (!this.options.infinite) {
-      if (newIndex >= this.totalSlide - 1 || newIndex <= 0) {
-        return;
-      }
-    }
-    this.slidesContainer.style.transition = `all ${this.options.transitionSpeedInMs}ms ${this.options.transitionTimingFunc}`;
-    this._gotoSlide(newIndex, setFocus);
-  }
-
-  _gotoPrevSlide(setFocus = false) {
-    this._shiftSlide(-1, setFocus);
-  }
-
-  _gotoNextSlide(setFocus = false) {
-    this._shiftSlide(+1, setFocus);
-  }
-
-  _updateSlides() {
-    if (this.currentSlide === 0) {
-      this.slidesContainer.style.transition = 'none';
-      this._gotoSlide(this.totalSlide - 2);
-    } else if (this.currentSlide === this.totalSlide - 1) {
-      this.slidesContainer.style.transition = 'none';
-      this._gotoSlide(1);
-    }
-
-    const slide = this.slides[this.currentSlide];
-    if (this.setFocus) {
-      slide.setAttribute('tabindex', '-1');
-      slide.focus();
-      this.setFocus = false;
-    }
-    if (this.options.showNavigation) {
-      this._updateNavigation();
-    }
-    this._updateLiveRegionTextContent();
-
-    setTimeout(() => {
-      this.slidesContainer.style.transition = `all ${this.options.transitionSpeedInMs}ms ${this.options.transitionTimingFunc}`;
-    });
-  }
-
   _startAnimation() {
     this.animated = true;
-    if (this.options.showNavigation && this.options.showButtonAction) {
+    if (this.options.showIndicators && this.options.showButtonAction) {
       this.btnAction.innerHTML = '<span class="sr-only">Stop animation</span><span>￭</span>';
       this.btnAction.setAttribute('data-action', 'stop');
     }
@@ -262,29 +373,37 @@ export default class Slidify extends CustomComponent {
     }
   }
 
+  _resumeAnimation() {
+    if (this.animationSuspended) {
+      this.animationSuspended = false;
+      this._animate();
+    }
+  }
+
   _stopAnimation() {
     this._suspendAnimation();
     this.animated = false;
-    if (this.options.showNavigation && this.options.showButtonAction) {
+    if (this.options.showIndicators && this.options.showButtonAction) {
       this.btnAction.innerHTML = '<span class="sr-only">Start animation</span><span>▶</span>';
       this.btnAction.setAttribute('data-action', 'start');
     }
   }
 
-  _sliderLeaveEventHandler() {
-    this._animate();
-  }
-
-  _sliderEnterEventHandler() {
-    this._suspendAnimation();
+  /**
+   * @param {MouseEvent} event
+   * @returns {number}
+   * @private
+   */
+  _getMousePositionX(event) {
+    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
   }
 
   _prevButtonClickHandler() {
-    this._gotoPrevSlide(true);
+    this._gotoPreviousSlide(this.setFocus);
   }
 
   _nextButtonClickHandler() {
-    this._gotoNextSlide(true);
+    this._gotoNextSlide(this.setFocus);
   }
 
   _actionButtonClickHandler() {
@@ -295,99 +414,69 @@ export default class Slidify extends CustomComponent {
     }
   }
 
+  _sliderMouseLeaveEventHandler() {
+    this._resumeAnimation();
+  }
+
+  _sliderMouseEnterEventHandler() {
+    this._suspendAnimation();
+  }
+
   _dragAnim() {
-    this.slidesContainer.style.transform = `translateX(${this._currentTranslate}px)`;
-    if (this._isDragging) requestAnimationFrame(this.dragAnimBind);
-  }
-
-  _touchStartHandler(event) {
-    this._dragStartPos = this._getMousePositionX(event);
-    this._dragRAFRef = requestAnimationFrame(this.dragAnimBind);
-    this._isDragging = true;
-    this.slides[this.currentSlide].classList.add('grabbing');
-    this.slides[this.currentSlide].style.userSelect = 'none';
-  }
-
-  _touchEndHandler() {
-    cancelAnimationFrame(this._dragRAFRef);
-    this._isDragging = false;
-    const movedBy = this._currentTranslate - this._prevTranslate;
-
-    this.slides[this.currentSlide].classList.remove('grabbing');
-    this.slides[this.currentSlide].style.removeProperty('user-select');
-    let currentIndex = this.currentSlide;
-    if (movedBy < -this._dragThreshold && currentIndex < this.totalSlide - 1) {
-      currentIndex += 1;
-    } else if (movedBy > this._dragThreshold && currentIndex > 0) {
-      currentIndex -= 1;
+    if (this._isDragging) {
+      this.slidesContainer.style.setProperty('--slide-index', (this.currentSlide + this._dragDelta).toString());
+      requestAnimationFrame(this.dragAnimBind);
     }
-    this._gotoSlide(currentIndex);
   }
 
+  /**
+   * @param {MouseEvent} event
+   * @private
+   */
+  _touchStartHandler(event) {
+    this._isDragging = true;
+    this._dragStartPos = this._getMousePositionX(event);
+    this._grabElement = event.currentTarget;
+    // this.slides[this.currentSlide].classList.add('grabbing');
+    this._grabElement.classList.add('grabbing');
+    // this.slides[this.currentSlide].style.userSelect = "none";
+    this._dragRAFRef = requestAnimationFrame(this.dragAnimBind);
+  }
+
+  /**
+   * @param {MouseEvent} event
+   * @private
+   */
   _touchMoveHandler(event) {
     if (this._isDragging) {
       const currentPosition = this._getMousePositionX(event);
-      this._currentTranslate = this._prevTranslate + currentPosition - this._dragStartPos;
+      const movedBy = this._dragStartPos - currentPosition;
+      this._dragDelta = movedBy / this._elementWidth;
     }
   }
 
-  _init() {
-    if (this.options.showNavigation) {
-      this._createNavigation();
-    }
-
-    this._createLiveRegion();
-
-    const firstClone = this.slides[0].cloneNode(true);
-    const lastClone = this.slides[this.totalSlide - 1].cloneNode(true);
-
-    this.slidesContainer.append(firstClone);
-    this.slidesContainer.prepend(lastClone);
-
-    this.slides = this.slidesContainer.querySelectorAll('.slide');
-    this.totalSlide = this.slides.length;
-
-    this.currentSlide = clamp(this.options.startingSlide + 1, this.totalSlide - 2, 1);
-
-    if (this.options.center) {
-      this.currentSlide--;
-    }
-
-    this.element.addEventListener('mouseenter', this.onSliderMouseenter);
-    this.element.addEventListener('mouseleave', this.onSliderMouseleave);
-    this.element.addEventListener('focusin', this.onSliderfocusin);
-    this.element.addEventListener('focusout', this.onSliderfocusout);
-
-    if (this.hasButtonControls) {
-      this.btnPrev.addEventListener('click', this.onButtonPrevClick);
-      this.btnNext.addEventListener('click', this.onButtonNextClick);
-    }
-
-    this.slidesContainer.addEventListener('transitionend', this.onTransitionEnd);
-
-    this.slides.forEach((slide) => {
-      slide.addEventListener('touchstart', this._touchStartHandler.bind(this));
-      slide.addEventListener('touchend', this._touchEndHandler.bind(this));
-      slide.addEventListener('touchmove', this._touchMoveHandler.bind(this));
-      // mouse events
-      slide.addEventListener('mousedown', this._touchStartHandler.bind(this));
-      slide.addEventListener('mouseup', this._touchEndHandler.bind(this));
-      slide.addEventListener('mousemove', this._touchMoveHandler.bind(this));
-      slide.addEventListener('mouseleave', this._touchEndHandler.bind(this));
-    });
-    /* this.slidesContainer.onmousedown = this.onSlideMousedown;
-		this.slidesContainer.addEventListener("touchstart", this.onSlideTouchstart);
-		this.slidesContainer.addEventListener("touchend", this.onSlideTouchend);
-		this.slidesContainer.addEventListener("touchmove", this.onSlideTouchmove); */
-
-    this.slidesContainer.style.transition = 'none';
-    this._gotoSlide(this.currentSlide);
-    setTimeout(() => {
-      this.slidesContainer.style.transition = `all ${this.options.transitionSpeedInMs}ms ${this.options.transitionTimingFunc}`;
-    });
-
-    if (this.options.autoplay) {
-      this._startAnimation();
+  /**
+   * @param {MouseEvent} event
+   * @private
+   */
+  _touchEndHandler(event) {
+    if (this._isDragging) {
+      cancelAnimationFrame(this._dragRAFRef);
+      this._isDragging = false;
+      this._grabElement.classList.remove('grabbing');
+      // this.slides[this.currentSlide].style.removeProperty("user-select");
+      const currentPosition = this._getMousePositionX(event);
+      const movedBy = this._dragStartPos - currentPosition;
+      this._dragDelta = movedBy / this._elementWidth;
+      if (this._dragDelta >= this._dragThreshold) {
+        this._gotoNextSlide(this.setFocus);
+      } else if (this._dragDelta <= -this._dragThreshold) {
+        this._gotoPreviousSlide(this.setFocus);
+      } else {
+        this._gotoSlide(this.currentSlide, true);
+      }
+      this._dragDelta = 0;
+      this._dragStartPos = 0;
     }
   }
 
