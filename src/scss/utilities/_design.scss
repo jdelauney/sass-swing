@@ -1,145 +1,145 @@
 .ui {
   &--primary {
-    border: var(--border-width) solid var(--primary-border-color);
-    background-color: var(--primary-background);
-    color: var(--primary-text);
+    --border-width: var(--elem-border-width);
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
+    border: var(--border-width) solid var(--primary-color-variation-2);
 
-    &-alt {
-      border: var(--border-width) solid var(--primary-border-color-hover);
-      background-color: var(--primary-hover);
-      color: var(--primary-hover-text);
-
-      &[href]:hover {
-        border: var(--border-width) solid var(--primary-border-color);
-        background-color: var(--primary-background);
-        color: var(--primary-text);
-      }
+    > *,
+    > * *:is(h1, h2, h3, h4, h5) {
+      color: var(--on-primary-color);
     }
 
-    &[href]:hover {
-      border: var(--border-width) solid var(--primary-border-color-hover);
-      background-color: var(--primary-hover);
-      color: var(--primary-hover-text);
+    &-alt {
+      --border-width: var(--elem-border-width);
+      border: var(--border-width) solid var(--primary-color-variation-3);
+      background-color: var(--primary-color-variation-1);
+      color: var(--on-primary-color-variation-1);
+
+      > *,
+      > * *:is(h1, h2, h3, h4, h5) {
+        color: var(--on-primary-color-variation-1);
+      }
     }
   }
 
   &--secondary {
-    border: var(--border-width) solid var(--secondary-border-color);
-    background-color: var(--secondary-background);
-    color: var(--secondary-text);
+    --border-width: var(--elem-border-width);
+    background-color: var(--secondary-color);
+    color: var(--on-secondary-color);
+    border: var(--border-width) solid var(--secondary-color-variation-2);
 
-    &-alt {
-      border: var(--border-width) solid var(--secondary-border-color-hover);
-      background-color: var(--secondary-hover);
-      color: var(--secondary-hover-text);
-
-      &[href]:hover {
-        border: var(--border-width) solid var(--secondary-border-color);
-        background-color: var(--secondary-background);
-        color: var(--secondary-text);
-      }
+    > *,
+    > * *:is(h1, h2, h3, h4, h5) {
+      color: var(--on-secondary-color);
     }
 
-    &[href]:hover {
-      border: var(--border-width) solid var(--secondary-border-color-hover);
-      background-color: var(--secondary-hover);
-      color: var(--secondary-hover-text);
+    &-alt {
+      --border-width: var(--elem-border-width);
+      border: var(--border-width) solid var(--secondary-color-variation-3);
+      background-color: var(--secondary-color-variation-1);
+      color: var(--on-secondary-color-variation-1);
+
+      > *,
+      > * *:is(h1, h2, h3, h4, h5) {
+        color: var(--on-secondary-color-variation-1);
+      }
     }
   }
 
   &--info {
-    border: var(--border-width) solid var(--info-border-color);
-    background-color: var(--info-background);
-    color: var(--info-text);
+    --border-width: var(--elem-border-width);
+    background-color: var(--info-color-variation-1);
+    color: var(--on-info-color-variation-1);
+    border: var(--border-width) solid var(--info-color);
 
-    &-alt {
-      border: var(--border-width) solid var(--info-border-color-hover);
-      background-color: var(--info-hover);
-      color: var(--info-hover-text);
-
-      &[href]:hover {
-        border: var(--border-width) solid var(--info-border-color);
-        background-color: var(--info-background);
-        color: var(--info-text);
-      }
+    > *,
+    > * *:is(h1, h2, h3, h4, h5) {
+      color: var(--on-info-color-variation-1);
     }
 
-    &[href]:hover {
-      border: var(--border-width) solid var(--info-border-color-hover);
-      background-color: var(--info-hover);
-      color: var(--info-hover-text);
+    &-alt {
+      --border-width: var(--elem-border-width);
+      border: var(--border-width) solid var(--info-color-variation-2);
+      background-color: var(--info-color);
+      color: var(--on-info-color);
+
+      > *,
+      > * *:is(h1, h2, h3, h4, h5) {
+        color: var(--on-info-color);
+      }
     }
   }
 
   &--success {
-    border: var(--border-width) solid var(--success-border-color);
-    background-color: var(--success-background);
-    color: var(--success-text);
+    --border-width: var(--elem-border-width);
+    background-color: var(--success-color-variation-1);
+    color: var(--on-success-color-variation-1);
+    border: var(--border-width) solid var(--success-color);
 
-    &-alt {
-      border: var(--border-width) solid var(--success-border-color-hover);
-      background-color: var(--success-hover);
-      color: var(--success-hover-text);
-
-      &[href]:hover {
-        border: var(--border-width) solid var(--success-border-color);
-        background-color: var(--success-background);
-        color: var(--success-text);
-      }
+    > *,
+    > * *:is(h1, h2, h3, h4, h5) {
+      color: var(--on-succes-color-variation-1);
     }
 
-    &[href]:hover {
-      border: var(--border-width) solid var(--success-border-color-hover);
-      background-color: var(--success-hover);
-      color: var(--success-hover-text);
+    &-alt {
+      --border-width: var(--elem-border-width);
+      border: var(--border-width) solid var(--success-color-variation-2);
+      background-color: var(--success-color);
+      color: var(--on-success-color);
+
+      > *,
+      > * *:is(h1, h2, h3, h4, h5) {
+        color: var(--on-success-color);
+      }
     }
   }
 
   &--warning {
-    border: var(--border-width) solid var(--warning-border-color);
-    background-color: var(--warning-background);
-    color: var(--warning-text);
+    --border-width: var(--elem-border-width);
+    background-color: var(--warning-color-variation-1);
+    color: var(--on-warning-color-variation-1);
+    border: var(--border-width) solid var(--warning-color);
 
-    &-alt {
-      border: var(--border-width) solid var(--warning-border-color-hover);
-      background-color: var(--warning-hover);
-      color: var(--warning-hover-text);
-
-      &[href]:hover {
-        border: var(--border-width) solid var(--warning-border-color);
-        background-color: var(--warning-background);
-        color: var(--warning-text);
-      }
+    > *,
+    > * *:is(h1, h2, h3, h4, h5) {
+      color: var(--on-warning-color-variation-1);
     }
 
-    &[href]:hover {
-      border: var(--border-width) solid var(--warning-border-color-hover);
-      background-color: var(--warning-hover);
-      color: var(--warning-hover-text);
+    &-alt {
+      --border-width: var(--elem-border-width);
+      border: var(--border-width) solid var(--warning-color-variation-2);
+      background-color: var(--warning-color);
+      color: var(--on-warning-color);
+
+      > *,
+      > * *:is(h1, h2, h3, h4, h5) {
+        color: var(--on-warning-color);
+      }
     }
   }
 
   &--danger {
-    border: var(--border-width) solid var(--danger-border-color);
-    background-color: var(--danger-background);
-    color: var(--danger-text);
+    --border-width: var(--elem-border-width);
+    background-color: var(--danger-color-variation-1);
+    color: var(--on-danger-color-variation-1);
+    border: var(--border-width) solid var(--danger-color);
 
-    &-alt {
-      border: var(--border-width) solid var(--danger-border-color-hover);
-      background-color: var(--danger-hover);
-      color: var(--danger-hover-text);
-
-      &[href]:hover {
-        border: var(--border-width) solid var(--danger-border-color);
-        background-color: var(--danger-background);
-        color: var(--danger-text);
-      }
+    > *,
+    > * *:is(h1, h2, h3, h4, h5) {
+      color: var(--on-danger-color-variation-1);
     }
 
-    &[href]:hover {
-      border: var(--border-width) solid var(--danger-border-color-hover);
-      background-color: var(--danger-hover);
-      color: var(--danger-hover-text);
+    &-alt {
+      --border-width: var(--elem-border-width);
+      border: var(--border-width) solid var(--danger-color-variation-2);
+      background-color: var(--danger-color);
+      color: var(--on-danger-color);
+
+      > *,
+      > * *:is(h1, h2, h3, h4, h5) {
+        color: var(--on-danger-color);
+      }
     }
   }
 
@@ -197,20 +197,24 @@
   border-bottom-right-radius: var(--btlr) !important;
 }
 
-[style*='--bg:'] {
-  background-color: var(--bg) !important;
+[style*='--bgc:'] {
+  background-color: var(--bgc) !important;
 }
 
 [style*='--bgi:'] {
   background-image: var(--bgi) !important;
 }
 
-[style*='--txt:'] {
-  color: var(--txt) !important;
+[style*='--clr:'] {
+  color: var(--clr) !important;
 }
 
 [style*='--fs:'] {
   font-size: var(--fs) !important;
+}
+
+[style*='--lh:'] {
+  line-height: var(--lh) !important;
 }
 
 [style*='--fw:'] {

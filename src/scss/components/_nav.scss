@@ -37,7 +37,7 @@ nav ul {
 nav {
   $ref: '.navbar';
 
-  --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.7);
+  --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.85);
 
   position: relative;
   justify-content: space-between;

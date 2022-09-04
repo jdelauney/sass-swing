@@ -1,7 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/settings' as *;
+@use '../abstracts/mixins' as *;
+
 .flex {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  //width: 100%;
 }
 
 .iflex {
@@ -12,6 +16,10 @@
   flex-direction: column;
 }
 
+.flex--autosize {
+  flex: 1 1 100%;
+}
+
 .flex,
 .flex--column {
   &:where(:not(.flex--row)).flex--top {
@@ -20,6 +28,10 @@
 
   &:where(:not(.flex--row)).flex--bottom {
     justify-content: flex-end;
+  }
+
+  &:where(:not(.flex--row)).flex--left {
+    align-items: flex-start;
   }
 
   &:where(:not(.flex--row)).flex--right {
@@ -35,6 +47,10 @@
   }
 }
 
+.flex--nowrap {
+  flex-wrap: nowrap;
+}
+
 .iflex,
 .flex--row {
   flex-flow: row wrap;
@@ -47,6 +63,10 @@
     align-items: flex-end;
   }
 
+  &.flex--left {
+    justify-content: flex-start;
+  }
+
   &.flex--right {
     justify-content: flex-end;
   }
@@ -57,30 +77,6 @@
   &.flex--v-center {
     align-items: center;
   }
-}
-
-.flex--top {
-  align-items: flex-start;
-}
-
-.flex--bottom {
-  align-items: flex-end;
-}
-
-.flex--left {
-  justify-content: flex-start;
-}
-
-.flex--right {
-  justify-content: flex-end;
-}
-
-.flex--v-center {
-  align-items: center;
-}
-
-.flex--center {
-  justify-content: center;
 }
 
 .flex--center-all {
@@ -100,6 +96,23 @@
   justify-content: space-between;
 }
 
+.iblock {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+@for $i from 1 through length($breakpoints) {
+  $bpv: nth($breakpoints, $i);
+  $bp: nth($breakpoint-prefixes, $i);
+  @media only screen and (min-width: #{$bpv}) {
+    .#{$bp}\:hidden {
+      display: none;
+    }
+  }
+}
 //.full-width {
 //  width: 100%;
 //}
@@ -118,7 +131,7 @@
 }
 
 [style*='--minw:'] {
-  min-width: var(--mw) !important;
+  min-width: var(--minw) !important;
 }
 
 [style*='--h:'] {
@@ -126,7 +139,7 @@
 }
 
 [style*='--minh:'] {
-  min-height: var(--mh) !important;
+  min-height: var(--minh) !important;
 }
 
 [style*='--mh:'] {
@@ -169,6 +182,14 @@
 
 [style*='--lh:'] {
   line-height: var(--lh) !important;
+}
+
+[style*='--of:'] {
+  object-fit: var(--of) !important;
+}
+
+[style*='--ar:'] {
+  aspect-ratio: var(--ar) !important;
 }
 
 .disabled-scroll {

@@ -2,24 +2,23 @@
 
 details {
   --border-width: var(--elem-border-width);
-  --border-color: var(--primary-color);
 
   display: block;
   margin-top: var(--spacing);
   padding-bottom: var(--spacing);
-  border-bottom: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--primary-color);
 
   summary {
     display: block;
     position: relative;
     outline: none;
-    color: var(--details-summary-close);
+    color: var(--primary-color);
     list-style: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
     &[role='button'] {
-      width: 100%;
+      width: 97%;
       justify-content: left;
 
       &::after {
@@ -47,10 +46,10 @@ details {
     }
 
     &:hover {
-      color: var(--primary-color-variation-1) !important;
+      color: var(--primary-color-variation-1);
 
       &::after {
-        --_border: 3px solid var(--hover-border-color);
+        --_border: 3px solid var(--primary-color-variation-1);
 
         border-right: var(--_border);
         border-bottom: var(--_border);
@@ -58,7 +57,7 @@ details {
     }
 
     &::after {
-      --_border: 3px solid var(--border-color);
+      --_border: 3px solid var(--primary-color-variation-2);
 
       display: none;
       position: absolute;
@@ -85,24 +84,22 @@ details {
 
   &[open] {
     summary {
+      --_border: 3px solid var(--primary-color-variation-2);
       color: var(--primary-color);
 
       &[role='button'] {
-        background-color: var(--active-background-color);
-        color: var(--active-color);
-
+        color: var(--on-primary-color);
         &::after {
           top: 0.3em;
-          border-color: var(--active-border-color);
+          border-color: var(--_border);
         }
       }
 
       &::after {
-        --_border: 3px solid var(--active-border-color);
         top: 0;
         transform: rotate(45deg);
-        border-right: 3px solid var(--_border);
-        border-bottom: 3px solid var(--_border);
+        border-right: var(--_border);
+        border-bottom: var(--_border);
       }
     }
   }

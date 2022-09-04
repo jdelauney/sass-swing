@@ -45,16 +45,16 @@
   //:not([data-theme="dark"])
   color-scheme: light;
 
-  --scrollbar-color-background: var(--secondary-color-variation-2);
-  --scrollbar-color-thumb: var(--secondary-color-variation-1);
-  --scrollbar-color-thumb-border: var(--secondary-color);
+  --scrollbar-color-background: var(--neutral-color-variation-1);
+  --scrollbar-color-thumb: var(--secondary-color);
+  --scrollbar-color-thumb-border: var(--neutral-color);
 
-  --color-h1: #{$color-neutral-900};
-  --color-h2: #{mix($color-neutral-900, $color-neutral-800)};
-  --color-h3: #{$color-neutral-800};
-  --color-h4: #{mix($color-neutral-800, $color-neutral-700)};
-  --color-h5: #{$color-neutral-700};
-  --color-h6: #{mix($color-neutral-700, $color-neutral-600)};
+  --color-h1: #{$h1-light-color};
+  --color-h2: #{$h2-light-color};
+  --color-h3: #{$h3-light-color};
+  --color-h4: #{$h4-light-color};
+  --color-h5: #{$h5-light-color};
+  --color-h6: #{$h6-light-color};
 
   --neutral-color-h: #{hue($neutral-light-color)};
   --neutral-color-s: #{saturation($neutral-light-color)};
@@ -93,8 +93,8 @@
 
   /* Your main brand color */
   --primary-color-h: #{hue($brand-color)};
-  --primary-color-s: #{saturation($brand-color)};
-  --primary-color-l: #{lightness($brand-color)};
+  --primary-color-s: #{$primary-light-color-s};
+  --primary-color-l: #{$primary-light-color-l};
 
   /* Primary (brand) color should be used at 10%, principally for your CTA, input elements, links */
   --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
@@ -133,8 +133,8 @@
 
   /* Your secondary color */
   --secondary-color-h: #{hue($secondary-color)};
-  --secondary-color-s: #{saturation($secondary-color)};
-  --secondary-color-l: #{lightness($secondary-color)};
+  --secondary-color-s: #{$secondary-light-color-s};
+  --secondary-color-l: #{$secondary-light-color-l};
 
   /* Secondary color should be used at 30%  */
   --secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
@@ -166,11 +166,133 @@
   --on-secondary-color-variation-3-s: #{$on-secondary-light-color-variation-3-s};
   --on-secondary-color-variation-3-l: #{$on-secondary-light-color-variation-3-l};
   --on-secondary-color-variation-3: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-3-s), var(--on-secondary-color-variation-3-l));
+
+  --divider-color: #{$divider-light-color};
 }
 
 /* dark theme schema settings */
 @mixin dark {
   color-scheme: dark;
+
+  --color-h1: #{$h1-dark-color};
+  --color-h2: #{$h2-dark-color};
+  --color-h3: #{$h3-dark-color};
+  --color-h4: #{$h4-dark-color};
+  --color-h5: #{$h5-dark-color};
+  --color-h6: #{$h6-dark-color};
+
+  --neutral-color-h: #{hue($neutral-dark-color)};
+  --neutral-color-s: #{$neutral-dark-color-s};
+  --neutral-color-l: #{$neutral-dark-color-l};
+  //  --neutral-color: hsl(var(--neutral-color-h), var(--neutral-color-s), var(--neutral-color-l));
+  //  --neutral-shadow: #{$neutral-shadow};
+  //  --neutral-shadow-alt: #{$neutral-shadow-alt};
+
+  --on-neutral-color-s: #{$on-neutral-dark-color-s};
+  --on-neutral-color-l: #{$on-neutral-dark-color-l};
+  --on-neutral-color: hsl(var(--neutral-color-h), var(--on-neutral-color-s), var(--on-neutral-color-l));
+
+  --neutral-color-variation-1-s: #{$neutral-dark-color-variation-1-s};
+  --neutral-color-variation-1-l: #{$neutral-dark-color-variation-1-l};
+  --neutral-color-variation-1: hsl(var(--neutral-color-h), var(--neutral-color-variation-1-s), var(--neutral-color-variation-1-l));
+
+  --on-neutral-color-variation-1-s: #{$on-neutral-dark-color-variation-1-s};
+  --on-neutral-color-variation-1-l: #{$on-neutral-dark-color-variation-1-l};
+  --on-neutral-color-variation-1: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-1-s), var(--on-neutral-color-variation-1-l));
+
+  --neutral-color-variation-2-s: #{$neutral-dark-color-variation-2-s};
+  --neutral-color-variation-2-l: #{$neutral-dark-color-variation-2-l};
+  --neutral-color-variation-2: hsl(var(--neutral-color-h), var(--neutral-color-variation-2-s), var(--neutral-color-variation-2-l));
+
+  --on-neutral-color-variation-2-s: #{$on-neutral-dark-color-variation-2-s};
+  --on-neutral-color-variation-2-l: #{$on-neutral-dark-color-variation-2-l};
+  --on-neutral-color-variation-2: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-2-s), var(--on-neutral-color-variation-2-l));
+
+  --neutral-color-variation-3-s: #{$neutral-dark-color-variation-3-s};
+  --neutral-color-variation-3-l: #{$neutral-dark-color-variation-3-l};
+  --neutral-color-variation-3: hsl(var(--neutral-color-h), var(--neutral-color-variation-3-s), var(--neutral-color-variation-3-l));
+
+  --on-neutral-color-variation-3-s: #{$on-neutral-dark-color-variation-3-s};
+  --on-neutral-color-variation-3-l: #{$on-neutral-dark-color-variation-3-l};
+  --on-neutral-color-variation-3: hsl(var(--neutral-color-h), var(--on-neutral-color-variation-3-s), var(--on-neutral-color-variation-3-l));
+
+  /* Your main brand color */
+  //  --primary-color-h: #{hue($brand-color)};
+  --primary-color-s: #{$primary-dark-color-s};
+  --primary-color-l: #{$primary-dark-color-l};
+
+  /* Primary (brand) color should be used at 10%, principally for your CTA, input elements, links */
+  //--primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
+
+  --on-primary-color-s: #{$on-primary-dark-color-s};
+  --on-primary-color-l: #{$on-primary-dark-color-l};
+  --on-primary-color: hsl(var(--primary-color-h), var(--on-primary-color-s), var(--on-primary-color-l));
+  //--primary-shadow: #{$primary-shadow};
+
+  --primary-color-variation-1-s: #{$primary-dark-color-variation-1-s};
+  --primary-color-variation-1-l: #{$primary-dark-color-variation-1-l};
+  --primary-color-variation-1: hsl(var(--primary-color-h), var(--primary-color-variation-1-s), var(--primary-color-variation-1-l));
+  //--primary-shadow-variation-1: #{$primary-shadow-variation-1};
+
+  --on-primary-color-variation-1-s: #{$on-primary-dark-color-variation-1-s};
+  --on-primary-color-variation-1-l: #{$on-primary-dark-color-variation-1-l};
+  --on-primary-color-variation-1: hsl(var(--primary-color-h), var(--on-primary-color-variation-1-s), var(--on-primary-color-variation-1-l));
+
+  --primary-color-variation-2-s: #{$primary-dark-color-variation-2-s};
+  --primary-color-variation-2-l: #{$primary-dark-color-variation-2-l};
+  --primary-color-variation-2: hsl(var(--primary-color-h), var(--primary-color-variation-2-s), var(--primary-color-variation-2-l));
+  //--primary-shadow-variation-2: #{$primary-shadow-variation-2};
+
+  --on-primary-color-variation-2-s: #{$on-primary-dark-color-variation-2-s};
+  --on-primary-color-variation-2-l: #{$on-primary-dark-color-variation-2-l};
+  --on-primary-color-variation-2: hsl(var(--primary-color-h), var(--on-primary-color-variation-2-s), var(--on-primary-color-variation-2-l));
+
+  --primary-color-variation-3-s: #{$primary-dark-color-variation-3-s};
+  --primary-color-variation-3-l: #{$primary-dark-color-variation-3-l};
+  --primary-color-variation-3: hsl(var(--primary-color-h), var(--primary-color-variation-3-s), var(--primary-color-variation-3-l));
+  //--primary-shadow-variation-3: #{$primary-shadow-variation-3};
+
+  --on-primary-color-variation-3-s: #{$on-primary-dark-color-variation-3-s};
+  --on-primary-color-variation-3-l: #{$on-primary-dark-color-variation-3-l};
+  --on-primary-color-variation-3: hsl(var(--primary-color-h), var(--on-primary-color-variation-3-s), var(--on-primary-color-variation-3-l));
+
+  /* Your secondary color */
+  //--secondary-color-h: #{hue($secondary-color)};
+  --secondary-color-s: #{$secondary-dark-color-s};
+  --secondary-color-l: #{$secondary-dark-color-l};
+
+  /* Secondary color should be used at 30%  */
+  //--secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
+
+  --on-secondary-color-s: #{$on-secondary-dark-color-s};
+  --on-secondary-color-l: #{$on-secondary-dark-color-l};
+  --on-secondary-color: hsl(var(--secondary-color-h), var(--on-secondary-color-s), var(--on-secondary-color-l));
+
+  --secondary-color-variation-1-s: #{$secondary-dark-color-variation-1-s};
+  --secondary-color-variation-1-l: #{$secondary-dark-color-variation-1-l};
+  --secondary-color-variation-1: hsl(var(--secondary-color-h), var(--secondary-color-variation-1-s), var(--secondary-color-variation-1-l));
+
+  --on-secondary-color-variation-1-s: #{$on-secondary-dark-color-variation-1-s};
+  --on-secondary-color-variation-1-l: #{$on-secondary-dark-color-variation-1-l};
+  --on-secondary-color-variation-1: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-1-s), var(--on-secondary-color-variation-1-l));
+
+  --secondary-color-variation-2-s: #{$secondary-dark-color-variation-2-s};
+  --secondary-color-variation-2-l: #{$secondary-dark-color-variation-2-l};
+  --secondary-color-variation-2: hsl(var(--secondary-color-h), var(--secondary-color-variation-2-s), var(--secondary-color-variation-2-l));
+
+  --on-secondary-color-variation-2-s: #{$on-secondary-dark-color-variation-2-s};
+  --on-secondary-color-variation-2-l: #{$on-secondary-dark-color-variation-2-l};
+  --on-secondary-color-variation-2: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-2-s), var(--on-secondary-color-variation-2-l));
+
+  --secondary-color-variation-3-s: #{$secondary-dark-color-variation-3-s};
+  --secondary-color-variation-3-l: #{$secondary-dark-color-variation-3-l};
+  --secondary-color-variation-3: hsl(var(--secondary-color-h), var(--secondary-color-variation-3-s), var(--secondary-color-variation-3-l));
+
+  --on-secondary-color-variation-3-s: #{$on-secondary-dark-color-variation-3-s};
+  --on-secondary-color-variation-3-l: #{$on-secondary-dark-color-variation-3-l};
+  --on-secondary-color-variation-3: hsl(var(--secondary-color-h), var(--on-secondary-color-variation-3-s), var(--on-secondary-color-variation-3-l));
+
+  --divider-color: #{$divider-dark-color};
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -185,8 +307,6 @@
 
 /* common theme schema settings */
 :root {
-  --divider-color: #{$divider-color};
-
   --code-color-background: #{$code-color-background};
   --code-color-lang-background: #{$code-color-lang-background};
   --code-color-lang-text: #{$code-color-lang-text};
@@ -312,8 +432,8 @@
   --on-danger-color-variation-2: hsl(var(--danger-color-h), var(--on-danger-color-variation-2-s), var(--on-danger-color-variation-2-l));
 
   --icon-success: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg fill='none' stroke='#{set-color-opacity($success-color, 75)}' stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath stroke-width='1.016' d='M73.699 91.713l2.57 2.158 4.082-4.57'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' stroke-width='.508' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
-  --icon-warning: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath fill='none' stroke='#{set-color-opacity($warning-color, 75)}' stroke-width='1.016' d='M6.444 8.621l-.062-5.03'/%3E%3Cpath fill='none' stroke='#{set-color-opacity($warning-color, 75)}' stroke-width='.508' d='M12.415 12.394L.317 12.363 6.444.317z' paint-order='stroke fill markers'/%3E%3Cpath d='M7.2 10.635a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-warning: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath fill='#{set-color-opacity($warning-color, 75)}' stroke='#{set-color-opacity($warning-color, 75)}' stroke-width='1.016' d='M6.444 8.621l-.062-5.03'/%3E%3Cpath fill='none' stroke='#{set-color-opacity($warning-color, 75)}' stroke-width='.508' d='M12.415 12.394L.317 12.363 6.444.317z' paint-order='stroke fill markers'/%3E%3Cpath d='M7.2 10.635a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' fill='#{set-color-opacity($warning-color, 75)}' stroke='none' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
   --icon-danger: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg fill='none' stroke='#{set-color-opacity($danger-color, 75)}' stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath stroke-width='1.016' d='M79.238 93.844l-4.857-4.768'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' stroke-width='.508' paint-order='stroke fill markers'/%3E%3Cpath stroke-width='1.016' d='M74.425 93.889l4.77-4.857'/%3E%3C/g%3E%3C/svg%3E");
-  --icon-info: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath fill='none' stroke='#{set-color-opacity($info-color, 75)}' stroke-width='1.016' d='M76.841 93.087l-.062-5.03'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' fill='none' stroke='%23000' stroke-width='.508' paint-order='stroke fill markers'/%3E%3Cpath d='M77.597 95.101a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
+  --icon-info: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.7 12.7'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' transform='translate(-70.46 -85.11)'%3E%3Cpath fill='#{set-color-opacity($info-color, 75)}' stroke='#{set-color-opacity($info-color, 75)}' stroke-width='1.016' d='M76.841 93.087l-.062-5.03'/%3E%3Ccircle cx='76.81' cy='91.46' r='6.096' fill='none' stroke='#{set-color-opacity($info-color, 75)}' stroke-width='.508' paint-order='stroke fill markers'/%3E%3Cpath d='M77.597 95.101a.787.732 0 01-.787.732.787.732 0 01-.788-.732.787.732 0 01.788-.732.787.732 0 01.787.732z' fill='#{set-color-opacity($info-color, 75)}' stroke='none' paint-order='stroke fill markers'/%3E%3C/g%3E%3C/svg%3E");
   --icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10' cy='10' r='8'%3E%3C/circle%3E%3Cline x1='23' y1='23' x2='15' y2='15'%3E%3C/line%3E%3C/svg%3E");
 }

@@ -19,6 +19,7 @@ form {
   > footer {
     display: flex;
     flex-flow: row wrap;
+    column-gap: 0.25em;
     padding: var(--spacing);
     padding-right: 0;
     align-items: center;
@@ -137,10 +138,10 @@ textarea {
     --border: var(--border-width) solid var(--border-color);
     --box-shadow: none;
 
-    //--active-background-color: var(--neutral-color);
-    //--active-color: var(--on-neutral-color);
-    //--active-border-color: var(--primary-color);
-    --active-box-shadow: var(--neutral-shadow);
+    //--focus-background-color: var(--neutral-color);
+    //--focus-color: var(--on-neutral-color);
+    //--focus-border-color: var(--primary-color);
+    --focus-box-shadow: var(--neutral-shadow);
 
     --hover-background-color: var(--neutral-color-variation-1);
     --hover-color: var(--primary-color);
@@ -163,14 +164,14 @@ textarea {
 
     // &:active,
     &:focus {
-      background-color: var(--active-background-color);
-      color: var(--active-color);
-      border: var(--border-width) solid var(--active-border-color);
-      //box-shadow: var(--active-box-shadow);
+      background-color: var(--focus-background-color);
+      color: var(--focus-color);
+      border: var(--border-width) solid var(--focus-border-color);
+      //box-shadow: var(--focus-box-shadow);
     }
 
     &:focus {
-      box-shadow: var(--active-box-shadow), 0 0 0 var(--focus-outline-width) var(--focus-border-color);
+      box-shadow: var(--focus-box-shadow), 0 0 0 var(--focus-outline-width) var(--focus-border-color);
     }
 
     &:hover {
@@ -411,7 +412,7 @@ input[type='checkbox'][role='switch'] {
   --border-color: var(--primary-color-variation-2);
   --hover-border-color: var(--primary-color-variation-1);
   --inner-border-color: var(--primary-color-variation-3);
-  //--active-border-color: var(--primary-color-variation-1);
+  //--focus-border-color: var(--primary-color-variation-1);
   --outline-width: var(--elem-outline-width);
   --focus-border-color: var(--primary-color-variation-1);
 

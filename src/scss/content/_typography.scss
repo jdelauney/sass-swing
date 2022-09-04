@@ -2,17 +2,6 @@
 
 @use 'sass:math';
 
-ol,
-ul {
-  -webkit-padding-start: var(--spacing);
-  -webkit-padding-end: 0;
-  padding-right: 0;
-  padding-left: var(--spacing);
-  padding-inline-start: var(--spacing);
-  padding-inline-end: 0;
-  margin-left: 1rem;
-}
-
 // https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/
 // https://spencermortensen.com/articles/typographic-scale/
 
@@ -156,6 +145,22 @@ h6 {
 
   &:only-child {
     margin-bottom: 0 !important;
+  }
+}
+
+ol,
+ul {
+  padding-left: var(--spacing);
+  margin-left: 1rem;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  &,
+  & li ul {
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0;
   }
 }
 
@@ -314,9 +319,9 @@ kbd {
 code,
 kbd {
   display: inline-block;
-  padding: 0.375em 0.5em;
   background: var(--code-color-background);
   color: var(--code-color-text);
+  padding: 0.275em 0.5em;
 }
 
 kbd {
