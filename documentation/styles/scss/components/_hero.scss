@@ -1,0 +1,61 @@
+@use '../../../../src/scss/abstracts/mixins' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding:2em 0;
+  align-items: center;
+  //max-height:60vh;
+  //background-image: linear-gradient(
+  //  315deg,
+  background-image: radial-gradient(circle at bottom right,
+    hsl(330deg 66% 61%) 0%,
+    hsl(323deg 54% 60%) 12%,
+    hsl(313deg 43% 58%) 23%,
+    hsl(296deg 35% 57%) 34%,
+    hsl(277deg 40% 59%) 44%,
+    hsl(259deg 45% 62%) 53%,
+    hsl(241deg 52% 65%) 62%,
+    hsl(226deg 66% 61%) 69%,
+    hsl(226deg 53% 55%) 76%,
+    hsl(226deg 45% 49%) 81%,
+    hsl(226deg 47% 44%) 86%,
+    hsl(226deg 49% 38%) 90%,
+    hsl(226deg 52% 33%) 94%,
+    hsl(226deg 56% 27%) 97%,
+    hsl(225deg 63% 22%) 100%
+  );
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--block-half-spacing);
+  }
+  &__right {
+    flex: 1 1 50%;
+    padding-left: 1em;
+    color: #f1f1f1;
+  }
+
+  &__left {
+    flex: 1 1 50%;
+    display: none;
+  }
+}
+
+@include mq(tablet-medium) {
+  .hero {
+    align-items: unset;
+  }
+  .hero__content {
+    flex-direction: row;
+  }
+  .hero__left {
+    display: flex;
+    padding: 0 2.5em;
+    color:#131418;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
