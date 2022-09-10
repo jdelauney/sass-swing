@@ -6,14 +6,14 @@
  * @returns {number}
  */
 export const clamp = (num, min, max) => {
-	return Math.min(Math.max(num, min), max)
-}
+  return Math.min(Math.max(num, min), max);
+};
 
-/**
- * S'assure que le nombre num est compris entre 0 et 255 inclus
- * @param {number } num
- * @returns {number}
- */
-export const clampByte = (num) => {
-	return clamp(num, 0, 255)
-}
+export const randomBetween = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+export const safeRandomBetween = (min, max) => {
+  const randomNumber = crypto.getRandomValues(new Uint32Array(1))[0] / 4294967296;
+  return Math.floor(randomNumber * (max - min + 1)) + min;
+};

@@ -1,10 +1,10 @@
-import CustomComponent from '../core/CustomComponent.js';
+import { CustomComponent } from '../core/CustomComponent.js';
 /**
  * Gestion d'un composant de type "dropdown", au click ou au survol suivant les options passées en paramètre
  *
  * @property {HTMLElement} element
  */
-export default class Dropdownify extends CustomComponent {
+export class Dropdownify extends CustomComponent {
   /**
    *
    * @param {HTMLElement} element

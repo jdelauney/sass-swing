@@ -1,5 +1,5 @@
 import { waitForDOMEvent } from '../core/helpers/domUtils.js';
-import CustomComponent from '../core/CustomComponent.js';
+import { CustomComponent } from '../core/CustomComponent.js';
 
 export class Modalify extends CustomComponent {
   /**

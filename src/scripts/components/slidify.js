@@ -1,7 +1,7 @@
-import CustomComponent from '../core/CustomComponent.js';
+import { CustomComponent } from '../core/CustomComponent.js';
 import { clamp } from '../core/helpers/mathUtils.js';
 
-export default class Slidify extends CustomComponent {
+export class Slidify extends CustomComponent {
   constructor(element) {
     super(element);
 
@@ -84,6 +84,7 @@ export default class Slidify extends CustomComponent {
         maxSlide = this.totalSlide - this.slidesPerPage - 1;
       }
     }
+
     this.currentSlide = clamp(this.options.startIndex, minSlide, maxSlide);
 
     this.slides.forEach((slide) => {
@@ -150,7 +151,7 @@ export default class Slidify extends CustomComponent {
       this.slidesContainer.prepend(lastClone);
     }
     this.slides = this.slidesContainer.querySelectorAll('.slider__slide');
-    this.totalSlide = this.options.slidePage ? this.totalSlide + 2 : this.slides.length;
+    this.totalSlide = this.slides.length;
     this.element.style.setProperty('--slide-count', this.totalSlide);
   }
 
@@ -350,7 +351,7 @@ export default class Slidify extends CustomComponent {
         }, this.options.intervalInMs);
       } else {
         this.timer = setInterval(() => {
-          this._gotoPrevSlide();
+          this._gotoPreviousSlide();
         }, this.options.intervalInMs);
       }
     }
