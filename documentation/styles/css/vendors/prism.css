@@ -352,6 +352,7 @@ span.inline-color {
 }
 
 div.code-toolbar {
+    display:flex;
     position: relative;
     /*width:100%;*/
     margin-bottom:1.2em;

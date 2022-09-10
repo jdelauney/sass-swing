@@ -1,7 +1,7 @@
 dialog,
 .modal {
-  --background-color: var(--neutral-color-variation-3);
-  --color: var(--on-neutral-color-variation-3);
+  --background-color: var(--neutral-color-variation-1);
+  --color: var(--on-neutral-color-variation-1);
   --border-width: var(--elem-border-width);
   --border-color: var(--neutral-color-variation-2);
   --border-radius: var(--elem-border-radius);
@@ -25,6 +25,19 @@ dialog,
   &:not([open]) {
     pointer-events: none;
     opacity: 0;
+  }
+
+  .close {
+    align-items: center;
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    display: flex;
+    height: 2em;
+    justify-content: center;
+    padding: 0;
+    width: 2em;
   }
 
   &[open] {
@@ -67,10 +80,7 @@ dialog,
   }
 
   & footer {
-    justify-content: space-between;
-  }
-
-  & footer {
+    column-gap: 0.25em;
     justify-content: flex-end;
   }
 
@@ -78,9 +88,13 @@ dialog,
     display: grid;
     grid-template-rows: auto 1fr auto;
     align-items: start;
-    max-height: 80vh;
-    max-block-size: 80vh;
+    max-height: 60vh;
+    max-block-size: 60vh;
     padding: 0;
+
+    + footer {
+      margin-top: 0 !important;
+    }
   }
 
   & article {
@@ -90,7 +104,7 @@ dialog,
     overscroll-behavior-y: contain;
     padding: var(--inner-h-spacing) var(--inner-v-spacing);
     max-height: 60vh;
-    max-block-size: min(60vh, 100%);
+    max-block-size: 60vh;
 
     > header {
       padding: 0;

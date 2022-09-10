@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+
+	<meta charset="UTF-8">
+	<title>Documentation Sass Swing - Contenu : Les boutons</title>
+	<meta name="Description" content="Donner du style à vos boutons avec le framework scss/css Sass Swing"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass Swing - Contenu : Les boutons">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Donner du style à vos boutons avec le framework scss/css Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/content/button.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Contenu : Les boutons"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/content/button.html">
+	<meta property="og:title" content="Documentation Sass Swing - Contenu : Les boutons">
+	<meta property="og:description" content="Donner du style à vos boutons avec le framework scss/css Sass Swing">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/">
+	<meta property="twitter:title" content="Documentation Sass Swing - Contenu : Les boutons">
+	<meta property="twitter:description" content="Donner du style à vos boutons avec le framework scss/css Sass Swing">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../../styles/css/sass-swing.doc.min.css"/>
+	<script src="../../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="../getting-started/usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="../models.html" class="link--default">Modèles</a></li>
+				<li><a href="../supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sass-swing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Change theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="../getting-started/usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="../getting-started/javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="../getting-started/themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="../getting-started/customize.html" class="link--default-alt">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="../layout/containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="../layout/grid.html" class="link--default-alt">Grille</a></li>
+				<li><a href="../layout/breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="typography.html" class="link--default-alt">Typographie</a></li>
+				<li><a href="buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="form.html" class="link--default-alt">Formulaires</a></li>
+				<li><a href="medias.html" class="link--default-alt" aria-current="page">Médias</a></li>
+				<li><a href="table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="../component/navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="../component/card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="../component/details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="../component/breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="../component/pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="../component/modal.html" class="link--default-alt">Boite de dialogue</a></li>
+				<li><a href="../component/collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="../component/addons/badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="../component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="../component/addons/loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="../component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
+						<li><a href="../component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="../component/addons/notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="../component/addons/slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="../component/addons/reveal.html" class="link--default-alt">Reveal</a></li>
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="../helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="../helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Les médias</h1>
+				<span class="like-h4 text-em">Images, images vectorielles, vidéos des éléments pratiquement inévitables dans vos designs.</span>
+				<hr>
+			</header>
+			<h2 class="text-swing">Vue d'ensemble</h2>
+			<p>
+				Les éléments HTML <code>&lt;<b>video</b>&gt;</code> <sup><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/video" target="_blank" rel="nofollow"
+				class="link--default">MDN Référence</a></sup> et <code>&lt;<b>img</b>&gt;</code> <sup><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Img" target="_blank" rel="nofollow"
+        class="link--default">MDN Référence</a></sup> permettent d'intégrer ces contenus dans un document. L'élément <code>&lt;<b>picture</b>&gt;</code> <sup><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/picture" target="_blank" rel="nofollow"
+        class="link--default">MDN Référence</a></sup> quant à lui, vous permettra d'adapter une image en fonction de la dimension d'affichage. Enfin l'élément <code>&lt;<b>svg</b>&gt;</code>
+				<sup><a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/svg" target="_blank" rel="nofollow" class="link--default">MDN Référence</a></sup> vous permettra d'afficher des images vectorielles décrites directement dans votre code.
+			</p>
+			<h3 class="text-swing">Les images et les vidéos</h3>
+			<p>
+				Elles adapteront automatique leur hauteur en fonction de la largeur de l'élément conteneur.
+			</p>
+			<p>
+				Grâce à l'élément HTML <code>&lt;<b>figure</b>&gt;</code> <sup><a
+				href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/figure" target="_blank" rel="nofollow"
+				class="link--default">MDN Référence</a></sup> et à son élément enfant <code>&lt;<b>figcaption</b>&gt;</code> (<i>de type "inline-flex"</i>) vous pourrez ajouter une légende à vos médias.
+			</p>
+			<p>
+				Vous pouvez positionner l'élément <code>&lt;<b>figcaption</b>&gt;</code> à l'intérieur avec l'aide de quelques classes : <i>figcaption--top-left, figcaption--top-center, figcaption--top-right, figcaption--center, figcaption--bottom-left, figcaption--bottom-center et figcaption--bottom-right</i>
+			</p>
+			<article class="card">
+				<div class="panel">
+					<h4>Affichage des différents formats de média visuel</h4>
+					<div class="grid t:cols-2 md:cols-3 gap-2">
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land">
+							<figcaption>
+								Un coucher de soleil dans un paysage désertique
+							</figcaption>
+						</figure>
+						<figure>
+							<video controls>
+								<source src="../../assets/videos/vheader.webm" type="video/webm">
+								<source src="../../assets/videos/vheader.mp4" type="video/mp4">
+								<p>Votre navigateur ne prend pas en charge les vidéos HTML5.</p>
+							</video>
+							<figcaption>
+								Ambiance zen
+							</figcaption>
+						</figure>
+						<figure>
+							<figcaption>
+								Tigre en vectoriel
+							</figcaption>
+							<img src="../../assets/images/tiger.svg" width="512" height="512" alt="tigre en vectoriel">
+						</figure>
+					</div>
+					<hr>
+					<h4>Positionnement des libellés</h4>
+					<div class="grid t:cols-2 md:cols-3 gap-2">
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land">
+							<figcaption class="figcaption--top-left">
+								<b>TOP LEFT</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land">
+							<figcaption class="figcaption--center">
+								<b>CENTER</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land">
+							<figcaption class="figcaption--bottom-right">
+								<b>BOTTOM RIGHT</b>
+							</figcaption>
+						</figure>
+					</div>
+					<hr>
+					<h4>
+						Choix du fichier image à charger en fonction des dimensions de l'affichage<br>
+						<span><small>Redimensionnez votre navigateur, pour voir les différentes images aux différents points
+							d'arrêt</small></span>
+					</h4>
+
+					<div style="--mw:1200px">
+						<picture>
+							<source srcset="../../assets/images/image08.jpg" media="(min-width: 1200px)">
+							<source srcset="../../assets/images/image08-tablet.jpg" media="(min-width: 600px)">
+							<img src="../../assets/images/image08-mobile.jpg" alt="sunset in desertic land" />
+						</picture>
+					</div>
+					<div class="ui--warning" style="--p:1em;--mt:var(--spacing);">
+						<p>
+							<b>A noter</b> : Il est important de trier les balises <code>&lt;<b>source</b>&gt;</code> de la plus grande, à la plus petite taille.
+						</p>
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;h4&gt;Affichage des diff&eacute;rents formats de m&eacute;dia visuel&lt;/h4&gt;
+&lt;div class=&quot;grid md:cols-3 gap-2&quot;&gt;
+	&lt;figure&gt;
+		&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1024&quot; height=&quot;680&quot; alt=&quot;sunset in desertic land&quot;&gt;
+		&lt;figcaption&gt;
+			Un coucher de soleil dans un paysage d&eacute;sertique
+		&lt;/figcaption&gt;
+	&lt;/figure&gt;
+	&lt;figure&gt;
+		&lt;video controls&gt;
+			&lt;source src=&quot;../../assets/videos/vheader.webm&quot; type=&quot;video/webm&quot;&gt;
+			&lt;source src=&quot;../../assets/videos/vheader.mp4&quot; type=&quot;video/mp4&quot;&gt;
+			&lt;p&gt;Votre navigateur ne prend pas en charge les vid&eacute;os HTML5.&lt;/p&gt;
+		&lt;/video&gt;
+		&lt;figcaption&gt;
+			Ambiance zen
+		&lt;/figcaption&gt;
+	&lt;/figure&gt;
+	&lt;figure&gt;
+		&lt;figcaption&gt;
+			Tigre en vectoriel
+		&lt;/figcaption&gt;
+		&lt;img src=&quot;../../assets/images/tiger.svg&quot; width=&quot;512&quot; height=&quot;512&quot; alt=&quot;tigre en vectoriel&quot;&gt;
+	&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+
+&lt;h4&gt;Positionnement des libell&eacute;s&lt;/h4&gt;
+&lt;div class=&quot;grid md:cols-3 gap-2&quot;&gt;
+	&lt;figure&gt;
+		&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot;&gt;
+		&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+			&lt;b&gt;TOP LEFT&lt;/b&gt;
+		&lt;/figcaption&gt;
+	&lt;/figure&gt;
+	&lt;figure&gt;
+		&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot;&gt;
+		&lt;figcaption class=&quot;figcaption--center&quot;&gt;
+			&lt;b&gt;CENTER&lt;/b&gt;
+		&lt;/figcaption&gt;
+	&lt;/figure&gt;
+	&lt;figure&gt;
+		&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot;&gt;
+		&lt;figcaption class=&quot;figcaption--bottom-right&quot;&gt;
+			&lt;b&gt;BOTTOM RIGHT&lt;/b&gt;
+		&lt;/figcaption&gt;
+	&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+
+&lt;h4&gt;
+	Choix du fichier image &agrave; charger en fonction des dimensions de l&#39;affichage&lt;br&gt;
+	&lt;span&gt;&lt;small&gt;Redimensionnez votre navigateur, pour voir les diff&eacute;rentes images aux diff&eacute;rents points
+		d&#39;arr&ecirc;t&lt;/small&gt;&lt;/span&gt;
+&lt;/h4&gt;
+
+&lt;div style=&quot;--mw:1200px&quot;&gt;
+	&lt;picture&gt;
+		&lt;source srcset=&quot;../../assets/images/image08.jpg&quot; media=&quot;(min-width: 1200px)&quot;&gt;
+		&lt;source srcset=&quot;../../assets/images/image08-tablet.jpg&quot; media=&quot;(min-width: 600px)&quot;&gt;
+		&lt;img src=&quot;../../assets/images/image08-mobile.jpg&quot; alt=&quot;sunset in desertic land&quot; /&gt;
+	&lt;/picture&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<h3 class="text-swing">Les images vectorielles SVG</h3>
+			<p>
+				Les images vectorielles, ont l'avantage d'être très petites et peuvent être personnalisées et animées avec du css.
+				Comme les images, les SVG adapteront leurs taille en fonction des dimensions d'affichage.
+			</p>
+			<div class="ui--warning" style="--p:1em;">
+				<b>A noter </b> : Lors de la création de votre image SVG, il est important que votre illustration ne touche pas les bords. Il faut en effet laisser une marge de 1 ou 2px. Dans le cas contraire votre svg pourra être tronqué. C'est un bug d'affichage connu lors du redimensionnement d'un SVG "inline"
+			</div>
+			<p>
+				Pour utiliser un svg comme une icône, il vous suffira de spécifier la classe <code><i>.icon</i></code> dans votre conteneur. Vous pourrez également choisir sa couleur de fond ainsi que la couleur d'avant-plan avec les variables CSS <code><b>--fill</b></code> et <code><b>--stroke</b></code>. Par défaut la couleur des contours est celle de l'élément conteneur.
+			</p>
+			<p>
+				Si vous utilisez seulement quelques icônes dans votre page (<i>max entre 10 et 12)</i>) à plusieurs endroits. Vous pouvez les stocker directement dans votre code html dans une balise <code>&lt;<b>svg</b>&gt;</code> caché et non accessible.
+				Ensuite vous devrez englober la description du SVG avec le tag <code>&lt;<b>symbol</b>&gt;</code>
+			</p>
+			<p>
+				Pour les utiliser il vous suffira de spécifier avec le tag <code>&lt;<b>use</b>&gt;</code> et son attribut <code><b>href</b></code> l'id du svg défini.
+			</p>
+
+			<article class="card">
+				<div class="panel">
+					<figure style="--mw:128px;--pl:1em;">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M5.118 17.523c-1.186.244-2.409.269-3.591-.923-.796-.8-1.19-1.99-1.143-3.237 3.032 3.46 6.727-.814 2.24-3.037 2.169-1.005 4.209-.059 5.293 1.896.515.923.82 1.41 1.212 1.737.07.063.146.118.223.17.169-.468.506-.855.948-1.09a1.81 1.81 0 0 1 .81-.195c.79 0 1.78.463 1.945 1.255.036-.008.073-.015.11-.015h.574a.382.384 0 0 1 .092 0c.626.06 1.134.515 1.249 1.123a.412.415 0 0 1 .175-.04h.575a.382.384 0 0 1 .091 0c.825.125 1.161.625 1.278 1.251h.638a.413.416 0 0 1 .095 0c.945.143 1.318.754 1.46 1.487 1.744-.26 3.63-1.288 5.483.567a4.277 4.3 0 0 1 1.139 3.233c-3.033-3.458-6.727.816-2.245 3.04-1.86.861-3.633.283-4.782-1.141a7.233 7.271 0 0 1-.582 1.203c-.096.15-.19.306-.315.523a.011.011 0 0 0 0 .015c-.1.17-.21.335-.327.49h.4a.619.622 0 0 1 .622.61v3.325c0 .339-.278.61-.622.61H9.135a.614.617 0 0 1-.621-.61V26.47c0-.339.278-.611.622-.611h.216a4.464 4.488 0 0 1-.223-.928l-3.105-4.984-.015-.019a5.49 5.519 0 0 1-.623-1.037 2.967 2.983 0 0 1-.267-.976 2.204 2.216 0 0 1 0-.382zm22.92-8.132a.574.577 0 0 0-.091-.183.415.417 0 0 0-.143-.111.38.383 0 0 0-.176-.055.79.794 0 0 0-.186.022h-.02l-1.829.548a.753.757 0 0 1-.905-.379c-.095-.154-.187-.309-.3-.49-.114-.176-.249-.334-.345-.485-.098-.155-.241-.299-.391-.452-.147-.151-.249-.277-.421-.446a.744.748 0 0 1-.121-.869l.975-1.796a.376.378 0 0 0 .032-.354.503.506 0 0 0-.077-.162.49.493 0 0 0-.154-.117L21.58 2.857a.672.676 0 0 0-.169-.066.647.65 0 0 0-.206.03.302.303 0 0 0-.15.08.436.438 0 0 0-.124.148l-.893 1.649a.79.794 0 0 1-.924.372 17.099 17.189 0 0 0-.563-.137 9.08 9.08 0 0 0-.59-.091 5.39 5.419 0 0 0-.597-.048c-.208-.015-.403 0-.59-.015a.747.751 0 0 1-.747-.534l-.622-1.977v-.025a.72.725 0 0 0-.077-.162.527.53 0 0 0-.311-.147.487.49 0 0 0-.205.025l-2.468.74a.487.49 0 0 0-.187.089.432.434 0 0 0-.117.14.394.396 0 0 0-.051.172.514.516 0 0 0 .021.184v.011l.561 1.797a.74.744 0 0 1-.388.891c-.158.088-.315.18-.498.29-.184.114-.344.232-.499.34a7.141 7.179 0 0 0-.475.378c-.15.132-.286.244-.455.416a.794.798 0 0 1-.897.115l-1.827-.954a.425.427 0 0 0-.187-.055.886.89 0 0 0-.172.015.38.383 0 0 0-.154.077.49.492 0 0 0-.12.155l-.099.18a5.993 6.025 0 0 0-1.678-.085l.443-.82c.129-.233.298-.438.5-.608.207-.166.445-.291.699-.367a2.156 2.167 0 0 1 .794-.082c.26.037.516.122.747.247l1.351.706.099-.08c.176-.148.363-.292.55-.434.187-.144.387-.289.574-.405l.063-.049-.374-1.233a1.762 1.772 0 0 1-.08-.773c.022-.262.098-.515.227-.747a1.969 1.979 0 0 1 .497-.603 2.09 2.09 0 0 1 .703-.366l2.49-.758c.254-.08.52-.114.784-.1.267.023.527.1.761.226.242.128.455.301.627.508.165.202.286.433.348.688l.454 1.436a.71.71 0 0 0 .11 0c.223.01.454.037.7.058.241.022.464.07.698.114a.23.23 0 0 1 .096.026l.615-1.134a1.94 1.95 0 0 1 1.2-.956h.016a1.88 1.88 0 0 1 .772-.074c.264.025.517.099.748.217l2.307 1.203c.234.126.447.291.618.49.173.203.3.438.374.688.081.25.11.516.085.778a2.126 2.126 0 0 1-.25.732l-.725 1.329c.03.025.059.07.088.096.146.172.293.353.44.537.142.184.296.379.413.563l.048.066 1.256-.372c.256-.08.523-.106.791-.077.267.022.527.1.761.221.238.122.447.287.615.49v.022c.169.203.294.434.374.688l.747 2.419h.01c.078.25.108.508.089.765a1.837 1.847 0 0 1-.23.748 2.01 2.01 0 0 1-.498.603 1.848 1.857 0 0 1-.704.343l-1.465.445v.114c0 .226-.036.449-.062.663v.037a6.539 6.573 0 0 1-.124.695l-.02.081 1.166.608a1.89 1.89 0 0 1 .974 1.17v.02c.08.242.106.499.077.757a2.006 2.006 0 0 1-.223.732l-.184.34-.329-.174a6.187 6.22 0 0 0-1.08-1.892 6.74 6.776 0 0 0-1.993-1.664 5.92 5.92 0 0 0 .063-.276c.033-.183.07-.376.09-.589v-.037c.03-.198.045-.38.06-.556.015-.177.022-.39.019-.577a.726.73 0 0 1 .542-.733l2.013-.61h.03a.587.59 0 0 0 .16-.074.37.372 0 0 0 .104-.137.455.457 0 0 0 .025-.372l-.747-2.417Zm-8.469-.758c.347.181.678.398.978.648.3.244.578.516.824.814.23.29.438.6.622.923a5.27 5.298 0 0 1 .64 2.095c.04.368.04.74 0 1.108v.066a5.59 5.62 0 0 1-.168.921c-.41.04-.816.104-1.215.172l-.37-.19a4.513 4.537 0 0 0 .249-1.028.12.122 0 0 1 0-.05 4.542 4.566 0 0 0 0-.84 4.41 4.433 0 0 0-.158-.791 3.386 3.404 0 0 0-.318-.733 4.254 4.277 0 0 0-.477-.7 3.904 3.925 0 0 0-.607-.6 4.61 4.634 0 0 0-1.546-.806 5.12 5.147 0 0 0-.784-.158.139.14 0 0 1-.054 0 4.784 4.809 0 0 0-.857 0 5.043 5.07 0 0 0-.806.155 3.925 3.946 0 0 0-.746.312 4.465 4.465 0 0 0-.714.464 4.181 4.203 0 0 0-.605.593 2.49 2.49 0 0 0-.172.213l-1.359-.71c.11-.162.228-.317.356-.468a5.7 5.7 0 0 1 .81-.798 6.99 6.99 0 0 1 .944-.616 6.197 6.197 0 0 1 1.047-.427c.356-.106.722-.18 1.095-.213a5.312 5.34 0 0 1 1.132 0c.025 0 .047.01.062 0a6.02 6.02 0 0 1 1.083.202c.378.115.744.262 1.095.438zm-9.44 5.864v5.191a.41.413 0 0 1-.198.379.43.432 0 0 1-.44 0 .41.413 0 0 1-.197-.379v-.759c-.023-.015-.044-.025-.062-.044l-.927-.626-1.08-.872a1.548 1.556 0 0 0-.363-.228h-.281a.677.68 0 0 0-.363.015.354.356 0 0 0-.194.198h-.026c-.051.166-.07.343-.051.516.025.246.095.485.2.71.148.298.323.582.532.843l.022.04 3.164 5.074a.375.377 0 0 1 .07.183c.028.394.139.777.329 1.123h6.313c.318-.239.583-.541.768-.886a23.045 23.045 0 0 1 .341-.557 7.202 7.24 0 0 0 .715-1.663v-.123l.014-.047v-1.303l-.032-1.391a.157.158 0 0 1 0-.06v-1.854a.9.905 0 0 0-.722-.733h-.398v.566c-.015.229-.03.45-.03.66a.415.415 0 0 1-.417.411.413.416 0 0 1-.417-.411c0-.21.015-.453.029-.707v-.361.132-.29c0-.615-.11-1.153-.615-1.24h-.553a.382.384 0 0 1-.091 0c0 .227 0 .467-.02.699v.243c-.014.228-.028.448-.028.658a.415.415 0 0 1-.418.412.413.416 0 0 1-.417-.411c0-.21.015-.453.029-.707v-.537c.022-.693-.055-1.334-.615-1.433h-.538a.568.571 0 0 1-.106-.015v1.583a.415.415 0 0 1-.418.412.413.416 0 0 1-.418-.412v-2.002c0-.568-.574-.81-1.11-.81-.15 0-.3.033-.435.103a1.227 1.227 0 0 0-.56.732zm-.952 2.99-.396-.159a5.298 5.326 0 0 0-.546-.184l.6.49.342.273Zm0 0"/></svg>
+					</figure>
+					<hr>
+					<svg aria-hidden="true" style="display:none">
+						<symbol id="icon-github" viewBox="0 0 24 24">
+							<path d="M12 .5C5.646.5.5 5.78.5 12.292c0 5.211 3.295 9.63 7.863 11.188.575.11.786-.254.786-.567 0-.28-.01-1.022-.014-2.005-3.2.711-3.874-1.582-3.874-1.582-.523-1.361-1.28-1.725-1.28-1.725-1.041-.73.081-.716.081-.716 1.155.082 1.762 1.215 1.762 1.215 1.025 1.803 2.692 1.282 3.349.98.103-.762.4-1.282.728-1.577-2.554-.295-5.238-1.309-5.238-5.827 0-1.287.446-2.339 1.184-3.164-.13-.298-.518-1.497.1-3.121 0 0 .963-.317 3.163 1.208.92-.262 1.897-.392 2.875-.398a10.77 10.77 0 0 1 2.875.398c2.185-1.525 3.148-1.208 3.148-1.208.618 1.624.23 2.823.115 3.12.733.826 1.179 1.878 1.179 3.165 0 4.53-2.689 5.527-5.247 5.817.402.354.776 1.077.776 2.182 0 1.578-.014 2.846-.014 3.229 0 .31.2.678.79.56 4.601-1.547 7.893-5.969 7.893-11.172C23.5 5.78 18.35.5 12 .5"/>
+						</symbol>
+					</svg>
+					<button class="icon">
+						github&nbsp;
+						<svg>
+							<use href="#icon-github"/>
+						</svg>
+					</button>
+					<span class="icon" style="--fs:2em; --clr:var(--primary-color);">
+						github&nbsp;
+						<svg>
+							<use href="#icon-github"/>
+						</svg>
+					</span>
+					<span class="icon" style="--fs:5em;--clr:var(--color-swing); --stroke:var(--color-swing-light); --fill:var(--color-swing-dark);">
+						github&nbsp;
+						<svg>
+							<use href="#icon-github"/>
+						</svg>
+					</span>
+				</div>
+				<footer class="footer__code">
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;figure style=&quot;--mw:128px;--pl:1em;&quot;&gt;
+	&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 32 32&quot;&gt;&lt;path d=&quot;M5.118 17.523c-1.186.244-2.409.269-3.591-.923-.796-.8-1.19-1.99-1.143-3.237 3.032 3.46 6.727-.814 2.24-3.037 2.169-1.005 4.209-.059 5.293 1.896.515.923.82 1.41 1.212 1.737.07.063.146.118.223.17.169-.468.506-.855.948-1.09a1.81 1.81 0 0 1 .81-.195c.79 0 1.78.463 1.945 1.255.036-.008.073-.015.11-.015h.574a.382.384 0 0 1 .092 0c.626.06 1.134.515 1.249 1.123a.412.415 0 0 1 .175-.04h.575a.382.384 0 0 1 .091 0c.825.125 1.161.625 1.278 1.251h.638a.413.416 0 0 1 .095 0c.945.143 1.318.754 1.46 1.487 1.744-.26 3.63-1.288 5.483.567a4.277 4.3 0 0 1 1.139 3.233c-3.033-3.458-6.727.816-2.245 3.04-1.86.861-3.633.283-4.782-1.141a7.233 7.271 0 0 1-.582 1.203c-.096.15-.19.306-.315.523a.011.011 0 0 0 0 .015c-.1.17-.21.335-.327.49h.4a.619.622 0 0 1 .622.61v3.325c0 .339-.278.61-.622.61H9.135a.614.617 0 0 1-.621-.61V26.47c0-.339.278-.611.622-.611h.216a4.464 4.488 0 0 1-.223-.928l-3.105-4.984-.015-.019a5.49 5.519 0 0 1-.623-1.037 2.967 2.983 0 0 1-.267-.976 2.204 2.216 0 0 1 0-.382zm22.92-8.132a.574.577 0 0 0-.091-.183.415.417 0 0 0-.143-.111.38.383 0 0 0-.176-.055.79.794 0 0 0-.186.022h-.02l-1.829.548a.753.757 0 0 1-.905-.379c-.095-.154-.187-.309-.3-.49-.114-.176-.249-.334-.345-.485-.098-.155-.241-.299-.391-.452-.147-.151-.249-.277-.421-.446a.744.748 0 0 1-.121-.869l.975-1.796a.376.378 0 0 0 .032-.354.503.506 0 0 0-.077-.162.49.493 0 0 0-.154-.117L21.58 2.857a.672.676 0 0 0-.169-.066.647.65 0 0 0-.206.03.302.303 0 0 0-.15.08.436.438 0 0 0-.124.148l-.893 1.649a.79.794 0 0 1-.924.372 17.099 17.189 0 0 0-.563-.137 9.08 9.08 0 0 0-.59-.091 5.39 5.419 0 0 0-.597-.048c-.208-.015-.403 0-.59-.015a.747.751 0 0 1-.747-.534l-.622-1.977v-.025a.72.725 0 0 0-.077-.162.527.53 0 0 0-.311-.147.487.49 0 0 0-.205.025l-2.468.74a.487.49 0 0 0-.187.089.432.434 0 0 0-.117.14.394.396 0 0 0-.051.172.514.516 0 0 0 .021.184v.011l.561 1.797a.74.744 0 0 1-.388.891c-.158.088-.315.18-.498.29-.184.114-.344.232-.499.34a7.141 7.179 0 0 0-.475.378c-.15.132-.286.244-.455.416a.794.798 0 0 1-.897.115l-1.827-.954a.425.427 0 0 0-.187-.055.886.89 0 0 0-.172.015.38.383 0 0 0-.154.077.49.492 0 0 0-.12.155l-.099.18a5.993 6.025 0 0 0-1.678-.085l.443-.82c.129-.233.298-.438.5-.608.207-.166.445-.291.699-.367a2.156 2.167 0 0 1 .794-.082c.26.037.516.122.747.247l1.351.706.099-.08c.176-.148.363-.292.55-.434.187-.144.387-.289.574-.405l.063-.049-.374-1.233a1.762 1.772 0 0 1-.08-.773c.022-.262.098-.515.227-.747a1.969 1.979 0 0 1 .497-.603 2.09 2.09 0 0 1 .703-.366l2.49-.758c.254-.08.52-.114.784-.1.267.023.527.1.761.226.242.128.455.301.627.508.165.202.286.433.348.688l.454 1.436a.71.71 0 0 0 .11 0c.223.01.454.037.7.058.241.022.464.07.698.114a.23.23 0 0 1 .096.026l.615-1.134a1.94 1.95 0 0 1 1.2-.956h.016a1.88 1.88 0 0 1 .772-.074c.264.025.517.099.748.217l2.307 1.203c.234.126.447.291.618.49.173.203.3.438.374.688.081.25.11.516.085.778a2.126 2.126 0 0 1-.25.732l-.725 1.329c.03.025.059.07.088.096.146.172.293.353.44.537.142.184.296.379.413.563l.048.066 1.256-.372c.256-.08.523-.106.791-.077.267.022.527.1.761.221.238.122.447.287.615.49v.022c.169.203.294.434.374.688l.747 2.419h.01c.078.25.108.508.089.765a1.837 1.847 0 0 1-.23.748 2.01 2.01 0 0 1-.498.603 1.848 1.857 0 0 1-.704.343l-1.465.445v.114c0 .226-.036.449-.062.663v.037a6.539 6.573 0 0 1-.124.695l-.02.081 1.166.608a1.89 1.89 0 0 1 .974 1.17v.02c.08.242.106.499.077.757a2.006 2.006 0 0 1-.223.732l-.184.34-.329-.174a6.187 6.22 0 0 0-1.08-1.892 6.74 6.776 0 0 0-1.993-1.664 5.92 5.92 0 0 0 .063-.276c.033-.183.07-.376.09-.589v-.037c.03-.198.045-.38.06-.556.015-.177.022-.39.019-.577a.726.73 0 0 1 .542-.733l2.013-.61h.03a.587.59 0 0 0 .16-.074.37.372 0 0 0 .104-.137.455.457 0 0 0 .025-.372l-.747-2.417Zm-8.469-.758c.347.181.678.398.978.648.3.244.578.516.824.814.23.29.438.6.622.923a5.27 5.298 0 0 1 .64 2.095c.04.368.04.74 0 1.108v.066a5.59 5.62 0 0 1-.168.921c-.41.04-.816.104-1.215.172l-.37-.19a4.513 4.537 0 0 0 .249-1.028.12.122 0 0 1 0-.05 4.542 4.566 0 0 0 0-.84 4.41 4.433 0 0 0-.158-.791 3.386 3.404 0 0 0-.318-.733 4.254 4.277 0 0 0-.477-.7 3.904 3.925 0 0 0-.607-.6 4.61 4.634 0 0 0-1.546-.806 5.12 5.147 0 0 0-.784-.158.139.14 0 0 1-.054 0 4.784 4.809 0 0 0-.857 0 5.043 5.07 0 0 0-.806.155 3.925 3.946 0 0 0-.746.312 4.465 4.465 0 0 0-.714.464 4.181 4.203 0 0 0-.605.593 2.49 2.49 0 0 0-.172.213l-1.359-.71c.11-.162.228-.317.356-.468a5.7 5.7 0 0 1 .81-.798 6.99 6.99 0 0 1 .944-.616 6.197 6.197 0 0 1 1.047-.427c.356-.106.722-.18 1.095-.213a5.312 5.34 0 0 1 1.132 0c.025 0 .047.01.062 0a6.02 6.02 0 0 1 1.083.202c.378.115.744.262 1.095.438zm-9.44 5.864v5.191a.41.413 0 0 1-.198.379.43.432 0 0 1-.44 0 .41.413 0 0 1-.197-.379v-.759c-.023-.015-.044-.025-.062-.044l-.927-.626-1.08-.872a1.548 1.556 0 0 0-.363-.228h-.281a.677.68 0 0 0-.363.015.354.356 0 0 0-.194.198h-.026c-.051.166-.07.343-.051.516.025.246.095.485.2.71.148.298.323.582.532.843l.022.04 3.164 5.074a.375.377 0 0 1 .07.183c.028.394.139.777.329 1.123h6.313c.318-.239.583-.541.768-.886a23.045 23.045 0 0 1 .341-.557 7.202 7.24 0 0 0 .715-1.663v-.123l.014-.047v-1.303l-.032-1.391a.157.158 0 0 1 0-.06v-1.854a.9.905 0 0 0-.722-.733h-.398v.566c-.015.229-.03.45-.03.66a.415.415 0 0 1-.417.411.413.416 0 0 1-.417-.411c0-.21.015-.453.029-.707v-.361.132-.29c0-.615-.11-1.153-.615-1.24h-.553a.382.384 0 0 1-.091 0c0 .227 0 .467-.02.699v.243c-.014.228-.028.448-.028.658a.415.415 0 0 1-.418.412.413.416 0 0 1-.417-.411c0-.21.015-.453.029-.707v-.537c.022-.693-.055-1.334-.615-1.433h-.538a.568.571 0 0 1-.106-.015v1.583a.415.415 0 0 1-.418.412.413.416 0 0 1-.418-.412v-2.002c0-.568-.574-.81-1.11-.81-.15 0-.3.033-.435.103a1.227 1.227 0 0 0-.56.732zm-.952 2.99-.396-.159a5.298 5.326 0 0 0-.546-.184l.6.49.342.273Zm0 0&quot;/&gt;&lt;/svg&gt;
+&lt;/figure&gt;
+&lt;hr&gt;
+&lt;svg aria-hidden=&quot;true&quot; style=&quot;display:none&quot;&gt;
+	&lt;symbol id=&quot;icon-github&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+		&lt;path d=&quot;M12 .5C5.646.5.5 5.78.5 12.292c0 5.211 3.295 9.63 7.863 11.188.575.11.786-.254.786-.567 0-.28-.01-1.022-.014-2.005-3.2.711-3.874-1.582-3.874-1.582-.523-1.361-1.28-1.725-1.28-1.725-1.041-.73.081-.716.081-.716 1.155.082 1.762 1.215 1.762 1.215 1.025 1.803 2.692 1.282 3.349.98.103-.762.4-1.282.728-1.577-2.554-.295-5.238-1.309-5.238-5.827 0-1.287.446-2.339 1.184-3.164-.13-.298-.518-1.497.1-3.121 0 0 .963-.317 3.163 1.208.92-.262 1.897-.392 2.875-.398a10.77 10.77 0 0 1 2.875.398c2.185-1.525 3.148-1.208 3.148-1.208.618 1.624.23 2.823.115 3.12.733.826 1.179 1.878 1.179 3.165 0 4.53-2.689 5.527-5.247 5.817.402.354.776 1.077.776 2.182 0 1.578-.014 2.846-.014 3.229 0 .31.2.678.79.56 4.601-1.547 7.893-5.969 7.893-11.172C23.5 5.78 18.35.5 12 .5&quot;/&gt;
+	&lt;/symbol&gt;
+&lt;/svg&gt;
+&lt;button class=&quot;icon&quot;&gt;
+	github&amp;nbsp;
+	&lt;svg&gt;
+		&lt;use href=&quot;#icon-github&quot;/&gt;
+	&lt;/svg&gt;
+&lt;/button&gt;
+&lt;span class=&quot;icon&quot; style=&quot;--fs:2em; --clr:var(--primary-color);&quot;&gt;
+	github&amp;nbsp;
+	&lt;svg&gt;
+		&lt;use href=&quot;#icon-github&quot;/&gt;
+	&lt;/svg&gt;
+&lt;/span&gt;
+&lt;span class=&quot;icon&quot; style=&quot;--fs:5em;--clr:var(--color-swing); --stroke:var(--color-swing-light); --fill:var(--color-swing-dark);&quot;&gt;
+	github&amp;nbsp;
+	&lt;svg&gt;
+		&lt;use href=&quot;#icon-github&quot;/&gt;
+	&lt;/svg&gt;
+&lt;/span&gt;</code></pre>
+					<div class="ui--info" style="--p:1em; --w:100%;">
+						<p>Pour optimiser vos SVG vous pouvez vous servir de l'excellent outil en ligne <a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="nofollow" class="link--default-alt link-underline">svgomg</a></p>
+					</div>
+				</footer>
+			</article>
+			<h3 class="text-swing">Allez plus loin...</h3>
+			<p>
+				Pour contrôler la taille de vos medias, vous pouvez faire appel à la <a href="../helpers/layout.html" class="link--default-alt">variable utilitaire CSS</a> <code><b>--ar</b></code>. Celle-ci permet d'ajuster le ratio d'aspect. Pour vous aider à choisir <span class="text-swing">Sass Swing</span> met a disposition des variables prédéfinies :
+				<i>--ratio-square: 1, --ratio-letterbox, --ratio-portrait, --ratio-wide, --ratio-ultrawide, --ratio-golden et --ratio-perfectFourth</i>
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid t:cols-2 md:cols-3 gap-2">
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-square);">
+							<figcaption class="figcaption--top-left">
+								<b>Square</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-letterbox);">
+							<figcaption class="figcaption--top-left">
+								<b>Letter-box</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-portrait);">
+							<figcaption class="figcaption--top-left">
+								<b>Portrait</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-wide);">
+							<figcaption class="figcaption--top-left">
+								<b>Wide</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-ultraWide);">
+							<figcaption class="figcaption--top-left">
+								<b>Ultra-wide</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-cinemaScope);">
+							<figcaption class="figcaption--top-left">
+								<b>Cinema Scope</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-tv);">
+							<figcaption class="figcaption--top-left">
+								<b>TV</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-golden);">
+							<figcaption class="figcaption--top-left">
+								<b>Golden</b>
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="../../assets/images/image08.jpg" width="1200" height="797" alt="sunset in desertic land" style="--ar:var(--ratio-goldenSquare);">
+							<figcaption class="figcaption--top-left">
+								<b>Golden square</b>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<footer class="footer__code">
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-square);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Square&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-letterbox);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Letter-box&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-portrait);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Portrait&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-wide);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Wide&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-ultraWide);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Ultra-wide&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-cinemaScope);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Cinema Scope&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-tv);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;TV&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-golden);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Golden&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+	&lt;img src=&quot;../../assets/images/image08.jpg&quot; width=&quot;1200&quot; height=&quot;797&quot; alt=&quot;sunset in desertic land&quot; style=&quot;--ar:var(--ratio-goldenSquare);&quot;&gt;
+	&lt;figcaption class=&quot;figcaption--top-left&quot;&gt;
+		&lt;b&gt;Golden square&lt;/b&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+				</footer>
+			</article>
+			<div class="ui--info" style="--p:1em;">
+				<p>
+					Pour vous aider à créer une bannière type hero, vous pouvez utiliser la classe <code><b>.grid-stacked</b></code> dans
+					<a href="../layout/grid.html" target="_blank" class="link--default-alt link-underline">grilles</a>
+				</p>
+			</div>
+
+
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Liens</span>
+					<ul>
+						<li><a href="../../index.html" class="link--default">Accueil</a></li>
+						<li><a href="../index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="../getting-started/usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="../legal-notice.html" class="link--default">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+
+<script src="../../scripts/vendors/prism.js"></script>
+<script type="module" src="../../scripts/script.js"></script>
+</body>
+</html>

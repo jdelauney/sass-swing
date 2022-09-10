@@ -1,12 +1,21 @@
 @use '../abstracts/mixins' as *;
 
 table {
-  --background-color: var(--neutral-color-variation-1);
+  --background-color: hsla(var(--neutral-color-h), var(--neutral-color-variation-1-s), var(--neutral-color-variation-1-l) 0.5); //var(--neutral-color-variation-1);
   --color: var(--on-neutral-color-variation-1);
   --header-background-color: var(--neutral-color-variation-3);
   --header-color: var(--on-neutral-color-variation-3);
   --border-width: var(--elem-border-width);
   --border-color: var(--on-neutral-color-variation-1);
+
+  /*
+  --cell-hover-background-color
+  --cell-hover-color
+  --col-hover-background-color
+  --col-hover-color
+  --row-hover-background-color
+  --row-hover-color
+   */
 
   display: block;
   position: relative;
@@ -39,7 +48,7 @@ table {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    background-color: hsla(var(--neutral-color-h), var(--neutral-color-variation-1-s), var(--neutral-color-variation-1-l) 0.5);
+    background-color: var(--background-color);
     color: var(--color);
     white-space: nowrap;
   }

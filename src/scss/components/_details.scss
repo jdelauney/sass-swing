@@ -2,37 +2,20 @@
 
 details {
   --border-width: var(--elem-border-width);
-  --border-color: var(--primary-color);
 
   display: block;
   margin-top: var(--spacing);
   padding-bottom: var(--spacing);
-  border-bottom: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--primary-color);
 
   summary {
     display: block;
     position: relative;
     outline: none;
-    color: var(--details-summary-close);
+    color: var(--primary-color);
     list-style: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-
-    &[role='button'] {
-      width: 100%;
-      justify-content: left;
-
-      &::after {
-        border-color: var(--border-color);
-        top: 0.5em;
-      }
-
-      &:hover {
-        &::after {
-          border-color: var(--hover-border-color);
-        }
-      }
-    }
 
     &::-webkit-details-marker {
       display: none;
@@ -46,32 +29,49 @@ details {
       list-style-type: none;
     }
 
+    &::after {
+      --_border: 3px solid var(--primary-color-variation-2);
+
+      display: block;
+      width: 0.7em;
+      height: 0.7em;
+      content: '';
+      margin: 0 0.5em;
+      float: right;
+
+      transform-origin: center;
+      transform: translateY(0.35em) rotate(-45deg);
+      border-right: var(--_border);
+      border-bottom: var(--_border);
+      transition: all 0.2s ease-in-out;
+    }
+
     &:hover {
-      color: var(--primary-color-variation-1) !important;
+      color: var(--primary-color-variation-1);
 
       &::after {
-        --_border: 3px solid var(--hover-border-color);
+        --_border: 3px solid var(--primary-color-variation-1);
 
         border-right: var(--_border);
         border-bottom: var(--_border);
       }
     }
 
-    &::after {
-      --_border: 3px solid var(--border-color);
+    &[role*='button'] {
+      width: 100%;
+      justify-content: left;
 
-      display: none;
-      position: absolute;
-      content: '';
-      top: 0.25em;
-      right: 1em;
-      width: 1em;
-      height: 1em;
-      transform: rotate(-45deg);
-      transform-origin: center;
-      border-right: var(--_border);
-      border-bottom: var(--_border);
-      transition: all 0.2s ease-in-out;
+      &::after {
+        transform: translateY(0) rotate(-45deg);
+        border-color: var(--border-color);
+      }
+
+      &:hover {
+        &::after {
+          transform: translatey(-0.175em) rotate(45deg);
+          border-color: var(--hover-border-color);
+        }
+      }
     }
 
     & > * {
@@ -79,30 +79,27 @@ details {
     }
 
     & ~ * {
-      margin-top: var(--spacing) !important;
+      margin-top: var(--spacing);
     }
   }
 
   &[open] {
     summary {
+      --_border: 3px solid var(--primary-color-variation-2);
       color: var(--primary-color);
 
-      &[role='button'] {
-        background-color: var(--active-background-color);
-        color: var(--active-color);
-
-        &::after {
-          top: 0.3em;
-          border-color: var(--active-border-color);
-        }
+      &::after {
+        transform: translatey(0.175em) rotate(45deg);
+        border-right: var(--_border);
+        border-bottom: var(--_border);
       }
 
-      &::after {
-        --_border: 3px solid var(--active-border-color);
-        top: 0;
-        transform: rotate(45deg);
-        border-right: 3px solid var(--_border);
-        border-bottom: 3px solid var(--_border);
+      &[role*='button'] {
+        color: var(--on-primary-color);
+        &::after {
+          border-color: var(--_border);
+          transform: translatey(-0.175em) rotate(45deg);
+        }
       }
     }
   }
@@ -115,12 +112,132 @@ details {
 @include mq(tablet) {
   details summary {
     & ~ * {
-      margin-left: var(--block-half-spacing) !important;
-      margin-right: var(--block-half-spacing) !important;
+      margin-left: var(--block-half-spacing);
+      margin-right: var(--block-half-spacing);
     }
 
     &::after {
       display: block;
+    }
+  }
+}
+
+/* details as dropdown in a nav */
+nav details[role='group'],
+details[role='listbox'] {
+  --background-color: var(--neutral-color-variation-2);
+  --border-color: var(--neutral-color-variation-3);
+  --border-radius: var(--elem-border-radius);
+  --border-width: var(--elem-border-width);
+  --box-shadow: var(--neutral-shadow);
+
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  border-bottom: none;
+
+  summary[role*='button'] {
+    width: auto;
+
+    //&::after {
+    //  display: none;
+    //}
+  }
+  summary {
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::marker {
+      display: none;
+    }
+
+    &::-moz-list-bullet {
+      list-style-type: none;
+    }
+    + ul[role='menu'],
+    + ul[role='listbox'],
+    + ul[role='list'] {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: calc(100% - var(--half-spacing));
+      right: 0;
+      left: 0;
+      height: auto;
+      min-width: fit-content;
+      background-color: var(--background-color);
+      border: var(--border-width) solid var(--border-color);
+      border-radius: var(--border-radius);
+      margin: 0;
+      padding: 0;
+      box-shadow: var(--box-shadow);
+      z-index: 900;
+      opacity: 0;
+      transition: all 0.25s ease-in-out;
+
+      li,
+      li[role='option'],
+      li[role='presentation'],
+      li[role='menuitem'] {
+        padding: 0;
+        width: 100%;
+
+        a,
+        a[role='menuitem'] {
+          --color: var(--primary-color);
+          --hover-background-color: var(--primary-color);
+          --hover-color: var(--on-primary-color);
+
+          width: 100%;
+          background-color: transparent;
+          overflow: hidden;
+          color: var(--color);
+          text-overflow: ellipsis;
+          padding: 0.5em;
+
+          &:hover {
+            background-color: var(--hover-background-color);
+            color: var(--hover-color);
+          }
+        }
+      }
+      li:first-of-type,
+      li[role='option']:first-of-type,
+      li[role='presentation']:first-of-type,
+      li[role='menuitem']:first-of-type {
+        margin-top: var(--half-spacing);
+      }
+      li:last-of-type,
+      li[role='option']:last-of-type,
+      li[role='presentation']:last-of-type,
+      li[role='menuitem']:last-of-type {
+        margin-bottom: var(--half-spacing);
+      }
+    }
+  }
+
+  &[open] {
+    summary {
+      &::before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: transparent;
+        cursor: default;
+        z-index: 1;
+      }
+      + ul[role='menu'],
+      + ul[role='listbox'],
+      + ul[role='list'] {
+        opacity: 1;
+      }
     }
   }
 }

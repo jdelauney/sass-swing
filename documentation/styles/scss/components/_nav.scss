@@ -1,19 +1,50 @@
 @use "../../../../src/scss/abstracts/mixins" as *;
 
+
 .navigation {
   nav {
-    backdrop-filter: saturate(180%) blur(20px);
-    //background-color: var(--navbar-background);
-    //box-shadow: var(--navbar-menu-shadow);
+    background-color: transparent !important;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color : hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / .7);
+    backdrop-filter: saturate(180%) blur(5px);
   }
 }
 
-.navbar__menu {
-  --background-color: var(--neutral-color-variation-1);
+.navigation nav > input[type='checkbox']:checked ~ .navbar__menu {
+  background-color: transparent !important;
+  &::before {
+    content: '';
+    background-color : hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / .7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    backdrop-filter: saturate(180%) blur(5px);
+  }
 }
+
+.navigation-menu-right {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow:1;
+  justify-content: flex-end;
+}
+
+
 
 @include mq(tablet-medium) {
   .navbar__menu {
     background-color: transparent;
+  }
+  .navigation-menu-right {
+    flex-grow:0;
   }
 }

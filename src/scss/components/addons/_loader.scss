@@ -1,0 +1,70 @@
+[aria-busy='false'],
+[aria-busy='true'] {
+  --loader-color: var(--primary-color);
+  position: relative;
+  z-index: 9999;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--neutral-color-variation-2), var(--neutral-color-variation-1));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  &::after {
+    --width: 0.5em;
+    content: '';
+    position: absolute;
+    width: 2.5em;
+    padding: 0.3em;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+    background: conic-gradient(#0000 10%, var(--loader-color)) content-box; //var(--loader-color);
+    border-radius: 50%;
+    --_mask: repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg), radial-gradient(farthest-side, #0000 calc(100% - var(--width) - 1px), #000 calc(100% - var(--width)));
+    //conic-gradient(#0000,#000), linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_mask);
+    mask: var(--_mask);
+    //-webkit-mask-composite: source-out;
+    //mask-composite: subtract;
+
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.35s ease;
+  }
+}
+
+[aria-busy='true'] {
+  cursor: progress;
+  //pointer-events: none;
+
+  &::before {
+    opacity: 0.98;
+  }
+  &::after {
+    opacity: 1;
+    animation: aria-loader-anim 1s infinite steps(10); //aria-loader-anim 1s linear infinite step(10);
+  }
+}
+
+[aria-busy='false'] {
+  z-index: inherit;
+  &::after,
+  &::before {
+    display: none;
+  }
+}
+
+@keyframes aria-loader-anim {
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}

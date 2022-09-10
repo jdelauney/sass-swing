@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" data-responsive='auto'>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<title>Sass Swing - Class-less template</title>
+	<meta name="Description" content="Exemple : modèle de page << class less >> du framework Sass Swing "/>
+
+	<meta name="robots" content="index, follow">
+
+	<!--	<link rel="preconnect" href="https://unpkg.com">-->
+	<!--	<link rel="preload" href="https://unpkg.com/@sass-swing/dist/css/sass-swing.min.css" as="style">-->
+	<!--	<link rel="stylesheet" href="https://unpkg.com/@sass-swing/dist/css/sass-swing.min.css">-->
+	<link rel="stylesheet" href="../../../dist/css/sass-swing.min.css">
+	<link rel="stylesheet" href="custom.css">
+	<script src="../../../dist/js/sass-swing.min.js" defer></script>
+
+</head>
+<body>
+<header>
+	<nav>
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<a href="#">CLASS-LESS</a>
+		<div>
+			<ul>
+				<li><a href="#">Lien 1</a></li>
+				<li><a href="#">Lien 2</a></li>
+				<li><a href="#">Lien 3</a></li>
+				<li><a href="#">Lien 4</a></li>
+			</ul>
+		</div>
+		<label for="nav-toggle" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span>&nbsp;</span>
+		</label>
+	</nav>
+	<nav>
+		<span>&nbsp;&nbsp;&nbsp;Quick menu</span>
+		<details id="sectionmenu" role="group">
+			<summary id="sectionmenubutton" aria-haspopup="true" role="button menuitem" aria-controls="sectionmenulist">Sections</summary>
+			<ul id="sectionmenulist" role="menu" aria-labelledby="sectionmenubutton">
+				<li role="presentation"><a role="menuitem" href="#typography">Typography</a></li>
+				<li role="presentation"><a role="menuitem" href="#list">List</a></li>
+				<li role="presentation"><a role="menuitem" href="#blockquotes">Blockquotes</a></li>
+				<li role="presentation"><a role="menuitem" href="#medias">Medias</a></li>
+				<li role="presentation"><a role="menuitem" href="#button">Button</a></li>
+				<li role="presentation"><a role="menuitem" href="#form">Form</a></li>
+				<li role="presentation"><a role="menuitem" href="#tables">Tables</a></li>
+				<li role="presentation"><a role="menuitem" href="#accordions">Accordions</a></li>
+				<li role="presentation"><a role="menuitem" href="#progress">Progress</a></li>
+				<li role="presentation"><a role="menuitem" href="#preformated">Preformated</a></li>
+			</ul>
+		</details>
+		<details id="thememenu" role="group">
+			<summary id="thememenubutton" aria-haspopup="true" role="button menuitem" aria-controls="thememenulist">Theme</summary>
+			<ul id="thememenulist" role="menu" aria-labelledby="thememenubutton">
+				<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="auto">Auto</a></li>
+				<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="light">Light</a></li>
+				<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="dark">Dark</a></li>
+			</ul>
+		</details>
+	</nav>
+</header>
+<main>
+	<section>
+		<h1>SASS SWING CLASS LESS TEMPLATE</h1>
+		<h2>Use less class as possible in your HTML. Try to just use semantic.</h2>
+	</section>
+	<hr>
+	<section id="typography">
+		<h2>Typography</h2>
+		<article>
+			<h3>Heading 3</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum ducimus, exercitationem hic illum in incidunt ipsa maiores maxime, officia quas quis quod recusandae repudiandae rerum saepe sed sequi sint sit soluta veritatis, voluptate voluptates.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta eaque eum, exercitationem fugit mollitia nobis! At autem commodi consectetur cumque dolore eligendi illo maiores modi molestias non quae quidem, recusandae rem reprehenderit tempora vitae.</p>
+			<h4>Heading 4</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim eum ipsa iste nobis odit placeat quidem veritatis. Alias aperiam asperiores enim explicabo facere fugiat ipsa maiores, necessitatibus nesciunt nobis quae, quidem rerum veritatis voluptatum!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At distinctio dolor eius, enim et eveniet fuga ipsam nobis nulla obcaecati odio perspiciatis provident quae rem repellat sit, soluta vero voluptatem? Accusamus consequuntur enim ratione repellendus!</p>
+			<h5>Heading 5</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid aut commodi consequatur debitis dicta ducimus esse et in ipsam laudantium non nostrum pariatur, provident qui quibusdam reprehenderit sit ullam veritatis voluptatum. Architecto, error, nesciunt.</p>
+			<h6>Heading 6</h6>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere fuga laudantium mollitia, nisi placeat quae voluptatem voluptatibus. Aliquam at doloremque in iusto, non odit qui voluptatum? Adipisci eveniet facere in molestiae natus ratione voluptatum!</p>
+			<hr>
+			<section data-theme="light">
+				<h3>Heading 3</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum ducimus, exercitationem hic illum in incidunt ipsa maiores maxime, officia quas quis quod recusandae repudiandae rerum saepe sed sequi sint sit soluta veritatis, voluptate voluptates.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta eaque eum, exercitationem fugit mollitia nobis! At autem commodi consectetur cumque dolore eligendi illo maiores modi molestias non quae quidem, recusandae rem reprehenderit tempora vitae.</p>
+			</section>
+			<section data-theme="dark">
+				<h3>Heading 3</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum ducimus, exercitationem hic illum in incidunt ipsa maiores maxime, officia quas quis quod recusandae repudiandae rerum saepe sed sequi sint sit soluta veritatis, voluptate voluptates.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dicta eaque eum, exercitationem fugit mollitia nobis! At autem commodi consectetur cumque dolore eligendi illo maiores modi molestias non quae quidem, recusandae rem reprehenderit tempora vitae.</p>
+			</section>
+			<section>
+				<h3>Inline text elements</h3>
+				<figure>
+					<table>
+						<tbody>
+						<tr>
+							<td><a href="#">Link</a></td>
+							<td><strong>Bold</strong></td>
+							<td><em>Italic</em></td>
+						</tr>
+						<tr>
+							<td><u>Underline</u></td>
+							<td><del>Deleted</del></td>
+							<td><ins>Inserted</ins></td>
+						</tr>
+						<tr>
+							<td><s>Strikethrough</s></td>
+							<td><small>Small </small></td>
+							<td><abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr></td>
+						</tr>
+						<tr>
+							<td>Text <sub>Sub</sub></td>
+							<td>Text <sup>Sup</sup></td>
+							<td><kbd>Kbd</kbd></td>
+						</tr>
+						<tr>
+							<td><mark>Mark</mark></td>
+							<td><var>variable</var></td>
+							<td><samp>Samp</samp></td>
+						</tr>
+						<tr>
+							<td><code>Code</code></td>
+							<td>Time = <time datetime="2022-07-07">7 Juillet</time></td>
+							<td>Output = <output name="result" value="60">60</output></td>
+						</tr>
+						</tbody>
+					</table>
+				</figure>
+			</section>
+		</article>
+	</section>
+	<section id="list">
+		<h2>Lists</h2>
+		<article>
+			<ul>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+				<li>Lorem ipsum dolor sit amet, consectetur.
+					<ol>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, fuga?</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis mollitia nostrum tempore.</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, odit!</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quia.</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+							</ul>
+						</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+					</ol></li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, possimus?</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, veritatis?</li>
+			</ul>
+			<ol>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quam suscipit temporibus.</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, ut.
+					<ul>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo!</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing.
+							<ol>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga!</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, laboriosam, sed!</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit!</li>
+							</ol>
+						</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, harum!</li>
+						<li>Lorem ipsum dolor sit amet.</li>
+					</ul>
+				</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+			</ol>
+			<ul role="list">
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit.</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, incidunt.
+					<ul>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga!</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, laboriosam, sed!</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit!</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+					</ul></li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus distinctio non.</li>
+			</ul>
+		</article>
+	</section>
+	<section id="blockquotes">
+		<h2>Blockquotes</h2>
+		<article>
+			<blockquote>
+				"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque, ex, facere fugit, laborum molestiae odio quam reprehenderit rerum sunt vel!"
+				<footer>
+					<cite>- Lorem ipsum dolor.</cite>
+				</footer>
+			</blockquote>
+			<blockquote>
+				"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque, ex, facere fugit, laborum molestiae odio quam reprehenderit rerum sunt vel!"
+				<cite>- Lorem ipsum dolor.</cite>
+			</blockquote>
+		</article>
+	</section>
+	<section id="medias">
+		<h2>Medias</h2>
+		<article>
+			<figure>
+				<img src="https://images.unsplash.com/photo-1662225659291-1338062e9d72" alt="Hyptonic" loading="lazy">
+				<figcaption>Image from&nbsp;<a href="https://unsplash.com">unsplash.com</a></figcaption>
+			</figure>
+		</article>
+	</section>
+	<section id="button">
+		<h2>Button</h2>
+		<button>Primary</button>
+		<a role="button" href="#">Link as button</a>
+		<input type="submit">
+		<input type="reset">
+		<input type="button" value="Input Bouton">
+		<label role="button">Label as button</label>
+	</section>
+	<section id="form">
+		<form>
+			<h2>Form elements</h2>
+			<label for="text">
+				Text
+				<input type="text" id="text" name="text" placeholder="Text">
+				<small>Lorem ipsum dolor sit amet, consectetur adipisicing.</small>
+			</label>
+
+			<label for="password">
+				Password
+				<input type="password" id="password" name="text" placeholder="Password">
+				<small>Lorem ipsum dolor sit amet, consectetur adipisicing.</small>
+			</label>
+
+			<label for="number">Number
+				<input type="number" id="number" name="number" value="100">
+			</label>
+
+			<label for="range">Range slider
+				<input type="range" min="0" max="100" value="50" id="range" name="range">
+			</label>
+
+			<fieldset>
+				<legend><strong>Radio buttons</strong></legend>
+
+				<input type="radio" id="radio-1" name="radio" value="radio-1" checked>
+				<label for="radio-1">Radio button checked</label>
+
+				<input type="radio" id="radio-2" name="radio" value="radio-2">
+				<label for="radio-2">Radio button unchecked</label>
+			</fieldset>
+
+			<fieldset>
+				<legend><strong>Checkboxes</strong></legend>
+
+				<input type="checkbox" id="checkbox-1" name="checkbox-1" checked>
+				<label for="checkbox-1">Checkbox checked</label>
+
+				<input type="checkbox" id="checkbox-2" name="checkbox-2">
+				<label for="checkbox-2">Checkbox unchecked</label>
+			</fieldset>
+
+			<fieldset>
+				<legend><strong>Switches</strong></legend>
+				<label for="switch-1">
+					<input type="checkbox" id="switch-1" name="switch-1" role="switch" checked>
+					Switch checked
+				</label>
+				<label for="switch-2">
+					<input type="checkbox" id="switch-2" name="switch-2" role="switch">
+					Switch unchecked
+				</label>
+			</fieldset>
+
+			<label for="select">Select
+				<select id="select" name="select" required="">
+					<option value="" selected="">Select…</option>
+					<option>…</option>
+				</select>
+			</label>
+
+			<label for="date">Date
+				<input type="date" id="date" name="date">
+			</label>
+
+			<label for="time">Time
+				<input type="time" id="time" name="time">
+			</label>
+
+			<label for="tel">Telephone
+				<input type="tel" id="tel" name="tel">
+			</label>
+
+			<label for="color">Color
+				<input type="color" id="color" name="color" value="#0eaaaa">
+			</label>
+
+			<label for="search">Search
+				<input type="search" id="search" name="search" placeholder="Search">
+			</label>
+
+			<label for="file">File browser
+				<input type="file" id="file" name="file">
+			</label>
+
+			<label for="valid">
+				Valid
+				<input type="text" id="valid" name="valid" placeholder="Valid" aria-invalid="false">
+			</label>
+
+			<label for="invalid">
+				Invalid
+				<input type="text" id="invalid" name="invalid" placeholder="Invalid" aria-invalid="true">
+			</label>
+
+			<label for="disabled">
+				Disabled
+				<input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled>
+			</label>
+
+			<footer>
+				<input type="reset" value="Reset">
+				<input type="submit" value="Submit">
+			</footer>
+
+		</form>
+	</section>
+	<section id="tables">
+		<h2>Tables</h2>
+		<table>
+			<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Heading</th>
+				<th scope="col">Heading</th>
+				<th scope="col">Heading</th>
+				<th scope="col">Heading</th>
+				<th scope="col">Heading</th>
+				<th scope="col">Heading</th>
+				<th scope="col">Heading</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+				<td>Cell</td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+	<section id="accordions">
+		<h2>Accordions</h2>
+		<details>
+			<summary>Accordion 1</summary>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur dolore natus, nostrum odio ratione repellendus veniam? Atque eos exercitationem impedit iste necessitatibus.</p>
+		</details>
+		<details open="">
+			<summary>Accordion 2</summary>
+			<ul>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga!</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, laboriosam, sed!</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit!</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+			</ul>
+		</details>
+	</section>
+	<section id="progress">
+		<h2>Progress bar</h2>
+		<progress id="progress-1" value="25" max="100"></progress>
+		<progress id="progress-2"></progress>
+	</section>
+	<section id="preformated">
+		<h2>Preformated text</h2>
+		<pre>
+		_____________
+		< Sass Swing !>
+		-------------
+		       \   ^__^
+		        \  (oo)\_______
+		           (__)\       )\/\
+		               ||----w |
+		               ||     ||
+      </pre>
+		<pre data-lang="css"><code><b>body</b> {
+  <i>background-color</i> : <u>red</u>;
+}</code></pre>
+	</section>
+</main>
+<footer>
+	<small>Built with <a href="https://github.com/jdelauney/sass-swing">Sass Swing</a> • <a href="https://github.com/jdelauney/sass-swing/examples/classless/index.html">Source code</a></small>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+
+	<meta charset="UTF-8">
+	<title>Documentation Sass-Swing - Contenu : Typographie</title>
+	<meta name="Description" content="Rédiger un contenu propre grâce au framework scss/css Sass Swing"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass-Swing - Contenu : Typographie">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Rédiger un contenu propre grâce au framework scss/css Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/content/typography.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass-Swing - Contenu : Typographie"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/content/typography.html">
+	<meta property="og:title" content="Salon, beauté, esthétique, amincissement à Genève et Seyssel">
+	<meta property="og:description" content="Rédiger un contenu propre grâce au framework scss/css Sass Swing">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/">
+	<meta property="twitter:title" content="Documentation Sass-Swing - Contenu : Typographie">
+	<meta property="twitter:description" content="Rédiger un contenu propre grâce au framework scss/css Sass Swing">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../../styles/css/sass-swing.doc.min.css"/>
+	<script src="../../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="../getting-started/usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="../models.html" class="link--default">Modèles</a></li>
+				<li><a href="../supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sass-swing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Change theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="../getting-started/usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="../getting-started/javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="../getting-started/themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="../getting-started/customize.html" class="link--default-alt">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="../layout/containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="../layout/grid.html" class="link--default-alt">Grille</a></li>
+				<li><a href="../layout/breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="typography.html" class="link--default-alt" aria-current="page">Typographie</a></li>
+				<li><a href="buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="form.html" class="link--default-alt">Formulaires</a></li>
+				<li><a href="medias.html" class="link--default-alt">Médias</a></li>
+				<li><a href="table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="../component/navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="../component/card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="../component/details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="../component/breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="../component/pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="../component/modal.html" class="link--default-alt">Boite de dialogue</a></li>
+				<li><a href="../component/collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="../component/addons/badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="../component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="../component/addons/loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="../component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
+						<li><a href="../component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="../component/addons/notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="../component/addons/slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="../component/addons/reveal.html" class="link--default-alt">Reveal</a></li>
+						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="../helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="../helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Typographie</h1>
+				<span class="like-h4 text-em">Tous les éléments typographiques sont réactifs, ce qui permet au texte de s'adapter sur les appareils et fenêtres d'affichage.</span>
+				<hr>
+			</header>
+			<h2 class="text-swing">Vue d'ensemble</h2>
+			<p>
+				Afin d'optimiser la lisibilité pour l'utilisateur. La longueur de ligne des paragraphes <code>&lt;<b>p</b>&gt;</code> est fixée à <b>85 caractères maximum</b> <i>(la longueur est calculée par le navigateur en fonction de la largeur du caractère "0")</i>. Les lignes sont automatiquement tronquées sur les mots.
+			</p>
+
+			<h2 class="text-swing">Les titres</h2>
+			<p>
+				Les titres <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/heading_Elements" target="_blank" class="link--default"><sup>MDN Référence</sup></a>, leur taille varie légèrement en fonction de la largeur de l'écran et le rythme vertical est assuré automatiquement en fonction de celle-ci.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<h1>Titre 1</h1>
+					<h2>Titre 2</h2>
+					<h3>Titre 3</h3>
+					<h4>Titre 4</h4>
+					<h5>Titre 5</h5>
+					<h6>Titre 6</h6>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;h1&gt;Titre 1&lt;/h1&gt;
+&lt;h2&gt;Titre 2&lt;/h2&gt;
+&lt;h3&gt;Titre 3&lt;/h3&gt;
+&lt;h4&gt;Titre 4&lt;/h4&gt;
+&lt;h5&gt;Titre 5&lt;/h5&gt;
+&lt;h6&gt;Titre 6&lt;/h6&gt;</code></pre>
+					<div class="panel design--info-alt">
+						<p>
+							Les titres qui sont le premier enfant d'un bloc, n'ont pas de marge supérieure.
+						</p>
+						<hr>
+						<p>La couleur des titres est personnalisable via les variables <b>CSS</b> <code>--color-h<sub>X</sub></code> avec <b>X</b> variant de 1 à 6.</p>
+						<hr>
+						<p>
+							Des classes utilitaires, pour imiter le style des titres de&nbsp;<code>.like-h1</code>&nbsp;à&nbsp;<code>.like-h6</code> sans la gestion du rythme verticale, à utiliser principalement sur des éléments&nbsp;<code>&lt;<b>span</b>&gt;</code>&nbsp;ou&nbsp;<code>&lt;<b>a</b>&gt;</code>&nbsp;sont disponibles.
+						</p>
+					</div>
+				</footer>
+			</article>
+			<p>A l'intérieur d'un <code>&lt;<b>header</b>&gt;</code> ou d'une <code>&lt;<b>div</b>&gt;</code> avec <code><i>class</i>=<u>"heading"</u></code> le rythme vertical est réduit et les derniers éléments sont grisés.</p>
+			<article class="card">
+				<div class="panel">
+					<div class="heading">
+						<h2>Titre 2</h2>
+						<h3>Sous-titre 3</h3>
+						<span class="like-h4">Sous-titre "like-h4"</span>
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;heading&quot;&gt;
+	&lt;h2&gt;Titre 2&lt;/h2&gt;
+	&lt;h3&gt;Sous-titre 3&lt;/h3&gt;
+	&lt;span class=&quot;like-h4&quot;&gt;Sous-titre &quot;like-h4&quot;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Les éléments texte "inline"</h2>
+			<p>
+				Les éléments texte, sont préformatés et stylisés
+			</p>
+			<article id="inline-code" class="card">
+				<div class="panel">
+					<div class="grid md:cols-auto gap-3">
+						<div>
+							<p>
+								<abbr title="abbreviation">Abbr</abbr> <code>abbr</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/abbr" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>abbr</b> <i>title</i>=<u>&quot;abbreviation&quot;</u>&gt;Abbr&lt;<b>/abbr</b>&gt;</code>
+							</p>
+							<p>
+								<time datetime="2022-07-07">7 Juillet</time> <code>time</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/time" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>time</b> <i>datetime</i>=<u>&quot;2022-07-07&quot;</u>&gt;7 Juillet&lt;<b>/time</b>&gt;</code>
+							</p>
+							<p>
+								<strong>Bold</strong> <code>strong</code> <code>b</code>  <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/strong" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>strong</b>&gt;Bold&lt;<b>/strong</b>&gt;</code>
+							</p>
+							<p>
+								<em>italic</em> <code>em</code>&nbsp;<code>i</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/em" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>em</b>&gt;italic&lt;<b>/em</b>&gt;</code>
+							</p>
+							<p>
+								<u>souligné</u> <code>u</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/u" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>u</b>&gt;soulign&eacute;&lt;<b>/u</b>&gt;</code>
+							</p>
+							<p>
+								<s>barré</s> <code>s</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/s" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>s</b>&gt;barr&eacute;&lt;<b>/s</b>&gt;</code>
+							</p>
+							<p>
+								<mark class="mark--default-primary">surligné</mark> <code>mark</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/mark" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>mark</b>&gt;surlign&eacute;&lt;<b>/mark</b>&gt;</code>
+							</p>
+							<p>
+								<small>Petit</small> <code>small</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/small" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>small</b>&gt;Petit&lt;<b>/small</b>&gt;</code>
+							</p>
+						</div>
+						<div>
+							<p>
+								Indice<sub>sub</sub> <code>sub</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/sub" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>Indice&lt;<b>sub</b>&gt;sub&lt;<b>/sub</b>&gt;</code>
+							</p>
+							<p>
+								Exposant<sup>sup</sup> <code>sup</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/sup" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>Exposant&lt;<b>sup</b>&gt;sup&lt;<b>/sup</b>&gt;</code>
+							</p>
+							<p>
+								<del>Supprimé</del> <code>del</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/del" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>del</b>&gt;Supprim&eacute;&lt;<b>/del</b>&gt;</code>
+							</p>
+							<p>
+								<ins>Inséré</ins> <code>ins</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/ins" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>ins</b>&gt;Ins&eacute;r&eacute;&lt;<b>/ins</b>&gt;</code>
+							</p>
+							<p>
+								<var>variable</var> <code>var</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/var" target="_blank"  class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>var</b>&gt;variable&lt;<b>/var</b>&gt;</code>
+							</p>
+							<p>
+								<output name="result" value="60">60</output> <code>output</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/output" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>output</b> <i>name</i>=<u>&quot;result&quot;</u> <i>value</i>=<u>&quot;60&quot;</u>&gt;60&lt;<b>/output</b>&gt;</code>
+							</p>
+							<p>
+								<samp>Clavier non trouvé</samp> <code>samp</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/samp" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>samp</b>&gt;Clavier non trouvé&lt;<b>/samp</b>&gt;</code>
+							</p>
+							<p>
+								<kbd>Clavier</kbd> <code>kbd</code> <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/kbd" target="_blank" class="link--default"><small>MDN Référence</small></a><br>
+								<code>&lt;<b>kbd</b>&gt;Ins&eacute;r&eacute;&lt;<b>/kbd</b>&gt;</code>
+							</p>
+
+						</div>
+					</div>
+					<hr>
+					<p id="code">
+						Vous avez également accès à la balise  <code>&lt;<b>code</b>&gt;Code&lt;<b>/code</b>&gt;</code>
+					</p>
+					<p>
+						A l'intérieur de celle-ci vous avez accès à une colorisation syntaxique basique grâce aux balises
+						<code>&lt;b&gt;<b>tag</b>&lt;/b&gt;</code>
+						<code>&lt;i&gt;<i>propriét&eacute;</i>&lt;/i&gt;</code>
+						<code>&lt;u&gt;<u>valeur</u>&lt;/u&gt;</code>
+						<code>&lt;var&gt;<u>valeur</u>&lt;/var&gt;</code>
+						et <code>&lt;em&gt;<em>Commentaire</em>&lt;/em&gt;</code>
+					</p>
+					<p>
+						<i>NB : n'oubliez pas d'échapper les caractères spéciaux !</i>
+					</p>
+				</div>
+			</article>
+			<h2 class="text-swing">Les paragraphes</h2>
+			<p>
+				Les paragraphes <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/p" target="_blank" class="link--default"><sup>MDN Référence</sup></a> indispensables, pour vos textes.
+				Les marges supérieures s'adaptent automatiquement en fonction du contexte.
+				Ils adaptent également la marge supérieure des éléments qui les suivent directement en fonction de ceux-ci. Tout cela afin de conserver un rythme vertical fluide.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, architecto asperiores culpa, dignissimos doloremque dolores expedita hic iusto magnam molestiae, neque odio provident reiciendis repellat vitae! Accusantium autem consequuntur delectus dolor eos exercitationem, facilis magni nesciunt placeat possimus recusandae saepe sapiente, voluptatibus? Aliquam aut culpa cumque iste perspiciatis quod velit!
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad amet aperiam atque blanditiis consectetur, cupiditate expedita iste labore laboriosam maxime molestiae non optio quaerat tenetur? At delectus exercitationem harum ipsam molestias pariatur quas quasi ratione recusandae similique? A culpa ducimus harum libero magnam nam placeat, repellendus suscipit. Ea maxime molestias mollitia nostrum sed. Atque debitis dolorem earum, inventore ipsum maxime nihil saepe. Ab ad, consequatur eaque incidunt ipsum laudantium quas qui reprehenderit sequi voluptate.
+					</p>
+					<button class="btn--default-primary">Un bouton</button>
+				</div>
+
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;p&gt;
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, architecto asperiores culpa, dignissimos doloremque dolores expedita hic iusto magnam molestiae, neque odio provident reiciendis repellat vitae! Accusantium autem consequuntur delectus dolor eos exercitationem, facilis magni nesciunt placeat possimus recusandae saepe sapiente, voluptatibus? Aliquam aut culpa cumque iste perspiciatis quod velit!
+&lt;/p&gt;
+&lt;p&gt;
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad amet aperiam atque blanditiis consectetur, cupiditate expedita iste labore laboriosam maxime molestiae non optio quaerat tenetur? At delectus exercitationem harum ipsam molestias pariatur quas quasi ratione recusandae similique? A culpa ducimus harum libero magnam nam placeat, repellendus suscipit. Ea maxime molestias mollitia nostrum sed. Atque debitis dolorem earum, inventore ipsum maxime nihil saepe. Ab ad, consequatur eaque incidunt ipsum laudantium quas qui reprehenderit sequi voluptate.
+&lt;/p&gt;
+&lt;button&gt;Un bouton&lt;/button&gt;</code></pre>
+				</footer>
+			</article>
+
+
+			<h2 class="text-swing">Les liens</h2>
+			<p>
+				Les liens <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/a" target="_blank" class="link--default"><sup>MDN Référence</sup></a> sont disponibles en plusieurs variations. Les couleurs de base sont de type <mark>Primary</mark>.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div>
+						<a href="#">Primary</a>&nbsp;
+						<a href="#" class="link-underline" >Underline</a>&nbsp;
+						<a href="#" class="link-underline link-underline--dashed">Dashed</a>&nbsp;
+						<a href="#" class="link-underline link-underline--dotted">Dotted</a>&nbsp;
+						<a href="#" class="link-underline link-underline--overline">Overline</a>&nbsp;
+						<a href="#" class="link-underline link-underline--around">Around</a>&nbsp;
+						<a href="#" class="link-underline link-underline--lineThrough">LineThrough</a>&nbsp;
+						<a href="#" class="link-underline link-underline--wavy">Wavy</a>&nbsp;
+						<a href="#" class="link--mark">Mark</a>
+					</div>
+					<div>
+						<a href="#" class="link--secondary">Secondary</a>&nbsp;
+						<a href="#" class="link--secondary link-underline">Underline</a>&nbsp;
+						<a href="#" class="link--secondary link-underline link-underline--dashed">Dashed</a>&nbsp;
+						<a href="#" class="link--secondary link-underline link-underline--dotted">Dotted</a>&nbsp;
+						<a href="#" class="link--secondary link-underline link-underline--overline">Overline</a>&nbsp;
+						<a href="#" class="link--secondary link-underline link-underline--around">Around</a>&nbsp;
+						<a href="#" class="link--secondary link-underline link-underline--lineThrough">LineThrough</a>&nbsp;
+						<a href="#" class="link--secondary link-underline link-underline--wavy">Wavy</a>&nbsp;
+						<a href="#" class="link--secondary link--mark" >Mark</a>
+					</div>
+					<div>
+						<p>
+							Les liens peuvent également prendre l'apparence de <a href="buttons.html" class="link--default">boutons</a>.
+						</p>
+						<a role="button" class="btn--default-primary" href="#">Primary</a>
+						<a role="button" href="#" class="btn--secondary">Secondary</a>
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;a href=&quot;#&quot;&gt;Primary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-underline&quot;&gt;Underline&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-underline link-underline--dashed&quot;&gt;Dashed&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-underline link-underline--dotted&quot;&gt;Dotted&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-underline link-underline--overline&quot;&gt;Overline&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-underline link-underline--around&quot;&gt;Around&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-underline link-underline--lineThrough&quot;&gt;LineThrough&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link-underline link-underline--wavy&quot;&gt;Wavy&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--mark&quot;&gt;Mark&lt;/a&gt;
+
+&lt;a href=&quot;#&quot; class=&quot;link--secondary&quot;&gt;Secondary&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link-underline&quot;&gt;Underline&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link-underline link-underline--dashed&quot;&gt;Dashed&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link-underline link-underline--dotted&quot;&gt;Dotted&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link-underline link-underline--overline&quot;&gt;Overline&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link-underline link-underline--around&quot;&gt;Around&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link-underline link-underline--lineThrough&quot;&gt;LineThrough&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link-underline link-underline--wavy&quot;&gt;Wavy&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;link--secondary link--mark&quot;&gt;Mark&lt;/a&gt;
+
+&lt;a role=&quot;button&quot; href=&quot;#&quot;&gt;Primary&lt;/a&gt;
+&lt;a role=&quot;button&quot; href=&quot;#&quot; class=&quot;btn--secondary&quot;&gt;Secondary&lt;/a&gt;</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Les citations</h2>
+			<p>
+				Les citations<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/blockquote" target="_blank" class="link--default"><sup>MDN Référence</sup></a>, un classique. Le tag <code>&lt;<b>cite</b>&gt;</code> est stylisé et s'il est dans un <code>&lt;<b>footer</b>&gt;</code>, il est placé automatiquement sur la droite.
+				Les paragraphes <code>&lt;<b>p</b>&gt;</code> sont mis en <b>inline</b>.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<blockquote class="blockquote--default-primary">
+						<p>
+							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+						</p>
+						<footer>
+							<cite>Lorem Ipsum</cite>
+						</footer>
+					</blockquote>
+					<blockquote class="blockquote--default-primary">
+						<p>
+							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+						</p>
+						<cite>Lorem Ipsum</cite>
+					</blockquote>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;blockquote&gt;
+	&lt;p&gt;
+		Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+	&lt;/p&gt;
+	&lt;footer&gt;
+		&lt;cite&gt;Lorem Ipsum&lt;/cite&gt;
+	&lt;/footer&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+	&lt;p&gt;
+		Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+	&lt;/p&gt;
+	&lt;cite&gt;Lorem Ipsum&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Texte préformaté</h2>
+			<p>
+				S'adaptera automatiquement en fonction de la taille d'affichage. Si le texte préformaté <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/pre" target="_blank" class="link--default"><sup>MDN Référence</sup></a> est trop grand, une barre de scroll apparaitra automatiquement.
+			</p>
+			<article class="card">
+				<div class="panel">
+						<pre>
+		_____________
+		< Sass Swing !>
+		-------------
+		       \   ^__^
+		        \  (oo)\_______
+		           (__)\       )\/\
+		               ||----w |
+		               ||     ||
+				    </pre>
+					<p>Vous pouvez utiliser la balise <a href="#code" class="link--default link-underline"><span><code>&lt;<b>code</b>&gt;</code></span></a> pour obtenir une coloration syntaxique. Vous pouvez également ajouter l'attribut <code>data-lang="mon langage"</code> pour afficher le type de code</p>
+					<pre data-lang="css"><code><b>body</b> {
+  <i>background-color</i> : <u>red</u>;
+}</code></pre>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;pre&gt;
+		_____________
+		&lt; Sass Swing !&gt;
+		-------------
+		       \   ^__^
+		        \  (oo)\_______
+		           (__)\       )\/\
+		               ||----w |
+		               ||     ||
+	&lt;/pre&gt;</code></pre>
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;pre data-lang=&quot;css&quot;&gt;&lt;code&gt;&lt;b&gt;body&lt;/b&gt; {
+  &lt;i&gt;background-color&lt;/i&gt; : &lt;u&gt;red&lt;/u&gt;;
+}&lt;/code&gt;&lt;/pre&gt;</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Personnalisation</h2>
+			<p>
+				Le styles des éléments&nbsp;<code>&lt;<b>mark</b>&gt;</code>,
+				<code>&lt;<b>ins</b>&gt;</code>,
+				<code>&lt;<b>del</b>&gt;</code>,
+				<code>&lt;<b>kbd</b>&gt;</code>,
+				<code>&lt;<b>code</b>&gt;</code> et autres sont personnalisables via les variables CSS ou SCSS.<br>
+				Pour plus d'informations reportez-vous à la section <a href="../getting-started/customize.html" class="link--default link-underline">Personnalisation</a>
+			</p>
+
+			<p> Grâce aux variables CSS, vous pouvez également customiser facilement vos propres liens</p>
+			<article class="card">
+				<div class="panel">
+					<a href="#" class="link--custom link-underline link-underline--wavy">Custom</a>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="css" class="line-numbers language-css" data-prismjs-copy="Copier"><code>.link--custom {
+  --color: #4E342E;
+  --decoration-color: #4E342E;
+  --hover-color: #795548;
+  --hover-decoration-color: #795548;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme=&#39;light&#39;]) {
+    .link--custom {
+      --color: #e78872;
+      --decoration-color: #4E342E;
+      --hover-color: #e1b6a7;
+      --hover-decoration-color: #795548;
+    }
+  }
+}
+
+[data-theme=&#39;dark&#39;] {
+  .link--custom {
+    --color: #e78872;
+    --decoration-color: #4E342E;
+    --hover-color: #e1b6a7;
+    --hover-decoration-color: #795548;
+  }
+}</code></pre>
+				</footer>
+			</article>
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Liens</span>
+					<ul>
+						<li><a href="../../index.html" class="link--default">Accueil</a></li>
+						<li><a href="../index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="../getting-started/usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="../legal-notice.html" class="link--default">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+
+<script src="../../scripts/vendors/prism.js"></script>
+<script type="module" src="../../scripts/script.js"></script>
+</body>
+</html>

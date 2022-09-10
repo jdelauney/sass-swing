@@ -1,9 +1,9 @@
 progress {
-  --background-color: var(--neutral-color-variation-1);
+  --background-color: var(--neutral-color-variation-2);
   --border-width: var(--elem-border-width);
-  --border-color: var(--neutral-color-variation-2);
+  --border-color: var(--neutral-color-variation-3);
   --border-radius: var(--elem-border-radius);
-  --color: var(--primary-color);
+  --progress-color: var(--primary-color);
 
   display: inline-block;
   appearance: none;
@@ -14,7 +14,7 @@ progress {
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   background-color: var(--background-color);
-  color: var(--color);
+  color: var(--progress-color);
 
   &::-webkit-progress-bar {
     background: transparent;
@@ -22,19 +22,19 @@ progress {
   }
 
   &[value]::-webkit-progress-value {
-    background-color: var(--color);
+    background-color: var(--progress-color);
     border-radius: var(--border-radius);
   }
 
   &::-moz-progress-bar {
-    background-color: var(--color);
+    background-color: var(--progress-color);
     border-radius: var(--border-radius);
   }
 
   &:indeterminate,
   &[indeterminate='true'],
   &:not([value]) {
-    background: linear-gradient(to right, var(--color) 30%, var(--background-color) 30%) top left / 150% 150% no-repeat;
+    background: linear-gradient(to right, var(--progress-color) 30%, var(--background-color) 30%) top left / 150% 150% no-repeat;
 
     animation: progressIndeterminate 2.5s linear infinite alternate;
 

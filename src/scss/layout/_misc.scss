@@ -2,8 +2,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
-  margin-top: -0.2rem;
+  //vertical-align: middle;
+  > svg {
+    width: 1em;
+    aspect-ratio: 1;
+    stroke: var(--stroke, currentColor);
+    fill: var(--fill, none);
+  }
 }
 
 /* pour cacher un élément de manière accessible */

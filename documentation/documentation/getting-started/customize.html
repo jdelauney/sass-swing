@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<title>Comment personnaliser les couleurs dans le framework scss/css Sass Swing</title>
+	<meta name="Description" content="Apprend à Personnaliser le theme dans le framework scss/css Sass Swing ?"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Sass Swing Utilisation">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Personnalisation du theme dans le framework scss/css Sass Swing<"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/getting-started/customize.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Personnalisation"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/getting-started/customize.html">
+	<meta property="og:title" content="Personnalisation du theme dans le framework scss/css Sass Swing">
+	<meta property="og:description" content="Comment personnaliser le theme dans le framework scss/css Sass Swing ?">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/documentation/getting-started/customize.html">
+	<meta property="twitter:title" content="Personnalisation du theme dans le framework scss/css Sass Swing">
+	<meta property="twitter:description" content="Comment personnaliser le theme dans le framework scss/css Sass Swing ?">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../../styles/css/sass-swing.doc.min.css"/>
+	<script src="../../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="../models.html" class="link--default">Modèles</a></li>
+				<li><a href="../supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sassswing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Changer theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="./customize.html" class="link--default-alt" aria-current="page">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="../layout/containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="../layout/grid.html" class="link--default-alt">Grille</a></li>
+				<li><a href="../layout/breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler">
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="../content/typography.html" class="link--default-alt">Typographie</a></li>
+				<li><a href="../content/buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="../content/form.html" class="link--default-alt">Formulaires</a></li>
+				<li><a href="../content/medias.html" class="link--default-alt">Médias</a></li>
+				<li><a href="../content/table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="../content/progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="../component/navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="../component/card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="../component/details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="../component/breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="../component/pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="../component/modal.html" class="link--default-alt">Boite de dialogue</a></li>
+				<li><a href="../component/collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="../component/addons/badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="../component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="../component/addons/loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="../component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
+						<li><a href="../component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="../component/addons/notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="../component/addons/slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="../component/addons/reveal.html" class="link--secondary">Reveal</a></li>
+
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="../helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="../helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Personnalisez votre design</h1>
+				<span class="like-h4 text-em">Prenez le contrôle, de votre UI</span>
+				<hr>
+			</header>
+			<h2 class="text-swing">Vue d'ensemble</h2>
+			<p>
+				Par défaut, <span class="text-swing">Sass Swing</span> propose <b>3 couleurs</b>. Une neutre, une primaire (primary) qui est la couleur de la marque et une secondaire (secondary).
+				Chacune de ces couleurs dispose de 3 variantes. Ces couleurs sont au format HSL (en attendant les spécifications de CSS 4) pour mieux les contrôler.
+			</p>
+			<p>
+				En supplément, vous avez accès à un jeu de <b>4 couleurs supplémentaires</b> avec chacune 2 variantes. Ces couleurs servent pour de référence pour les notifications et autres états.
+				Ces états sont <i>succès (success)</i>, <i>information (info)</i>, <i>attention (warning)</i> et <i>danger (danger)</i>. Leurs teintes sont respectivement, le vert, le bleu, l'orange et le rouge.
+			</p>
+			<p>
+				<span class="text-swing">Sass Swing</span> gère également <b>deux modes de thème</b>. Le mode <i>clair (light)</i> et le mode <i>sombre (dark)</i>. <b>Le thème utilisé est en fonction des préférences système de l'utilisateur</b>.
+			</p>
+			<h2 class="text-swing">Personnalisation</h2>
+			<p>
+				En fonction, que vous utilisez les fichiers css ou scss, l'approche est un peu différente. En <b>CSS</b> vous devrez <b>configurer les variables css à la racine (:root)</b>. Tandis qu'en <b>SCSS</b>, ce seront les <b>variables SCSS</b> à redéfinir.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<h3 class="text-swing-alt">Avec SCSS</h3>
+					<p>Les variables sont définies dans un fichier "partial" <code>_theme-settings.scss</code> avec des valeurs par défaut. Ce qui signifie, que vous pouvez écraser ces variables.</p>
+					<ul>
+						<li>
+							<section>
+								<h4 class="text-swing">Les couleurs de base</h4>
+								<p>Dans le dossier "styles/scss" de votre projet créez un fichier <code>theme-settings.scss</code>. Avec les variables suivantes :</p>
+								<pre data-lang="scss" class="line-numbers language-scss" data-prismjs-copy="Copier"><code>@use './vendors/sass-swing/theme/colors' as *;
+
+/* neutral light color */
+$neutral-light-color: ;   // couleur de référence pour neutral
+$on-neutral-light-color-s: ;
+$on-neutral-light-color-l: ;
+$neutral-shadow:;
+$neutral-shadow-alt: ;
+
+$neutral-light-color-variation-1-s: ;
+$neutral-light-color-variation-1-l: ;
+$on-neutral-light-color-variation-1-s: ;
+$on-neutral-light-color-variation-1-l: ;
+
+$neutral-light-color-variation-2-s: ;
+$neutral-light-color-variation-2-l: ;
+$on-neutral-light-color-variation-2-s: ;
+$on-neutral-light-color-variation-2-l: ;
+
+$neutral-light-color-variation-3-s: ;
+$neutral-light-color-variation-3-l: ;
+$on-neutral-light-color-variation-3-s: ;
+$on-neutral-light-color-variation-3-l:;
+
+/* neutral dark color */
+$neutral-dark-color: ;
+$neutral-dark-color-s: ;
+$neutral-dark-color-l: ;
+$on-neutral-dark-color-s: ;
+$on-neutral-dark-color-l: ;
+
+$neutral-dark-color-variation-1-s: ;
+$neutral-dark-color-variation-1-l: ;
+$on-neutral-dark-color-variation-1-s: ;
+$on-neutral-dark-color-variation-1-l: ;
+
+$neutral-dark-color-variation-2-s: ;
+$neutral-dark-color-variation-2-l: ;
+$on-neutral-dark-color-variation-2-s: ;
+$on-neutral-dark-color-variation-2-l: ;
+
+$neutral-dark-color-variation-3-s: ;
+$neutral-dark-color-variation-3-l: ;
+$on-neutral-dark-color-variation-3-s: ;
+$on-neutral-dark-color-variation-3-l: ;
+
+/* primary light color */
+$brand-color: ; // couleur de référence pour primary
+
+$primary-light-color-s: ;
+$primary-light-color-l: ;
+$primary-shadow: ;
+$on-primary-light-color-s: ;
+$on-primary-light-color-l: ;
+
+$primary-light-color-variation-1-s: ;
+$primary-light-color-variation-1-l: ;
+$on-primary-light-color-variation-1-s: ;
+$on-primary-light-color-variation-1-l: ;
+$primary-shadow-variation-1: ;
+
+$primary-light-color-variation-2-s: ;
+$primary-light-color-variation-2-l: ;
+$on-primary-light-color-variation-2-s: ;
+$on-primary-light-color-variation-2-l: ;
+$primary-shadow-variation-2: ;
+
+$primary-light-color-variation-3-s: ;
+$primary-light-color-variation-3-l: ;
+$on-primary-light-color-variation-3-s:;
+$on-primary-light-color-variation-3-l: ;
+$primary-shadow-variation-3: ;
+
+/* primary dark color */
+$primary-dark-color-s: ;
+$primary-dark-color-l: ;
+$on-primary-dark-color-s: ;
+$on-primary-dark-color-l: ;
+
+$primary-dark-color-variation-1-s: ;
+$primary-dark-color-variation-1-l: ;
+$on-primary-dark-color-variation-1-s: ;
+$on-primary-dark-color-variation-1-l: ;
+
+$primary-dark-color-variation-2-s: ;
+$primary-dark-color-variation-2-l: ;
+$on-primary-dark-color-variation-2-s: ;
+$on-primary-dark-color-variation-2-l: ;
+
+$primary-dark-color-variation-3-s: ;
+$primary-dark-color-variation-3-l: ;
+$on-primary-dark-color-variation-3-s: ;
+$on-primary-dark-color-variation-3-l: ;
+
+
+/* Secondary light color */
+$secondary-color: ;  //couleur de référence pour secondary"
+$secondary-light-color-s: ;
+$secondary-light-color-l: ;
+$on-secondary-light-color-s: ;
+$on-secondary-light-color-l: ;
+$secondary-shadow: ;
+
+$secondary-light-color-variation-1-s: ;
+$secondary-light-color-variation-1-l: ;
+$on-secondary-light-color-variation-1-s: ;
+$on-secondary-light-color-variation-1-l: ;
+$secondary-shadow-variation-1: ;
+
+$secondary-light-color-variation-2-s: ;
+$secondary-light-color-variation-2-l: ;
+$on-secondary-light-color-variation-2-s: ;
+$on-secondary-light-color-variation-2-l: ;
+$secondary-shadow-variation-2: ;
+
+$secondary-light-color-variation-3-s: ;
+$secondary-light-color-variation-3-l: ;
+$on-secondary-light-color-variation-3-s: ;
+$on-secondary-light-color-variation-3-l: ;
+$secondary-shadow-variation-3: ;
+
+/* Secondary dark color */
+$secondary-dark-color-s: ;
+$secondary-dark-color-l: ;
+$on-secondary-dark-color-s: ;
+$on-secondary-dark-color-l: ;
+
+$secondary-dark-color-variation-1-s: ;
+$secondary-dark-color-variation-1-l: ;
+$on-secondary-dark-color-variation-1-s: ;
+$on-secondary-dark-color-variation-1-l: ;
+
+$secondary-dark-color-variation-2-s: ;
+$secondary-dark-color-variation-2-l: ;
+$on-secondary-dark-color-variation-2-s: ;
+$on-secondary-dark-color-variation-2-l: ;
+
+$secondary-dark-color-variation-3-s: ;
+$secondary-dark-color-variation-3-l: ;
+$on-secondary-dark-color-variation-3-s: ;
+$on-secondary-dark-color-variation-3-l: ;</code></pre>
+								<p>La première ligne sert à <b>importer une liste de couleurs prédéfinies</b>. Vous n'êtes bien sûr pas obliger de l'utiliser et donc de l'importer</p>
+								<p>Comme vous l'avez remarqué, <b>chaque couleur et variante ont une sous couleur préfixée</b> avec <code><b>on-</b></code>. Celles-ci correspondent à la couleur contrastée pour l'écriture.</p>
+								<p>
+									Dans la majorité des cas ont ne modifiera pas la saturation, celle-ci reste inchangée. <a href="https://sass-lang.com" target="_blank">Sass</a> nous fournit des fonctions utiles pour manipuler
+									des couleurs pour nous aider tel que <a href="https://sass-lang.com/documentation/modules/color#saturation" target="_blank">saturation</a> (que vous vous servirez très souvent)
+									et <a href="https://sass-lang.com/documentation/modules/color#lightness" target="_blank">lightness</a> (très peu utiliser, voir pas du tout) qui nous renvoie la valeur en % de la saturation et de la luminosité.
+								</p>
+								<p>
+									C'est très simple de les utiliser. Exemple : <code><i>$neutral-dark-color-s</i>: <b>saturation</b>(<i>$neutral-dark-color</i>);</code>
+								</p>
+								<div class="ui--info" style="--p:1em;">
+									Pour un thème optimal pour l'utilisateur et surtout pour les personnes ayant des capacités visuelles amoindries vous pouvez vous aider d'outils en ligne comme
+									<a role="button" class="btn--swing" href="https://contrast-ratio.com">contrast-ratio</a> pour vérifier que la norme <a href="https://www.w3.org/WAI/standards-guidelines/wcag/fr" class="link--default link-underline" rel="nofollow" target="_blank">WCAG</a> soit respectée.
+								</div>
+								<p>
+									Vous l'aurez peut-être remarqué vous pouvez également définir les ombres. <small><i>Variables comportant le mot clef : <code><b>shadow</b></code></i></small>.
+								</p>
+							</section>
+						</li>
+						<li>
+							<section>
+								<h4 class="text-swing">Les couleurs supplémentaires</h4>
+								<p>
+									Comme cité plus haut vous pouvez personnaliser les couleurs supplémentaires.<br>Et là encore le format retenu est le HSL.
+								</p>
+								<pre data-lang="scss" class="line-numbers language-scss" data-prismjs-copy="Copier"><code>/* Success color */
+$success-color: ; // couleur de référence pour success
+$on-success-color-s: ;
+$on-success-color-l: ;
+
+$success-color-variation-1-s: ;
+$success-color-variation-1-l: ;
+$on-success-color-variation-1-s: ;
+$on-success-color-variation-1-l: ;
+
+$success-color-variation-2-s: ;
+$success-color-variation-2-l: ;
+$on-success-color-variation-2-s: ;
+$on-success-color-variation-2-l: ;
+
+/* Info color */
+$info-color: ; // couleur de référence pour info
+$on-info-color-s: ;
+$on-info-color-l: ;
+
+$info-color-variation-1-s: ;
+$info-color-variation-1-l: ;
+$on-info-color-variation-1-s: ;
+$on-info-color-variation-1-l: ;
+
+$info-color-variation-2-s: ;
+$info-color-variation-2-l: ;
+$on-info-color-variation-2-s: ;
+$on-info-color-variation-2-l: ;
+
+/* Warning color */
+$warning-color: ; // couleur de référence pour warning
+$on-warning-color-s: ;
+$on-warning-color-l: ;
+
+$warning-color-variation-1-s: ;
+$warning-color-variation-1-l: ;
+$on-warning-color-variation-1-s: ;
+$on-warning-color-variation-1-l: ;
+
+$warning-color-variation-2-s: ;
+$warning-color-variation-2-l: ;
+$on-warning-color-variation-2-s: ;
+$on-warning-color-variation-2-l: ;
+
+/* Danger color */
+$danger-color: ; // couleur de référence pour danger
+$on-danger-color-s: ;
+$on-danger-color-l: ;
+
+$danger-color-variation-1-s: ;
+$danger-color-variation-1-l: ;
+$on-danger-color-variation-1-s: ;
+$on-danger-color-variation-1-l: ;
+
+$danger-color-variation-2-s: ;
+$danger-color-variation-2-l: ;
+$on-danger-color-variation-2-s: ;
+$on-danger-color-variation-2-l: ;</code></pre>
+								<p>
+									Ou bien encore, les couleurs des blocs de type <code>&lt;<b>code</b>&gt;</code> ou la couleur des titres <code>&lt;<b>Hx</b>&gt;</code> par exemple. Ici le format de couleur vous appartient. Hexadécimale, rgb/rgba, hsl/hsla.
+								</p>
+								<pre data-lang="scss" class="line-numbers language-scss" data-prismjs-copy="Copier"><code>/* misc colors */
+$code-color-background: ;
+$code-color-text: ;
+$code-color-tag: ;
+$code-color-property: ;
+$code-color-value: ;
+$code-color-var: ;
+$code-color-comment: ;
+$code-color-lang-background: ;
+$code-color-lang-text: ;
+
+$kbd-color-background: ;
+$kbd-color-text: ;
+
+$ins-color-background: ;
+$ins-color-text: ;
+
+$del-color-background: ;
+$del-color-text: ;
+
+$divider-light-color: ;
+$divider-dark-color: ;
+
+$h1-light-color: ;
+$h2-light-color: ;
+$h3-light-color: ;
+$h4-light-color: ;
+$h5-light-color: ;
+$h6-light-color: ;
+
+$h1-dark-color: ;
+$h2-dark-color: ;
+$h3-dark-color: ;
+$h4-dark-color: ;
+$h5-dark-color: ;
+$h6-dark-color: ;</code></pre>
+								<div class="ui--info" style="--p:1em;">
+									<p>
+										<b>Sass Swing</b> met à disposition quelques fonctions qui pourront vous être utile.
+									</p>
+									<ul>
+										<li><code><b>set-color-opacity</b>(<i>$color</i>, <i>$opacity</i>)</code> : Modifie l'opacité d'une couleur RGB ou RGBA.<br><small>Avec <code><i>$opacity</i></code> compris entre 0 et 100</small></li>
+										<li><code><b>color-yiq</b>(<i>$color</i>, <i>$threshold</i> : <u>0.40</u>)</code> : Retourne la couleur contrastée en fonction de <code><i>$color</i></code><br><small>Avec <code><i>$threshold</i></code> compris entre 0 et 1</small></li>
+										<li><code><b>create-neutral</b>(<i>$color</i>)</code> : Retourne la couleur complémentaire en fonction de la température de <code><i>$color</i></code></li>
+										<li><code><b>neutral-desaturate</b>(<i>$color</i>)</code> : Retourne la couleur désaturée en fonction de la température de <code><i>$color</i></code></li>
+										<li>
+											<code><b>make-shadow</b>(<i>$preset</i>:<u>'custom'</u>, <i>$color</i>: <u>#000</u>, <i>$inset</i>: <u>false</u>, <i>$left</i>: <u>0</u>, <i>$top</i>: <u>1</u>, <i>$blur</i>: <u>1</u>, <i>$spread</i>: <u>0</u>, <i>$unit</i>: <u>'px'</u>)</code><br>
+											Cette fonction va créer une ombre. Le paramètre <code><i>$preset</i></code> peut prendre les valeurs suivantes : <br>
+											<i>custom, realistic, smooth, smooth-light, medium, long, diffuse, sharp, dreamy, shorter ou longer</i>
+										</li>
+									</ul>
+									<p>
+										Ces fonctions sont disponibles dans le fichier <code>functions.scss</code> qu'il vous suffit d'importer avec <code><u>@use</u><i> "./vendors/sass-swing/abstract/function"</i> as <i>*</i></code> au début de votre fichier.
+									</p>
+								</div>
+							</section>
+						</li>
+						<li>
+							<section>
+								<h4 class="text-swing">Autres options personnalisables</h4>
+								<p>En plus des couleurs, vous avez la possibilité de configurer quelques variables générales.</p>
+								<p>
+									Ces variables, servent à définir les polices de caractères, la fluidité des tailles de police d'écriture des éléments. Ou encore le rythme vertical entre les différentes sections et éléments composants votre page.
+								</p>
+								<pre data-lang="scss" class="line-numbers language-scss" data-prismjs-copy="Copier"><code>// Famille des polices de caractères
+$font-family-monospace: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace !default;
+//consolas, 'Lucida Console', Monaco, courier, monospace !default;
+$font-family-serif: Georgia, Times, 'Times New Roman', serif !default;
+$font-family-sans: Roboto, Noto, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+$default-font-family: $font-family-sans !default;
+$default-font-family-alt: $font-family-serif !default;
+
+/* Hauteur entre les lignes de texte */
+$default-line-height: ;
+$default-line-height-ratio: 161.8033% !default; // cette valeur est exprimé en %
+
+/* Taille de fluide pour le corps de la page */
+$min-heading-font-size: ;
+$max-heading-font-size: ;
+
+/* Empattement des titres et global */
+$default-heading-font-weight: 500 !default;
+$default-font-weight: 400 !default;
+
+/* Rythme vertical */
+$vertical-flow-space-ratio: ;
+$vertical-heading-flow-space-ratio: ;
+
+$spacing: ;
+$flow-spacing: ;
+$block-spacing-vertical: ;
+$min-block-spacing-vertical: ;
+
+/* largeur minimal pour une colonne dans une grille */
+$min-grid-col-width: 0 !default;
+
+/* aspect général des blocs et bordure */
+$global-border-width: 1px !default;
+$global-outline-width: 2px !default;
+$global-border-radius: 0.35rem !default;
+</code></pre>
+								<div class="ui--info" style="--p:1em;">
+									<p>
+										<b>Sass Swing</b> fournit une fonction <code><u>type-ratio</u></code> pour vous aider à choisir les valeurs des variables contenant le mot clef <code><b>ratio</b></code>.
+										Cette fonction prend en paramètre une chaine de caractère. Les paramètres disponibles sont : <br><i>minorSecond, majorSecond, minorThird, majorThird, perfectFourth, augmentedFourth, perfectFifth, goldenRatio et goldenSquareRatio</i>
+									</p>
+									<p>
+										Cette fonction est disponible dans le fichier <code>functions.scss</code> qu'il vous suffit d'importer avec <code><u>@use</u><i> "./vendors/sass-swing/abstract/function"</i> as <i>*</i></code> au début de votre fichier.
+									</p>
+								</div>
+							</section>
+						</li>
+					</ul>
+				</div>
+			</article>
+			<article class="card">
+				<div class="panel">
+					<h3 class="text-swing-alt">Avec CSS</h3>
+					<p>
+						La méthodologie est sensiblement la même qu'avec le <strong>SCSS</strong>. Les noms de variables sont exactement les mêmes que plus haut que nous allons remplacer le <code><b>$</b></code> par <code><b>--</b></code>. Et de les englobées dans le sélecteur CSS <code><b>:root</b></code> et l'attribut. <code>[<b>theme-mode</b>=<u>"theme-name"</u>]</code> dans un fichier css à part.
+					</p>
+					<p>
+						Pour le mode clair (light) il suffit de configurer les variables de cette manière :
+					</p>
+					<pre data-lang="css" class="line-numbers language-css" data-prismjs-copy="Copier"><code>[theme-mode="light"], :root,  {
+  --neutral-color-h: ;
+  --neutral-color-s: ;
+  --neutral-color-l: ;
+  --neutral-color: ;
+    ...
+}</code></pre>
+					<p>Pour le mode sombre (dark) il faut ajouter la règle comme ceci :</p>
+					<pre data-lang="css" class="line-numbers language-css" data-prismjs-copy="Copier"><code>@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --neutral-color-h: ;
+    --neutral-color-s: ;
+    --neutral-color-l: ;
+    --neutral-color: ;
+      ...
+}
+
+[data-theme='dark'] {
+  --neutral-color-h: ;
+  --neutral-color-s: ;
+  --neutral-color-l: ;
+  --neutral-color: ;
+    ...
+}</code></pre>
+					<p>Il ne vous restera plus qu'à charger ce fichier <b>APRES</b> le fichier <code>sass-swing.min.css</code> dans le <code>&lt;<b>head</b>&gt; de votre page</code></p>
+				</div>
+			</article>
+			<h2 class="text-swing">Créer ses propres classes</h2>
+			<p>
+				Une autre méthode pour personnaliser les éléments, est d'écrire une nouvelle classe. Chaque élément dans <span class="text-swing">Sass Swing</span> est configurable directement via des <b>variables CSS locales</b>.
+				Les noms de ces classes sont <b>faciles à retenir</b>. En effet, elles <b>reprennent le nom des propriétés CSS</b>. Par exemple pour modifier la couleur de fond, dans votre classe, vous devrez simplement définir la variable <code><i>--background-color</i></code>.
+			</p>
+			<p>
+				Pour les éléments HTML comportant des <i>états</i> tel que <i>Hover</i>, <i>Focus</i> ect... Il suffira de préfixer les variables adéquats. Par exemple, vous souhaitez modifier la couleur d'un lien au survol de la souris. Rien de plus facile, ajoutez simplement la variable <code><i>--hover-color</i></code>
+			</p>
+			<p>
+				Bon à savoir, certains éléments comme les liens contiennent des variables propres supplémentaires pour modifier certaines propriétés.
+			</p>
+			<p>
+				De base, dans la majorité des cas, les éléments contiennent les variables locales suivantes :
+			</p>
+			<ul>
+				<li><code><i>--background-color</i></code>&nbsp;: Changement de la couleur de fond</li>
+				<li><code><i>--color</i></code>&nbsp;: Changement de la couleur d'écriture</li>
+				<li><code><i>--border-width</i></code>&nbsp;: Changement de l'épaisseur des bordures</li>
+				<li><code><i>--border-color</i></code>&nbsp;: Changement de la couleur des bordures</li>
+				<li><code><i>--border-radius</i></code>&nbsp;: Changement du rayon de bordure</li>
+			</ul>
+			<article class="card">
+				<div class="panel">
+					<h3>Exemples :</h3>
+					<pre data-lang="css" class="line-numbers language-css" data-prismjs-copy="Copier"><code>.myLink {
+  --color: #4E342E;
+  --decoration-color: #4E342E;
+
+  --hover-color: #795548;
+  --hover-decoration-color: #795548;
+}
+
+.myButton {
+  --background-color: #A1887F;
+  --border-color:#3E2723;
+  --color:#1B2631;
+
+  --active-background-color:#4E342E;
+  --active-color:#D7CCC8;
+
+  --hover-background-color:#4E342E;
+  --hover-color:#D7CCC8;
+  --hover-border-color:#795548;
+}</code></pre>
+				<p>
+					Pour les informations détaillées sur la personnalisation de chaques éléments, veuillez vous reporter aux différentes sections de cette documentation.
+				</p>
+				</div>
+			</article>
+
+		</section>
+		<section class="d:col-start-2">
+			<hr>
+			<h2>Supportez <span class="text-swing-alt">Sass Swing</span></h2>
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Liens</span>
+					<ul>
+						<li><a href="../../index.html" class="link--default">Accueil</a></li>
+						<li><a href="../index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="../legal-notice.html" class="link--default">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+<script src="../../scripts/vendors/prism.js"></script>
+<script type="module" src="../../scripts/script.js"></script>
+</body>
+</html>

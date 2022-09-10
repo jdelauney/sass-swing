@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+
+	<meta charset="UTF-8">
+	<title>Documentation Sass Swing - Contenu : Les formulaires</title>
+	<meta name="Description" content="Comment concevoir des formulaires ? avec panache grâce au framework scss/css Sass Swing"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass Swing - Contenu : Les formulaires">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Comment concevoir des formulaires ? avec panache grâce au framework scss/css Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/content/form.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Contenu : Les formulaires"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/content/form.html">
+	<meta property="og:title" content="Documentation Sass Swing - Contenu : Les formulaires">
+	<meta property="og:description" content="Comment concevoir des formulaires ? avec panache grâce au framework scss/css Sass Swing">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/">
+	<meta property="twitter:title" content="Documentation Sass Swing - Contenu : Les formulaires">
+	<meta property="twitter:description" content="Comment concevoir des formulaires ? avec panache grâce au framework scss/css Sass Swing">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../../styles/css/sass-swing.doc.min.css"/>
+	<script src="../../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="../getting-started/usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="../models.html" class="link--default">Modèles</a></li>
+				<li><a href="../supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sass-swing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Change theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="../getting-started/usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="../getting-started/javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="../getting-started/themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="../getting-started/customize.html" class="link--default-alt">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="../layout/containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="../layout/grid.html" class="link--default-alt">Grille</a></li>
+				<li><a href="../layout/breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="typography.html" class="link--default-alt">Typographie</a></li>
+				<li><a href="buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="form.html" class="link--default-alt" aria-current="page">Formulaires</a></li>
+				<li><a href="medias.html" class="link--default-alt">Médias</a></li>
+				<li><a href="table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="../component/navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="../component/card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="../component/details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="../component/breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="../component/pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="../component/modal.html" class="link--default-alt">Boite de dialogue</a></li>
+				<li><a href="../component/collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="../component/addons/badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="../component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="../component/addons/loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="../component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
+						<li><a href="../component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="../component/addons/notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="../component/addons/slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="../component/addons/reveal.html" class="link--default-alt">Reveal</a></li>
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="../helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="../helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Les formulaires</h1>
+				<span class="like-h4 text-em">Les contrôles de formulaire indispensables en HTML sémantique pur, avec styles personnalisés et totalement responsive.</span>
+				<hr>
+			</header>
+
+			<h2 class="text-swing">Exploitez toute la puissance des formulaires.</h2>
+			<p>
+				Dans les formulaires <a class="link--default" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Form" target="_blank"><sup>MDN Référence</sup></a>, tous les types de champs <a class="link--default" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/input" target="_blank"><sup>MDN Référence</sup></a> ont une largeur de 100%. Pour vous aider à mettre en page vos formulaires, vous pouvez utiliser les grilles et les <b>utilitaires flex</b>.
+				Sass Swing fournit en sus une classe utilitaire <code><b>.input-group-inline</b></code> pour aligner une étiquette à un champ et son texte d'aide. Si vous placez un <code><b>footer</b></code> dans votre <code><b>form</b></code>
+				Alors son contenu sera aligné à droite. Grâce à la classe <code><b>.form-inline</b></code> vous pourrez créer des formulaires <b>inline</b>.
+			</p>
+			<p>
+				Assurez-vous d'utiliser un attribut de type approprié sur tous les champs (par exemple, <code>e-mail</code> pour l'adresse e-mail ou <code>number</code> pour les informations numériques) pour bénéficier de la vérification de l'e-mail, d'un nombre, etc...
+			</p>
+			<article class="card">
+				<div class="panel">
+					<form>
+						<div class="grid md:cols-auto gap-1">
+							<label for="firstname">
+								Firstname :
+								<input type="text" id="firstname">
+							</label>
+							<label for="lastname">
+								Lastname :
+								<input type="text" id="lastname">
+							</label>
+						</div>
+
+						<div class="input-group-inline">
+							<label for="pseudo">Pseudo :</label>
+							<input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" aria-describedby="pseudoHelp" autocomplete="off" required>
+							<small id="pseudoHelp">Specials characters are not allowed</small>
+						</div>
+
+						<label for="email1">Email address :</label>
+						<input type="email" id="email1" name="email1" placeholder="Email address" aria-describedby="emailHelp" required>
+						<small id="emailHelp">We'll never share your email with anyone else.</small>
+
+						<footer>
+							<button type="submit" value="Envoyer">Envoyer</button>
+							<button type="reset" value="RAZ">RAZ</button>
+						</footer>
+					</form>
+					<hr>
+					<form class="form-inline">
+						<label for="email">Email address :</label>
+						<input type="email" id="email" name="email" placeholder="Email address" required>
+						<label for="password">Password :</label>
+						<input type="password" id="password" name="password" placeholder="Mot de passe" autocomplete="off" required>
+						<input type="checkbox" id="remember" name="remember">
+						<label for="remember">remember me</label>
+						<footer>
+							<button type="submit" value="">Envoyer</button>
+						</footer>
+					</form>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;form&gt;
+	&lt;div class=&quot;grid md:cols-auto gap-1&quot;&gt;
+		&lt;label for=&quot;firstname&quot;&gt;
+			Firstname :
+			&lt;input type=&quot;text&quot; id=&quot;firstname&quot;&gt;
+		&lt;/label&gt;
+		&lt;label for=&quot;lastname&quot;&gt;
+			Lastname :
+			&lt;input type=&quot;text&quot; id=&quot;lastname&quot;&gt;
+		&lt;/label&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;input-group-inline&quot;&gt;
+		&lt;label for=&quot;pseudo&quot;&gt;Pseudo :&lt;/label&gt;
+		&lt;input type=&quot;text&quot; id=&quot;pseudo&quot; name=&quot;pseudo&quot; placeholder=&quot;Pseudo&quot; aria-describedby=&quot;pseudoHelp&quot; autocomplete=&quot;off&quot; required&gt;
+		&lt;small id=&quot;pseudoHelp&quot;&gt;Sp&eacute;cials characters are not allowed&lt;/small&gt;
+	&lt;/div&gt;
+
+	&lt;label for=&quot;email1&quot;&gt;Email address :&lt;/label&gt;
+	&lt;input type=&quot;email&quot; id=&quot;email1&quot; name=&quot;email1&quot; placeholder=&quot;Email address&quot; aria-describedby=&quot;emailHelp&quot; required&gt;
+	&lt;small id=&quot;emailHelp&quot;&gt;We&#39;ll never share your email with anyone else.&lt;/small&gt;
+
+	&lt;footer&gt;
+		&lt;button type=&quot;submit&quot; value=&quot;Envoyer&quot;&gt;Envoyer&lt;/button&gt;
+		&lt;button type=&quot;reset&quot; value=&quot;RAZ&quot;&gt;RAZ&lt;/button&gt;
+	&lt;/footer&gt;
+&lt;/form&gt;
+
+&lt;form class=&quot;form-inline&quot;&gt;
+	&lt;label for=&quot;email&quot;&gt;Email address :&lt;/label&gt;
+	&lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Email address&quot; required&gt;
+	&lt;label for=&quot;password&quot;&gt;Password :&lt;/label&gt;
+	&lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Mot de passe&quot; autocomplete=&quot;off&quot; required&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;remember&quot; name=&quot;remember&quot;&gt;
+	&lt;label for=&quot;remember&quot;&gt;remember me&lt;/label&gt;
+	&lt;footer&gt;
+		&lt;button type=&quot;submit&quot; value=&quot;&quot;&gt;Envoyer&lt;/button&gt;
+	&lt;/footer&gt;
+&lt;/form&gt;</code></pre>
+				</footer>
+			</article>
+
+			<h3 class="text-swing">Etats et validations</h3>
+			<h4 class="text-swing">Les états</h4>
+			<p>
+				Le HTML nous fournit des attributs spécifiques pour désigner un champ désactivé, invalide, en lecture seule etc...
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid t:cols-auto gap-2">
+						<input type="text" placeholder="Valid" aria-invalid="false" aria-label="input valide">
+						<input type="text" placeholder="Invalid" aria-invalid="true" aria-label="input invalide">
+						<input type="text" placeholder="Disabled" disabled aria-label="input désactivé">
+						<input type="text" value="Readonly" readonly aria-label="input en lecture seule">
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid t:cols-auto gap-2&quot;&gt;
+	&lt;input type=&quot;text&quot; placeholder=&quot;Valid&quot; aria-invalid=&quot;false&quot;&gt;
+	&lt;input type=&quot;text&quot; placeholder=&quot;Invalid&quot; aria-invalid=&quot;true&quot;&gt;
+	&lt;input type=&quot;text&quot; placeholder=&quot;Disabled&quot; disabled&gt;
+	&lt;input type=&quot;text&quot; value=&quot;Readonly&quot; readonly&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<h4 class="text-swing">Les validations</h4>
+			<p>
+				Pour contrôler la validation des champs, nativement le HTML met à notre disposition plusieurs attributs comme <code><i>required</i></code> pour rendre le champ obligatoire, <code><i>autocomplete</i>=<u>"on/off"</u></code> pour activer/désactiver l'autocomplétion du navigateur,
+				<code><i>pattern</i></code> pour vérifier le contenu du champ avec une formule regEx. Les attributs <code><i>minlength</i></code>, <code><i>maxlength</i></code>, <code><i>size</i></code> pour contrôler le nombre de caractères.
+			</p>
+
+			<h3>Les champs de base</h3>
+			<p>
+				La langage HTML nous fournit nativement des types de champs pour des données spécifiques tels que les mots de passe, les emails, numéro de téléphone, url etc...
+			</p>
+			<article class="card">
+				<div class="panel">
+					<form>
+						<label for="texte">
+							Texte :
+							<input type="text" id="texte" placeholder="un texte">
+						</label>
+						<div class="grid md:cols-auto gap-1">
+							<label for="email2">
+								Email :
+								<input type="email" id="email2" placeholder="myemail@server.com">
+							</label>
+							<label for="pwd">
+								Mot de passe :
+								<input type="password" id="pwd" placeholder="mot de passe">
+							</label>
+						</div>
+						<div class="grid md:cols-auto gap-1">
+							<label for="url">
+								URL :
+								<input type="url" id="url" placeholder="https//www.monsite.com">
+							</label>
+							<label for="phone">
+								Téléphone :
+								<input type="tel" id="phone" placeholder="01 02 03 04 05">
+							</label>
+						</div>
+					</form>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;form&gt;
+	&lt;label for=&quot;texte&quot;&gt;
+		Texte :
+		&lt;input type=&quot;text&quot; id=&quot;texte&quot; placeholder=&quot;un texte&quot;&gt;
+	&lt;/label&gt;
+	&lt;div class=&quot;grid md:cols-auto gap-1&quot;&gt;
+		&lt;label for=&quot;email2&quot;&gt;
+			Email :
+			&lt;input type=&quot;email&quot; id=&quot;email2&quot; placeholder=&quot;myemail@server.com&quot;&gt;
+		&lt;/label&gt;
+		&lt;label for=&quot;pwd&quot;&gt;
+			Mot de passe :
+			&lt;input type=&quot;password&quot; id=&quot;pwd&quot; placeholder=&quot;mot de passe&quot;&gt;
+		&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;grid md:cols-auto gap-1&quot;&gt;
+		&lt;label for=&quot;url&quot;&gt;
+			URL :
+			&lt;input type=&quot;url&quot; id=&quot;url&quot; placeholder=&quot;https//www.monsite.com&quot;&gt;
+		&lt;/label&gt;
+		&lt;label for=&quot;phone&quot;&gt;
+			T&eacute;l&eacute;phone :
+			&lt;input type=&quot;tel&quot; id=&quot;phone&quot; placeholder=&quot;01 02 03 04 05&quot;&gt;
+		&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+				</footer>
+			</article>
+
+			<h3 class="text-swing">Select, radio, checkbox et switch</h3>
+			<p>
+				Faites votre choix, des champs au style de votre thème ou entièrement personnalisables. Vous pouvez également grouper vos contrôles avec Utilisez le tag <code>&lt;<b>fieldset</b>&gt;</code>.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<form>
+						<label for="combobox">
+							Role
+							<select id="combobox" required>
+								<option value="" selected>Select a role…</option>
+								<option value="1" data-color="#ff0000">Administrator</option>
+								<option value="2">Moderator</option>
+								<option value="3">Premium member</option>
+								<option value="4">Member</option>
+							</select>
+						</label>
+
+						<label for="multiselect">
+							Langage
+							<select id="multiselect" multiple>
+								<option value="1">Javascript</option>
+								<option value="2">Python</option>
+								<option value="3">PHP</option>
+								<option value="4">C/C++/C#</option>
+								<option value="5">Ruby on rail</option>
+								<option value="6">Pascal</option>
+							</select>
+						</label>
+
+						<fieldset>
+							<legend>Size</legend>
+							<input type="radio" id="small" name="size" value="small" checked>
+							<label for="small">Small</label>
+							<input type="radio" id="medium" name="size" value="medium">
+							<label for="medium">Medium</label>
+							<input type="radio" id="large" name="size" value="large">
+							<label for="large">Large</label>
+						</fieldset>
+
+						<fieldset class="flex">
+							<legend>Niveau</legend>
+							<input type="radio" id="rookie" name="level" value="rookie">
+							<label for="rookie">Débutant</label>
+							<input type="radio" id="middle" name="level" value="middle"  checked>
+							<label for="middle">Intermédiaire</label>
+							<input type="radio" id="expert" name="level" value="expert">
+							<label for="expert">Expert</label>
+						</fieldset>
+
+						<fieldset>
+							<input type="checkbox" id="terms" name="terms">
+							<label for="terms">J'accepte les termes et conditions</label>
+						</fieldset>
+
+						<fieldset>
+							<label for="switch">
+								<input type="checkbox" id="switch" name="switch" role="switch">
+								Publier mon profil
+							</label>
+						</fieldset>
+
+						<fieldset>
+							<label for="switch1">
+								Suivre les commentaires
+								<input type="checkbox" id="switch1" name="switch1" role="switch" data-on-label="OUI" data-off-label="NON">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;form&gt;
+	&lt;label for=&quot;combobox&quot;&gt;
+		Role
+		&lt;select id=&quot;combobox&quot; required&gt;
+			&lt;option value=&quot;&quot; selected&gt;Select a role&hellip;&lt;/option&gt;
+			&lt;option&gt;Administrator&lt;/option&gt;
+			&lt;option&gt;Moderator&lt;/option&gt;
+			&lt;option&gt;Premium member&lt;/option&gt;
+			&lt;option&gt;Member&lt;/option&gt;
+		&lt;/select&gt;
+	&lt;/label&gt;
+
+	&lt;label for=&quot;multiselect&quot;&gt;
+		Langage
+		&lt;select id=&quot;multiselect&quot; multiple&gt;
+			&lt;option value=&quot;1&quot;&gt;Javascript&lt;/option&gt;
+			&lt;option value=&quot;2&quot;&gt;Python&lt;/option&gt;
+			&lt;option value=&quot;3&quot;&gt;PHP&lt;/option&gt;
+			&lt;option value=&quot;4&quot;&gt;C/C++/C#&lt;/option&gt;
+			&lt;option value=&quot;5&quot;&gt;Ruby on rail&lt;/option&gt;
+			&lt;option value=&quot;6&quot;&gt;Pascal&lt;/option&gt;
+		&lt;/select&gt;
+	&lt;/label&gt;
+
+	&lt;fieldset&gt;
+		&lt;legend&gt;Size&lt;/legend&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;small&quot; name=&quot;size&quot; value=&quot;small&quot; checked&gt;
+		&lt;label for=&quot;small&quot;&gt;Small&lt;/label&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;medium&quot; name=&quot;size&quot; value=&quot;medium&quot;&gt;
+		&lt;label for=&quot;medium&quot;&gt;Medium&lt;/label&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;large&quot; name=&quot;size&quot; value=&quot;large&quot;&gt;
+		&lt;label for=&quot;large&quot;&gt;Large&lt;/label&gt;
+	&lt;/fieldset&gt;
+
+	&lt;fieldset class=&quot;flex-container gap-1&quot;&gt;
+		&lt;legend&gt;Niveau&lt;/legend&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;rookie&quot; name=&quot;level&quot; value=&quot;rookie&quot;&gt;
+		&lt;label for=&quot;rookie&quot;&gt;D&eacute;butant&lt;/label&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;middle&quot; name=&quot;level&quot; value=&quot;middle&quot;  checked&gt;
+		&lt;label for=&quot;middle&quot;&gt;Interm&eacute;diaire&lt;/label&gt;
+		&lt;input type=&quot;radio&quot; id=&quot;expert&quot; name=&quot;level&quot; value=&quot;expert&quot;&gt;
+		&lt;label for=&quot;expert&quot;&gt;Expert&lt;/label&gt;
+	&lt;/fieldset&gt;
+
+	&lt;fieldset&gt;
+		&lt;input type=&quot;checkbox&quot; id=&quot;terms&quot; name=&quot;terms&quot;&gt;
+		&lt;label for=&quot;terms&quot;&gt;J&#39;accepte les termes et conditions&lt;/label&gt;
+	&lt;/fieldset&gt;
+
+	&lt;fieldset&gt;
+		&lt;label for=&quot;switch&quot;&gt;
+			&lt;input type=&quot;checkbox&quot; id=&quot;switch&quot; name=&quot;switch&quot; role=&quot;switch&quot;&gt;
+			Publier mon profil
+		&lt;/label&gt;
+	&lt;/fieldset&gt;
+
+	&lt;fieldset&gt;
+		&lt;label for=&quot;switch1&quot;&gt;
+			Suivre les commentaires
+			&lt;input type=&quot;checkbox&quot; id=&quot;switch1&quot; name=&quot;switch1&quot; role=&quot;switch&quot; data-on-label=&quot;OUI&quot; data-off-label=&quot;NON&quot;&gt;
+		&lt;/label&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+				</footer>
+			</article>
+
+			<h3 class="text-swing">Les autres types de champs</h3>
+			<p>
+				Il existe de nombreux autres types tels que des champs pour la recherche, choisir une date, une heure, une couleur, un nombre entre un interval défini, choisir un fichier sur son disque etc...
+			</p>
+			<article class="card">
+				<div class="panel">
+					<form>
+						<div class="grid md:cols-auto gap-1">
+							<label for="number">Nombre
+								<input type="number" id="number" name="number" value="100">
+							</label>
+							<label for="range">Range slider
+								<input type="range" min="0" max="100" value="50" id="range" name="range">
+							</label>
+						</div>
+
+						<div class="grid md:cols-auto gap-1">
+							<label for="color">Color
+								<input type="color" id="color" name="color" value="#0eaaaa">
+							</label>
+							<label for="search">Search
+								<input type="search" id="search" name="search">
+							</label>
+						</div>
+
+						<div class="grid md:cols-auto gap-1">
+							<label for="date">Date
+								<input type="date" id="date" name="date">
+							</label>
+							<label for="time">Time
+								<input type="time" id="time" name="time">
+							</label>
+						</div>
+
+						<label for="file">Choisir un fichier
+							<input type="file" id="file" name="file">
+						</label>
+
+						<label for="customfile" class="btn btn--secondary">Choisir un fichier
+							<input type="file" id="customfile" name="customfile" hidden>
+						</label>
+					</form>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;form&gt;
+&lt;div class=&quot;grid md:cols-auto gap-1&quot;&gt;
+	&lt;label for=&quot;number&quot;&gt;Nombre
+		&lt;input type=&quot;number&quot; id=&quot;number&quot; name=&quot;number&quot; value=&quot;100&quot;&gt;
+	&lt;/label&gt;
+	&lt;label for=&quot;range&quot;&gt;Range slider
+		&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;50&quot; id=&quot;range&quot; name=&quot;range&quot;&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid md:cols-auto gap-1&quot;&gt;
+	&lt;label for=&quot;color&quot;&gt;Color
+		&lt;input type=&quot;color&quot; id=&quot;color&quot; name=&quot;color&quot; value=&quot;#0eaaaa&quot;&gt;
+	&lt;/label&gt;
+	&lt;label for=&quot;search&quot;&gt;Search
+		&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot;&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid md:cols-auto gap-1&quot;&gt;
+	&lt;label for=&quot;date&quot;&gt;Date
+		&lt;input type=&quot;date&quot; id=&quot;date&quot; name=&quot;date&quot;&gt;
+	&lt;/label&gt;
+	&lt;label for=&quot;time&quot;&gt;Time
+		&lt;input type=&quot;time&quot; id=&quot;time&quot; name=&quot;time&quot;&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;label for=&quot;file&quot;&gt;Choisir un fichier
+	&lt;input type=&quot;file&quot; id=&quot;file&quot; name=&quot;file&quot;&gt;
+&lt;/label&gt;
+
+&lt;label for=&quot;customfile&quot; class=&quot;btn btn--secondary&quot;&gt;Choisir un fichier
+	&lt;input type=&quot;file&quot; id=&quot;customfile&quot; name=&quot;customfile&quot; hidden&gt;
+&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+				</footer>
+			</article>
+
+			<h2 class="text-swing">Optimisez l'accessibilité et augmentez l'expérience utilisateur</h2>
+			<p>
+				Assurez-vous que tous les champs de votre formulaire soient nommés de façon claire, concise et appropriée afin d'en faciliter la transmission vers les utilisateurs de technologies d'assistance.
+				Le moyen le plus simple d'y parvenir est d'utiliser un élément <code>&lt;<b>label</b>&gt;</code> et d'inclure un texte suffisamment descriptif.
+			</p>
+			<p>
+				Dans le cas où vous désirez utiliser un <code>&lt;<b>span</b>&gt;</code> qui agira comme une étiquette à la place d'un <code>&lt;<b>label</b>&gt;</code>, il vous faudra ajouter à votre champ l'attribut <code><i>aria-labelledby</i></code>.
+			</p>
+			<p>
+				Un texte d'information par exemple, associé à un champ, doit être explicitement lié au contrôle du formulaire auquel il se rapporte à l'aide de l'attribut <code><i>aria-dedicatedby</i></code>.
+				Cela garantira que les technologies d'assistance, telles que les lecteurs d'écran, annoncent ce texte.
+			</p>
+			<p>
+				Dans le cas où vous ne fournissez pas de <code>&lt;<b>label</b>&gt;</code> ni d'étiquette alors, ajoutez un attribut <code><i>title</i></code> ou
+				donnez une définition explicite sur votre élément à l'aide d'<code><i>aria-label</i></code> à votre champ. Pensez aussi à utiliser l'attribut <code><i>placeholder</i></code> sur vos champs en sus.
+			</p>
+			<p>
+				Pour améliorer encore plus l'expérience utilisateur, le HTML nous fournit également des attributs spécifiques comme <code><i>autofocus</i></code>, <code><i>autocomplete</i></code>, <code><i>tabindex</i></code>, <code><i>value</i></code>
+			</p>
+			<article class="card">
+				<div class="panel">
+					<form>
+						<span id="userLabel" style="white-space: nowrap; display:inline-block">
+							Utilisateur
+							<input type="text" id="user" name="user" aria-labelledby="userLabel" tabindex="3">
+						</span>
+
+						<input type="text" id="user1" name="user1" title="Nom utilisateur" placeholder="Nom utilisateur" autocomplete="on" tabindex="1">
+
+						<input type="text" id="user2" name="user2" aria-label="Nom utilisateur" placeholder="Nom utilisateur" tabindex="4" value="John">
+
+						<label for="user3">Utilisateur :</label>
+						<input type="text" id="user3" name="user3" placeholder="Nom utilisateur" aria-describedby="userHelp" tabindex="2">
+						<small id="userHelp">Identifiant de connexion</small>
+					</form>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;form&gt;
+	&lt;span id=&quot;userLabel&quot; style=&quot;white-space: nowrap; display:inline-block&quot;&gt;
+		Utilisateur
+		&lt;input type=&quot;text&quot; id=&quot;user&quot; name=&quot;user&quot; aria-labelledby=&quot;userLabel&quot; tabindex=&quot;3&quot;&gt;
+	&lt;/span&gt;
+
+	&lt;input type=&quot;text&quot; id=&quot;user1&quot; name=&quot;user1&quot; title=&quot;Nom utilisateur&quot; placeholder=&quot;Nom utilisateur&quot; autocomplete=&quot;on&quot; tabindex=&quot;1&quot;&gt;
+
+	&lt;input type=&quot;text&quot; id=&quot;user2&quot; name=&quot;user2&quot; aria-label=&quot;Nom utilisateur&quot; placeholder=&quot;Nom utilisateur&quot; tabindex=&quot;4&quot; value=&quot;John&quot;&gt;
+
+	&lt;label for=&quot;user3&quot;&gt;Utilisateur :&lt;/label&gt;
+	&lt;input type=&quot;text&quot; id=&quot;user3&quot; name=&quot;user3&quot; placeholder=&quot;Nom utilisateur&quot; aria-describedby=&quot;userHelp&quot; tabindex=&quot;2&quot;&gt;
+	&lt;small id=&quot;userHelp&quot;&gt;Identifiant de connexion&lt;/small&gt;
+&lt;/form&gt;</code></pre>
+				</footer>
+			</article>
+			<p>
+				Retrouvez toutes les caractéristiques et types des champs de formulaire HTML sur le site de référence :
+			</p>
+			<a class="link--default" href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input" target="_blank">mdn web docs</a>
+			<h2 class="text-swing">Personnalisation</h2>
+			<p>
+				Vous pouvez personnaliser, les couleurs, bordures et états via des variables CSS ou SCSS.<br>
+				Pour plus d'informations reportez-vous à la section <a href="../getting-started/customize.html" class="link--default link-underline">Personnalisation</a>
+			</p>
+			<div class="ui--danger" style="--p:1em">
+				<p>
+					<b>ATTENTION : </b> Il est primordiale d'ajouter le mot-clef <b>!important</b> pour forcer l'application des variables. En effet, pour les <b>input</b>, <span class="text-swing-alt">Sass Swing</span> les cible avec précision grâce à l'attribut <i>type</i>. De ce fait les règles de base l'emportent dans ce cas précis.
+				</p>
+	    </div>
+
+			<article class="card">
+				<div class="panel">
+					<form>
+						<label for="user4">Custom Input :</label>
+						<input type="text" id="user4" name="user4" placeholder="Custom input" class="custom--input">
+					</form>
+				</div>
+				<footer class="footer__code">
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;form&gt;
+	&lt;label for=&quot;user4&quot;&gt;Custom Input :&lt;/label&gt;
+	&lt;input type=&quot;text&quot; id=&quot;user4&quot; name=&quot;user4&quot; placeholder=&quot;Custom input&quot; class=&quot;custom--input&quot;&gt;
+&lt;/form&gt;</code></pre>
+
+					<pre data-lang="css" class="line-numbers language-css" data-prismjs-copy="Copier"><code>.custom--input {
+  --spacing-v: 1em !important;
+  --spacing-h: 1.2em !important;
+  --background-color: #97af96 !important;
+  --color: #2a2f25 !important;
+  --border-width: 2px !important;
+  --border-color: #669353 !important;
+  --border-radius: 1em !important;
+  /*--border: var(--border-width) solid var(--border-color) !important; */
+  --box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px !important;
+
+  --hover-background-color: #a2d574 !important;
+  --hover-color: #27311d !important;
+  --hover-border-color: #385b2c !important;
+  --hover-box-shadow:  rgba(13, 44, 6, 0.4) 0px 0px 0px 2px, rgba(6, 44, 8, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset !important;
+
+  --focus-background-color: #5c7c5c !important;
+  --focus-color: #a0d273 !important;
+  --focus-border-color: #52932d !important;
+  --focus-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+  --focus-outline-width: 3px !important;
+
+  --placeholder-color: #373f36 !important;
+
+  font-size:1.5em;
+}</code></pre>
+				</footer>
+			</article>
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing-alt">Liens</span>
+					<ul>
+						<li><a href="../../index.html" class="link--default">Accueil</a></li>
+						<li><a href="../index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="../getting-started/usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="../legal-notice.html" class="link--default">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+
+<script src="../../scripts/vendors/prism.js"></script>
+<script type="module" src="../../scripts/script.js"></script>
+</body>
+</html>

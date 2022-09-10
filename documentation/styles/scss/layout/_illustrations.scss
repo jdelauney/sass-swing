@@ -1,0 +1,494 @@
+.animator-hidden {
+  display: none;
+}
+
+svg#freepik_stories-static-website,
+svg#freepik_stories-multi-device-targeting,
+svg#freepik_stories-personalization,
+svg#freepik_stories-creative-writing,
+svg#freepik_stories-saving-money,
+svg#freepik_stories-connected-world {
+  overflow: visible;
+  color: #545056;
+}
+svg#freepik_stories-static-website:not(.animated) .animable,
+svg#freepik_stories-multi-device-targeting:not(.animated) .animable,
+svg#freepik_stories-personalization:not(.animated) .animable,
+svg#freepik_stories-creative-writing:not(.animated) .animable,
+svg#freepik_stories-saving-money:not(.animated) .animable,
+svg#freepik_stories-connected-world:not(.animated) .animable {
+  opacity: 0;
+}
+
+svg#freepik_stories-static-website.animated #freepik--Floor--inject-2 {
+  animation: 1.3s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-static-website.animated #freepik--files--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown;
+  animation-delay: 0.4s;
+  opacity: 0
+}
+
+svg#freepik_stories-static-website.animated #freepik--Files--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown, 6s Infinite linear floating;
+  animation-delay: 0.4s, 1.4s;
+  opacity: 0
+}
+
+svg#freepik_stories-static-website.animated #freepik--Cloud--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown, 6s Infinite linear floating;
+  animation-delay: 0s, 1.3s;
+}
+
+svg#freepik_stories-static-website.animated #freepik--Server--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-static-website.animated #freepik--Conection--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-static-website.animated #freepik--Boxes--inject-2 {
+  animation: 1.5s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft, 3s Infinite linear wind;
+  animation-delay: 0.3s, 1.8s;
+  opacity: 0
+}
+
+svg#freepik_stories-static-website.animated #freepik--Gears--inject-2 {
+  animation: 1.6s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-static-website.animated #freepik--Device--inject-2 {
+  animation: 1s 1 forwards ease-out zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-static-website.animated #freepik--Window--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown;
+  animation-delay: 0.3s;
+  opacity: 0
+}
+
+svg#freepik_stories-static-website.animated #freepik--window-2--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown;
+  animation-delay: 0.3s;
+  opacity: 0
+}
+
+svg#freepik_stories-static-website.animated #freepik--window--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideRight;
+  animation-delay: 0.5s;
+  opacity: 0
+}
+
+svg#freepik_stories-static-website.animated #freepik--window-1--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideRight, 3s Infinite linear wind;
+  animation-delay: 0.5s, 1.7s;
+  opacity: 0
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--Floor--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--Shadows--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--Gears--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--device-3--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft;
+  animation-delay: 0.8s;
+  opacity: 0
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--screen-3--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft, 6s Infinite linear floating;
+  animation-delay: 0.7s, 3.2s;
+  opacity: 0
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--device-2--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideUp;
+  animation-delay: 0.5s;
+  opacity: 0
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--screen-2--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideUp, 6s Infinite linear floating;
+  animation-delay: 0.7s, 2.2s;
+  opacity: 0
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--device-1--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft;
+  animation-delay: 0.2s;
+  opacity: 0
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--screen-1--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft, 6s Infinite linear floating;
+  animation-delay: 0s, 2s;
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--Plants--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--Target--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--Character--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedRight;
+  animation-delay: 0.3s;
+  opacity: 0
+}
+
+svg#freepik_stories-multi-device-targeting.animated #freepik--speech-bubble--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn, 3s Infinite linear wind;
+  animation-delay: 0.8s, 1.8s;
+  opacity: 0
+}
+
+svg#freepik_stories-personalization.animated #freepik--Floor--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-personalization.animated #freepik--Shadows--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-personalization.animated #freepik--Plan--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown;
+  animation-delay: 0.4s;
+  opacity: 0
+}
+
+svg#freepik_stories-personalization.animated #freepik--Panel--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown;
+  animation-delay: 0.4s;
+  opacity: 0
+}
+
+svg#freepik_stories-personalization.animated #freepik--paint-tools--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-personalization.animated #freepik--light-bulb--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 1.0s;
+  opacity: 0
+}
+
+svg#freepik_stories-personalization.animated #freepik--Tools--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0.5s;
+  opacity: 0
+}
+
+svg#freepik_stories-personalization.animated #freepik--Character--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-creative-writing.animated #freepik--Floor--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-creative-writing.animated #freepik--Plants--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0.6s;
+  opacity: 0
+}
+
+svg#freepik_stories-creative-writing.animated #freepik--Lines--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0.3s;
+  opacity: 0
+}
+
+svg#freepik_stories-creative-writing.animated #freepik--Notebook--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-creative-writing.animated #freepik--Character--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft, 3s Infinite linear wind;
+  animation-delay: 0.5s, 1.5s;
+  opacity: 0
+}
+
+svg#freepik_stories-creative-writing.animated #freepik--Shapes--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn, 3s Infinite linear wind;
+  animation-delay: 0.8s, 2.8s;
+  opacity: 0
+}
+
+svg#freepik_stories-creative-writing.animated #freepik--text-icon--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) slideDown, 3s Infinite linear floating;
+  animation-delay: 0.5s, 1.5s;
+  opacity: 0
+}
+
+svg#freepik_stories-saving-money.animated #freepik--Floor--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-saving-money.animated #freepik--Plants--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0.4s;
+  opacity: 0
+}
+
+svg#freepik_stories-saving-money.animated #freepik--Jar--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedLeft;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-saving-money.animated #freepik--Coins--inject-2 {
+  animation: 1.6s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn, 3s Infinite linear floating;
+  animation-delay: 0.5s, 2.1s;
+  opacity: 0
+}
+
+svg#freepik_stories-saving-money.animated #freepik--Character--inject-2 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) lightSpeedRight, 3s Infinite linear wind;
+  animation-delay: 0.6s, 2.6s;
+  opacity: 0
+}
+
+svg#freepik_stories-saving-money.animated #freepik--Sparkles--inject-2 {
+  animation: 1s 1 forwards ease-out slideDown, 3s Infinite linear wind;
+  animation-delay: 0.5s, 1.5s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--Icons--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn, 6s Infinite linear wind;
+  animation-delay: 2s, 3s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--Line--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0.3s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--World--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) zoomIn;
+  animation-delay: 0s;
+}
+
+svg#freepik_stories-connected-world.animated #freepik--character-6--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 1.6s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--character-5--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 1.9s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--character-4--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0.8s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--character-3--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 0.5s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--character-2--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 1.3s;
+  opacity: 0
+}
+
+svg#freepik_stories-connected-world.animated #freepik--character-1--inject-5 {
+  animation: 1s 1 forwards cubic-bezier(.36, -0.01, .5, 1.38) fadeIn;
+  animation-delay: 1s;
+  opacity: 0
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lightSpeedLeft {
+  from {
+    transform: translate3d(-50%, 0, 0) skewX(20deg);
+    opacity: 0;
+  }
+  60% {
+    transform: skewX(-10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: skewX(2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: inherit;
+  }
+}
+
+@keyframes lightSpeedRight {
+  from {
+    transform: translate3d(50%, 0, 0) skewX(-20deg);
+    opacity: 0;
+  }
+  60% {
+    transform: skewX(10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: skewX(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes wind {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes lightSpeedLeft {
+  from {
+    transform: translate3d(-50%, 0, 0) skewX(20deg);
+    opacity: 0;
+  }
+  60% {
+    transform: skewX(-10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: skewX(2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

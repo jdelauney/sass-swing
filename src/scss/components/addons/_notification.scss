@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: space-evenly;
   gap: 0.5rem;
-  min-width: 60vmin;
   max-width: 90vmin;
   //width:100%;
   padding: 1rem;
@@ -66,10 +65,10 @@
 }
 
 .notification {
-  --background-color: var(--neutral-color-variation-3);
-  --color: var(--on-neutral-color-variation-3);
+  --background-color: var(--neutral-color-variation-1);
+  --color: var(--on-neutral-color-variation-1);
   --border-color: var(--neutral-color-variation-2);
-  --hover-border-color: var(--neutral-color-variation-1);
+  --hover-border-color: var(--neutral-color-variation-3);
   --box-shadow: var(--neutral-shadow);
   --ntf-w: fit-content;
 
@@ -107,7 +106,13 @@
     transition: all 0.15s ease;
   }
   &__close:hover {
-    border: 2px solid var(--hover-border-color);
+    border: 1px solid var(--hover-border-color);
+    background-color: var(--neutral-color-variation-3);
+
+    &:before,
+    &:after {
+      background-color: var(--neutral-color);
+    }
   }
   &__close:before,
   &__close:after {
@@ -133,44 +138,80 @@
     background-repeat: no-repeat;
   }
 
+  &.ui--primary .notification__close {
+    color: var(--on-primary-color-variation-3);
+    border-color: var(--on-primary-color-variation-3);
+  }
+  &.ui--primary .notification__close:before,
+  &.ui--primary .notification__close:after {
+    background-color: var(--on-primary-color-variation-1);
+  }
+  &.ui--primary .notification__close:hover {
+    border-color: var(--on-primary-color-variation-2);
+    background-color: var(--on-primary-color-variation-2);
+
+    &:before,
+    &:after {
+      background-color: var(--primary-color);
+    }
+  }
+
+  &.ui--secondary .notification__close {
+    color: var(--on-secondary-color-variation-3);
+    border-color: var(--on-secondary-color-variation-3);
+  }
+  &.ui--secondary .notification__close:before,
+  &.ui--secondary .notification__close:after {
+    background-color: var(--on-secondary-color-variation-1);
+  }
+  &.ui--secondary .notification__close:hover {
+    border-color: var(--on-secondary-color-variation-2);
+    background-color: var(--on-secondary-color-variation-2);
+
+    &:before,
+    &:after {
+      background-color: var(--secondary-color);
+    }
+  }
+
   &.ui--success > .notification__icon,
   &.ui--success > span:first-of-type,
   &.ui--success > span:last-of-type {
-    stroke: var(--success-color-variation-3);
     background-image: var(--icon-success);
     //-webkit-filter: invert(73%) sepia(41%) saturate(3056%) hue-rotate(116deg) brightness(102%) contrast(102%) drop-shadow(1px 1px 2px var(--success-text));
     //filter: invert(73%) sepia(41%) saturate(3056%) hue-rotate(116deg) brightness(102%) contrast(102%) drop-shadow(1px 1px 2px var(--success-text));
   }
 
   &.ui--success .notification__close {
-    color: var(--on-success-color-variation-1);
-    border-color: var(--success-color-variation-1);
+    color: var(--on-success-color-variation-3);
+    border-color: var(--success-color-variation-3);
   }
   &.ui--success .notification__close:before,
   &.ui--success .notification__close:after {
-    background-color: var(--success-color-variation-1);
+    background-color: var(--on-success-color-variation-1);
   }
   &.ui--success .notification__close:hover {
     border-color: var(--success-color-variation-2);
+    background-color: var(--success-color);
   }
 
   &.ui--warning > .notification__icon,
   &.ui--warning > span:first-of-type,
   &.ui--warning > span:last-of-type {
-    stroke: var(--warning-color-variation-3);
     background-image: var(--icon-warning);
   }
 
   &.ui--warning .notification__close {
-    color: var(--on-warning-color-variation-1);
-    border-color: var(--warning-color-variation-1);
+    color: var(--on-warning-color-variation-3);
+    border-color: var(--warning-color-variation-3);
   }
   &.ui--warning .notification__close:before,
   &.ui--warning .notification__close:after {
-    background-color: var(--warning-color-variation-1);
+    background-color: var(--on-warning-color-variation-1);
   }
   &.ui--warning .notification__close:hover {
     border-color: var(--warning-color-variation-2);
+    background-color: var(--warning-color);
   }
 
   &.ui--danger > .notification__icon,
@@ -183,15 +224,21 @@
   }
 
   &.ui--danger .notification__close {
-    color: var(--on-danger-color-variation-1);
-    border-color: var(--danger-color-variation-1);
+    color: var(--on-danger-color-variation-3);
+    border-color: var(--danger-color-variation-3);
   }
   &.ui--danger .notification__close:before,
   &.ui--danger .notification__close:after {
-    background-color: var(--danger-color-variation-1);
+    background-color: var(--on-danger-color-variation-1);
   }
   &.ui--danger .notification__close:hover {
     border-color: var(--danger-color-variation-2);
+    background-color: var(--danger-color);
+
+    &:before,
+    &:after {
+      background-color: var(--on-danger-color);
+    }
   }
 
   &.ui--info > .notification__icon,
@@ -204,15 +251,16 @@
   }
 
   &.ui--info .notification__close {
-    color: var(--on-info-color-variation-1);
-    border-color: var(--info-color-variation-1);
+    color: var(--on-info-color-variation-3);
+    border-color: var(--info-color-variation-3);
   }
   &.ui--info .notification__close:before,
   &.ui--info .notification__close:after {
-    background-color: var(--info-color-variation-1);
+    background-color: var(--on-info-color-variation-1);
   }
   &.ui--info .notification__close:hover {
     border-color: var(--info-color-variation-2);
+    background-color: var(--info-color);
   }
 
   & *:is(h1, h2, h3, h4, h5, h6) {

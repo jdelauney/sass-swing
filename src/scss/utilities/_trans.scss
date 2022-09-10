@@ -40,6 +40,24 @@
   }
 }
 
+[style*='--bgc-hvr:'] {
+  --transition: all 0.3s ease-in-out;
+  transition: var(--transition);
+  &:hover {
+    transition: var(--transition);
+    background-color: var(--bgc-hvr) !important;
+  }
+}
+
+[style*='--clr-hvr:'] {
+  --transition: all 0.3s ease-in-out;
+  transition: var(--transition);
+  &:hover {
+    transition: var(--transition);
+    color: var(--clr-hvr) !important;
+  }
+}
+
 [style*='--t-delay:'] {
   transition-delay: var(--t-delay) !important;
 }

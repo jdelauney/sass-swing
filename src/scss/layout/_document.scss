@@ -15,11 +15,7 @@ body {
   --background-color: var(--neutral-color);
   --color: var(--on-neutral-color);
 
-  text-rendering: optimizeSpeed;
-  position: relative;
-  width: 100%;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
   background-color: var(--background-color);
   color: var(--color);
   font-size: clamp(1.5rem, 0.5vw + 1.4rem, 1.7rem);
@@ -62,6 +58,24 @@ ul li {
   }
 }
 
+ol,
+ul {
+  padding-left: var(--spacing);
+  margin-left: 1rem;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+ol + :is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article)),
+ul + :is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article)) {
+  margin-top: calc(var(--flow-space-ratio) * 1em);
+}
+
 body,
 table,
 article,
@@ -69,7 +83,7 @@ section,
 pre > code,
 select[multiple],
 .custom-scrollbar {
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
   scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-background);
   scrollbar-width: thin;
 }
@@ -106,7 +120,12 @@ select::-webkit-scrollbar-thumb,
   border-radius: 6px;
   background-clip: content-box;
   background-color: var(--scrollbar-color-thumb);
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgb(0 0 0 /0.3);
+}
+
+*:focus-visible {
+  outline: 2px dotted var(--on-neutral-color);
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

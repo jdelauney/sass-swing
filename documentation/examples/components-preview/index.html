@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<title>Sass Swing - Class-less template</title>
+	<meta name="Description" content="Exemple : modèle de page << class less >> du framework Sass Swing "/>
+
+	<meta name="robots" content="index, follow">
+
+<!--	<link rel="preconnect" href="https://unpkg.com">-->
+<!--	<link rel="preload" href="https://unpkg.com/@sass-swing/dist/css/sass-swing.min.css" as="style">-->
+<!--	<link rel="stylesheet" href="https://unpkg.com/@sass-swing/dist/css/sass-swing.min.css">-->
+	<link rel="stylesheet" href="../../../dist/css/sass-swing.min.css">
+	<script src="../../../dist/js/sass-swing.min.js" defer></script>
+	<style>
+		[class*=grid-sample] > div {
+			padding: 1em;
+			background-color: var(--secondary-color-variation-1);
+			color: var(--on-secondary-color-variation-1);
+			text-align: center;
+		}
+
+		[class*="grid-neested"] > div {
+			padding: .5em;
+			background: var(--secondary-color-variation-2);
+			color: var(--on-secondary-color-variation-2);
+		}
+
+		[class*="grid-neested-1"] > div {
+			padding: .5em;
+			background: var(--info-color) ;
+			color: var(--on-info-color);
+		}
+
+		.mySlideOverlay {
+			display: grid;
+			place-content: center;
+			background-color: rgb(0 0 0 / .15);
+			border: 3px solid var(--primary-color-variation-1);
+			backdrop-filter: blur(5px);
+		}
+
+		@media screen and (min-width:768px) {
+			.mySlider {
+				--slides-per-page: 2;
+			}
+		}
+
+		@media screen and (min-width:1200px) {
+			.mySlider {
+				--slides-per-page: 3;
+			}
+		}
+	</style>
+
+</head>
+<body>
+	<header>
+		<div class="navigation navigation--fixed" >
+			<nav class="md:navigation-toggle" aria-label="menu principal" style="--p:.5em;">
+				<input type="checkbox" id="nav-toggle" name="nav-toggle">
+				<a href="#"  aria-label="back home">COMPONENTS PREVIEW</a>
+				<div id="main-menu" class="navbar__menu  flex--center">
+					<ul>
+						<li><a href="#">Lien 1</a></li>
+						<li><a href="#">Lien 2</a></li>
+						<li><a href="#">Lien 3</a></li>
+						<li><a href="#">Lien 4</a></li>
+					</ul>
+				</div>
+				<label for="nav-toggle" class="navbar__toggler" aria-controls="navbar-menu"
+				       aria-label="Ouvre ou ferme le menu principal">
+					<span class="navbar__toggler__icon">&nbsp;</span>
+					<span class="sr-only">Ouvre ou ferme le menu principal</span>
+				</label>
+			</nav>
+		</div>
+
+		<section class="container" style="--mt:6em; --ta:center;">
+			<h1 style="--mw:100%;">SASS SWING COMPONENTS TEMPLATE PREVIEW</h1>
+			<h2 style="--mw:100%;">Use less class as possible in your HTML. Try to just use semantic.</h2>
+			<h3 style="--mw:100%;">Now, explore, the others capabilities of Sass Swig and the use of some few classes. </h3>
+			<hr>
+		</section>
+	</header>
+	<main class="container">
+		<div class="navigation navigation--sticky" style="top:2.7em;">
+			<nav style="--px:1em;">
+			<span>Quick menu</span>
+			<details id="sectionmenu" role="group">
+				<summary id="sectionmenubutton" aria-haspopup="true" role="button menuitem" aria-controls="sectionmenulist">Sections</summary>
+				<ul id="sectionmenulist" role="menu" aria-labelledby="sectionmenubutton">
+					<li role="presentation"><a role="menuitem" href="#heading">Heading</a></li>
+					<li role="presentation"><a role="menuitem" href="#flex">Flex</a></li>
+					<li role="presentation"><a role="menuitem" href="#grids">Grids</a></li>
+					<li role="presentation"><a role="menuitem" href="#buttons">Buttons</a></li>
+					<li role="presentation"><a role="menuitem" href="#tables">Tables</a></li>
+					<li role="presentation"><a role="menuitem" href="#navbars">Navbars</a></li>
+					<li role="presentation"><a role="menuitem" href="#cards">Cards</a></li>
+					<li role="presentation"><a role="menuitem" href="#breadcrumb">Breadcrumb</a></li>
+					<li role="presentation"><a role="menuitem" href="#pagination">Pagination</a></li>
+					<li role="presentation"><a role="menuitem" href="#collapsable">Collapsable</a></li>
+					<li role="presentation"><a role="menuitem" href="#modals">Modals</a></li>
+					<li role="presentation"><a role="menuitem" href="#badges">Badges</a></li>
+					<li role="presentation"><a role="menuitem" href="#tooltips">Tooltips</a></li>
+					<li role="presentation"><a role="menuitem" href="#dropdown">Dropdown</a></li>
+					<li role="presentation"><a role="menuitem" href="#tabs">Tabs</a></li>
+					<li role="presentation"><a role="menuitem" href="#notifications">Notifications</a></li>
+					<li role="presentation"><a role="menuitem" href="#slider">slider</a></li>
+				</ul>
+			</details>
+			<details id="thememenu" role="group">
+				<summary id="thememenubutton" aria-haspopup="true" role="button menuitem" aria-controls="thememenulist">Theme</summary>
+				<ul id="thememenulist" role="menu" aria-labelledby="thememenubutton">
+					<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="auto">Auto</a></li>
+					<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="light">Light</a></li>
+					<li role="presentation"><a role="menuitem" href="#" data-js-themeSwitcher="dark">Dark</a></li>
+				</ul>
+			</details>
+		</nav>
+		</div>
+		<section id="heading">
+			<h2>Heading</h2>
+			<header class="heading">
+				<h3 class="text-swing-alt">Composed heading</h3>
+				<span class="like-h4 text-em">Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
+				<hr>
+			</header>
+		</section>
+		<section id="flex">
+			<h2>Flexbox</h2>
+			<article>
+				<div class="flex" style="--bgc:var(--neutral-color-variation-1); --p:1em;">
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 1
+					</div>
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 2
+					</div>
+				</div>
+				<hr>
+				<div class="flex flex--center-all" style="--bgc:var(--neutral-color-variation-1); --p:1em;">
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 1
+					</div>
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 2
+					</div>
+				</div>
+				<hr>
+				<div class="flex flex--row flex--bottom flex--right" style="--bgc:var(--neutral-color-variation-1); --p:1em;">
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 1
+					</div>
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 2
+					</div>
+				</div>
+				<hr>
+				<div class="flex flex--row flex--v-center flex--space-around" style="--bgc:var(--neutral-color-variation-1); --p:1em;">
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 1
+					</div>
+					<div style="--bgc:var(--neutral-color-variation-2); --clr:var(--on-neutral-color-variation-2); --p:1em;">
+						Element 2
+					</div>
+				</div>
+			</article>
+		</section>
+		<section id="grids">
+			<h2>Grids</h2>
+			<article>
+				<div class="grid-sample grid cols-2">
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+				</div>
+				<hr>
+				<div class="grid-sample grid cols-auto">
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+				</div>
+			</article>
+			<article>
+				<div class="grid-sample cols-2 grid gap-3">
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+				</div>
+				<hr>
+				<div class="grid-sample grid cols-4 row-gap-1 col-gap-2" >
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+					<div>5</div>
+					<div>6</div>
+					<div>7</div>
+					<div>8</div>
+				</div>
+			</article>
+			<article>
+				<div class="grid-sample grid cols-3 gap-3">
+					<div>1</div>
+					<div class="col-start-3">2</div>
+					<div>3</div>
+					<div>4</div>
+					<div class="col-start-1 col-end-4">5</div>
+					<div class="col-start-2">6</div>
+					<div class="col-end-4">7</div>
+				</div>
+				<hr>
+				<div class="grid-sample grid cols-3 gap-3">
+					<div class="col-span-full">0</div>
+					<div>1</div>
+					<div class="row-span-2">2</div>
+					<div>3</div>
+					<div>4</div>
+					<div>5</div>
+					<div class="col-span-3">6</div>
+				</div>
+			</article>
+			<article>
+				<div class="grid-sample grid t:cols-2 gap-1">
+					<div class="t:col-span-2 d:col-span-full">1
+						<div class="grid-neested grid t:cols-2 md:cols-4 gap-3">
+							<div class="t:col-span-2 d:col-span-full">a</div>
+							<div>b</div>
+							<div>c</div>
+							<div>d</div>
+							<div>e</div>
+							<div class="d:col-span-2">f</div>
+							<div class="d:col-span-2">g</div>
+							<div class="t:col-span-full">h</div>
+						</div>
+					</div>
+					<div>2</div>
+					<div>3
+						<div class="grid-neested grid md:cols-2 d:cols-3 gap-1">
+							<div class="col-span-full d:col-span-1">a</div>
+							<div>b</div>
+							<div>c</div>
+							<div>d</div>
+							<div class="col-span-full md:col-span-1">e
+								<div class="grid-neested-1 subgrid md:cols-2 gap-1">
+									<div>a</div>
+									<div>b</div>
+									<div>c</div>
+									<div>d</div>
+								</div>
+							</div>
+							<div class="col-span-full d:col-span-1">f</div>
+						</div>
+					</div>
+					<div>4</div>
+					<div>5</div>
+					<div class="col-span-full">6</div>
+				</div>
+			</article>
+
+		</section>
+		<section id="buttons">
+			<h2>Buttons</h2>
+			<article>
+				<button>Primary</button>
+				<button class="btn--secondary">Secondary</button>
+				<button class="btn--info">Info</button>
+				<button class="btn--success">Success</button>
+				<button class="btn--warning">Warning</button>
+				<button class="btn--danger">Danger</button>
+			</article>
+			<hr>
+			<article>
+				<button class="btn--outline">Outline Primary</button>
+				<button class="btn--secondary btn--outline">Outline Secondary</button>
+				<button class="btn--info btn--outline">Outline Info</button>
+				<button class="btn--success btn--outline">Outline Success</button>
+				<button class="btn--warning btn--outline">Outline Warning</button>
+				<button class="btn--danger btn--outline">Outline Danger</button>
+			</article>
+			<hr>
+			<article>
+				<button class="btn--pills">Pills</button>
+				<button class="btn--circle">Circle</button>
+				<button class="btn--small">Small</button>
+				<button class="btn--big">Big</button>
+				<button class="btn--noshadow">No shadow</button>
+				<button class="btn--noborder">No border</button>
+				<button class="btn--norounded">No rounded</button>
+			</article>
+			<hr>
+			<article>
+				<button class="btn--block">As Block</button>
+			</article>
+			<hr>
+			<article>
+				<input type="button" value="Input button">
+				<input type="submit">
+				<input type="reset">
+			</article>
+			<hr>
+			<article>
+				<button disabled>Primary disabled</button>
+				<button class="btn--secondary" disabled>Secondary disabled</button>
+				<input type="submit" disabled>
+				<input type="reset" disabled>
+			</article>
+			<hr>
+			<article>
+				<a href="#" role="button">As link</a>
+				<label role="button">As label</label>
+			</article>
+		</section>
+		<section id="tables">
+			<h2>Tables</h2>
+			<article>
+				<table>
+					<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					</tbody>
+				</table>
+			</article>
+			<hr>
+			<article>
+				<table class="table--bordered table--row-hover">
+					<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					</tbody>
+				</table>
+			</article>
+			<hr>
+			<article>
+				<table class="table--bordered table--col-hover">
+					<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					</tbody>
+				</table>
+			</article>
+			<hr>
+			<article>
+				<table class="table--bordered table--row-hover table--col-hover table--cell-hover">
+					<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+						<th scope="col">Heading</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+						<td>Cell</td>
+					</tr>
+					</tbody>
+				</table>
+			</article>
+			<hr>
+			<article>
+				<table class="table--responsive table--bordered table--cell-hover">
+					<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Heading 1</th>
+						<th scope="col">Heading 2</th>
+						<th scope="col">Heading 3</th>
+						<th scope="col">Heading 4</th>
+						<th scope="col">Heading 5</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td data-label="Heading 1">Cell</td>
+						<td data-label="Heading 2">Cell</td>
+						<td data-label="Heading 3">Cell</td>
+						<td data-label="Heading 4">Cell</td>
+						<td data-label="Heading 5">Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td data-label="Heading 1">Cell</td>
+						<td data-label="Heading 2">Cell</td>
+						<td data-label="Heading 3">Cell</td>
+						<td data-label="Heading 4">Cell</td>
+						<td data-label="Heading 5">Cell</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td data-label="Heading 1">Cell</td>
+						<td data-label="Heading 2">Cell</td>
+						<td data-label="Heading 3">Cell</td>
+						<td data-label="Heading 4">Cell</td>
+						<td data-label="Heading 5">Cell</td>
+					</tr>
+					</tbody>
+				</table>
+			</article>
+		</section>
+		<section id="navbars">
+			<h2>Navbars</h2>
+			<article>
+				<nav>
+					<ul>
+						<li><a href="#">Lien 1</a></li>
+						<li><a href="#">Lien 2</a></li>
+						<li><a href="#">Lien 3</a></li>
+						<li><a href="#">Lien 4</a></li>
+					</ul>
+				</nav>
+				<hr>
+				<nav>
+					<a href="#">LOGO</a>
+					<ul>
+						<li><a href="#">Lien 1</a></li>
+						<li><a href="#">Lien 2</a></li>
+						<li><a href="#">Lien 3</a></li>
+						<li><a href="#">Lien 4</a></li>
+					</ul>
+				</nav>
+				<hr>
+				<nav class="flex--left">
+					<a href="#">LOGO</a>
+					<ul>
+						<li><a href="#">Lien 1</a></li>
+						<li><a href="#">Lien 2</a></li>
+						<li><a href="#">Lien 3</a></li>
+						<li><a href="#">Lien 4</a></li>
+					</ul>
+				</nav>
+				<hr>
+				<nav class="flex--center">
+					<ul>
+						<li><a href="#">Lien 1</a></li>
+						<li><a href="#">Lien 2</a></li>
+						<li><a href="#">Lien 3</a></li>
+						<li><a href="#">Lien 4</a></li>
+					</ul>
+				</nav>
+				<hr>
+				<nav class="flex--right">
+					<ul>
+						<li><a href="#">Lien 1</a></li>
+						<li><a href="#">Lien 2</a></li>
+						<li><a href="#">Lien 3</a></li>
+						<li><a href="#">Lien 4</a></li>
+					</ul>
+				</nav>
+				<hr>
+				<div role="navigation" class="navbar flex--center">
+					<ul class="flex--column">
+						<li><a href="#">Lien 1</a></li>
+						<li><a href="#">Lien 2</a></li>
+						<li><a href="#">Lien 3</a></li>
+						<li><a href="#">Lien 4</a></li>
+					</ul>
+				</div>
+			</article>
+			<hr>
+			<article>
+				<div class="navigation" style="--zi:6000;">
+					<nav class="navigation--burger">
+						<input type="checkbox"  id="nav-toggle-test" aria-checked="false">
+						<ul>
+							<li>MENU BURGER ONLY</li>
+						</ul>
+						<div id="test-menu" class="navbar__menu">
+							<ul>
+								<li><a href="#">Lien 1</a> </li>
+								<li><a href="#">Lien 2</a> </li>
+								<li><a href="#">Lien 3</a></li>
+								<li><a href="#">Lien 4</a></li>
+							</ul>
+						</div>
+						<label for="nav-toggle-test" class="navbar__toggler" aria-haspopup="true" aria-controls="test-menu" aria-label="Open or close test menu">
+							<span class="navbar__toggler__icon">&nbsp;</span>
+						</label>
+					</nav>
+				</div>
+				<hr>
+				<div class="navigation md:navigation-toggle">
+					<nav>
+						<input type="checkbox" id="nav-toggle-test-dropdown" aria-checked="false">
+						<ul>
+							<li>MENU & Dropdown</li>
+						</ul>
+						<div id="test-menu-dropdown" class="navbar__menu flex--center">
+							<ul>
+								<li><a href="#">Lien 1</a> </li>
+								<li class="dropdown">
+									<a href="#">Lien 2</a>
+									<ul>
+										<li><a href="#">Lien 2a</a></li>
+										<li class="dropdown">
+											<a href="#">Lien 2b</a>
+											<ul class="dropdown__menu--left">
+												<li><a href="#">Lien 2b.1</a></li>
+												<li><a href="#">Lien 2b.2</a></li>
+												<li class="dropdown">
+													<a href="#">Lien 2b.3</a>
+													<ul>
+														<li><a href="#">Lien 2b.3a</a></li>
+														<li><a href="#">Lien 2b.3b</a></li>
+														<li><a href="#">Lien 2b.3c</a></li>
+														<li><a href="#">Lien 2b.3d</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Lien 2b.4</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Lien 2c</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Lien 3</a></li>
+								<li><a href="#">Lien 4</a></li>
+							</ul>
+						</div>
+						<label for="nav-toggle-test-dropdown" class="navbar__toggler" aria-haspopup="true" aria-controls="test-menu" aria-label="Open or close dropdown menu">
+							<span class="navbar__toggler__icon">&nbsp;</span>
+						</label>
+					</nav>
+				</div>
+			</article>
+
+		</section>
+		<section id="cards">
+			<h2>Cards</h2>
+			<article>
+				<div class="card">
+					<p>CONTENU</p>
+				</div>
+
+				<div class="card">
+					<header>
+						EN-TETE
+					</header>
+					<p>CONTENU</p>
+					<footer>
+						PIED DE PAGE
+					</footer>
+				</div>
+			</article>
+			<hr>
+			<article>
+				<div class="grid t:cols-2 gap-3">
+					<div class="card">
+						<img src="https://picsum.photos/300/200/" alt="picsum" width="300" height="200">
+						<div class="panel">
+							<p>CONTENU</p>
+						</div>
+					</div>
+
+					<div class="card  ui--primary">
+						<header>
+							<img src="https://picsum.photos/300/200/" alt="picsum" width="300" height="200">
+							<div class="panel">
+								EN-TETE
+							</div>
+						</header>
+						<div class="panel">
+							<p>CONTENU</p>
+						</div>
+					</div>
+
+					<div class="card  ui--secondary">
+						<figure>
+							<img src="https://picsum.photos/300/200/" alt="picsum" width="300" height="200">
+							<figcaption>LIBELLE</figcaption>
+						</figure>
+						<div class="panel">
+							<p>CONTENU</p>
+						</div>
+					</div>
+
+					<div class="card">
+						<div class="panel">
+							<p>CONTENU</p>
+						</div>
+						<footer>
+							<div class="panel">
+								PIED DE PAGE
+							</div>
+							<img src="https://picsum.photos/300/200/" alt="picsum" width="300" height="200">
+						</footer>
+					</div>
+				</div>
+			</article>
+		</section>
+		<section id="breadcrumb">
+			<h2>Fil d'Ariane</h2>
+			<article>
+				<nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+				<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem">
+						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
+							<span itemprop="name">Accueil</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem">
+						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
+							<span itemprop="name">Documentation</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem" aria-current="page">
+						<span itemprop="name">FIl d'ariane</span>
+						<meta itemprop="position" content="3" />
+					</li>
+				</ol>
+			</nav>
+				<nav class="breadcrumb-nav" aria-label="Fil d'Ariane" style="--divider:'/';">
+				<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem">
+						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
+							<span itemprop="name">Accueil</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem">
+						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
+							<span itemprop="name">Documentation</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem" aria-current="page">
+						<span itemprop="name">FIl d'ariane</span>
+						<meta itemprop="position" content="3" />
+					</li>
+				</ol>
+			</nav>
+				<nav class="breadcrumb-nav" aria-label="Fil d'Ariane" style="--divider:url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);">
+				<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem">
+						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/">
+							<span itemprop="name">Accueil</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem">
+						<a itemprop="item" href="https://jdelauney.github.io/sass-swing/documentation/">
+							<span itemprop="name">Documentation</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+					<li itemprop="itemListElement" itemscope
+					    itemtype="https://schema.org/ListItem" aria-current="page">
+						<span itemprop="name">FIl d'ariane</span>
+						<meta itemprop="position" content="3" />
+					</li>
+				</ol>
+			</nav>
+			</article>
+		</section>
+		<section id="pagination">
+			<h2>Pagination</h2>
+			<article>
+				<nav class="pagination-nav" aria-label="Liste des articles">
+					<ul>
+						<li>
+							<a href="#" aria-label="Page précédente" title="Page précédente">
+								<span aria-hidden="true">&nbsp;&laquo;</span>
+								<span class="sr-only">Page précédente</span>
+							</a>
+						</li>
+						<li><a href="#"><span class="sr-only">Page </span>1</a></li>
+						<li class="divider"><span aria-hidden="true">...</span></li>
+						<li><a href="#"><span class="sr-only">Page </span>13</a></li>
+						<li><a href="#"><span class="sr-only">Page </span>14</a></li>
+						<li><a href="#"><span class="sr-only">Page </span>15</a></li>
+						<li>
+							<a href="#" aria-current="page">
+								<span class="sr-only">Page courante </span>16
+							</a>
+						</li>
+						<li><a href="#"><span class="sr-only">Page </span>17</a></li>
+						<li><a href="#"><span class="sr-only">Page </span>18</a></li>
+						<li><a href="#"><span class="sr-only">Page </span>19</a></li>
+						<li class="divider"><span aria-hidden="true">...</span></li>
+						<li><a href="#"><span class="sr-only">Page </span>30</a></li>
+						<li>
+							<a href="#" aria-label="Page suivante" title="Page suivante">
+								<span aria-hidden="true">&nbsp;&raquo;</span>
+								<span class="sr-only">Page suivante</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</article>
+		</section>
+		<section id="collapsable">
+			<h2>Collapsable</h2>
+			<article>
+				<div class="group group--vertical" style="--w:100%;">
+
+					<label role="button" class="btn--noshadow" for="collapse-accordeon-1" aria-label="Afficher cacher section un" style="--w:100%;">
+						Section 1
+					</label>
+					<input type="radio" id="collapse-accordeon-1" name="collapse-accordeon" class="collapsable-toggler" aria-controls="accordeon-content-1" tabindex="-1" checked>
+					<div id="accordeon-content-1" class="card collapsable" style="--box-shadow: none; --border-radius:0;">
+						<div class="panel">
+							<h3>SECTION 1</h3>
+							<p>Contenu section 1</p>
+
+							<label role="button" class="btn--noshadow" for="collapse-list" aria-label="Afficher cacher la liste des liens en relation">
+								En relation
+							</label>
+							<input type="checkbox" id="collapse-list" name="collapse-list" class="collapsable-toggler" aria-controls="collapsable-list-content-1">
+							<ul id="collapsable-list-content-1" class="collapsable" style="--px:var(--inner-v-spacing)">
+								<li><a href="#">Lien 1</a></li>
+								<li><a href="#">Lien 2</a></li>
+								<li><a href="#">Lien 3</a></li>
+							</ul>
+
+						</div>
+					</div>
+
+					<label role="button" class="btn--noshadow" for="collapse-accordeon-2" aria-label="Afficher cacher section deux" style="--w:100%;">
+						Section 2
+					</label>
+					<input type="radio" id="collapse-accordeon-2" name="collapse-accordeon" class="collapsable-toggler" aria-controls="accordeon-content-2">
+					<div id="accordeon-content-2" class="card collapsable" style="--box-shadow: none; --border-radius:0;">
+						<div class="panel">
+							<h3>SECTION 2</h3>
+							<p>Contenu section 2</p>
+
+							<label class="btn--noshadow" for="collapse-div" aria-label="Afficher cacher la liste des liens en relation">
+								<span class="link link-underline link-underline--wavy">Voir l'image</span>
+							</label>
+							<input type="checkbox" id="collapse-div" name="collapse-div" class="collapsable-toggler" aria-controls="collapsable-div-content-1">
+							<div id="collapsable-div-content-1" class="collapsable" style="--mw:320px;">
+								<img src="https://picsum.photos/300/200/" alt="picsum" width="300" height="200">
+							</div>
+
+						</div>
+					</div>
+
+					<label role="button" class="btn--noshadow" for="collapse-accordeon-3" aria-label="Afficher cacher section trois" style="--w:100%;">
+						Section 3
+					</label>
+					<input type="radio" id="collapse-accordeon-3" name="collapse-accordeon" class="collapsable-toggler" aria-controls="accordeon-content-3">
+					<div id="accordeon-content-3" class="card collapsable" style="--box-shadow: none; --border-radius:0;">
+						<div class="panel">
+							<h3>SECTION 3</h3>
+							<p>Contenu section 3</p>
+
+							<label class="btn--noshadow" for="collapse-span" aria-label="Afficher cacher l'astuce" style="display: inline-block;">
+								<span class="link link-underline">Astuce ></span>
+							</label>
+							<input type="checkbox" id="collapse-span" name="collapse-div" class="collapsable-toggler" aria-controls="collapsable-span-content-1">
+							<span id="collapsable-span-content-1" class="collapsable" style="--txt: var(--on-neutral-color-variation-2);">
+				Un composant <b>Collaspable en ligne</b> ? Ajoutez <code><b>style</b>=<i>"display: inline-block;"</i></code> à votre <code><b>label</b></code>
+			</span>
+
+						</div>
+					</div>
+
+				</div>
+			</article>
+		</section>
+		<section id="modals">
+			<h2>Modals</h2>
+			<article>
+				<button data-modal-open-default>Ouvrir une boite de dialogue avec overlay</button>
+				<button data-modal-open-simple>Ouvrir une boite de dialogue sans overlay</button>
+			</article>
+		</section>
+		<section id="badges">
+			<h2>Badges</h2>
+			<article>
+				<span class="badge">Default Badge</span>
+				<span class="badge ui--primary">Primary Badge</span>
+				<span class="badge ui--secondary">Secondary Badge</span>
+				<span class="badge ui--info">Info Badge</span>
+				<span class="badge ui--success">Success Badge</span>
+				<span class="badge ui--warning">Warning Badge</span>
+				<span class="badge ui--danger">Danger Badge</span>
+			</article>
+			<hr>
+			<article>
+				<span class="badge badge--pill">Default Badge</span>
+				<span class="badge badge--pill ui--primary">Primary Badge</span>
+				<span class="badge badge--pill ui--secondary">Secondary Badge</span>
+				<span class="badge badge--pill ui--info">Info Badge</span>
+				<span class="badge badge--pill ui--success">Success Badge</span>
+				<span class="badge badge--pill ui--warning">Warning Badge</span>
+				<span class="badge badge--pill ui--danger">Danger Badge</span>
+			</article>
+			<hr>
+			<article>
+				<h1>Titre <span class="badge">Badge</span></h1>
+				<h2>Titre <span class="badge">Badge</span></h2>
+				<h3>Titre <span class="badge">Badge</span></h3>
+				<h4>Titre <span class="badge">Badge</span></h4>
+			</article>
+			<hr>
+			<article>
+				<button>
+					Notifications&nbsp;<span class="badge ui--info-alt">9<span class="sr-only"> Notifications non lues</span></span>
+				</button>
+				<button>
+					Notifications&nbsp;<span class="badge badge--floating ui--success-alt">0<span class="sr-only"> Notifications non lues</span></span>
+				</button>
+				<button>
+					Notifications&nbsp;<span class="badge badge--pill badge--floating ui--warning-alt">9<span class="sr-only"> Notifications non lues</span></span>
+				</button>
+				<button>
+					Notifications&nbsp;<span class="badge badge--circle badge--floating ui--danger-alt">124<span class="sr-only"> Notifications non lues</span></span>
+				</button>
+			</article>
+			<hr>
+			<article>
+				<a href="#" class="badge">Default Badge</a>
+				<a href="#" class="badge ui--primary">Primary Badge</a>
+				<a href="#" class="badge ui--secondary">Secondary Badge</a>
+				<a href="#" class="badge ui--info">Info Badge</a>
+				<a href="#" class="badge ui--success">Success Badge</a>
+				<a href="#" class="badge ui--warning">Warning Badge</a>
+				<a href="#" class="badge ui--danger">Danger Badge</a>
+			</article>
+		</section>
+		<section id="tooltips">
+			<h2>Tooltips</h2>
+			<article>
+				<span aria-label="Tooltip top" data-tooltip="top">top</span>
+				<span aria-label="Tooltip left" data-tooltip="left" style="--tooltip-delay:0;">left</span>
+				<span aria-label="Tooltip right" data-tooltip="right" style="--tooltip-delay:3s;">right</span>
+				<span aria-label="Tooltip bottom" data-tooltip="bottom">bottom</span>
+			</article>
+			<hr>
+			<article>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="top">Normal</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="fit" data-tooltip="top">Info-bulle : fit</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="small" data-tooltip="bottom">Info-bulle : small</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="medium" data-tooltip="top">Info-bulle : medium</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="large" data-tooltip="right">Info-bulle : large</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip-size="medium" data-tooltip="bottom" style="--tooltip-size-medium:12em;">Info-bulle : perso</span>
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="top" style="--tooltip-size-large:8em;">Info-bulle : perso</span>
+			</article>
+			<hr>
+			<article style="--mt:4em;">
+				<span aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit." data-tooltip="bottom"  data-tooltip-size="fit" data-tooltip-visible>toujours visible</span>
+
+				<div role="button" class="tooltip tooltip--top tooltip--large" style="--tooltip-size-large: 240px" aria-describedby="tooltipContent1" tabindex="0">
+					Lorem picsum
+					<div id="tooltipContent1" role="tooltip" class="flex flex--column flex--center" style="--p:.5em">
+						<h4 style="--ta:center;">Random Lorem picsum</h4>
+						<img src="https://picsum.photos/240/160/" alt="picsum" width="240" height="160"/>
+					</div>
+				</div>
+
+				<div role="button" class="tooltip tooltip--right tooltip--fit" data-tooltip-visible style="--tooltip-size-medium: 240px" aria-describedby="tooltipContent2" tabindex="0">
+					Lorem picsum
+					<div id="tooltipContent2" role="tooltip" class="flex flex--column flex--center" style="--p:.5em">
+						<h5 style="--ta:center;">Random Lorem picsum</h5>
+						<img src="https://picsum.photos/240/160/" alt="picsum" width="240" height="160"/>
+						<a href="https://picsum.photos">Picsum Photos</a>
+					</div>
+				</div>
+			</article>
+		</section>
+		<section id="dropdown" style="--mt:8em;">
+			<h2>Dropdown</h2>
+			<article>
+				<div class="dropdown">
+					<button class="btn--secondary">Dropdown générique au survole</button>
+					<ul style="--gap:.5em;">
+						<li><a href="#">Action 1</a></li>
+						<li><a href="#">Action 2</a></li>
+						<li class="dropdown">
+							<a href="#">Action 3</a>
+							<ul style="--gap:.5em;">
+								<li><a href="#">Action 3a</a></li>
+								<li><a href="#">Action 3b</a></li>
+								<li><a href="#">Action 3c</a></li>
+								<li><a href="#">Action 3d</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Action 4</a></li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<button class="btn--secondary">Dropdown avec contenu personnalisé</button>
+					<div class="dropdown__menu" style="--gap:.5em;">
+						<a href="#" class="dropdown__item">
+							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+							&nbsp; item 1
+						</a>
+						<a href="#" class="dropdown__item">
+							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+							&nbsp; item 2
+						</a>
+						<a href="#" class="dropdown__item">
+							<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+							&nbsp; item 3
+						</a>
+					</div>
+				</div>
+			</article>
+			<hr>
+			<article>
+				<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": false, "hideOnClickOutside": true}'>
+					<button class="btn--secondary">Dropdown au click</button>
+					<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+						<li><a href="#">Action 1</a></li>
+						<li><a href="#">Action 2</a></li>
+						<li class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true}'>
+							<a href="#">Action 3</a>
+							<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+								<li><a href="#">Action 3a</a></li>
+								<li><a href="#">Action 3b</a></li>
+								<li><a href="#">Action 3c</a></li>
+								<li><a href="#">Action 3d</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Action 4</a></li>
+					</ul>
+				</div>
+				<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+					<button class="btn--secondary">Dropdown au survol accessible</button>
+					<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+						<li><a href="#">Action 1</a></li>
+						<li><a href="#">Action 2</a></li>
+						<li class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+							<a href="#">Action 3</a>
+							<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+								<li><a href="#">Action 3a</a></li>
+								<li><a href="#">Action 3b</a></li>
+								<li><a href="#">Action 3c</a></li>
+								<li><a href="#">Action 3d</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Action 4</a></li>
+					</ul>
+				</div>
+			</article>
+		</section>
+		<section id="tabs">
+			<h2>Tabs</h2>
+			<article>
+				<div class="tabs">
+					<ul role="tablist" aria-label="Tab choices">
+						<li role="presentation">
+							<a href="#panel-1" role="tab" id="tab-1" tabindex="0" aria-controls="panel-1" aria-selected="true">Tab 1</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel-2" role="tab" id="tab-2" tabindex="-1" aria-controls="panel-2">Tab 2</a>
+						</li>
+						<li role="presentation">
+							<a href="#panel-3" role="tab" id="tab-3" tabindex="-1" aria-controls="panel-3">Tab 3</a>
+						</li>
+					</ul>
+					<section id="panels" role="region" aria-live="polite" style="--mh:10em;">
+						<div id="panel-1" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="false" aria-expanded="true">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eos laboriosam placeat, quasi quibusdam quisquam sed voluptas. Accusantium asperiores delectus dolorum, hic iure maxime molestiae natus, quaerat quis sequi tempora.
+							</p>
+						</div>
+						<div id="panel-2" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true" aria-expanded="false">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium atque autem cumque, dicta distinctio ea eaque error et eveniet expedita facere fugit harum id illo labore laborum magni minus mollitia, nemo neque nesciunt numquam odit officiis quia quibusdam repellendus saepe sequi tempora tempore temporibus tenetur vel voluptas. Accusantium, illo.
+							</p>
+						</div>
+						<div id="panel-3" tabindex="0" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true" aria-expanded="false">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut beatae consectetur deserunt, dignissimos doloremque eaque expedita harum molestiae mollitia nemo officiis perferendis perspiciatis quidem quos! Accusantium aliquid atque consequatur doloremque eos, hic impedit nam officiis quos ut? Ab alias, aliquam architecto aspernatur atque commodi, consectetur dignissimos dolorum earum eligendi enim, esse et facere facilis fugit illo incidunt iure iusto labore laboriosam mollitia natus neque non pariatur perferendis quae quam quas quasi quis quod rem sapiente sunt tenetur ullam vitae!
+							</p>
+						</div>
+					</section>
+				</div>
+			</article>
+		</section>
+		<section id="notifications">
+			<h2>Notifications</h2>
+			<article>
+				<div role="status" class="notification" style="--op:1; --zi:unset;">
+					<div class="notification__content">
+						<h4>Standard</h4>
+						Boite de notification standard
+					</div>
+				</div>
+				<div role="status" class="notification ui--primary" style="--op:1; --zi:unset; --mt:1em;">
+					<div class="notification__content">
+						<h4>Primary</h4>
+						Boite de notification standard primary
+					</div>
+				</div>
+				<div role="status" class="notification ui--secondary" style="--op:1; --zi:unset; --mt:1em;">
+					<div class="notification__content">
+						<h4>Primary</h4>
+						Boite de notification standard secondary
+					</div>
+				</div>
+				<div role="status" class="notification ui--warning" style="--op:1; --zi:unset; --mt:1em;">
+					<span></span>
+					<div class="notification__content">
+						<h4>WARNING</h4>
+						<p>
+							Boite de notification warning
+						</p>
+					</div>
+				</div>
+				<div role="status" class="notification ui--info" style="--op:1; --zi:unset; --ntf-w: 50%; --mt:1em;">
+					<span></span>
+					<div class="notification__content">
+						<h4>INFO</h4>
+						<p>
+							Boite de notification info
+						</p>
+					</div>
+				</div>
+				<div role="status" class="notification ui--danger" style="--op:1; --zi:unset; --ntf-w: 75%; --mt:1em;">
+					<div class="notification__content">
+						<h4>DANGER</h4>
+						<p>
+							Boite de notification danger
+						</p>
+					</div>
+					<span></span>
+				</div>
+				<div role="status" class="notification ui--success" style="--op:1; --zi:unset; --ntf-w: 100%; --mt:1em;">
+					<span></span>
+					<div class="notification__content">
+						<h4 class="notification__title">SUCCESS</h4>
+						<p class="notification__message">
+							Boite de notification success
+						</p>
+					</div>
+				</div>
+			</article>
+			<hr>
+			<article>
+				<div class="panel">
+					<span class="like-h4">1) Choose the position where to show notifications</span>
+					<div class="section">
+						<input type="radio" name="notifyPos" id="top-left" value="top-left" checked=""><label for="top-left">top-left</label>
+						<input type="radio" name="notifyPos" id="top-center" value="top-center"><label for="top-center">top-center</label>
+						<input type="radio" name="notifyPos" id="top-right" value="top-right"><label for="top-right">top-right</label>
+						<input type="radio" name="notifyPos" id="mid-left" value="mid-left"><label for="mid-left">mid-left</label>
+						<input type="radio" name="notifyPos" id="mid-center" value="mid-center"><label for="mid-center">mid-center</label>
+						<input type="radio" name="notifyPos" id="mid-right" value="mid-right"><label for="mid-right">mid-right</label>
+						<input type="radio" name="notifyPos" id="bottom-left" value="bottom-left"><label for="bottom-left">bottom-left</label>
+						<input type="radio" name="notifyPos" id="bottom-center" value="bottom-center"><label for="bottom-center">bottom-center</label>
+						<input type="radio" name="notifyPos" id="bottom-right" value="bottom-right"><label for="bottom-right">bottom-right</label>
+					</div>
+					<span class="like-h4">2) Just click !</span>
+					<div class="section">
+						<button data-js-notify="default">Default</button>
+						<button data-js-notify="autoclose" class="btn--secondary">Default auto-close</button>
+						<button data-js-notify="primary">Primary</button>
+						<button data-js-notify="secondary" class="btn--secondary">Secondary</button>
+						<button data-js-notify="success" class="btn--success">Success</button>
+						<button data-js-notify="warning" class="btn--warning">Warning</button>
+						<button data-js-notify="danger" class="btn--danger">Danger</button>
+						<button data-js-notify="info" class="btn--info">Info</button>
+					</div>
+				</div>
+			</article>
+		</section>
+		<section id="slider">
+			<h2>Slider</h2>
+			<article>
+				<section class="slider" aria-label="Carrousel" data-js-slider='{"infinite":false, "showButtonAction":true}' style="--slides-per-page:1; --slider-max-height: 300px;">
+					<div class="slider__slides-wrapper">
+						<button class="slider__controls-prev btn--circle">
+							<span class="sr-only">Previous slides</span>
+							<span aria-hidden="true"><</span>
+						</button>
+						<div class="slider__slides-inner">
+							<div class="slider__slides">
+								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false" aria-current="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300city,night&1" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 1</p>
+									</div>
+									<div class="slider__slide__overlay  mySlideOverlay">
+										<a role="button" href="#">Overlay Slide 1</a>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 2 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200" height="300" loading="lazy">
+										<p>SLIDE 2</p>
+									</div>
+									<div class="slider__slide__overlay  mySlideOverlay">
+										<a role="button" href="#">Overlay Slide 2</a>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 3 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200" height="300" loading="lazy">
+										<p>SLIDE 3</p>
+									</div>
+									<div class="slider__slide__overlay  mySlideOverlay">
+										<a role="button" href="#">Overlay Slide 3</a>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 4 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 4</p>
+									</div>
+									<div class="slider__slide__overlay  mySlideOverlay">
+										<a role="button" href="#">Overlay Slide 4</a>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 5 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 5</p>
+									</div>
+									<div class="slider__slide__overlay  mySlideOverlay">
+										<a role="button" href="#">Overlay Slide 5</a>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 6 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 6</p>
+									</div>
+									<div class="slider__slide__overlay  mySlideOverlay">
+										<a role="button" href="#">Overlay Slide 6</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="slider__controls-next btn--circle">
+							<span class="sr-only">Next slides</span>
+							<span aria-hidden="true">></span>
+						</button>
+					</div>
+				</section>
+			</article>
+			<hr>
+			<article>
+				<section class="slider slider--showControlsOnHover" aria-label="Carrousel" data-js-slider='{ "slideByPage":true, "infinite":true, "autoplay":true,"indicatorsPosition":"top", "transitionTimingFunc": "cubic-bezier(0.39, 0.13, 0.11, 0.83)"}' style="--slides-per-page:2; --slider-max-height: 300px; --slider-horizontal-padding: 0; --slide-gap:1rem;--justify-indicators: flex-end;">
+					<div class="slider__slides-wrapper">
+						<button class="slider__controls-prev btn--circle">
+							<span class="sr-only">Previous slides</span>
+							<span aria-hidden="true"><</span>
+						</button>
+						<div class="slider__slides-inner">
+							<div class="slider__slides">
+								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false" aria-current="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&1" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 1</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 2 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200" height="300" loading="lazy">
+										<p>SLIDE 2</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 3 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200" height="300" loading="lazy">
+										<p>SLIDE 3</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 4 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 4</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 5 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 5</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 6 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 6</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="slider__controls-next btn--circle">
+							<span class="sr-only">Next slides</span>
+							<span aria-hidden="true">></span>
+						</button>
+					</div>
+				</section>
+			</article>
+			<hr>
+			<article>
+				<section class="slider mySlider" aria-label="Carrousel" data-js-slider='{ "slideByPage":false, "infinite":true, "autoplay":true,"showIndicators":false, "intervalInMs" : 2500, "transitionSpeedInMs":2000, "transitionTimingFunc": "linear"}' style="--slider-max-height: 300px; --slider-horizontal-padding: 0;">
+					<div class="slider__slides-wrapper">
+						<div class="slider__slides-inner">
+							<div class="slider__slides">
+								<div class="slider__slide" role="group" aria-label="slide 1 de 12" aria-hidden="false" aria-current="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&1" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 1</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 2 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&2" alt="image 2" width="200" height="300" loading="lazy">
+										<p>SLIDE 2</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 3 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&3" alt="image 3" width="200" height="300" loading="lazy">
+										<p>SLIDE 3</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 4 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&4" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 4</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 5 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&5" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 5</p>
+									</div>
+								</div>
+								<div class="slider__slide" role="group" aria-label="slide 6 de 12" aria-hidden="true">
+									<div class="slider__slide__content">
+										<img src="https://source.unsplash.com/random/200×300?city,night&6" alt="image 1" width="200" height="300" loading="lazy">
+										<p>SLIDE 6</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</article>
+		</section>
+		<hr>
+	</main>
+	<footer>
+		<small>Built with <a href="https://github.com/jdelauney/sass-swing">Sass Swing</a> • <a href="https://github.com/jdelauney/sass-swing/examples/classless/index.html">Source code</a></small>
+	</footer>
+
+	<dialog id="modalTest">
+		<header>
+			<span class="like-h3" style="--mb:0;">Modal title</span>
+			<button data-modal-result="close" class="close" aria-label="Close" >
+				<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+					<path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+				</svg>
+			</button>
+		</header>
+		<article>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+			<p>
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			</p>
+		</article>
+		<footer>
+			<button autofocus data-modal-result="cancel" class="btn--secondary" aria-label="Fermer">Fermer</button>
+			<button data-modal-result="ok" aria-label="Ok">Ok</button>
+		</footer>
+	</dialog>
+
+	<dialog id="modalTestSimple" modal-mode="simple">
+		<article>
+			<header class="header-with-icon">
+				<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" style="--clr:var(--warning-color);">
+					<title>A warning icon</title>
+					<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+					<line x1="12" y1="9" x2="12" y2="13"></line>
+					<line x1="12" y1="17" x2="12.01" y2="17"></line>
+				</svg>
+				<span class="like-h4" style="--ml:1em; --mb:0; --clr:var(--danger-color);">
+					Etes-vous sûr de vouloir supprimer cet élément ?
+				</span>
+			</header>
+		</article>
+		<footer>
+			<button autofocus data-modal-result="cancel" class="btn--secondary" aria-label="Annuler">Annuler</button>
+			<button autofocus data-modal-result="confirm" aria-label="Confirmer">Confirmer</button>
+		</footer>
+	</dialog>
+
+
+	<script type="module" src="script.js"></script>
+</body>
+</html>

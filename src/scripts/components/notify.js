@@ -4,8 +4,8 @@
  */
 export class Notify {
   /**
-   * Paramètres par defaut des notifications
-   * @type {{displayIcon: boolean, size: string, displayCloseButton: boolean, position: string, showDuration: number, closeOnClick: boolean, animationType: string}}
+   * Paramètres par défaut des notifications
+   * @type {{displayIcon: boolean, displayCloseButton: boolean, position: string, showDuration: number, closeOnClick: boolean, animationType: string}}
    * @private
    */
   _defaultConfig = {
@@ -18,28 +18,28 @@ export class Notify {
   };
 
   /**
-   * Paramètres des notifications cf _defaultConfig
+   * Paramètres des notifications cf. _defaultConfig
    * @type {Object}
    * @private
    */
   _config = {};
 
   /**
-   * 2lement containeur des notifications
+   * Elément conteneur des notifications
    * @type {HTMLElement}
    * @private
    */
   _container;
 
   /**
-   * Tableau des notficiations
+   * Tableau des notifications
    * @type {HTMLElement[]}
    * @private
    */
   _notifications = [];
 
   /**
-   * Increment pour le nombre de notification
+   * Increment pour le nombre de notifications
    * @type {number}
    * @private
    */
@@ -47,7 +47,7 @@ export class Notify {
 
   /**
    * Constructeur de la classe
-   * @param {Object} config pour personnaliser la configurion cf _defaultConfig
+   * @param {Object} config pour personnaliser la configuration cf. _defaultConfig
    */
   constructor(config = {}) {
     this.setConfig(config);
@@ -55,7 +55,7 @@ export class Notify {
 
   /**
    * Définis la configuration
-   * @param {Object} config  pour personnaliser la configurion cf _defaultConfig
+   * @param {Object} config  pour personnaliser la configuration cf. _defaultConfig
    */
   setConfig(config = {}) {
     if (typeof config.showDuration !== 'number') {
@@ -70,7 +70,7 @@ export class Notify {
   }
 
   /**
-   * Creation de l'éllément containeur des notifications
+   * Creation de l'élément conteneur des notifications
    * @param {Object} config
    * @private
    */
@@ -156,7 +156,7 @@ export class Notify {
     }
 
     const currentConfig = { ...this._config, ...config };
-    console.log(currentConfig);
+
     // this.setConfig(config);
 
     this._createContainer(currentConfig);
@@ -170,6 +170,8 @@ export class Notify {
     if (type !== '' && type !== 'default') {
       classCss += ` ui--${type}`;
     }
+    const hasIcon = type !== '' && type !== 'default' && type !== 'primary' && type !== 'secondary';
+
     classCss += this._mapAnimateIn(currentConfig.animationType, currentConfig.position);
     notification.className = classCss;
 
@@ -184,7 +186,7 @@ export class Notify {
       notification.appendChild(closeBtn);
     }
 
-    if (currentConfig.displayIcon) {
+    if (currentConfig.displayIcon && hasIcon === true) {
       const icon = document.createElement('span');
       notification.appendChild(icon);
     }
@@ -234,7 +236,7 @@ export class Notify {
   }
 
   /**
-   * Supprime une notification et supprime le containeur, si il n'y a plus de notifications
+   * Supprime une notification et supprime le conteneur, si il n'y a plus de notifications
    * @param {AnimationEvent} notification
    * @private
    */

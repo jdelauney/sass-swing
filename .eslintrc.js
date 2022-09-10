@@ -14,5 +14,6 @@ module.exports = {
   rules: {
     'semi': 0,
     'comma-dangle': 0,
+    'standard/no-callback-literal': "off",
   }
 }
