@@ -18,7 +18,7 @@
 
     > a {
       --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-2-s) var(--neutral-color-variation-2-l) / 0.7);
-      --color: var(--neutral-color-variation-1);
+      --color: var(--on-neutral-color-variation-3);
       --border-width: var(--elem-border-width);
       --border-color: var(--neutral-color-variation-1);
       --hover-background-color: var(--background-color);
@@ -64,8 +64,8 @@
   }
 
   & [aria-current] {
-    --border-color: var(--on-neutral-color-variation-3);
-    --background-color: var(--neutral-color-variation-2);
+    --border-color: var(--on-neutral-color-variation-2);
+    --background-color: var(--neutral-color);
 
     cursor: none;
     pointer-events: none;

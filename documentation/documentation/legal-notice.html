@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+	<title>Exemples de pages réalisées avec le framework Sass Swing</title>
+	<meta name="Description" content="Découvrez quelques modèles de page pour aider à augmenter votre productivité"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Sass Swing Utilisation">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Exemples de pages réalisées avec le framework Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/models.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Modèles de pages"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/models.html">
+	<meta property="og:title" content="Exemples de pages réalisées avec le framework Sass Swing">
+	<meta property="og:description" content="Découvrez quelques modèles de page pour aider à augmenter votre productivité">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/documentation/models.html">
+	<meta property="twitter:title" content="Exemples de pages réalisées avec le framework Sass Swing">
+	<meta property="twitter:description" content="Découvrez quelques modèles de page pour aider à augmenter votre productivité">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../styles/css/sass-swing.doc.min.css"/>
+	<script src="../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="index.html" class="link--default">Présentation</a> </li>
+				<li><a href="getting-started/usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="models.html" class="link--default">Modèles</a></li>
+				<li><a href="supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sassswing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Changer theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="getting-started/usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="getting-started/javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="getting-started/themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="getting-started/customize.html" class="link--default-alt">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="layout/containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="layout/grid.html" class="link--default-alt">Grille</a></li>
+				<li><a href="layout/breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler">
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="content/typography.html" class="link--default-alt">Typographie</a></li>
+				<li><a href="content/buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="content/form.html" class="link--default-alt">Formulaires</a></li>
+				<li><a href="content/medias.html" class="link--default-alt">Médias</a></li>
+				<li><a href="content/table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="content/progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="component/navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="component/card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="component/details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="component/breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="component/pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="component/modal.html" class="link--default-alt">Boite de dialogue</a></li>
+				<li><a href="component/collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="component/addons/badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="component/addons/loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
+						<li><a href="component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="component/addons/notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="component/addons/slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="component/addons/reveal.html" class="link--default-alt">Reveal</a></li>
+						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt"> MENTIONS LEGALES :</h1>
+				<hr style="--my:0;">
+			</header>
+			<h2><b>Définitions</b></h2>
+			<p><b>Client : </b>tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.</p>
+			<p><b>Prestations et Services : </b><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> met à disposition des Clients :</p>
+			<p><b>Contenu : </b>Ensemble des éléments constituants l’information présente sur le Site, notamment textes – images – vidéos.</p>
+			<p><b>Informations clients : </b> Ci après dénommé « Information (s) » qui correspondent à l’ensemble des données personnelles susceptibles d’être détenues par <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> pour la gestion de votre compte, de la gestion de la relation client et à des fins d’analyses et de statistiques.</p>
+			<p><b>Utilisateur : </b>Internaute se connectant, utilisant le site susnommé.</p>
+			<p><b>Informations personnelles : </b>« Les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
+			<p>Les termes « données à caractère personnel », « personne concernée », « sous traitant » et « données sensibles » ont le sens défini par le Règlement Général sur la Protection des Données (RGPD : n° 2016-679)</p>
+			<h3><b>1. Présentation du site internet.</b></h3>
+			<p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi:</p>
+			<p><strong>Propriétaire : </strong><span>Jérôme Delauney - Genève 1219 Genève </span><br><strong>Responsable publication : </strong><span>Jérôme Delauney - delauney.jerome@gmail.com </span><br>Le responsable publication est une personne physique ou une personne morale.<br><strong>Webmaster</strong>: <span>Jérôme Delauney - delauney.jerome@gmail.com</span><br><strong>Hébergeur : </strong><span> Github - San Francisco, Californie, États-Unis  94102 San Francisco 00 000 00 00 </span><br><strong>Délégué à la protection des données : </strong><span>Jérôme Delauney - delauney.jerome@gmail.com</span><br></p>
+			<p>Les mentions légales sont conformes à <a href="https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es">RGPD</a> est sont proposé par
+				<!----><a href="https://marozed.com/generateur-mentions-legales">Le générateur de mentions légales</a>.</p>
+			<h3><b>2. Conditions générales d’utilisation du site et des services proposés.</b></h3>
+			<p>Le Site constitue une œuvre de l’esprit protégée par les dispositions du Code de la Propriété Intellectuelle et des Réglementations Internationales applicables. Le Client ne peut en aucune manière réutiliser, céder ou exploiter pour son propre compte tout ou partie des éléments ou travaux du Site.</p>
+			<p>L’utilisation du site <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> sont donc invités à les consulter de manière régulière.</p>
+			<p>Ce site internet est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par <a href="https://jdelauney.github.io">https://jdelauney.github.io</a>, qui s’efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention. Le site web <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> est mis à jour régulièrement par <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> responsable. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s’imposent néanmoins à l’utilisateur qui est invité à s’y référer le plus souvent possible afin d’en prendre connaissance.</p>
+			<h3><b>3. Description des services fournis.</b></h3>
+			<p>Le site internet <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> a pour objet de fournir une information concernant l’ensemble des activités de la société. <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> s’efforce de fournir sur le site <a href="https://jdelauney.github.io">https://jdelauney.github.io </a> des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des oublis, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
+			<p>Toutes les informations indiquées sur le site <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.</p>
+			<h3><b>4. Limitations contractuelles sur les données techniques.</b></h3>
+			<p> Le site utilise la technologie JavaScript. Le site Internet ne pourra être tenu responsable de dommages matériels liés à l’utilisation du site. De plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour Le site <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> est hébergé chez un prestataire sur le territoire de l’Union Européenne conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD : n° 2016-679)</p>
+			<p>L’objectif est d’apporter une prestation qui assure le meilleur taux d’accessibilité. L’hébergeur assure la continuité de son service 24 Heures sur 24, tous les jours de l’année. Il se réserve néanmoins la possibilité d’interrompre le service d’hébergement pour les durées les plus courtes possibles notamment à des fins de maintenance, d’amélioration de ses infrastructures, de défaillance de ses infrastructures ou si les Prestations et Services génèrent un trafic réputé anormal.</p>
+			<p><a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> et l’hébergeur ne pourront être tenus responsables en cas de dysfonctionnement du réseau Internet, des lignes téléphoniques ou du matériel informatique et de téléphonie lié notamment à l’encombrement du réseau empêchant l’accès au serveur.</p>
+			<h3><b>5. Propriété intellectuelle et contrefaçons.</b></h3>
+			<p><a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site internet, notamment les textes, logos. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de : <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a></p>
+			<p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+			<h3><b>6. Limitations de responsabilité.</b></h3>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> agit en tant qu’éditeur du site. <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> est responsable de la qualité et de la véracité du Contenu qu’il publie.</p>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site internet <a href="https://jdelauney.github.io">https://jdelauney.github.io</a>, et résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l’apparition d’un bug ou d’une incompatibilité.</p>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> ne pourra également être tenu responsable des dommages indirects (tels par exemple qu’une perte de marché ou perte d’une chance) consécutifs à l’utilisation du site <a href="https://jdelauney.github.io">https://jdelauney.github.io</a>.</p>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données.</p>
+			<p>Le cas échéant, <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie …).</p>
+			<h3><b>7. Gestion des données personnelles.</b></h3>
+			<p>Le Client est informé des réglementations concernant la communication marketing, la loi du 21 Juin 2014 pour la confiance dans l’Economie Numérique, la Loi Informatique et Liberté du 06 Août 2004 ainsi que du Règlement Général sur la Protection des Données (RGPD : n° 2016-679).</p>
+			<h5><b>7.1 Responsables de la collecte des données personnelles</b></h5>
+			<p>Pour les Données Personnelles collectées dans le cadre de la création du compte personnel de l’Utilisateur et de sa navigation sur le Site, le responsable du traitement des Données Personnelles est : <span>Jérôme Delauney</span></p>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> est représenté par <span>Jérôme Delauney</span>, son représentant légal.</p>
+			<p>En tant que responsable du traitement des données qu’il collecte, <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> s’engage à respecter le cadre des dispositions légales en vigueur. Il lui appartient notamment au Client d’établir les finalités de ses traitements de données, de fournir à ses prospects et clients, à partir de la collecte de leurs consentements, une information complète sur le traitement de leurs données personnelles et de maintenir un registre des traitements conforme à la réalité. Chaque fois que <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> traite des Données Personnelles, <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> prend toutes les mesures raisonnables pour s’assurer de l’exactitude et de la pertinence des Données Personnelles au regard des finalités pour lesquelles <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> les traite.</p>
+			<h5><b>7.2 Finalité des données collectées</b></h5>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> est susceptible de traiter tout ou partie des données : </p>
+			<ul>
+				<li> pour permettre la navigation sur le Site et la gestion et la traçabilité des prestations et services commandés par l’utilisateur : données de connexion et d’utilisation du Site, facturation, historique des commandes, etc.</li>
+				<li> pour prévenir et lutter contre la fraude informatique (spamming, hacking…) : matériel informatique utilisé pour la navigation, l’adresse IP, le mot de passe (hashé)</li>
+				<li> pour améliorer la navigation sur le Site : données de connexion et d’utilisation</li>
+				<li> pour mener des enquêtes de satisfaction facultatives sur <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> : adresse email </li>
+				<li> pour mener des campagnes de communication (sms, mail) : numéro de téléphone, adresse email</li>
+			</ul>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> ne commercialise pas vos données personnelles qui sont donc uniquement utilisées par nécessité ou à des fins statistiques et d’analyses.</p>
+			<h5><b>7.3 Droit d’accès, de rectification et d’opposition</b></h5>
+			<p>Conformément à la réglementation européenne en vigueur, les Utilisateurs de <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> disposent des droits suivants :</p>
+			<ul>
+				<li>droit d'accès (article 15 RGPD) et de rectification (article 16 RGPD), de mise à jour, de complétude des données des Utilisateurs droit de verrouillage ou d’effacement des données des Utilisateurs à caractère personnel (article 17 du RGPD), lorsqu’elles sont inexactes, incomplètes, équivoques, périmées, ou dont la collecte, l'utilisation, la communication ou la conservation est interdite</li>
+				<li>droit de retirer à tout moment un consentement (article 13-2c RGPD)</li>
+				<li>droit à la limitation du traitement des données des Utilisateurs (article 18 RGPD)</li>
+				<li>droit d’opposition au traitement des données des Utilisateurs (article 21 RGPD)</li>
+				<li>droit à la portabilité des données que les Utilisateurs auront fournies, lorsque ces données font l’objet de traitements automatisés fondés sur leur consentement ou sur un contrat (article 20 RGPD)</li>
+				<li>droit de définir le sort des données des Utilisateurs après leur mort et de choisir à qui <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> devra communiquer (ou non) ses données à un tiers qu’ils aura préalablement désigné</li>
+			</ul>
+			<p>Dès que <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> a connaissance du décès d’un Utilisateur et à défaut d’instructions de sa part, <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> s’engage à détruire ses données, sauf si leur conservation s’avère nécessaire à des fins probatoires ou pour répondre à une obligation légale.</p>
+			<p>Si l’Utilisateur souhaite savoir comment <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> utilise ses Données Personnelles, demander à les rectifier ou s’oppose à leur traitement, l’Utilisateur peut contacter <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> par écrit à l’adresse suivante :</p>
+			<p><span>Jérôme Delauney</span> - DPO, <span>Jérôme Delauney </span><br><span>Genève 1219 Genève.</span></p>
+			<p>Dans ce cas, l’Utilisateur doit indiquer les Données Personnelles qu’il souhaiterait que <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> corrige, mette à jour ou supprime, en s’identifiant précisément avec une copie d’une pièce d’identité (carte d’identité ou passeport).</p>
+			<p>Les demandes de suppression de Données Personnelles seront soumises aux obligations qui sont imposées à <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> par la loi, notamment en matière de conservation ou d’archivage des documents. Enfin, les Utilisateurs de <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> peuvent déposer une réclamation auprès des autorités de contrôle, et notamment de la CNIL (https://www.cnil.fr/fr/plaintes).</p>
+			<h5><b>7.4 Non-communication des données personnelles</b></h5>
+			<p><a href="https://jdelauney.github.io">https://jdelauney.github.io</a> s’interdit de traiter, héberger ou transférer les Informations collectées sur ses Clients vers un pays situé en dehors de l’Union européenne ou reconnu comme « non adéquat » par la Commission européenne sans en informer préalablement le client. Pour autant, <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> reste libre du choix de ses sous-traitants techniques et commerciaux à la condition qu’il présentent les garanties suffisantes au regard des exigences du Règlement Général sur la Protection des Données (RGPD : n° 2016-679).</p>
+			<p><a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> s’engage à prendre toutes les précautions nécessaires afin de préserver la sécurité des Informations et notamment qu’elles ne soient pas communiquées à des personnes non autorisées. Cependant, si un incident impactant l’intégrité ou la confidentialité des Informations du Client est portée à la connaissance de <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a>, celle-ci devra dans les meilleurs délais informer le Client et lui communiquer les mesures de corrections prises. Par ailleurs, <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> ne collecte aucune « données sensibles ».</p>
+			<p>Les Données Personnelles de l’Utilisateur peuvent être traitées par des filiales de <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> et des sous-traitants (prestataires de services), exclusivement afin de réaliser les finalités de la présente politique.</p>
+			<p>Dans la limite de leurs attributions respectives et pour les finalités rappelées ci-dessus, les principales personnes susceptibles d’avoir accès aux données des Utilisateurs de <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> sont principalement les agents de notre service client.</p>
+			<h5><b>7.5 Types de données collectées</b></h5>
+			<p>Concernant les utilisateurs d’un Site <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a>,nous collectons les données suivantes qui sont indispensables au fonctionnement du service , et qui seront conservées pendant une période maximale de <span>-</span> mois après la fin de la relation contractuelle: <span><b>Aucune information est collectée</b></span></p>
+			<h3><b>8. Notification d’incident.</b></h3>
+			<p>Quels que soient les efforts fournis, aucune méthode de transmission sur Internet et aucune méthode de stockage électronique n'est complètement sûre. Nous ne pouvons en conséquence pas garantir une sécurité absolue. Si nous prenions connaissance d'une brèche de la sécurité, nous avertirions les utilisateurs concernés afin qu'ils puissent prendre les mesures appropriées. Nos procédures de notification d’incident tiennent compte de nos obligations légales, qu'elles se situent au niveau national ou européen. Nous nous engageons à informer pleinement nos clients de toutes les questions relevant de la sécurité de leur compte et à leur fournir toutes les informations nécessaires pour les aider à respecter leurs propres obligations réglementaires en matière de reporting.</p>
+			<p>Aucune information personnelle de l'utilisateur du site <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l'hypothèse du rachat de <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> et de ses droits permettrait la transmission des dites informations à l'éventuel acquéreur qui serait à son tour tenu de la même obligation de conservation et de modification des données vis à vis de l'utilisateur du site <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a>.</p>
+			<h6><b>Sécurité</b></h6>
+			<p>Pour assurer la sécurité et la confidentialité des Données Personnelles et des Données Personnelles de Santé, <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> utilise des réseaux protégés par des dispositifs standards tels que par pare-feu, la pseudonymisation, l’encryption et mot de passe.</p>
+			<p>Lors du traitement des Données Personnelles, <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> prend toutes les mesures raisonnables visant à les protéger contre toute perte, utilisation détournée, accès non autorisé, divulgation, altération ou destruction.</p>
+			<h3><b>9. Liens hypertextes « cookies » et balises (“tags”) internet</b></h3>
+			<p>Le site <a href="https://jdelauney.github.io">https://jdelauney.github.io</a> contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec l’autorisation de <a href="https://jdelauney.github.io">https://jdelauney.github.io</a>. Cependant, <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et n’assumera en conséquence aucune responsabilité de ce fait.</p>
+			<p>Sauf si vous décidez de désactiver les cookies, vous acceptez que le site puisse les utiliser. Vous pouvez à tout moment désactiver ces cookies et ce gratuitement à partir des possibilités de désactivation qui vous sont offertes et rappelées ci-après, sachant que cela peut réduire ou empêcher l’accessibilité à tout ou partie des Services proposés par le site.</p>
+			<h5><b>9.1. « COOKIES »</b></h5>
+			<p>Un « cookie » est un petit fichier d’information envoyé sur le navigateur de l’Utilisateur et enregistré au sein du terminal de l’Utilisateur (ex : ordinateur, smartphone), (ci-après « Cookies »). Ce fichier comprend des informations telles que le nom de domaine de l’Utilisateur, le fournisseur d’accès Internet de l’Utilisateur, le système d’exploitation de l’Utilisateur, ainsi que la date et l’heure d’accès. Les Cookies ne risquent en aucun cas d’endommager le terminal de l’Utilisateur.</p>
+			<p><a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> est susceptible de traiter les informations de l’Utilisateur concernant sa visite du Site, telles que les pages consultées, les recherches effectuées. Ces informations permettent à <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> d’améliorer le contenu du Site, de la navigation de l’Utilisateur.
+			</p>
+			<p>Les Cookies facilitant la navigation et/ou la fourniture des services proposés par le Site, l’Utilisateur peut configurer son navigateur pour qu’il lui permette de décider s’il souhaite ou non les accepter de manière à ce que des Cookies soient enregistrés dans le terminal ou, au contraire, qu’ils soient rejetés, soit systématiquement, soit selon leur émetteur. L’Utilisateur peut également configurer son logiciel de navigation de manière à ce que l’acceptation ou le refus des Cookies lui soient proposés ponctuellement, avant qu’un Cookie soit susceptible d’être enregistré dans son terminal. <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> informe l’Utilisateur que, dans ce cas, il se peut que les fonctionnalités de son logiciel de navigation ne soient pas toutes disponibles.</p>
+			<p>Si l’Utilisateur refuse l’enregistrement de Cookies dans son terminal ou son navigateur, ou si l’Utilisateur supprime ceux qui y sont enregistrés, l’Utilisateur est informé que sa navigation et son expérience sur le Site peuvent être limitées. Cela pourrait également être le cas lorsque, <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> ou l’un de ses prestataires ne peut pas reconnaître, à des fins de compatibilité technique, le type de navigateur utilisé par le terminal, les paramètres de langue et d’affichage ou le pays depuis lequel le terminal semble connecté à Internet.</p>
+			<p>Le cas échéant, <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> décline toute responsabilité pour les conséquences liées au fonctionnement dégradé du Site et des services éventuellement proposés par <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a>, résultant (i) du refus de Cookies par l’Utilisateur (ii) de l’impossibilité pour <a href="https://jdelauney.github.io"> https://jdelauney.github.io</a> d’enregistrer ou de consulter les Cookies nécessaires à leur fonctionnement du fait du choix de l’Utilisateur. Pour la gestion des Cookies et des choix de l’Utilisateur, la configuration de chaque navigateur est différente. Elle est décrite dans le menu d’aide du navigateur, qui permettra de savoir de quelle manière l’Utilisateur peut modifier ses souhaits en matière de Cookies.</p>
+			<p>À tout moment, l’Utilisateur peut faire le choix d’exprimer et de modifier ses souhaits en matière de Cookies. <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> pourra en outre faire appel aux services de prestataires externes pour l’aider à recueillir et traiter les informations décrites dans cette section.</p>
+			<p>Enfin, en cliquant sur les icônes dédiées aux réseaux sociaux Twitter, Facebook, Linkedin et Google Plus figurant sur le Site de <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> ou dans son application mobile et si l’Utilisateur a accepté le dépôt de cookies en poursuivant sa navigation sur le Site Internet ou l’application mobile de <a href="https://jdelauney.github.io">https://jdelauney.github.io</a>, Twitter, Facebook, Linkedin et autres peuvent également déposer des cookies sur vos terminaux (ordinateur, tablette, téléphone portable).</p>
+			<p>Ces types de cookies ne sont déposés sur vos terminaux qu’à condition que vous y consentiez, en continuant votre navigation sur le Site Internet ou l’application mobile de <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a>. À tout moment, l’Utilisateur peut néanmoins revenir sur son consentement à ce que <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> dépose ce type de cookies.</p>
+			<h5><b>Article 9.2. BALISES (“TAGS”) INTERNET</b></h5>
+			<p><a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> peut employer occasionnellement des balises Internet (également appelées « tags », ou balises d’action, GIF à un pixel, GIF transparents, GIF invisibles et GIF un à un) et les déployer par l’intermédiaire d’un partenaire spécialiste d’analyses Web susceptible de se trouver (et donc de stocker les informations correspondantes, y compris l’adresse IP de l’Utilisateur) dans un pays étranger.</p>
+			<p>Ces balises sont placées à la fois dans les publicités en ligne permettant aux internautes d’accéder au Site, et sur les différentes pages de celui-ci.</p>
+			<p>Cette technologie permet à <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> d’évaluer les réponses des visiteurs face au Site et l’efficacité de ses actions (par exemple, le nombre de fois où une page est ouverte et les informations consultées), ainsi que l’utilisation de ce Site par l’Utilisateur.</p>
+			<p>Le prestataire externe pourra éventuellement recueillir des informations sur les visiteurs du Site et d’autres sites Internet grâce à ces balises, constituer des rapports sur l’activité du Site à l’attention de <a href="https://jdelauney.github.io">https://jdelauney.github.io</a>, et fournir d’autres services relatifs à l’utilisation de celui-ci et d’Internet.</p>
+			<h3><b>10. Droit applicable et attribution de juridiction.</b></h3>
+			<p>Tout litige en relation avec l’utilisation du site <a href="https://jdelauney.github.io"> https://jdelauney.github.io </a> est soumis au droit Suisse. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de <span>Genève</span></p>
+			<hr>
+			<h2>CREDITS :</h2>
+			<p>
+				<strong>Sass</strong> est conçu par Hampton Catlin. Site web <a href="https://sass-lang.com" target="_blank" rel="nofollow">https://sass-lang.com</a>
+			</p>
+			<p>
+				Les logos de Github, Twitter, LinkedIn sont des marques déposées. Provenance des logos : <a href="https://simpleicons.org" target="_blank" rel="nofollow">https://simpleicons.org</a>
+			</p>
+			<p>
+				Les illustrations de la page d'accueil proviennent de <a href="https://storyset.com/online">Online illustrations by Storyset</a>
+			</p>
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h2 text-swing">Liens</span>
+					<ul>
+						<li><a href="../index.html" class="link--default">Accueil</a></li>
+						<li><a href="index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h2 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="getting-started/usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h2 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h2.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h2.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="./legal-notice.html" class="link--default" aria-current="page">Mentions légales</a>
+		</div>
+	</div>
+
+</footer>
+<script src="../scripts/vendors/prism.js"></script>
+<script type="module" src="../scripts/script.js"></script>
+</body>
+</html>

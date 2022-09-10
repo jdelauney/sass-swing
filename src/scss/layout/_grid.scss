@@ -54,6 +54,29 @@
   }
 }
 
+.grid-stacked {
+  --aspect-ratio: 4/1;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+
+  > * {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  > img,
+  > video,
+  > picture,
+  > .media {
+    aspect-ratio: var(--aspect-ratio);
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    transition: all 0.6s;
+  }
+}
+
 .subgrid {
   display: grid;
   grid-template-rows: subgrid;

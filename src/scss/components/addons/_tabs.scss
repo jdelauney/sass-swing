@@ -101,7 +101,7 @@
 
   &[aria-selected='true'] {
     background-color: var(--selected-background-color);
-    color: var(--selected-color);
+    color: var(--selected-color) !important;
   }
 
   //&:hover::before,

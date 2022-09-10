@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+
+	<meta charset="UTF-8">
+	<title>Documentation Sass Swing - Mise en page : Les grilles</title>
+	<meta name="Description" content="Exploitez toute la puissance des grilles avec le framework scss/css Sass Swing"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass Swing - Mise en page : Les grilles">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Exploitez toute la puissance des grilles avec le framework scss/css Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/layout/grid.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Mise en page : Les grilles"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/layout/grid.html">
+	<meta property="og:title" content="Documentation Sass Swing - Mise en page : Les grilles">
+	<meta property="og:description" content="Exploitez toute la puissance des grilles avec le framework scss/css Sass Swing">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/documentation/layout/grid.html">
+	<meta property="twitter:title" content="Documentation Sass Swing - Mise en page : Les grilles">
+	<meta property="twitter:description" content="Exploitez toute la puissance des grilles avec le framework scss/css Sass Swing">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../../styles/css/sass-swing.doc.min.css"/>
+	<script src="../../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="../getting-started/usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="../models.html" class="link--default">Modèles</a></li>
+				<li><a href="../supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sass-swing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Change theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="../getting-started/usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="../getting-started/javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="../getting-started/themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="../getting-started/customize.html" class="link--default-alt">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="./grid.html" class="link--default-alt" aria-current="page">Grille</a></li>
+				<li><a href="breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler">
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="../content/typography.html" class="link--default-alt">Typographie</a></li>
+				<li><a href="../content/buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="../content/form.html" class="link--default-alt">Formulaires</a></li>
+				<li><a href="../content/medias.html" class="link--default-alt">Médias</a></li>
+				<li><a href="../content/table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="../content/progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler">
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="../component/navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="../component/card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="../component/details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="../component/breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="../component/pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="../component/modal.html" class="link--default-alt">Boite de dialogue</a></li>
+				<li><a href="../component/collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="../component/addons/badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="../component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="../component/addons/loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="../component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
+						<li><a href="../component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="../component/addons/notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="../component/addons/slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="../component/addons/reveal.html" class="link--default-alt">Reveal</a></li>
+						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="../helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="../helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Les grilles</h1>
+				<span class="like-h4 text-em">Créez des mises en page dynamiques en divisant l'espace d'affichage avec des fonctionnalités intelligentes</span>
+				<hr>
+			</header>
+			<h2 class="text-swing">Une grille pour les gouverner toutes.</h2>
+			<p>
+				Le système de grille de Sass Swing est basé uniquement sur les <strong>grid CSS</strong>. Sass Swing étant orienté mobile first la grille par défaut comprend qu'une seule colonne.
+				Les grilles sont basées sur un maximum de 8 colonnes. Vous pouvez, dans la version <span class="text-swing-alt">SASS</span> modifier ce nombre grâce à la variable <code><u>$default-grid-columns</u></code>.
+				Notez que par défaut les grilles ne sont pas espacées.
+			</p>
+			<article id="code" class="card">
+				<div class="panel">
+					<div class="grid-sample grid">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid&quot;&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<p>
+				Vous pouvez choisir le nombre de colonnes par ligne avec la classe <code><b>.cols-x</b></code> avec <b>x</b> allant de 2 à 8 (maximum de colonne) ou choisir le mode auto avec <code><b>.cols-auto</b></code>.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid-sample grid cols-2">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
+					<hr>
+					<div class="grid-sample grid cols-auto">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid-sample grid cols-2&quot;&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid-sample grid cols-auto&quot;&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<h3 class="text-swing">Espacements</h3>
+			<p>
+				Vous pouvez ajouter de l'espacement entre les lignes et colonnes avec les classes <code><i>.gap-<sub>x</sub></i></code>, juste sur les colonnes avec <code><i>.row-gap-<sub>x</sub></i></code> et
+				enfin juste sur les colonnes avec <code><i>.col-gap-<sub>x</sub></i></code>. Avec <b>X</b> variant de 1 à 8 <i>(3 est la taille de pour un espace "normal")</i>.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid-sample cols-2 grid gap-3">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
+					<hr>
+					<div class="grid-sample grid cols-4 row-gap-1 col-gap-2" >
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div>
+						<div>6</div>
+						<div>7</div>
+						<div>8</div>
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid cols-2 gap-3&quot;&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid cols-4 gap-3 cols-2 row-gap-1 col-gap-2&quot;&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+	&lt;div&gt;6&lt;/div&gt;
+	&lt;div&gt;7&lt;/div&gt;
+	&lt;div&gt;8&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<h3 class="text-swing">Contrôler les dimensions</h3>
+			<p>
+				Vous avez la possibilité de contrôler la position et les dimensions de chaque ligne et colonne en les fusionnant.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid-sample grid cols-3 gap-3">
+						<div>1</div>
+						<div class="col-start-3">2</div>
+						<div>3</div>
+						<div>4</div>
+						<div class="col-start-1 col-end-4">5</div>
+						<div class="col-start-2">6</div>
+						<div class="col-end-4">7</div>
+					</div>
+					<hr>
+					<div class="grid-sample grid cols-3 gap-3">
+						<div class="col-span-full">0</div>
+						<div>1</div>
+						<div class="row-span-2">2</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div>
+						<div class="col-span-3">6</div>
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid cols-3 gap-3&quot;&gt;
+&lt;div&gt;1&lt;/div&gt;
+	&lt;div class=&quot;col-start-3&quot;&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+	&lt;div class=&quot;col-start-1 col-end-4&quot;&gt;5&lt;/div&gt;
+	&lt;div class=&quot;col-start-2&quot;&gt;6&lt;/div&gt;
+	&lt;div class=&quot;col-end-4&quot;&gt;7&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid cols-3 gap-3&quot;&gt;
+	&lt;div class=&quot;col-span-full&quot;&gt;0&lt;/div&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div class=&quot;row-span-2&quot;&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+	&lt;div&gt;5&lt;/div&gt;
+	&lt;div class=&quot;col-span-3&quot;&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+
+			<h3 class="text-swing">Adaptation et points d'arrêts</h3>
+			<p>
+				Vous pouvez contrôler le flux de colonnes en fonction de la largeur d'affichage de l'appareil grâce au <b>media-queries</b>. cf <a href="./breakpoints" class="link--default link-underline">breakpoints</a> pour plus d'informations.
+			</p>
+			<p>
+				Vous avez le contrôle sur le nombre de lignes, de colonnes, leur taille ainsi que sur les espacements. C'est très simple, il vous suffira de préfixer le nom des classes par les différents "breakpoints" disponibles
+				<code><i>t:</i></code>, <code><i>md:</i></code>, <code><i>d:</i></code>, <code><i>dm:</i></code>, <code><i>lg:</i></code>, <code><i>xl:</i></code> ou <code><i>xxl:</i></code>. Vous avez également la possibilité d'imbriquer plusieurs grilles entre elles.
+			</p>
+			<p>
+				<i>Redimensionnez votre fenêtre d'affichage pour tester, le comportement</i>.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid-sample grid t:cols-2 gap-1">
+					<div class="t:col-span-2 d:col-span-full">1
+						<div class="grid-neested grid t:cols-2 md:cols-4 gap-3">
+							<div class="t:col-span-2 d:col-span-full">a</div>
+							<div>b</div>
+							<div>c</div>
+							<div>d</div>
+							<div>e</div>
+							<div class="d:col-span-2">f</div>
+							<div class="d:col-span-2">g</div>
+							<div class="t:col-span-full">h</div>
+						</div>
+					</div>
+					<div>2</div>
+					<div>3
+						<div class="grid-neested grid md:cols-2 d:cols-3 gap-1">
+							<div class="col-span-full d:col-span-1">a</div>
+							<div>b</div>
+							<div>c</div>
+							<div>d</div>
+							<div class="col-span-full md:col-span-1">e
+								<div class="grid-neested-1 subgrid md:cols-2 gap-1">
+									<div>a</div>
+									<div>b</div>
+									<div>c</div>
+									<div>d</div>
+								</div>
+							</div>
+							<div class="col-span-full d:col-span-1">f</div>
+						</div>
+					</div>
+					<div>4</div>
+					<div>5</div>
+					<div class="col-span-full">6</div>
+				</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid t:cols-2 gap-1&quot;&gt;
+	&lt;div class=&quot;t:col-span-2 d:col-span-full&quot;&gt;1
+		&lt;div class=&quot;grid t:cols-2 md:cols-4 gap-3&quot;&gt;
+			&lt;div class=&quot;t:col-span-2 d:col-span-full&quot;&gt;a&lt;/div&gt;
+			&lt;div&gt;b&lt;/div&gt;
+			&lt;div&gt;c&lt;/div&gt;
+			&lt;div&gt;d&lt;/div&gt;
+			&lt;div&gt;e&lt;/div&gt;
+			&lt;div class=&quot;d:col-span-2&quot;&gt;f&lt;/div&gt;
+			&lt;div class=&quot;d:col-span-2&quot;&gt;g&lt;/div&gt;
+			&lt;div class=&quot;t:col-span-full&quot;&gt;h&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3
+		&lt;div class=&quot;grid md:cols-2 d:cols-3 gap-1&quot;&gt;
+			&lt;div class=&quot;col-span-full d:col-span-1&quot;&gt;a&lt;/div&gt;
+			&lt;div&gt;b&lt;/div&gt;
+			&lt;div&gt;c&lt;/div&gt;
+			&lt;div&gt;d&lt;/div&gt;
+			&lt;div class=&quot;col-span-full md:col-span-1&quot;&gt;e
+				&lt;div class=&quot;subgrid md:cols-2 gap-1&quot;&gt;
+					&lt;div&gt;a&lt;/div&gt;
+					&lt;div&gt;b&lt;/div&gt;
+					&lt;div&gt;c&lt;/div&gt;
+					&lt;div&gt;d&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;col-span-full d:col-span-1&quot;&gt;f&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+	&lt;div&gt;5&lt;/div&gt;
+	&lt;div class=&quot;col-span-full&quot;&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+
+			<h3 class="text-swing">Empilez vos éléments</h3>
+			<p>
+				Les grilles css, nous donnent également d'empilé nos éléments les un par-dessus les autres. Ce qui nous évite de créer des éléments avec <code><b>position</b>:<i>absolute</i>;</code>. Nous pourrons également nous en servir pour créer des en-têtes de page nommés couramment "hero"
+			</p>
+			<p>
+				Vous pouvez contrôler les dimensions en spécifiant le ratio d'aspect via la variable css local <code><b>--aspect-ratio</b></code>
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid-stacked">
+						<div>
+							<h1>Heading</h1>
+							<p>Slogan here</p>
+						</div>
+						<img src="../../assets/images/image03.jpg" width="200" height="300" alt="hero image">
+					</div>
+					<hr>
+					<div class="grid-stacked" style="--aspect-ratio:16/9;">
+						<div>
+							<h1>Heading</h1>
+							<p>Slogan here</p>
+						</div>
+						<img src="../../assets/images/image02.jpg" width="200" height="300" alt="hero image">
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid-stacked&quot;&gt;
+	&lt;div&gt;
+		&lt;h1&gt;Heading&lt;/h1&gt;
+		&lt;p&gt;Slogan here&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;img src=&quot;../../assets/images/image01.jpg&quot; width=&quot;200&quot; height=&quot;300&quot; alt=&quot;hero image&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid-stacked&quot; style=&quot;--aspect-ratio:16/9;&quot;&gt;
+	&lt;div&gt;
+		&lt;h1&gt;Heading&lt;/h1&gt;
+		&lt;p&gt;Slogan here&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;img src=&quot;../../assets/images/image02.jpg&quot; width=&quot;200&quot; height=&quot;300&quot; alt=&quot;hero image&quot;&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Liens</span>
+					<ul>
+						<li><a href="../../index.html" class="link--default">Accueil</a></li>
+						<li><a href="../index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="../getting-started/usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="../legal-notice.html" class="link--default">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+<script src="../../scripts/vendors/prism.js"></script>
+<script type="module" src="../../scripts/script.js"></script>
+</body>
+</html>

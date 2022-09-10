@@ -39,7 +39,7 @@ $neutral-light-color: $color-neutral-100 !default;
 $on-neutral-light-color-s: saturation($neutral-light-color) !default;
 $on-neutral-light-color-l: 10% !default;
 $neutral-shadow: #{make-shadow('smooth-light')} !default;
-$neutral-shadow-alt: 0 2px 6px rgba(0, 0, 0, 0.25), 0 10px 12px rgba(0, 0, 0, 0.15) !default;
+$neutral-shadow-alt: 0 5px 6px rgba(0, 0, 0, 0.15), 0 12px 16px rgba(0, 0, 0, 0.15) !default;
 
 $neutral-light-color-variation-1-s: saturation($neutral-light-color) !default;
 $neutral-light-color-variation-1-l: 97% !default;
@@ -52,12 +52,36 @@ $on-neutral-light-color-variation-2-s: saturation($neutral-light-color) !default
 $on-neutral-light-color-variation-2-l: 15% !default;
 
 $neutral-light-color-variation-3-s: saturation($neutral-light-color) !default;
-$neutral-light-color-variation-3-l: 35% !default;
+$neutral-light-color-variation-3-l: 75% !default;
 $on-neutral-light-color-variation-3-s: saturation($neutral-light-color) !default;
-$on-neutral-light-color-variation-3-l: 60% !default;
+$on-neutral-light-color-variation-3-l: 50% !default;
+
+/* neutral dark color */
+$neutral-dark-color: $color-neutral-900 !default;
+$neutral-dark-color-s: saturation($neutral-dark-color) !default;
+$neutral-dark-color-l: 13%;
+$on-neutral-dark-color-s: saturation($neutral-dark-color) !default;
+$on-neutral-dark-color-l: 96% !default;
+
+$neutral-dark-color-variation-1-s: saturation($neutral-dark-color) !default;
+$neutral-dark-color-variation-1-l: 14% !default;
+$on-neutral-dark-color-variation-1-s: saturation($neutral-dark-color) !default;
+$on-neutral-dark-color-variation-1-l: 96% !default;
+
+$neutral-dark-color-variation-2-s: saturation($neutral-dark-color) !default;
+$neutral-dark-color-variation-2-l: 20% !default;
+$on-neutral-dark-color-variation-2-s: saturation($neutral-dark-color) !default;
+$on-neutral-dark-color-variation-2-l: 92% !default;
+
+$neutral-dark-color-variation-3-s: saturation($neutral-dark-color) !default;
+$neutral-dark-color-variation-3-l: 25% !default;
+$on-neutral-dark-color-variation-3-s: saturation($neutral-dark-color) !default;
+$on-neutral-dark-color-variation-3-l: 50% !default;
 
 /* primary light color */
 $brand-color: $color-SteelBlue2 !default;
+$primary-light-color-s: saturation($brand-color) !default;
+$primary-light-color-l: lightness($brand-color) !default;
 $primary-shadow: #{make-shadow('smooth-light')} !default;
 $on-primary-light-color-s: saturation($brand-color) !default;
 $on-primary-light-color-l: 96% !default;
@@ -75,15 +99,38 @@ $on-primary-light-color-variation-2-l: 85% !default;
 $primary-shadow-variation-2: #{make-shadow('diffuse')} !default;
 
 $primary-light-color-variation-3-s: saturation($brand-color) !default;
-$primary-light-color-variation-3-l: 20% !default;
+$primary-light-color-variation-3-l: 40% !default;
 $on-primary-light-color-variation-3-s: saturation($brand-color) !default;
 $on-primary-light-color-variation-3-l: 80% !default;
 $primary-shadow-variation-3: #{make-shadow('smooth')} !default;
 
+/* primary dark color */
+$primary-dark-color-s: saturation($brand-color) !default;
+$primary-dark-color-l: 50% !default;
+$on-primary-dark-color-s: 70% !default;
+$on-primary-dark-color-l: 95% !default;
+
+$primary-dark-color-variation-1-s: 70% !default;
+$primary-dark-color-variation-1-l: 60% !default;
+$on-primary-dark-color-variation-1-s: saturation($brand-color) !default;
+$on-primary-dark-color-variation-1-l: 98% !default;
+
+$primary-dark-color-variation-2-s: saturation($brand-color) !default;
+$primary-dark-color-variation-2-l: 70% !default;
+$on-primary-dark-color-variation-2-s: saturation($brand-color) !default;
+$on-primary-dark-color-variation-2-l: 9% !default;
+
+$primary-dark-color-variation-3-s: saturation($brand-color) !default;
+$primary-dark-color-variation-3-l: 65% !default;
+$on-primary-dark-color-variation-3-s: saturation($brand-color) !default;
+$on-primary-dark-color-variation-3-l: 80% !default;
+
 /* Secondary light color */
 $secondary-color: $color-slate-500 !default;
+$secondary-light-color-s: saturation($secondary-color) !default;
+$secondary-light-color-l: 50% !default;
 $on-secondary-light-color-s: saturation($secondary-color) !default;
-$on-secondary-light-color-l: 85% !default;
+$on-secondary-light-color-l: 95% !default;
 $secondary-shadow: #{make-shadow('smooth-light')} !default;
 
 $secondary-light-color-variation-1-s: saturation($secondary-color) !default;
@@ -99,10 +146,31 @@ $on-secondary-light-color-variation-2-l: 80% !default;
 $secondary-shadow-variation-2: #{make-shadow('diffuse')} !default;
 
 $secondary-light-color-variation-3-s: saturation($secondary-color) !default;
-$secondary-light-color-variation-3-l: 20% !default;
+$secondary-light-color-variation-3-l: 35% !default;
 $on-secondary-light-color-variation-3-s: saturation($secondary-color) !default;
 $on-secondary-light-color-variation-3-l: 85% !default;
 $secondary-shadow-variation-3: #{make-shadow('smooth')} !default;
+
+/* Secondary dark color */
+$secondary-dark-color-s: saturation($secondary-color) !default;
+$secondary-dark-color-l: 50% !default;
+$on-secondary-dark-color-s: saturation($secondary-color) !default;
+$on-secondary-dark-color-l: 95% !default;
+
+$secondary-dark-color-variation-1-s: saturation($secondary-color) !default;
+$secondary-dark-color-variation-1-l: 60% !default;
+$on-secondary-dark-color-variation-1-s: saturation($secondary-color) !default;
+$on-secondary-dark-color-variation-1-l: 95% !default;
+
+$secondary-dark-color-variation-2-s: saturation($secondary-color) !default;
+$secondary-dark-color-variation-2-l: 65% !default;
+$on-secondary-dark-color-variation-2-s: saturation($secondary-color) !default;
+$on-secondary-dark-color-variation-2-l: 80% !default;
+
+$secondary-dark-color-variation-3-s: saturation($secondary-color) !default;
+$secondary-dark-color-variation-3-l: 65% !default;
+$on-secondary-dark-color-variation-3-s: saturation($secondary-color) !default;
+$on-secondary-dark-color-variation-3-l: 40% !default;
 
 /* Success color */
 $success-color: $color-emerald-400 !default;
@@ -120,7 +188,7 @@ $on-success-color-variation-2-s: saturation($success-color) !default;
 $on-success-color-variation-2-l: 90% !default;
 
 /* Info color */
-$info-color: $color-light-blue-500 !default;
+$info-color: $color-light-blue-400 !default;
 $on-info-color-s: saturation($info-color) !default;
 $on-info-color-l: 95% !default;
 
@@ -184,4 +252,19 @@ $ins-color-text: $color-green-700 !default;
 $del-color-background: transparent !default;
 $del-color-text: $color-red-700 !default;
 
-$divider-color: #{set-color-opacity($color-Black, 25)} !default;
+$divider-light-color: #{set-color-opacity($color-Black, 25)} !default;
+$divider-dark-color: #{set-color-opacity($color-White, 25)} !default;
+
+$h1-light-color: $color-neutral-900 !default;
+$h2-light-color: mix($color-neutral-900, $color-neutral-800) !default;
+$h3-light-color: $color-neutral-800 !default;
+$h4-light-color: mix($color-neutral-800, $color-neutral-700) !default;
+$h5-light-color: $color-neutral-700 !default;
+$h6-light-color: mix($color-neutral-700, $color-neutral-600) !default;
+
+$h1-dark-color: $color-neutral-100 !default;
+$h2-dark-color: mix($color-neutral-100, $color-neutral-200) !default;
+$h3-dark-color: $color-neutral-200 !default;
+$h4-dark-color: mix($color-neutral-200, $color-neutral-300) !default;
+$h5-dark-color: $color-neutral-300 !default;
+$h6-dark-color: mix($color-neutral-300, $color-neutral-400) !default;

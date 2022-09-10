@@ -1,0 +1,333 @@
+:root {
+
+    --heading-font-size: clamp(1em,.5vw,2.8em);
+    --heading-font-weight: 900;
+
+    --flow-space-ratio: 1.333;
+    --heading-flow-space-ratio: 1.414;
+
+    --spacing: 1.6rem;
+    --flow-spacing: 1.8rem;
+    --half-spacing: calc(var(--spacing) * 0.5);
+
+    /* Resolving Margin Spacing For Zoom */
+    --block-spacing: min(4.8rem, 6vh);
+    --block-half-spacing: min(2.4rem, 3vh);
+
+    /*--inner-spacing: calc(var(--spacing) * 2);*/
+    /*--inner-v-spacing: var(--inner-spacing);*/
+    /*--inner-h-spacing: var(--inner-spacing);*/
+
+    /*--min-grid-col-width: 0;*/
+
+    --elem-border-width: 2px;
+    --elem-border-radius: 1rem;
+    --elem-outline-width: 3px;
+    --control-border-radius: .8rem;
+    --control-border-width: 2px;
+    --control-input-height: 1.8rem;
+}
+
+/* light theme schema settings */
+[data-theme='light'],
+:root {
+color-scheme: light;
+
+    /*--scrollbar-color-background: var(--neutral-color-variation-1);*/
+    /*--scrollbar-color-thumb: var(--secondary-color);*/
+    /*--scrollbar-color-thumb-border: var(--neutral-color);*/
+
+    --color-h1: #b3194c;
+    --color-h2: #df2060;
+    --color-h3: #e64c7f;
+    --color-h4: #e9638f;
+    --color-h5: #ec799f;
+    --color-h6: #f2a6bf;
+
+    --neutral-color-h: 230;
+    --neutral-color-s: 65%;
+    --neutral-color-l: 90%;
+
+    --neutral-shadow: 0 2px 4px rgb(0 0 0 /.15);
+    --neutral-shadow-alt: 1px 2px 4px rgb(0 0 0 /.2), 3px 4px 6px rgb(0 0 0 /.15), 6px 6px 12px rgb(0 0 0 /.1);
+
+    --on-neutral-color-s: 65%;
+    --on-neutral-color-l: 7%;
+
+    --neutral-color-variation-1-s: 50%;
+    --neutral-color-variation-1-l: 85%;
+
+    --on-neutral-color-variation-1-s: 50%;
+    --on-neutral-color-variation-1-l: 12%;
+
+    --neutral-color-variation-2-s: 50%;
+    --neutral-color-variation-2-l: 25%;
+
+    --on-neutral-color-variation-2-s: 50%;
+    --on-neutral-color-variation-2-l: 70%;
+
+    --neutral-color-variation-3-s: 40%;
+    --neutral-color-variation-3-l: 25%;
+
+    --on-neutral-color-variation-3-s: 40%;
+    --on-neutral-color-variation-3-l: 65%;
+
+    /* Your main brand color */
+    --primary-color-h: 340;
+    --primary-color-s: 75%;
+    --primary-color-l: 60%;
+
+    /* Primary (brand) color should be used at 10%, principally for your CTA, input elements, links */
+
+    --on-primary-color-s: 75%;
+    --on-primary-color-l: 96%;
+    --primary-shadow: 2px 2px 4px rgba(0 0 0 /.25);
+
+    --primary-color-variation-1-s: 75%;
+    --primary-color-variation-1-l: 70%;
+    --primary-shadow-variation-1: 1px 1px 2px rgba(0 0 0 /.35);
+
+    --on-primary-color-variation-1-s: 75%;
+    --on-primary-color-variation-1-l: 96%;
+
+    --primary-color-variation-2-s: 60%;
+    --primary-color-variation-2-l: 35%;
+    --primary-shadow-variation-2: 1px 1px 2px rgba(0 0 0 /.25), 3px 3px 6px rgba(0 0 0 /.15);
+
+    --on-primary-color-variation-2-s: 60%;
+    --on-primary-color-variation-2-l: 85%;
+
+
+    --primary-color-variation-3-s: 75%;
+    --primary-color-variation-3-l: 20%;
+    --primary-shadow-variation-3: none;
+
+    --on-primary-color-variation-3-s: 75%;
+    --on-primary-color-variation-3-l: 75%;
+
+
+    /* Your secondary color */
+    /* Secondary color should be used at 30%  */
+    --secondary-color-h: 240;
+    --secondary-color-s: 30%;
+    --secondary-color-l: 40%;
+
+    --on-secondary-color-s: 30%;
+    --on-secondary-color-l: 90%;
+
+    --secondary-color-variation-1-s: 30%;
+    --secondary-color-variation-1-l: 60%;
+
+    --on-secondary-color-variation-1-s: 30%;
+    --on-secondary-color-variation-1-l: 98%;
+
+    --secondary-color-variation-2-s: 20%;
+    --secondary-color-variation-2-l: 30%;
+
+    --on-secondary-color-variation-2-s: 20%;
+    --on-secondary-color-variation-2-l: 65%;
+
+    --secondary-color-variation-3-s: 20%;
+    --secondary-color-variation-3-l: 20%;
+
+    --on-secondary-color-variation-3-s: 30%;
+    --on-secondary-color-variation-3-l: 65%;
+
+    --divider-color: #0d1126;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        --color-h1: #c52157;
+        --color-h2: #df2060;
+        --color-h3: #e64c7f;
+        --color-h4: #e9638f;
+        --color-h5: #ec799f;
+        --color-h6: #f2a6bf;
+
+        --neutral-color-h: 230;
+        --neutral-color-s: 65%;
+        --neutral-color-l: 10%;
+
+        --on-neutral-color-s: 65%;
+        --on-neutral-color-l: 92%;
+
+        --neutral-color-variation-1-s: 50%;
+        --neutral-color-variation-1-l: 15%;
+
+        --on-neutral-color-variation-1-s: 50%;
+        --on-neutral-color-variation-1-l: 90%;
+
+        --neutral-color-variation-2-s: 50%;
+        --neutral-color-variation-2-l: 25%;
+
+        --on-neutral-color-variation-2-s: 50%;
+        --on-neutral-color-variation-2-l: 70%;
+
+        --neutral-color-variation-3-s: 40%;
+        --neutral-color-variation-3-l: 25%;
+
+        --on-neutral-color-variation-3-s: 40%;
+        --on-neutral-color-variation-3-l: 65%;
+
+        /* Your main brand color */
+        --primary-color-h: 340;
+        --primary-color-s: 75%;
+        --primary-color-l: 60%;
+
+        /* Primary (brand) color should be used at 10%, principally for your CTA, input elements, links */
+
+        --on-primary-color-s: 75%;
+        --on-primary-color-l: 96%;
+        --primary-shadow: 2px 2px 4px rgba(0 0 0 /.25);
+
+        --primary-color-variation-1-s: 75%;
+        --primary-color-variation-1-l: 70%;
+        --primary-shadow-variation-1: 1px 1px 2px rgba(0 0 0 /.35);
+
+        --on-primary-color-variation-1-s: 75%;
+        --on-primary-color-variation-1-l: 96%;
+
+        --primary-color-variation-2-s: 60%;
+        --primary-color-variation-2-l: 35%;
+        --primary-shadow-variation-2: 1px 1px 2px rgba(0 0 0 /.25), 3px 3px 6px rgba(0 0 0 /.15);
+
+        --on-primary-color-variation-2-s: 60%;
+        --on-primary-color-variation-2-l: 85%;
+
+
+        --primary-color-variation-3-s: 75%;
+        --primary-color-variation-3-l: 20%;
+        --primary-shadow-variation-3: none;
+
+        --on-primary-color-variation-3-s: 75%;
+        --on-primary-color-variation-3-l: 75%;
+
+
+        /* Your secondary color */
+        /* Secondary color should be used at 30%  */
+        --secondary-color-h: 240;
+        --secondary-color-s: 30%;
+        --secondary-color-l: 40%;
+
+        --on-secondary-color-s: 30%;
+        --on-secondary-color-l: 90%;
+
+        --secondary-color-variation-1-s: 30%;
+        --secondary-color-variation-1-l: 60%;
+
+        --on-secondary-color-variation-1-s: 30%;
+        --on-secondary-color-variation-1-l: 98%;
+
+        --secondary-color-variation-2-s: 20%;
+        --secondary-color-variation-2-l: 30%;
+
+        --on-secondary-color-variation-2-s: 20%;
+        --on-secondary-color-variation-2-l: 65%;
+
+        --secondary-color-variation-3-s: 20%;
+        --secondary-color-variation-3-l: 20%;
+
+        --on-secondary-color-variation-3-s: 30%;
+        --on-secondary-color-variation-3-l: 65%;
+
+        --divider-color: #1d2662;
+    }
+}
+
+[data-theme='dark'] {
+    --color-h1: #c52157;
+    --color-h2: #df2060;
+    --color-h3: #e64c7f;
+    --color-h4: #e9638f;
+    --color-h5: #ec799f;
+    --color-h6: #f2a6bf;
+
+    --neutral-color-h: 230;
+    --neutral-color-s: 65%;
+    --neutral-color-l: 10%;
+
+    --on-neutral-color-s: 65%;
+    --on-neutral-color-l: 92%;
+
+    --neutral-color-variation-1-s: 50%;
+    --neutral-color-variation-1-l: 15%;
+
+    --on-neutral-color-variation-1-s: 50%;
+    --on-neutral-color-variation-1-l: 90%;
+
+    --neutral-color-variation-2-s: 50%;
+    --neutral-color-variation-2-l: 25%;
+
+    --on-neutral-color-variation-2-s: 50%;
+    --on-neutral-color-variation-2-l: 70%;
+
+    --neutral-color-variation-3-s: 40%;
+    --neutral-color-variation-3-l: 25%;
+
+    --on-neutral-color-variation-3-s: 40%;
+    --on-neutral-color-variation-3-l: 65%;
+
+    /* Your main brand color */
+    --primary-color-h: 340;
+    --primary-color-s: 75%;
+    --primary-color-l: 60%;
+
+    /* Primary (brand) color should be used at 10%, principally for your CTA, input elements, links */
+
+    --on-primary-color-s: 75%;
+    --on-primary-color-l: 96%;
+    --primary-shadow: 2px 2px 4px rgba(0 0 0 /.25);
+
+    --primary-color-variation-1-s: 75%;
+    --primary-color-variation-1-l: 70%;
+    --primary-shadow-variation-1: 1px 1px 2px rgba(0 0 0 /.35);
+
+    --on-primary-color-variation-1-s: 75%;
+    --on-primary-color-variation-1-l: 96%;
+
+    --primary-color-variation-2-s: 60%;
+    --primary-color-variation-2-l: 35%;
+    --primary-shadow-variation-2: 1px 1px 2px rgba(0 0 0 /.25), 3px 3px 6px rgba(0 0 0 /.15);
+
+    --on-primary-color-variation-2-s: 60%;
+    --on-primary-color-variation-2-l: 85%;
+
+
+    --primary-color-variation-3-s: 75%;
+    --primary-color-variation-3-l: 20%;
+    --primary-shadow-variation-3: none;
+
+    --on-primary-color-variation-3-s: 75%;
+    --on-primary-color-variation-3-l: 75%;
+
+
+    /* Your secondary color */
+    /* Secondary color should be used at 30%  */
+    --secondary-color-h: 240;
+    --secondary-color-s: 30%;
+    --secondary-color-l: 40%;
+
+    --on-secondary-color-s: 30%;
+    --on-secondary-color-l: 90%;
+
+    --secondary-color-variation-1-s: 30%;
+    --secondary-color-variation-1-l: 60%;
+
+    --on-secondary-color-variation-1-s: 30%;
+    --on-secondary-color-variation-1-l: 98%;
+
+    --secondary-color-variation-2-s: 20%;
+    --secondary-color-variation-2-l: 30%;
+
+    --on-secondary-color-variation-2-s: 20%;
+    --on-secondary-color-variation-2-l: 65%;
+
+    --secondary-color-variation-3-s: 20%;
+    --secondary-color-variation-3-l: 20%;
+
+    --on-secondary-color-variation-3-s: 30%;
+    --on-secondary-color-variation-3-l: 65%;
+
+    --divider-color: #1d2662;
+}

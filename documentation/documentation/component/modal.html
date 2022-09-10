@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+
+	<title>Documentation Sass Swing - Composant : Boite de dialogue</title>
+	<meta name="Description" content="Afficher et gérer vos boites de dialogue en toute simplicité grâce au framework scss/css Sass Swing"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass Swing - Composant : Boite de dialogue">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Afficher et gérer vos boites de dialogue en toute simplicité grâce au framework scss/css Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/component/modal.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Composant : Boite de dialogue"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/themes.html">
+	<meta property="og:title" content="Documentation Sass Swing - Composant : Boite de dialogue">
+	<meta property="og:description" content="Afficher et gérer vos boites de dialogue en toute simplicité grâce au framework scss/css Sass Swing" >
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/">
+	<meta property="twitter:title" content="Documentation Sass Swing - Composant : Boite de dialogue">
+	<meta property="twitter:description" content="Afficher et gérer vos boites de dialogue en toute simplicité grâce au framework scss/css Sass Swing">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../../styles/css/sass-swing.doc.min.css"/>
+	<script src="../../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="../getting-started/usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="../models.html" class="link--default">Modèles</a></li>
+				<li><a href="../supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sass-swing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Change theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="../getting-started/usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="../getting-started/javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="../getting-started/themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="../getting-started/customize.html" class="link--default-alt">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="../layout/containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="../layout/grid.html" class="link--default-alt">Grille</a></li>
+				<li><a href="../layout/breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler">
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="../content/typography.html" class="link--default-alt">Typographie</a></li>
+				<li><a href="../content/buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="../content/form.html" class="link--default-alt">Formulaires</a></li>
+				<li><a href="../content/medias.html" class="link--default-alt">Médias</a></li>
+				<li><a href="../content/table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="../content/progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="./modal.html" class="link--default-alt" aria-current="page">Boite de dialogue</a></li>
+				<li><a href="collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler">
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="addons/badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="addons/loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
+						<li><a href="addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="addons/notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="addons/slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="addons/reveal.html" class="link--default-alt">Reveal</a></li>
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="../helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="../helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Modal</h1>
+				<span class="like-h4 text-em">Gérez des boites de dialogue de façon réactives et accessibles.</span>
+				<hr>
+			</header>
+			<h2 class="text-swing">Vue d'ensemble</h2>
+			<p>
+				L'élément de <code><<b>dialog</b>></code> <a href="https://developer.mozilla.org/fr/docs/Web/API/HTMLDialogElement" class="link--default" target="_blank"><sup>MDN Référence</sup></a> est idéal pour afficher des informations contextuelles ou confirmer des actions par l'utilisateur.
+				Les boites de dialogue augmentent l'expérience utilisateur et sont utiles pour demander une action sur la même page.
+				cela peut être parce que, il faut juste afficher un message d'information, remplir un petit formulaire ou demander une confirmation de la part de l'utilisateur, comme confirmer ou annuler.
+			</p>
+			<p>
+				Les boites de dialogue sont généralement constitué de 2 à 3 éléments : l'en-tête <code><<b>header</b>></code>, le corps <code><<b>article</b>></code> et le pied de page <code><<b>footer</b>></code>.
+				Ceux-ci servent de conteneurs sémantiques. L'en-tête propose généralement un titre et un bouton de fermeture. Le corps, contient les entrées de formulaire et les informations.
+				Et enfin, le pied de page contient le ou les boutons d'actions. Il a noté, que la boîte de dialogue ne dépassera jamais la hauteur de la page. Ce qui signifie que si le conteneur du corps est important, la barre de défilement verticale, apparaitra automatiquement sur celui-ci.
+			</p>
+			<p>
+				Il est conseillé, d'ajouter l'attribut <code><i>autofocus</i></code> sur le bouton d'annulation principal, ceci afin de garantir que la confirmation d'une action (<i> un suppression par exemple</i>) est délibérée et non accidentelle.
+				Il est bon de savoir également, qu'une boite de dialogue peut-être fermer grâce à la touche d'échappement <kbd>ESC</kbd>.
+			</p>
+			<p>
+				L' en-tête et le pied de page utilisent Flexbox pour aligner le contenu. Dans le pied de page le contenu est aligné par défaut à droite.
+			</p>
+
+			<article class="card">
+				<div class="panel">
+					<button data-modal-open-default>Ouvrir une boite de dialogue avec overlay</button>
+					<button data-modal-open-simple>Ouvrir une boite de dialogue sans overlay</button>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;button data-modal-open-default&gt;Ouvrir une boite de dialogue avec overlay&lt;/button&gt;
+&lt;button data-modal-open-simple&gt;Ouvrir une boite de dialogue sans overlay&lt;/button&gt;</code></pre>
+
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;body&gt;
+  ...
+  &lt;dialog id=&quot;modalTest&quot;&gt;
+		&lt;header&gt;
+			&lt;span class=&quot;like-h3&quot; style=&quot;--mb:0;&quot;&gt;Modal title&lt;/span&gt;
+			&lt;button modal-result=&quot;close&quot; class=&quot;close&quot; aria-label=&quot;Close&quot; &gt;
+				&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+					&lt;path d=&quot;M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z&quot; /&gt;
+				&lt;/svg&gt;
+			&lt;/button&gt;
+		&lt;/header&gt;
+		&lt;article&gt;
+			&lt;p&gt;
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			&lt;/p&gt;
+			&lt;p&gt;
+				Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+				Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+				Sed eleifend a dui nec ullamcorper.
+				Praesent vehicula lacus ac justo accumsan ullamcorper.
+			&lt;/p&gt;
+      ...
+		&lt;/article&gt;
+		&lt;footer&gt;
+			&lt;button autofocus modal-result=&quot;cancel&quot; class=&quot;btn--secondary&quot; aria-label=&quot;Fermer&quot;&gt;Fermer&lt;/button&gt;
+			&lt;button modal-result=&quot;ok&quot; aria-label=&quot;Ok&quot;&gt;Ok&lt;/button&gt;
+		&lt;/footer&gt;
+	&lt;/dialog&gt;
+
+	&lt;dialog id=&quot;modalTestSimple&quot; modal-mode=&quot;simple&quot;&gt;
+		&lt;article&gt;
+			&lt;header class=&quot;header-with-icon&quot;&gt;
+				&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; style=&quot;--txt:var(--warning-background);&quot;&gt;
+					&lt;title&gt;A warning icon&lt;/title&gt;
+					&lt;path d=&quot;M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z&quot;&gt;&lt;/path&gt;
+					&lt;line x1=&quot;12&quot; y1=&quot;9&quot; x2=&quot;12&quot; y2=&quot;13&quot;&gt;&lt;/line&gt;
+					&lt;line x1=&quot;12&quot; y1=&quot;17&quot; x2=&quot;12.01&quot; y2=&quot;17&quot;&gt;&lt;/line&gt;
+				&lt;/svg&gt;
+				&lt;span class=&quot;like-h4&quot; style=&quot;--mb:0; --txt:var(--danger-background);&quot;&gt;
+					Etes-vous sur de vouloir supprimer cet &eacute;l&eacute;ment ?
+				&lt;/span&gt;
+			&lt;/header&gt;
+		&lt;/article&gt;
+		&lt;footer&gt;
+			&lt;button autofocus modal-result=&quot;cancel&quot; class=&quot;btn--secondary&quot; aria-label=&quot;Annuler&quot;&gt;Annuler&lt;/button&gt;
+			&lt;button autofocus modal-result=&quot;confirm&quot; aria-label=&quot;Confirmer&quot;&gt;Confirmer&lt;/button&gt;
+		&lt;/footer&gt;
+	&lt;/dialog&gt;
+
+	&lt;script type=&quot;module&quot; src=&quot;../scripts/script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+					<pre data-lang="javascript" class="line-numbers language-javascript" data-prismjs-copy="Copier"><code>import Modalify from &quot;../../src/scripts/modalify.js&quot;;
+
+const modalTest = new Modalify(&quot;#modalTest&quot;);
+const modalTestSimple = new Modalify(&quot;#modalTestSimple&quot;);
+
+const  openDialog = async () =&gt; {
+	const result = await modalTest.showModal();
+	console.log(&quot;Modal result = &quot; + result);
+}
+
+const  openDialogSimple = async () =&gt; {
+	const result = await modalTestSimple.showModal();
+	console.log(&quot;Modal simple result = &quot; + result);
+}
+
+window.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+	const openDialogBtn = document.querySelector(&#39;[data-modal-open-default]&#39;);
+	if (openDialogBtn) { openDialogBtn.addEventListener(&quot;click&quot;, openDialog); }
+
+	const openDialogSimpleBtn = document.querySelector(&#39;[data-modal-open-simple]&#39;);
+	if (openDialogSimpleBtn) { openDialogSimpleBtn.addEventListener(&quot;click&quot;, openDialogSimple); }
+});</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Interactions</h2>
+			<p>
+				Généralement, les boites de dialogue sont utilisées pour interagir avec l'utilisateur et permettent de recueillir des informations.
+				Dans une boite de dialogue, les formulaires sont conçus pour fonctionner ensemble.
+				L'idéal est d'avoir un élément <code><<b>form</b>></code> qui enveloppe tout le contenu (<i>en-tête, corps et pied de page</i>).
+				Grâce à JavaScript on peut alors, accéder aux données saisies par l'utilisateur.
+				De plus, les boutons d'un formulaire utilisant comme attribut <code><i>method</i>=<u>'dialog'</u></code> peuvent fermer celle-ci sans JavaScript et transmettre les données saisies.
+			</p>
+			<p>
+				<span class="text-swing-alt">Sass Swing</span> fournit une <strong>classe Javascript</strong> <code><i>Modalify</i></code> d'aide à la gestion des boites de dialogue.
+				Cette classe permet d'ouvrir, de fermer et de retourner la valeur du bouton clicker. Via l'attribut <code><i>modal-result</i>=<u>"action"</u></code>.
+				Dans le cas où un formulaire est utilisé, la valeur du retour utilisé est celle de l'attribut <code><i>value</i>=<u>"action"</u></code> du bouton cliqué.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<button data-modal-open-form>Ouvrir une boite de dialogue avec formulaire</button>
+					<section class="flex flex--center-all">
+						<div class="avatar">
+							<img src="../../assets/images/no-avatar.png" alt="avatar">
+						</div>
+					</section>
+				</div>
+				<footer class="footer__code">
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;button data-modal-open-form&gt;Ouvrir une boite de dialogue avec formulaire&lt;/button&gt;</code></pre>
+
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;body&gt;
+  ...
+	&lt;dialog id=&quot;modalTestForm&quot;&gt;
+		&lt;header&gt;
+			&lt;span class=&quot;like-h3&quot; style=&quot;--mb:0;&quot;&gt;Choisissez un avatar&lt;/span&gt;
+			&lt;button data-modal-result=&quot;close&quot; class=&quot;close&quot; aria-label=&quot;Close&quot; &gt;
+				&lt;svg aria-hidden=&quot;true&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+					&lt;path d=&quot;M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z&quot; /&gt;
+				&lt;/svg&gt;
+			&lt;/button&gt;
+		&lt;/header&gt;
+		&lt;div class=&quot;panel&quot; style=&quot;--py:0;&quot;&gt;
+			&lt;form&gt;
+					&lt;label for=&quot;avatarImage&quot;&gt;
+						&lt;input type=&quot;file&quot; id=&quot;avatarImage&quot; name=&quot;avatarImage&quot; accept=&quot;image/*&quot;&gt;
+					&lt;/label&gt;
+					&lt;small&gt;* Taille maximum : 1Mb&lt;/small&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+		&lt;footer&gt;
+			&lt;button autofocus value=&quot;cancel&quot; class=&quot;btn--secondary&quot; aria-label=&quot;Annuler&quot;&gt;Annuler&lt;/button&gt;
+			&lt;button type=&quot;submit&quot; value=&quot;validate&quot; aria-label=&quot;Valider&quot;&gt;Valider&lt;/button&gt;
+		&lt;/footer&gt;
+	&lt;/dialog&gt;
+
+	&lt;script type=&quot;module&quot; src=&quot;../scripts/script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+					<pre data-lang="javascript" class="line-numbers language-javascript" data-prismjs-copy="Copier"><code>const SassSwing = windows[&#39;sass-swing&#39;];
+
+const modalTestForm = new SassSwing.Modalify(&quot;#modalTestForm&quot;);
+
+const handleAvatar = (formData) =&gt; {
+	const file = formData.get(&#39;avatarImage&#39;)
+	if (!file.size) return
+
+	const reader = new FileReader();
+	reader.readAsDataURL(file);
+
+	reader.onload = e =&gt; {
+		const avatar = document.querySelector(&#39;.avatar &gt;  img&#39;)
+		avatar.src = e.target.result;
+	}
+	modalTestForm.forceFormInputFileReset();
+}
+
+const  openDialogForm = async () =&gt; {
+	const result = await modalTestForm.showModal();
+
+	console.log(&quot;Modal Form result = &quot; + result);
+
+	if (result === &quot;validate&quot;) {
+		handleAvatar(modalTestForm.getFormData());
+	}
+}
+
+window.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+	const openDialogFormBtn = document.querySelector(&#39;[data-modal-open-form]&#39;);
+	if (openDialogFormBtn) { openDialogFormBtn.addEventListener(&quot;click&quot;, openDialogForm); }
+});</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Personnalisation</h2>
+			<p>
+				Grâce aux variables CSS, vous pouvez customiser facilement vos boites de dialogue.
+				Pour plus d'informations reportez-vous à la section <a href="../getting-started/customize.html" class="link--default link-underline">Personnalisation</a>
+			</p>
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Liens</span>
+					<ul>
+						<li><a href="../../index.html" class="link--default">Accueil</a></li>
+						<li><a href="../index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="../getting-started/usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="../legal-notice.html" class="link--default">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+
+
+<dialog id="modalTest">
+	<header>
+		<span class="like-h3" style="--mb:0;">Modal title</span>
+		<button data-modal-result="close" class="close" aria-label="Close" >
+			<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+				<path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+			</svg>
+		</button>
+	</header>
+	<article>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+		<p>
+			Nunc nec ligula a tortor sollicitudin dictum in vel enim.
+			Quisque facilisis turpis vel eros dictum aliquam et nec turpis.
+			Sed eleifend a dui nec ullamcorper.
+			Praesent vehicula lacus ac justo accumsan ullamcorper.
+		</p>
+	</article>
+	<footer>
+		<button autofocus data-modal-result="cancel" class="btn--secondary" aria-label="Fermer">Fermer</button>
+		<button data-modal-result="ok" aria-label="Ok">Ok</button>
+	</footer>
+</dialog>
+
+<dialog id="modalTestSimple" modal-mode="simple">
+	<article>
+		<header class="header-with-icon">
+			<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" style="--clr:var(--warning-color);">
+				<title>A warning icon</title>
+				<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+				<line x1="12" y1="9" x2="12" y2="13"></line>
+				<line x1="12" y1="17" x2="12.01" y2="17"></line>
+			</svg>
+			<span class="like-h4" style="--mb:0; --clr:var(--danger-color);">
+					Etes-vous sûr de vouloir supprimer cet élément ?
+				</span>
+		</header>
+	</article>
+	<footer>
+		<button autofocus data-modal-result="cancel" class="btn--secondary" aria-label="Annuler">Annuler</button>
+		<button autofocus data-modal-result="confirm" aria-label="Confirmer">Confirmer</button>
+	</footer>
+</dialog>
+
+<dialog id="modalTestForm">
+	<header>
+		<span class="like-h3" style="--mb:0;">Choisissez un avatar</span>
+		<button data-modal-result="close" class="close" aria-label="Close" >
+			<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+				<path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+			</svg>
+		</button>
+	</header>
+	<div class="panel" style="--py:0;">
+		<form>
+				<label for="avatarImage">
+					<input type="file" id="avatarImage" name="avatarImage" accept="image/*">
+				</label>
+				<small>* Taille maximum : 1Mb</small>
+		</form>
+	</div>
+	<footer>
+		<button autofocus value="cancel" class="btn--secondary" aria-label="Annuler">Annuler</button>
+		<button type="submit" value="validate" aria-label="Valider">Valider</button>
+	</footer>
+</dialog>
+
+<script src="../../scripts/vendors/prism.js"></script>
+<script type="module" src="../../scripts/script.js"></script>
+</body>
+</html>

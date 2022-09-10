@@ -1,6 +1,6 @@
-import CustomComponent from '../core/CustomComponent.js';
+import { CustomComponent } from '../core/CustomComponent.js';
 
-export default class Tabify extends CustomComponent {
+export class Tabify extends CustomComponent {
   constructor(element) {
     super(element);
 

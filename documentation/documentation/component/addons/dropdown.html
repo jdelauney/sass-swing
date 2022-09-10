@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0">
+
+	<title>Documentation Sass Swing - Composant supplémentaire : Menu déroulant</title>
+	<meta name="Description" content="Améliorez votre interface en ajoutant des menus déroulant grâce au framework scss/css Sass Swing"/>
+
+	<!-- Theme management -->
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="#1f2225">
+
+	<!-- Mobile app management -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-TileColor" content="#1f2225">
+	<meta name="msapplication-config" content="https://jdelauney.github.io/sass-swing/browserconfig.xml">
+	<link rel="manifest" href="https://jdelauney.github.io/sass-swing/site.webmanifest">
+	<meta name="application-name" content="Documentation Sass Swing - Composant supplémentaire : Menu déroulant">
+
+	<!-- SEO -->
+	<script type='application/ld+json'>
+		{
+			"@context": "https://www.schema.org",
+			"@type": "product",
+			"brand": "Sass Swing",
+			"name": "Framework SCSS / CSS Sass Swing",
+			"image": "https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg",
+			"description": "Améliorez votre interface en ajoutant des menus déroulant grâce au framework scss/css Sass Swing"
+		}
+	</script>
+
+	<link rel="canonical" href="https://jdelauney.github.io/sass-swing/documentation/component/addons/dropdown.html">
+	<meta name="robots" content="index, follow">
+
+	<!--	Preloading -->
+	<link rel="prerender" href="https://jdelauney.github.io/sass-swing/documentation/">
+
+	<!-- SEO:OpenGraph -->
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Documentation Sass Swing - Composant supplémentaire : Menu déroulant"/>
+	<meta property="og:url" content="https://jdelauney.github.io/sass-swing/documentation/component/addons/dropdown.html">
+	<meta property="og:title" content="Documentation Sass Swing - Composant supplémentaire : Menu déroulant">
+	<meta property="og:description" content="Améliorez votre interface en ajoutant des menus déroulant grâce au framework scss/css Sass Swing">
+
+	<meta property="og:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="470">
+
+	<!--<meta property="og:video" content="https://jdelauney.github.io/sass-swing/assets/videos/demo.mp4">
+	<meta property="og:video:type" content="video/mp4">
+	<meta property="og:video:width" content="1080">
+	<meta property="og:video:height" content="720">-->
+
+	<meta property="og:email" content="delauney.jerome@gmail.com"/>
+	<!--	<meta property="og:phone_number" content=""/>
+		<meta property="og:latitude" content=""/>
+		<meta property="og:longitude" content=""/>
+		<meta property="og:street-address" content=""/>-->
+	<meta property="og:locality" content="Genève"/>
+	<meta property="og:region" content="Genève"/>
+	<meta property="og:postal-code" content="1219"/>
+	<meta property="og:country-name" content="SUISSE"/>
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://jdelauney.github.io/sass-swing/documentation/component/addons/dropdown.html">
+	<meta property="twitter:title" content="Documentation Sass Swing - Composant supplémentaire : Menu déroulant">
+	<meta property="twitter:description" content="Améliorez votre interface en ajoutant des menus déroulant grâce au framework scss/css Sass Swing">
+	<meta property="twitter:image" content="https://jdelauney.github.io/sass-swing/assets/images/sass-swing-logo-01.svg">
+
+	<link rel="preload" href="../../../styles/css/prism.min.css" as="style">
+	<link rel="preload" href="../../../styles/css/sass-swing.doc.min.css" as="style">
+	<link rel="stylesheet" href="../../../styles/css/prism.min.css"/>
+	<link rel="stylesheet" href="../../../styles/css/sass-swing.doc.min.css"/>
+	<script src="../../../scripts/vendors/sass-swing.min.js" defer></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="https://jdelauney.github.io/sass-swing/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg" color="#1f2225">
+	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+</head>
+<body>
+<header class="navigation navigation--sticky md:navigation-toggle">
+	<nav  aria-label="menu principal">
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<ul>
+			<li><a href="#" aria-label="back home"><img aria-hidden="true" src="../../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework"></a> </li>
+			<li>Documentation</li>
+		</ul>
+		<div id="main-menu" class="navbar__menu flex--center">
+			<ul>
+				<li><a href="../../index.html" class="link--default">Présentation</a> </li>
+				<li><a href="../../getting-started/usage.html" class="link--default">Commencer</a> </li>
+				<li><a href="../../models.html" class="link--default">Modèles</a></li>
+				<li><a href="../../supportus.html" class="link--default">Supportez nous</a></li>
+				<li>
+					<a href="https://github.com/jdelauney/sass-swing" aria-label="Sass Swing GitHub repository" class="icon link--default">
+						<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+							<path fill="currentColor"
+							      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+							</path>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<button data-js-themeSwitcher class="theme-switcher" aria-label="Change theme couleur"></button>
+				</li>
+			</ul>
+		</div>
+		<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu" aria-label="Ouvre ou ferme le menu principal">
+			<span class="navbar__toggler__icon">&nbsp;</span>
+			<span class="sr-only">Ouvre ou ferme le menu principal</span>
+		</label>
+	</nav>
+</header>
+<main id="top">
+	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
+	<div class="sidebar__wrapper">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
+			<a href="../../index.html" class="menu-title link--default">Présentation</a>
+
+			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
+				<span class="menu-title">Commencer</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu1" name="collapsable-menu1" class="collapsable-toggler">
+			<ul id="collapsable-menu-1" class="collapsable">
+				<li><a href="../../getting-started/usage.html" class="link--default-alt">Usage</a></li>
+				<li><a href="../../getting-started/javascript.html" class="link--default-alt">Javascript</a></li>
+				<li><a href="../../getting-started/themes.html" class="link--default-alt">Themes</a></li>
+				<li><a href="../../getting-started/customize.html" class="link--default-alt">Personnalisation</a></li>
+				<!--				<li><a href="../roadmap.html" class="link&#45;&#45;secondary">Personnalisation</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu2"  aria-controls="collapsable-menu-2" aria-label="Agencement">
+				<span class="menu-title">Agencement</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu2" name="collapsable-menu2" class="collapsable-toggler">
+			<ul id="collapsable-menu-2" class="collapsable">
+				<li><a href="../../layout/containers.html" class="link--default-alt">Conteneurs</a></li>
+				<li><a href="../../layout/grid.html" class="link--default-alt">Grille</a></li>
+				<li><a href="../../layout/breakpoints.html" class="link--default-alt">Point d'arrêts</a></li>
+			</ul>
+
+			<label for="collapsable-menu3"  aria-controls="collapsable-menu-3" aria-label="Eléments">
+				<span class="menu-title">Eléments</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu3" name="collapsable-menu3" class="collapsable-toggler">
+			<ul id="collapsable-menu-3" class="collapsable">
+				<li><a href="../../content/typography.html" class="link--default-alt">Typographie</a></li>
+				<li><a href="../../content/buttons.html" class="link--default-alt">Boutons</a></li>
+				<li><a href="../../content/form.html" class="link--default-alt">Formulaires</a></li>
+				<li><a href="../../content/medias.html" class="link--default-alt">Médias</a></li>
+				<li><a href="../../content/table.html" class="link--default-alt">Tableaux</a></li>
+				<li><a href="../../content/progress.html" class="link--default-alt">Progression</a></li>
+				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
+			</ul>
+
+			<label for="collapsable-menu4" aria-controls="collapsable-menu-4" aria-label="Composants">
+				<span class="menu-title">Composants</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu4" name="collapsable-menu4" class="collapsable-toggler" checked>
+			<ul id="collapsable-menu-4" class="collapsable">
+				<li><a href="../navigation.html" class="link--default-alt">Navigation</a></li>
+				<li><a href="../card.html" class="link--default-alt">Carte</a></li>
+				<li><a href="../details.html" class="link--default-alt">Détails</a></li>
+				<li><a href="../breadcrumb.html" class="link--default-alt">Fil d'Ariane</a></li>
+				<li><a href="../pagination.html" class="link--default-alt">Pagination</a></li>
+				<li><a href="../modal.html" class="link--default-alt">Boite de dialogue</a></li>
+				<li><a href="../collapsable.html" class="link--default-alt">Collapsable</a></li>
+				<li>
+					<label for="collapsable-menu4a" aria-controls="collapsable-menu-4a" aria-label="Extras">
+						<span class="menu-title">Extras</span>
+					</label>
+					<input type="checkbox" id="collapsable-menu4a" name="collapsable-menu4a" class="collapsable-toggler" checked>
+					<ul id="collapsable-menu-4a" class="collapsable">
+						<li><a href="badge.html" class="link--default-alt">Badge</a></li>
+						<li><a href="tooltip.html" class="link--default-alt">Info bulle</a></li>
+						<li><a href="loader.html" class="link--default-alt">Loader</a></li>
+						<li><a href="./dropdown.html" class="link--default-alt" aria-current="page">Menu déroulant</a></li>
+						<li><a href="tabs.html" class="link--default-alt">Boite à onglets</a></li>
+						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
+						<li><a href="notification.html" class="link--default-alt">Notification</a></li>
+						<li><a href="slider.html" class="link--default-alt">Slider</a></li>
+						<li><a href="reveal.html" class="link--default-alt">Reveal</a></li>
+						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
+						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
+					</ul>
+				</li>
+			</ul>
+
+			<label for="collapsable-menu5" aria-controls="collapsable-menu-5" aria-label="Utilitaires">
+				<span class="menu-title">Utilitaires</span>
+			</label>
+			<input type="checkbox" id="collapsable-menu5" name="collapsable-menu5" class="collapsable-toggler">
+			<ul id="collapsable-menu-5" class="collapsable">
+				<li><a href="../../helpers/layout.html" class="link--default-alt">Agencement</a></li>
+				<li><a href="../../helpers/design.html" class="link--default-alt">Design</a></li>
+				<li><a href="../../helpers/animation.html" class="link--default-alt">Animation</a></li>
+			</ul>
+
+		</nav>
+		<label for="sidebar" class="sidebar__toggler" aria-label="Table des matières"><span class="sr-only">Ouvre ou ferme la table des matières</span></label>
+	</div>
+	<div  role="document" class="content">
+		<section>
+			<header class="heading">
+				<h1 class="text-swing-alt">Menu déroulant </h1>
+				<span class="like-h4 text-em">Un menu déroulant interactif, pour afficher une liste de liens ou autre de manière dynamique au click ou au survol.</span>
+				<hr>
+			</header>
+			<h2 class="text-swing">Vue d'ensemble</h2>
+			<p>
+				Les menus déroulants permettent de faire apparaitre une liste de liens ou autres contenus au survol ou au click de souris. Pour l'affichage par click, l'utilisation d'un script Javascript est nécessaire.
+			</p>
+			<p>
+				Les menus, peuvent être une suite de liens ou tout autre contenu personnalisé. Pour ce faire <span class="text-swing-alt">Sass Swing</span> met à disposition deux classes. Une pour définir les items <code><i>.dropdown__item</i></code>, qui est de type <code><b>Flex</b></code> et aligné verticalement au centre.
+			</p>
+			<p>
+				La deuxième classe est pour la balise englobant le contenu du sous-menu <code><i>.dropdown__menu</i></code>. Celle-ci est de type <code><b>Flex</b></code> en mode colonne.
+			</p>
+
+			<article class="card">
+				<div class="panel">
+					<div class="dropdown">
+						<button class="btn--secondary">Dropdown générique au survole</button>
+						<ul style="--gap:.5em;">
+							<li><a href="#">Action 1</a></li>
+							<li><a href="#">Action 2</a></li>
+							<li class="dropdown">
+								<a href="#">Action 3</a>
+								<ul style="--gap:.5em;">
+									<li><a href="#">Action 3a</a></li>
+									<li><a href="#">Action 3b</a></li>
+									<li><a href="#">Action 3c</a></li>
+									<li><a href="#">Action 3d</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Action 4</a></li>
+						</ul>
+					</div>
+					<div class="dropdown">
+						<button class="btn--secondary">Dropdown avec contenu personnalisé</button>
+						<div class="dropdown__menu" style="--gap:.5em;">
+							<a href="#" class="dropdown__item">
+								<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+								&nbsp; item 1
+							</a>
+							<a href="#" class="dropdown__item">
+								<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+								&nbsp; item 2
+							</a>
+							<a href="#" class="dropdown__item">
+								<img src="https://picsum.photos/24/24/" alt="picsum" width="24" height="24" style="--mw:24px;"/>
+								&nbsp; item 3
+							</a>
+						</div>
+					</div>
+				</div>
+				<footer class="footer__code">
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;dropdown&quot;&gt;
+	&lt;button class=&quot;btn--secondary&quot;&gt;Dropdown g&eacute;n&eacute;rique au survole&lt;/button&gt;
+	&lt;ul style=&quot;--gap:.5em;&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li class=&quot;dropdown&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;Action 3&lt;/a&gt;
+			&lt;ul style=&quot;--gap:.5em;&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3a&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3b&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3c&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3d&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dropdown&quot;&gt;
+	&lt;button class=&quot;btn--secondary&quot;&gt;Dropdown avec contenu personnalis&eacute;&lt;/button&gt;
+	&lt;div class=&quot;dropdown__menu&quot; style=&quot;--gap:.5em;&quot;&gt;
+		&lt;a href=&quot;#&quot; class=&quot;dropdown__item&quot;&gt;
+			&lt;img src=&quot;https://picsum.photos/24/24/&quot; alt=&quot;picsum&quot; width=&quot;24&quot; height=&quot;24&quot; style=&quot;--mw:24px;&quot;/&gt;
+			&amp;nbsp; item 1
+		&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;dropdown__item&quot;&gt;
+			&lt;img src=&quot;https://picsum.photos/24/24/&quot; alt=&quot;picsum&quot; width=&quot;24&quot; height=&quot;24&quot; style=&quot;--mw:24px;&quot;/&gt;
+			&amp;nbsp; item 2
+		&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;dropdown__item&quot;&gt;
+			&lt;img src=&quot;https://picsum.photos/24/24/&quot; alt=&quot;picsum&quot; width=&quot;24&quot; height=&quot;24&quot; style=&quot;--mw:24px;&quot;/&gt;
+			&amp;nbsp; item 3
+		&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Accessibilité</h2>
+			<p>
+				Tout comme la gestion du click. Pour une prise en charge totale des attributs d'accessibilité, l'utilisation d'un script est nécessaire.
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": false, "hideOnClickOutside": true}'>
+						<button class="btn--secondary">Dropdown au click</button>
+						<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+							<li><a href="#">Action 1</a></li>
+							<li><a href="#">Action 2</a></li>
+							<li class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true}'>
+								<a href="#">Action 3</a>
+								<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+									<li><a href="#">Action 3a</a></li>
+									<li><a href="#">Action 3b</a></li>
+									<li><a href="#">Action 3c</a></li>
+									<li><a href="#">Action 3d</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Action 4</a></li>
+						</ul>
+					</div>
+					<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+						<button class="btn--secondary">Dropdown au survol accessible</button>
+						<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+							<li><a href="#">Action 1</a></li>
+							<li><a href="#">Action 2</a></li>
+							<li class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+								<a href="#">Action 3</a>
+								<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+									<li><a href="#">Action 3a</a></li>
+									<li><a href="#">Action 3b</a></li>
+									<li><a href="#">Action 3c</a></li>
+									<li><a href="#">Action 3d</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Action 4</a></li>
+						</ul>
+					</div>
+				</div>
+				<footer class="footer__code">
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: false, &quot;hideOnClickOutside&quot;: true}&#39;&gt;
+	&lt;button class=&quot;btn--secondary&quot;&gt;Dropdown au click&lt;/button&gt;
+	&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: true}&#39;&gt;
+			&lt;a href=&quot;#&quot;&gt;Action 3&lt;/a&gt;
+			&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3a&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3b&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3c&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3d&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: true, &quot;hideOnClickOutside&quot;: false}&#39;&gt;
+	&lt;button class=&quot;btn--secondary&quot;&gt;Dropdown au survol accessible&lt;/button&gt;
+	&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: true, &quot;hideOnClickOutside&quot;: false}&#39;&gt;
+			&lt;a href=&quot;#&quot;&gt;Action 3&lt;/a&gt;
+			&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3a&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3b&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3c&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3d&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<p>L'ajout d'un menu déroulant dans une barre de navigation est tout aussi facile, avec ou sans l'utilisation du script.</p>
+			<article class="card">
+				<div class="panel">
+					<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": false, "hideOnClickOutside": true}'>
+						<button class="btn--secondary">Dropdown au click</button>
+						<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+							<li><a href="#">Action 1</a></li>
+							<li><a href="#">Action 2</a></li>
+							<li class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true}'>
+								<a href="#">Action 3</a>
+								<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+									<li><a href="#">Action 3a</a></li>
+									<li><a href="#">Action 3b</a></li>
+									<li><a href="#">Action 3c</a></li>
+									<li><a href="#">Action 3d</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Action 4</a></li>
+						</ul>
+					</div>
+					<div class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+						<button class="btn--secondary">Dropdown au survol accessible</button>
+						<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+							<li><a href="#">Action 1</a></li>
+							<li><a href="#">Action 2</a></li>
+							<li class="dropdown" aria-haspopup="true" aria-expanded="false" data-js-dropdown='{"showOnHover": true, "hideOnClickOutside": false}'>
+								<a href="#">Action 3</a>
+								<ul role="listbox" tabindex="-1" aria-hidden="true" style="--gap:.5em;">
+									<li><a href="#">Action 3a</a></li>
+									<li><a href="#">Action 3b</a></li>
+									<li><a href="#">Action 3c</a></li>
+									<li><a href="#">Action 3d</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Action 4</a></li>
+						</ul>
+					</div>
+				</div>
+				<footer class="footer__code">
+					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: false, &quot;hideOnClickOutside&quot;: true}&#39;&gt;
+	&lt;button class=&quot;btn--secondary&quot;&gt;Dropdown au click&lt;/button&gt;
+	&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: true}&#39;&gt;
+			&lt;a href=&quot;#&quot;&gt;Action 3&lt;/a&gt;
+			&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3a&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3b&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3c&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3d&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: true, &quot;hideOnClickOutside&quot;: false}&#39;&gt;
+	&lt;button class=&quot;btn--secondary&quot;&gt;Dropdown au survol accessible&lt;/button&gt;
+	&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li class=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; data-js-dropdown=&#39;{&quot;showOnHover&quot;: true, &quot;hideOnClickOutside&quot;: false}&#39;&gt;
+			&lt;a href=&quot;#&quot;&gt;Action 3&lt;/a&gt;
+			&lt;ul role=&quot;listbox&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot; style=&quot;--gap:.5em;&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3a&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3b&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3c&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 3d&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+			<h2 class="text-swing">Personnalisation</h2>
+			<div class="ui--warning flex flex--center-all" style="--p:1em;">
+				<span><b>Uniformisation et améliorations prévue</b></span>
+			</div>
+		</section>
+	</div>
+
+	<div class="back-to-top-wrapper">
+		<a href="#top" aria-label="Scroll to Top">
+		</a>
+	</div>
+
+</main>
+<footer class="container-full" style="--bgc:var(--neutral-color-variation-1);">
+	<div class="container grid md:cols-5 col-gap-4">
+		<div class="m:col-span-2 flex flex--center-all" style="--fs:.8em;">
+			<a href="#" aria-label="page d'accueil" class="link--default">
+					<span style="--w:160px;">
+						<img aria-hidden="true" src="../../../assets/images/sass-swing-logo-01.svg" width="80px" height="48px" alt="Sass Swing modern, elegant, consistent semantic scss css framework">
+					</span>
+				<span>
+						Développez vous avec <span style="--clr:red">❤</span>
+					</span>
+			</a>
+			<p style="--mt:0;--ta:center;">
+				Code licence MIT, docs CC BY 3.0<br>
+				Version actuelle : 1.0.1
+			</p>
+		</div>
+		<!--		<nav style="&#45;&#45;w:66%;">-->
+		<div class="t:col-span-3">
+			<hr class="md:hidden" style="--mt:.5em;--mb:0;">
+			<ul role="list" class="grid t:cols-3">
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Liens</span>
+					<ul>
+						<li><a href="../../../index.html" class="link--default">Accueil</a></li>
+						<li><a href="../../index.html" class="link--default">Documentation</a></li>
+						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
+						<!--					<li><a href="../themes.html">Themes Premium</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Guides</span>
+					<ul role="list">
+						<li><a href="../../getting-started/usage.html" class="link--default">Usage</a></li>
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-starter" class="link&#45;&#45;default">Projet standard</a></li>-->
+						<!--						<li><a href="https://github.com/jdelauney/sassswing-npm-starter" class="link&#45;&#45;default">Projet NPM</a></li>-->
+					</ul>
+				</li>
+				<li style="--mt:1em;">
+					<span class="like-h3 text-swing">Communauté</span>
+					<ul role="list">
+						<li><a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Issues</a></li>
+						<li><a href="https://github.com/jdelauney/sass-swing/discussions" class="link--default">Discussion</a></li>
+						<!--						<li><a href="" class="link&#45;&#45;default">Sponsors</a></li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--		</nav>-->
+	</div>
+	<div class="flex flex--row flex--space-between" style="--bgc:var(--neutral-color-variation-2);--fs:.8em;--py:.8em;--px:2em;--mt:1.6em;--br:2em;">
+		<span class="text-swing-alt">&reg;&nbsp;Sass Swing 2022 - &copy;&nbsp;J.Delauney</span>
+		<div class="iflex flex--v-center gap-2">
+			<a href="https://github.com/jdelauney" aria-label="J.Delauney GitHub repository" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+					</path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/jérôme-delauney-802994bb/" aria-label="J.Delauney LinkedIn profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+					</path>
+				</svg>
+			</a>
+			<a href="https://twitter.com/JeromeDelauney" aria-label="J.Delauney Twitter profile" class="icon link--default">
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px">
+					<path fill="currentColor"
+					      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+					</path>
+				</svg>
+			</a>
+		</div>
+		<div class="iflex gap-2">
+			<a href="https://github.com/jdelauney/sass-swing/issues" class="link--default">Signaler un bug</a>
+			<a href="../../legal-notice.html" class="link--default">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+<script src="../../../scripts/vendors/prism.js"></script>
+<script type="module" src="../../../scripts/script.js"></script>
+</body>
+</html>
