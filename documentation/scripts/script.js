@@ -129,7 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
 						SassSwing.notify.info('Info', 'Notification info', notifyConfig);
 						break;
 					default:
-							SassSwing.notify.notify(capitalize(type), 'Notification ' + type, type, notifyConfig);
+							SassSwing.notify.notify(SassSwing.capitalize(type), 'Notification ' + type, type, notifyConfig);
 							break;
 				}
 			})

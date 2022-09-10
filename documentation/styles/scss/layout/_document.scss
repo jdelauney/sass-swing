@@ -31,7 +31,6 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   min-height: 100vh;
 }
 
@@ -58,9 +57,10 @@ body {
 
 .card--thumb {
   padding:1em;
-  transform: scale(1);
+  //transform: scale(1);
   will-change: transform;
   transition: all .25s ease-in-out;
+  height:100%;
 
   header {
     margin-top: 1em;
@@ -106,20 +106,7 @@ body {
   }
 }
 
-.card__template-preview {
-  position: relative;
 
-  &__desktop {
-
-  }
-
-  &__tablet {
-
-  }
-  &__mobile {
-
-  }
-}
 
 .credits {
   display: flex;
@@ -277,7 +264,7 @@ body {
 }
 
 .menu-title {
-  color : var(--color-swing);
+  color : var(--color-swing-hover);
   font-weight: 300;
   font-size: 1.4rem;
   text-transform: uppercase;
@@ -289,7 +276,8 @@ body {
   }
 
   &:hover {
-    color: var(--color-swing-hover);
+    color: var(--color-swing);
+    font-weight: 500;
   }
 }
 
@@ -477,14 +465,11 @@ body {
 .navbar__toggler .navbar__toggler__icon,
 .navbar__toggler .navbar__toggler__icon:after,
 .navbar__toggler .navbar__toggler__icon:before {
-  --background-color: var(--color-swing-hover);
+  --background-color: var(--color-swing-hover) !important;
+  --hover-background-color: var(--color-swing) !important;
 }
 
-.navbar__toggler:hover .navbar__toggler__icon,
-.navbar__toggler:hover .navbar__toggler__icon:after,
-.navbar__toggler:hover .navbar__toggler__icon:before {
-  --hover-background-color: var(--color-swing);
-}
+
 
 @include mq(desktop-medium) {
   body > main {
@@ -706,6 +691,43 @@ dialog .close {
   background-color: rgb(0 0 0 / .15);
   border: 3px solid var(--primary-color-variation-1);
   backdrop-filter: blur(5px);
+}
+
+[aria-busy="true"].custom--loader::after {
+  all:unset;
+  content: "";
+  position: absolute;
+  width: .7em;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity:1;
+  transform: translate(-50%, -50%);
+  transition: opacity .35s ease;
+  animation: anim-custom-loader 1s infinite linear alternate;
+}
+@keyframes anim-custom-loader {
+  0%  {box-shadow: 20px 0 var(--primary-color), -20px 0 var(--primary-color-variation-1) ;background: var(--primary-color) }
+  33% {box-shadow: 20px 0 var(--primary-color), -20px 0 var(--primary-color-variation-1);background: var(--primary-color-variation-1)}
+  66% {box-shadow: 20px 0 var(--primary-color-variation-1),-20px 0 var(--primary-color); background: var(--primary-color-variation-1)}
+  100%{box-shadow: 20px 0 var(--primary-color-variation-1),-20px 0 var(--primary-color); background: var(--primary-color) }
+}
+
+.box-reveal-sample {
+  height:240px;
+  padding:1em;
+  background-color: CornflowerBlue;
+  color: black;
+  opacity:0;
+  text-align: center;
+  transition: all 10s ease-in-out;
+}
+
+.box-appear {
+  background-color: Crimson;
+  color:white;
+  opacity:1;
 }
 
 @include mq(tablet) {

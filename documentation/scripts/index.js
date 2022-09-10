@@ -1,11 +1,11 @@
-const threshold = 0.1;
+/*const threshold = 0.5;
 const options = {
-	root: null,
-	rootMargin: '10px 0px 0px 0px',
+	root: null,//document.querySelector('main'),
+	rootMargin: '0px 100% 0px 100%',
 	threshold
-};
+};*/
 
-const handleAnimationIntersect = function (entries, observer) {
+/*const handleAnimationIntersect = function (entries, observer) {
 	entries.forEach(function (entry) {
 		//console.log(entry.intersectionRatio);
 		if (entry.isIntersecting) {
@@ -27,12 +27,12 @@ const svgHandleAnimationIntersect = function (entries, observer) {
 			}
 		}
 	});
-};
+};*/
 
 document.addEventListener('DOMContentLoaded', function () {
-	window.setTimeout(document.querySelector('#freepik_stories-static-website').classList.add('animated'), 1500);
+	window.setTimeout(() => { document.querySelector('#freepik_stories-static-website').classList.add('animated') }, 1500);
 
-	const observer = new IntersectionObserver(handleAnimationIntersect, options);
+/*	const observer = new IntersectionObserver(handleAnimationIntersect, options);
 	const targets = document.querySelectorAll('[class*="reveal--"]');
 
 	targets.forEach(function (target) {
@@ -44,5 +44,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	svgTargets.forEach(function (target) {
 		svgObserver.observe(target);
-	});
+	});*/
 })

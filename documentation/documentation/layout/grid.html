@@ -120,7 +120,7 @@
 <main id="top">
 	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
 	<div class="sidebar__wrapper">
-		<nav class="custom-scrollbar" aria-label="Table des matières">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
 			<a href="../index.html" class="menu-title link--default">Présentation</a>
 
 			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
@@ -153,7 +153,7 @@
 				<li><a href="../content/typography.html" class="link--default-alt">Typographie</a></li>
 				<li><a href="../content/buttons.html" class="link--default-alt">Boutons</a></li>
 				<li><a href="../content/form.html" class="link--default-alt">Formulaires</a></li>
-<!--				<li><a href="../content/medias.html" class="link&#45;&#45;secondary">Médias</a></li>-->
+				<li><a href="../content/medias.html" class="link--default-alt">Médias</a></li>
 				<li><a href="../content/table.html" class="link--default-alt">Tableaux</a></li>
 				<li><a href="../content/progress.html" class="link--default-alt">Progression</a></li>
 				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
@@ -179,13 +179,13 @@
 					<ul id="collapsable-menu-4a" class="collapsable">
 						<li><a href="../component/addons/badge.html" class="link--default-alt">Badge</a></li>
 						<li><a href="../component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
-						<!--						<li><a href="../component/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
+						<li><a href="../component/addons/loader.html" class="link--default-alt">Loader</a></li>
 						<li><a href="../component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
 						<li><a href="../component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
 						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
 						<li><a href="../component/addons/notification.html" class="link--default-alt">Notification</a></li>
 						<li><a href="../component/addons/slider.html" class="link--default-alt">Slider</a></li>
-						<!--						<li><a href="./revealer.html" class="link&#45;&#45;secondary">Revealer</a></li>-->
+						<li><a href="../component/addons/reveal.html" class="link--default-alt">Reveal</a></li>
 						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
 						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
 					</ul>
@@ -219,11 +219,13 @@
 				Notez que par défaut les grilles ne sont pas espacées.
 			</p>
 			<article id="code" class="card">
-				<div class="grid-sample grid">
-					<div>1</div>
-					<div>2</div>
-					<div>3</div>
-					<div>4</div>
+				<div class="panel">
+					<div class="grid-sample grid">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
 				</div>
 				<footer class="footer__code">
 						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid&quot;&gt;
@@ -238,18 +240,20 @@
 				Vous pouvez choisir le nombre de colonnes par ligne avec la classe <code><b>.cols-x</b></code> avec <b>x</b> allant de 2 à 8 (maximum de colonne) ou choisir le mode auto avec <code><b>.cols-auto</b></code>.
 			</p>
 			<article class="card">
-				<div class="grid-sample grid cols-2">
-					<div>1</div>
-					<div>2</div>
-					<div>3</div>
-					<div>4</div>
-				</div>
-				<hr>
-				<div class="grid-sample grid cols-auto">
-					<div>1</div>
-					<div>2</div>
-					<div>3</div>
-					<div>4</div>
+				<div class="panel">
+					<div class="grid-sample grid cols-2">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
+					<hr>
+					<div class="grid-sample grid cols-auto">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
 				</div>
 				<footer class="footer__code">
 						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid-sample grid cols-2&quot;&gt;
@@ -273,22 +277,24 @@
 				enfin juste sur les colonnes avec <code><i>.col-gap-<sub>x</sub></i></code>. Avec <b>X</b> variant de 1 à 8 <i>(3 est la taille de pour un espace "normal")</i>.
 			</p>
 			<article class="card">
-				<div class="grid-sample cols-2 grid gap-3">
-					<div>1</div>
-					<div>2</div>
-					<div>3</div>
-					<div>4</div>
-				</div>
-				<hr>
-				<div class="grid-sample grid cols-4 row-gap-1 col-gap-2" >
-					<div>1</div>
-					<div>2</div>
-					<div>3</div>
-					<div>4</div>
-					<div>5</div>
-					<div>6</div>
-					<div>7</div>
-					<div>8</div>
+				<div class="panel">
+					<div class="grid-sample cols-2 grid gap-3">
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+					</div>
+					<hr>
+					<div class="grid-sample grid cols-4 row-gap-1 col-gap-2" >
+						<div>1</div>
+						<div>2</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div>
+						<div>6</div>
+						<div>7</div>
+						<div>8</div>
+					</div>
 				</div>
 				<footer class="footer__code">
 						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid cols-2 gap-3&quot;&gt;
@@ -315,24 +321,26 @@
 				Vous avez la possibilité de contrôler la position et les dimensions de chaque ligne et colonne en les fusionnant.
 			</p>
 			<article class="card">
-				<div class="grid-sample grid cols-3 gap-3">
-					<div>1</div>
-					<div class="col-start-3">2</div>
-					<div>3</div>
-					<div>4</div>
-					<div class="col-start-1 col-end-4">5</div>
-					<div class="col-start-2">6</div>
-					<div class="col-end-4">7</div>
-				</div>
-				<hr>
-				<div class="grid-sample grid cols-3 gap-3">
-					<div class="col-span-full">0</div>
-					<div>1</div>
-					<div class="row-span-2">2</div>
-					<div>3</div>
-					<div>4</div>
-					<div>5</div>
-					<div class="col-span-3">6</div>
+				<div class="panel">
+					<div class="grid-sample grid cols-3 gap-3">
+						<div>1</div>
+						<div class="col-start-3">2</div>
+						<div>3</div>
+						<div>4</div>
+						<div class="col-start-1 col-end-4">5</div>
+						<div class="col-start-2">6</div>
+						<div class="col-end-4">7</div>
+					</div>
+					<hr>
+					<div class="grid-sample grid cols-3 gap-3">
+						<div class="col-span-full">0</div>
+						<div>1</div>
+						<div class="row-span-2">2</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div>
+						<div class="col-span-3">6</div>
+					</div>
 				</div>
 				<footer class="footer__code">
 						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid cols-3 gap-3&quot;&gt;
@@ -369,7 +377,8 @@
 				<i>Redimensionnez votre fenêtre d'affichage pour tester, le comportement</i>.
 			</p>
 			<article class="card">
-				<div class="grid-sample grid t:cols-2 gap-1">
+				<div class="panel">
+					<div class="grid-sample grid t:cols-2 gap-1">
 					<div class="t:col-span-2 d:col-span-full">1
 						<div class="grid-neested grid t:cols-2 md:cols-4 gap-3">
 							<div class="t:col-span-2 d:col-span-full">a</div>
@@ -403,6 +412,7 @@
 					<div>4</div>
 					<div>5</div>
 					<div class="col-span-full">6</div>
+				</div>
 				</div>
 				<footer class="footer__code">
 						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid t:cols-2 gap-1&quot;&gt;
@@ -439,6 +449,50 @@
 	&lt;div&gt;4&lt;/div&gt;
 	&lt;div&gt;5&lt;/div&gt;
 	&lt;div class=&quot;col-span-full&quot;&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</footer>
+			</article>
+
+			<h3 class="text-swing">Empilez vos éléments</h3>
+			<p>
+				Les grilles css, nous donnent également d'empilé nos éléments les un par-dessus les autres. Ce qui nous évite de créer des éléments avec <code><b>position</b>:<i>absolute</i>;</code>. Nous pourrons également nous en servir pour créer des en-têtes de page nommés couramment "hero"
+			</p>
+			<p>
+				Vous pouvez contrôler les dimensions en spécifiant le ratio d'aspect via la variable css local <code><b>--aspect-ratio</b></code>
+			</p>
+			<article class="card">
+				<div class="panel">
+					<div class="grid-stacked">
+						<div>
+							<h1>Heading</h1>
+							<p>Slogan here</p>
+						</div>
+						<img src="../../assets/images/image03.jpg" width="200" height="300" alt="hero image">
+					</div>
+					<hr>
+					<div class="grid-stacked" style="--aspect-ratio:16/9;">
+						<div>
+							<h1>Heading</h1>
+							<p>Slogan here</p>
+						</div>
+						<img src="../../assets/images/image02.jpg" width="200" height="300" alt="hero image">
+					</div>
+				</div>
+				<footer class="footer__code">
+						<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;div class=&quot;grid-stacked&quot;&gt;
+	&lt;div&gt;
+		&lt;h1&gt;Heading&lt;/h1&gt;
+		&lt;p&gt;Slogan here&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;img src=&quot;../../assets/images/image01.jpg&quot; width=&quot;200&quot; height=&quot;300&quot; alt=&quot;hero image&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;grid-stacked&quot; style=&quot;--aspect-ratio:16/9;&quot;&gt;
+	&lt;div&gt;
+		&lt;h1&gt;Heading&lt;/h1&gt;
+		&lt;p&gt;Slogan here&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;img src=&quot;../../assets/images/image02.jpg&quot; width=&quot;200&quot; height=&quot;300&quot; alt=&quot;hero image&quot;&gt;
 &lt;/div&gt;</code></pre>
 				</footer>
 			</article>

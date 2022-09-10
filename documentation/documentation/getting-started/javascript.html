@@ -119,7 +119,7 @@
 <main id="top">
 	<input type="checkbox" id="sidebar" name="sidebar" class="sidebar__toggle">
 	<div class="sidebar__wrapper">
-		<nav class="custom-scrollbar" aria-label="Table des matières">
+		<nav class="navbar custom-scrollbar" aria-label="Table des matières">
 			<a href="../index.html" class="menu-title link--default">Présentation</a>
 
 			<label for="collapsable-menu1" aria-controls="collapsable-menu-1" aria-label="Commencer">
@@ -152,7 +152,7 @@
 				<li><a href="../content/typography.html" class="link--default-alt">Typographie</a></li>
 				<li><a href="../content/buttons.html" class="link--default-alt">Boutons</a></li>
 				<li><a href="../content/form.html" class="link--default-alt">Formulaires</a></li>
-				<!--				<li><a href="../content/medias.html" class="link&#45;&#45;secondary">Médias</a></li>-->
+				<li><a href="../content/medias.html" class="link--default-alt">Médias</a></li>
 				<li><a href="../content/table.html" class="link--default-alt">Tableaux</a></li>
 				<li><a href="../content/progress.html" class="link--default-alt">Progression</a></li>
 				<!--				<li><a href="../content/meter.html" class="link&#45;&#45;secondary">Mesure</a></li>-->
@@ -178,14 +178,13 @@
 					<ul id="collapsable-menu-4a" class="collapsable">
 						<li><a href="../component/addons/badge.html" class="link--default-alt">Badge</a></li>
 						<li><a href="../component/addons/tooltip.html" class="link--default-alt">Info bulle</a></li>
-						<!--						<li><a href="../component/addons/loader.html" class="link&#45;&#45;secondary">Loader</a></li>-->
+						<li><a href="../component/addons/loader.html" class="link--default-alt">Loader</a></li>
 						<li><a href="../component/addons/dropdown.html" class="link--default-alt">Menu déroulant</a></li>
 						<li><a href="../component/addons/tabs.html" class="link--default-alt">Boite à onglets</a></li>
 						<!--						<li><a href="../component/addons/selectex.html" class="link&#45;&#45;secondary">"Select" étendu</a></li>-->
 						<li><a href="../component/addons/notification.html" class="link--default-alt">Notification</a></li>
 						<li><a href="../component/addons/slider.html" class="link--default-alt">Slider</a></li>
-						<!--						<li><a href="./revealer.html" class="link&#45;&#45;secondary">Revealer</a></li>-->
-						<!--						<li><a href="./gallery.html" class="link&#45;&#45;secondary">Gallerie</a></li>-->
+						<li><a href="../component/addons/reveal.html" class="link--secondary">Reveal</a></li>
 						<!--						<li><a href="./chart.html" class="link&#45;&#45;secondary">Graphique</a></li>-->
 					</ul>
 				</li>
@@ -208,7 +207,7 @@
 		<section>
 			<header class="heading">
 				<h1 class="text-swing-alt">Fonctionnalités avancées en javascript</h1>
-				<span class="like-h4 text-em">Augmenter l'UX et l'accessibilité, grâce aux solutions de Sass Swing</span>
+				<span class="like-h4 text-em">Augmenter l'UX et l'accessibilité, grâce aux solutions javascript de Sass Swing</span>
 				<hr>
 			</header>
 			<h2 class="text-swing">Vue d'ensemble</h2>
@@ -220,10 +219,12 @@
 				Le deuxième est au format <abbr title="ECMAScript Module">ESM</abbr>. Celui-ci vous l'utiliserez dans vos scripts, si vous installez <span class="text-swing">Sass Swing</span> avec NPM. Vous devrez alors faire un import.
 			</p>
 
+			<h2 class="text-swing">Les composants</h2>
 			<article class="card">
 				<div class="panel">
 					<p>
-						Dans le premier cas pour le script UMD. Pour la majorité des composants, comme <a href="themes.html" class="link--default link-underline">Theme Switcher</a>, <a href="../component/addons/dropdown.html" class="link--default link-underline">Menus déroulants</a>, <a href="../component/addons/tabs.html" class="link--default link-underline">Boites à onglets</a> et <a href="../component/addons/slider.html" class="link--default link-underline">Slider</a>, pour la prise en charge, vous n'aurez rien à faire à part lier le fichier javascript <code>sass-swing.min.js</code> dans votre page
+						Dans le premier cas pour le script UMD. Pour la majorité des composants, comme <a href="themes.html" class="link--default link-underline">Theme Switcher</a>, <a href="../component/addons/dropdown.html" class="link--default link-underline">Menus déroulants</a>,
+						<a href="../component/addons/tabs.html" class="link--default link-underline">Boites à onglets</a>, <a href="../component/addons/slider.html" class="link--default link-underline">Slider</a>, <a href="../component/addons/reveal.html" class="link--default link-underline">Reveal</a> pour la prise en charge, vous n'aurez rien à faire à part lier le fichier javascript <code>sass-swing.min.js</code> dans votre page
 					</p>
 					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;head&gt;
    ...
@@ -249,6 +250,95 @@ notify.notify(&#39;Default&#39;, &#39;Notification simple&#39;, &#39;default&#39
 
 const myModalManager = new Modal(&#39;#myModal&#39;);</code></pre>
 				</div>
+			</article>
+			<h2 class="text-swing">Les fonctions utiles</h2>
+			<p>
+				Sass Swing met également à disposition quelques fonctions utiles dans divers domaines.
+			</p>
+			<ul>
+				<li>
+					<h3>Maths</h3>
+					<ul>
+						<li>
+							<code><b>clamp</b>(<i>min</i>, <i>max)</i>)</code> : Permet de s'assurer qu'un nombre soit compris dans l'interval <i>min</i> et <i>max</i>.
+						</li>
+						<li>
+							<code><b>randomBetween</b>(<i>min</i>, <i>max)</i>)</code> : Retourne un nombre aléatoire compris dans l'interval <i>min</i> et <i>max</i>.
+						</li>
+						<li>
+							<code><b>safeRandomBetween</b>(<i>min</i>, <i>max)</i>)</code> : Retourne un nombre aléatoire compris dans l'interval <i>min</i> et <i>max</i> sécurisé.
+						</li>
+					</ul>
+				</li>
+				<li style="--mt:var(--block-half-spacing);">
+					<h3>String</h3>
+					<ul>
+						<li>
+							<code><b>capitalize</b>(<i>string</i>)</code> : Met la première lettre d'une chaine de caractères en majuscule.
+						</li>
+						<li>
+							<code><b>escapeHTML</b>(<i>string</i>)</code> : Protège une chaine de caractères contre les attaques XSS et échappe les caractères spéciaux.
+						</li>
+						<li>
+							<code><b>unescapeHTML</b>(<i>string</i>)</code> : Convertit les "entities html" en caractères normaux.
+						</li>
+						<li>
+							<code><b>removeAccents</b>(<i>string</i>)</code> : Convertit les lettres avec accents en lettre sans accent
+						</li>
+					</ul>
+				</li>
+				<li style="--mt:var(--block-half-spacing);">
+					<h3>DOM</h3>
+					<ul>
+						<li>
+							<code><b>waitForDOMEvent</b>(<i>element</i>, <i>event)</i>)</code> : Fonction asynchrone. Permet d'attendre qu'un évènement du DOM soit lever par un élément
+						</li>
+					</ul>
+				</li>
+				<li style="--mt:var(--block-half-spacing);">
+					<h3>Divers</h3>
+					<ul>
+						<li>
+							<code><b>wait</b>(<i>durationInMs</i>)</code> : Fonction asynchrone. Suspend l'exécution du code pendant <i>X</i> ms.
+						</li>
+						<li>
+							<code><b>debounce</b>(<i>fn</i>, <i>timeout</i>=<u>200</u>)</code> : Retourne une fonction qui exécute une fonction <i>fn</i> appelée <i>X</i> fois qu'une seule fois après un temps d'attente de <i>X</i> ms.
+						</li>
+						<li>
+							<code><b>debounceAsync</b>(<i>fn</i>, <i>timeout</i>=<u>200</u>)</code> : Fonction asynchrone identique à <i>debounce</i>
+						</li>
+						<li>
+							<code><b>throttle</b>(<i>fn</i>, <i>timeout</i>=<u>1000</u>)</code> : Retourne une fonction qui permet d'exécuter une fonction <i>fn</i> appelée X fois que toutes les <i>X</i> ms.
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<article class="card">
+				<div class="panel">
+					<p>Exemple d'utilisation USM : Il vous suffira de faire appel à ces fonctions en utilisant l'espace de nom <code><b>window</b>.[<i>'sass-swing'</i>]</code>.</p>
+				</div>
+				<footer>
+					<pre data-lang="javascript" class="line-numbers language-javascript" data-prismjs-copy="Copier"><code>const myStr = &quot;ma chaine de caract&egrave;res&quot;;
+
+console.log(window[&#39;sass-swing&#39;].capitalize(myStr);
+/* Ma chaine de caract&egrave;res */
+
+const printHelloWorld = async () =&gt; {
+	await window[&#39;sass-swing&#39;].wait(2000);
+  console.log(&quot;Hello world !&quot;);
+}
+
+window[&#39;sass-swing&#39;].wait(1000);
+
+const myButton = document.getElementById(&quot;myButton&quot;);
+const myButtonClickHandler = window[&#39;sass-swing&#39;].debounce(printHelloWorld); /* idem avec la fonction throtlle */
+myButton.addEventListener(&quot;click&quot;, myButtonClickHandler);
+
+myButton.addEventListener(&quot;click&quot;, printHelloWorld);
+console.log(&quot;On attend que l&#39;utilisateur clique sur le bouton&quot;);
+window[&#39;sass-swing&#39;].waitForDOMEvent(myButton, &quot;click&quot;);
+console.log(&quot;On peux continuer...&quot;);</code></pre>
+				</footer>
 			</article>
 		</section>
 		<section class="d:col-start-2">
