@@ -178,3 +178,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 /.idea/watcherTasks.xml
+
+/dist-documentation/
