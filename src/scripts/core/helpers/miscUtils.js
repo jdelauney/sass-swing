@@ -22,7 +22,7 @@ export const debounce = (callback, timeout = 200) => {
     window.clearTimeout(debounceTimeoutId);
     debounceTimeoutId = window.setTimeout(() => {
       debounceTimeoutId = null;
-      callback.apply(this, args);
+      callback.apply(null, args);
     }, timeout);
   };
 };
@@ -40,7 +40,7 @@ export const debounceAsync = (callback, timeout = 200) => {
     return new Promise((resolve) => {
       debounceTimeoutId = setTimeout(() => {
         debounceTimeoutId = null;
-        return resolve(callback.apply(this, args));
+        return resolve(callback.apply(null, args));
       }, timeout);
     });
   };
@@ -54,9 +54,9 @@ export const debounceAsync = (callback, timeout = 200) => {
  */
 export const throttle = (callback, timeout = 1000) => {
   let throttle = true;
-  return function () {
+  return (...args) => {
     if (throttle) {
-      callback.apply(this, arguments);
+      callback.apply(null, args);
       throttle = false;
       setTimeout(() => {
         throttle = true;
