@@ -88,6 +88,13 @@
 	<link rel="mask-icon" href="https://jdelauney.github.io/sass-swing/assets/icons/safari-pinned-tab.svg"
 	      color="#1f2225">
 	<link rel="shortcut icon" href="https://jdelauney.github.io/sass-swing/assets/icons/favicon.ico">
+
+	<style>
+		:root {
+			--block-spacing: min(9.6rem,10vh);
+			--block-half-spacing: min(4.8rem,5vh);
+		}
+	</style>
 </head>
 <body>
 <header class="hero">
@@ -98,17 +105,14 @@
 				<img aria-hidden="true" src="./assets/images/sass-swing-logo-01.svg" width="80px" height="48px"
              alt="Sass Swing modern, elegant, consistent semantic scss css framework" style="--pl:1em;">
 			</a>
-			<div id="main-menu" class="navbar__menu  flex--center">
-				<!--				<div class="navbar__menu-container">-->
+			<div id="main-menu" class="navbar__menu flex--center">
 				<ul>
 					<li><a href="documentation/index.html" class="link--default">Présentation</a></li>
 					<li><a href="documentation/getting-started/usage.html" class="link--default">Commencer</a></li>
 					<li><a href="documentation/supportus.html" class="link--default">Supportez nous</a></li>
 				</ul>
-
-				<!--				</div>-->
 			</div>
-			<div class="flex flex--row">
+			<div class="navigation-menu-right">
 				<ul>
 					<li>
 						<a href="https://github.com/jdelauney/sassswing" aria-label="Sass Swing GitHub repository"
@@ -125,13 +129,17 @@
 					<li style="justify-self: flex-end">
 						<button data-js-themeSwitcher class="theme-switcher" aria-label="Changer theme couleur"></button>
 					</li>
+					<li>
+
+					</li>
 				</ul>
-				<label for="nav-toggle" class="navbar__toggler" aria-controls="main-menu"
-				       aria-label="Ouvre ou ferme le menu principal">
-					<span class="navbar__toggler__icon">&nbsp;</span>
-					<span class="sr-only">Ouvre ou ferme le menu principal</span>
-				</label>
+
 			</div>
+			<label for="nav-toggle" class="navbar__toggler" aria-controls="navbar-menu"
+			       aria-label="Ouvre ou ferme le menu principal">
+				<span class="navbar__toggler__icon">&nbsp;</span>
+				<span class="sr-only">Ouvre ou ferme le menu principal</span>
+			</label>
 		</nav>
 	</div>
 	<div class="flex flex--center-all">
@@ -2285,8 +2293,8 @@
 				<span>Concentrez-vous sur l'accessibilité et améliorez <br><strong>l'expérience utilisateur</strong> pour les <br><strong>personnes avec un handicap</strong></span>
 			</div>
 			<div class="intro__cta" style="--mt:var(--block-half-spacing);--ml:1em;">
-				<a role="button" href="documentation/getting-started/usage.html" target="_blank" class="btn--swing ">Commencer</a>&nbsp;
-				<a role="button" href="#" class="btn--secondary">Télécharger</a>
+				<a role="button" href="documentation/getting-started/usage.html" target="_blank" class="btn--swing" style="--px:2em;--py:1em;">Commencer</a>&nbsp;
+				<a role="button" href="#" class="btn--secondary" style="--py:1em;">Télécharger</a>
 			</div>
 			<p class="intro__info"><code style="--fs:.7em;">Moins de x ko minifié et compressé</code></p>
 		</div>
@@ -2295,11 +2303,11 @@
 </header>
 <main id="top" class="intro">
 	<div role="document">
-		<section class="container" style="--mt:var(--block-spacing);">
+		<section class="container" style="--mt:var(--block-half-spacing);">
 			<h2 class="title">Un framework CSS moderne, complet et modulaire</h2>
 			<h3 class="sub-title">Une expérience utilisateur unifiée et augmentée avec un design cohérent et une meilleure
 				prise en charge de l'accessibilité.</h3>
-			<div class="grid t:cols-3 col-gap-3">
+			<div class="grid t:cols-3 row-gap-3 col-gap-3">
 				<article class="card card--thumb reveal--scale-up">
 					<header>
 						<h4>
@@ -2348,7 +2356,7 @@
 		<section class="container-fluid" style="--bgc:var(--neutral-color-variation-1);--py:1em;">
 			<div class="grid t:cols-2">
 				<div class="flex flex--v-center grid-item-order-first" style="--p:1em;">
-					<svg class="reveal" id="freepik_stories-multi-device-targeting" xmlns="http://www.w3.org/2000/svg"
+					<svg class="reveal" data-js-reveal='{"addClass":"animated"}' id="freepik_stories-multi-device-targeting" xmlns="http://www.w3.org/2000/svg"
 					     viewBox="0 0 500 500"  xmlns:xlink="http://www.w3.org/1999/xlink"
 					     xmlns:svgjs="http://svgjs.com/svgjs">
 						<g id="freepik--Shadows--inject-2" class="animable" style="transform-origin: 256.808px 369.025px;">
@@ -3467,7 +3475,7 @@
 			<hr style="--w:60%;--mx:auto;">
 			<div class="grid t:cols-2">
 				<div class="flex flex--v-center" style="--p:1em">
-					<svg class="reveal" id="freepik_stories-personalization" xmlns="http://www.w3.org/2000/svg"
+					<svg class="reveal" data-js-reveal='{"addClass":"animated"}' id="freepik_stories-personalization" xmlns="http://www.w3.org/2000/svg"
 					     viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink"
 					     xmlns:svgjs="http://svgjs.com/svgjs">
 						<g id="freepik--Shadows--inject-2" class="animable" style="transform-origin: 250.442px 349.541px;">
@@ -4495,7 +4503,7 @@
 			<h2 class="title">Concentrez vous sur l'expérience utilisateur</h2>
 			<h3 class="sub-title">Gagnez du temps avec la mise en page et la mise en place des bonnes pratiques en UI/UX.<br>Améliorez
 				l'accessibilité pour les utilisateurs de lecteurs d'écran. </h3>
-			<div class="grid md:cols-2 dm:cols-3 gap-4" style="--mt:var(--block-spacing);">
+			<div class="grid md:cols-2 dm:cols-3 gap-4" style="--mt:var(--block-half-spacing);">
 				<div class="grid">
 					<div class="flex flex--space-between gap-4">
 						<div class="card card--thumb reveal--scale-up">
@@ -4503,12 +4511,14 @@
 								<h4>Ajustez rapidement votre UI</h4>
 							</header>
 							<p>
-								Des <strong>variables CSS </strong>dîtes <strong>utilitaires</strong>  permettant	d'ajuster rapidement et
-								avec précision certaines propriétés <strong>en éditant l'attribut style
-								directement dans votre code HTML</strong> et de faire bien plus encore sont disponibles.
+								En plus des nombreux composants vous simplifiant la mise en page. Des <strong>variables CSS </strong>dîtes <strong>utilitaires</strong>  permettant	d'ajuster rapidement et
+								avec précision certaines propriétés sont disponibles.
 							</p>
 							<p>
-								Prenez le <strong>contrôle total de votre design en toute simplicité</strong>.
+								Editez l'attribut style directement dans votre code HTML</strong> et de faites bien plus encore.
+							</p>
+							<p>
+								Prenez le <strong>contrôle total de votre design et de votre mise en page en toute simplicité</strong>.
 							</p>
 						</div>
 						<div class="card card--thumb reveal--scale-up">
@@ -4525,7 +4535,7 @@
 					</div>
 				</div>
 				<div class="flex flex--center-all pic-thumb">
-					<svg class="reveal" id="freepik_stories-connected-world" xmlns="http://www.w3.org/2000/svg"
+					<svg class="reveal" data-js-reveal='{"addClass":"animated"}' id="freepik_stories-connected-world" xmlns="http://www.w3.org/2000/svg"
 					     viewBox="0 0 500 500"  xmlns:xlink="http://www.w3.org/1999/xlink"
 					     xmlns:svgjs="http://svgjs.com/svgjs">
 						<g id="freepik--Icons--inject-5" class="animable" style="transform-origin: 250.205px 249.645px;">
@@ -5649,6 +5659,10 @@
 								<h4>Améliorez l'accessibilité</h4>
 							</header>
 							<p>
+								<strong>En France, c'est plus de 4 millions de personnes qui sont touchées par une perte de vision de légère à grave</strong><br><small>Source : <a href="https://www.statista.com/statistics/1200871/vision-impairments-by-severity-in-france/" target="_blank" rel="nofollow">www.statista.com</a></small>.
+							</p>
+
+							<p>
 								<strong>Une documentation détaillée ainsi que des exemples de code spécifiques</strong> et des astuces sont présents
 								pour aider tous utilisateurs à démarrer.
 							</p>
@@ -5672,10 +5686,202 @@
 				</div>
 			</div>
 		</section>
+		<section class="container">
+			<h2 class="title">Quelques exemples de pages minimalistes</h2>
+			<h3 class="sub-title">Servez vous de ces exemples pour découvrir <span class="text-swing-alt">Sass Swing</span> en action.</h3>
+			<div class="grid cols-1 md:cols-2 gap-4" style="--mt:var(--block-half-spacing);">
+				<a href="examples/class-less/index.html" target="_blank" class="link--default-alt">
+					<article class="card card-sample reveal--light-left">
+						<header>
+							<h4>CLASS-LESS</h4>
+							<hr>
+						</header>
+						<div class="card-sample__preview-wrapper">
+							<div class="card-sample__preview">
+								<div class="card-sample__preview__desktop">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-desktop-light-low.jpg" width="480" height="3054" alt="Exemple minimaliste Class-Less avec mode desktop light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-desktop-dark-low.jpg" width="480" height="3056" alt="Exemple minimaliste Class-Less avec mode desktop dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__mobile">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-mobile-light-low.jpg" width="160" height="4409" alt="Exemple minimaliste Class-Less avec mode mobile light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-mobile-dark-low.jpg" width="160" height="4409" alt="Exemple minimaliste Class-Less avec mode mobile dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__tablet">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-tablet-light-low.jpg" width="240" height="2253" alt="Exemple minimaliste Class-Less avec mode tablette light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-tablet-dark-low.jpg" width="240" height="2250" alt="Exemple minimaliste Class-Less avec mode tablette dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<footer>
+							<p>Un exemple en pure sémantique HTML sans aucune <code><i>.classes</i></code></p>
+						</footer>
+					</article>
+				</a>
+				<a href="examples/class-less-custom-with-css-variables/index.html" target="_blank" class="link--default-alt">
+					<article class="card card-sample reveal--light-right">
+						<header>
+							<h4>PERSONNALISATION</h4>
+							<hr>
+						</header>
+						<div class="card-sample__preview-wrapper">
+							<div class="card-sample__preview">
+								<div class="card-sample__preview__desktop">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-custom-desktop-light-low.jpg" width="480" height="3050" alt="Exemple minimaliste personalisation Class-Less avec mode desktop light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-custom-desktop-dark-low.jpg" width="480" height="3055" alt="Exemple minimaliste personalisation Class-Less avec mode desktop dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__mobile">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-custom-mobile-light-low.jpg" width="160" height="4521" alt="Exemple minimaliste personalisation Class-Less avec mode mobile light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-custom-mobile-dark-low.jpg" width="160" height="4534" alt="Exemple minimaliste personalisation Class-Less avec mode mobile dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__tablet">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-custom-tablet-light-low.jpg" width="240" height="2296" alt="Exemple minimaliste personalisation Class-Less avec mode tablette light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/class-less-custom-tablet-dark-low.jpg" width="240" height="2296" alt="Exemple minimaliste personalisation Class-Less avec mode tablette dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<footer>
+							<p>
+								Un exemple de customisation du theme en utilisant juste les variables CSS
+							</p>
+						</footer>
+					</article>
+				</a>
+				<a href="examples/components-preview/index.html" target="_blank" class="link--default-alt">
+					<article class="card card-sample reveal--light-left">
+						<header>
+							<h4>COMPOSANTS</h4>
+							<hr>
+						</header>
+						<div class="card-sample__preview-wrapper">
+							<div class="card-sample__preview">
+								<div class="card-sample__preview__desktop">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/components-preview-desktop-light-low.jpg" width="480" height="5491" alt="Exemple minimaliste composants avec mode desktop light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/components-preview-desktop-dark-low.jpg" width="480" height="5488" alt="Exemple minimaliste composants avec mode desktop dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__mobile">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/components-preview-mobile-light-low.jpg" width="160" height="7274" alt="Exemple minimaliste composants avec mode mobile light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/components-preview-mobile-dark-low.jpg" width="160" height="7293" alt="Exemple minimaliste composants avec mode mobile dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__tablet">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/components-preview-tablet-light-low.jpg" width="240" height="4363" alt="Exemple minimaliste composants avec mode tablette light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/components-preview-tablet-dark-low.jpg" width="240" height="4366" alt="Exemple minimaliste composants avec mode tablette dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<footer>
+							<p>
+								Vue d'ensemble des composants mis à disposition.
+							</p>
+						</footer>
+					</article>
+				</a>
+				<a href="examples/full-overview-with-custom-classes-and-css-variables/index.html" target="_blank" class="link--default-alt">
+					<article class="card card-sample reveal--light-right">
+						<header>
+							<h4>VUE D'ENSEMBLE COMPLETE</h4>
+							<hr>
+						</header>
+						<div class="card-sample__preview-wrapper">
+							<div class="card-sample__preview">
+								<div class="card-sample__preview__desktop">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/full-preview-desktop-light-low.jpg" width="480" height="9181" alt="Exemple minimaliste vue d'ensemble avec mode desktop light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/full-preview-desktop-dark-low.jpg" width="480" height="9190" alt="Exemple minimaliste vue d'ensemble avec mode desktop dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__mobile">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/full-preview-mobile-light-low.jpg" width="160" height="10243" alt="Exemple minimaliste vue d'ensemble avec mode mobile light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/full-preview-mobile-dark-low.jpg" width="160" height="12233" alt="Exemple minimaliste vue d'ensemble avec mode mobile dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+								<div class="card-sample__preview__tablet">
+									<div class="card-sample__preview__images">
+										<div class="card-sample__preview__image">
+											<img src="assets/images/full-preview-tablet-light-low.jpg" width="240" height="6683" alt="Exemple minimaliste vue d'ensemble avec mode tablette light du framework css Sass Swing">
+										</div>
+										<div class="card-sample__preview__image">
+											<img src="assets/images/full-preview-tablet-dark-low.jpg" width="240" height="6645" alt="Exemple minimaliste vue d'ensemble avec mode tablette dark du framework css Sass Swing">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<footer>
+							<p>
+								Vue d'ensemble complète des possibilités de <span class="text-swing">Sass Swing</span> avec personnalisation du thème.
+							</p>
+						</footer>
+					</article>
+				</a>
+			</div>
+		</section>
 		<section class="container-fluid" style="--bgc:var(--neutral-color-variation-1);--pb:1em;">
 			<div class="grid t:cols-2" style="--mt:1em;">
 				<div class="flex flex--v-center" style="--p:1em;">
-					<svg class="reveal" id="freepik_stories-creative-writing" xmlns="http://www.w3.org/2000/svg"
+					<svg class="reveal" data-js-reveal='{"addClass":"animated"}' id="freepik_stories-creative-writing" xmlns="http://www.w3.org/2000/svg"
 					     viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink"
 					     xmlns:svgjs="http://svgjs.com/svgjs">
 						<g id="freepik--Shadows--inject-2" class="animable" style="transform-origin: 242.994px 347.94px;">
@@ -6234,7 +6440,7 @@
 			<hr style="--w:60%;--mx:auto;">
 			<div class="grid t:cols-2">
 				<div class="flex flex--v-center grid-item-order-first" style="--p:1em">
-					<svg class="reveal" id="freepik_stories-saving-money" xmlns="http://www.w3.org/2000/svg"
+					<svg class="reveal" data-js-reveal='{"addClass":"animated"}' id="freepik_stories-saving-money" xmlns="http://www.w3.org/2000/svg"
 					     viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink"
 					     xmlns:svgjs="http://svgjs.com/svgjs">
 						<g id="freepik--Plants--inject-2" class="animable" style="transform-origin: 242.352px 349.922px;">
@@ -8359,8 +8565,8 @@
 			</div>
 		</section>
 		<section class="container">
-			<h2 class="title">Quelques templates de pages minimalistes</h2>
-			<h3 class="sub-title">Servez vous des modèles de page pour découvrir <span class="text-swing-alt">Sass Swing</span> en action.</h3>
+			<h2 class="title">Des modèles de pages pour bien commencer</h2>
+			<h3 class="sub-title">Commencez vos projets en toute simplicité avec l'aide des modèles de <span class="text-swing-alt">Sass Swing</span></h3>
 			<div class="ui--warning" style="--p:1em;--ta:center;--mt:var(--block-half-spacing);">
 				<p style="--minw:100%;">
 					Les modèles sont en cours de réalisation, ils arrivent très prochainement....
@@ -8369,92 +8575,11 @@
 					<b>Merci de patienter</b>.
 				</p>
 			</div>
-			<div class="grid cols-auto gap-4" style="--mt:var(--block-half-spacing);">
-				<article class="card__template">
-					<a href="#" target="_blank" class="link--default-alt link-underline" >
-						<span>CLASS-LESS</span>
-						<div class="card__template-preview">
-							<div class="card__template-preview__desktop"></div>
-							<div class="card__template-preview__tablet"></div>
-							<div class="card__template-preview__mobile"></div>
-						</div>
-					</a>
-					<p>
-						Un exemple en pure sémantique HTML sans aucune <code><i>.classes</i></code>
-					</p>
-				</article>
-				<article class="card__template">
-					<a href="#" target="_blank" class="link--default-alt link-underline" >
-						<span>CUSTOM</span>
-						<div class="card__template-preview">
-							<div class="card__template-preview__desktop"></div>
-							<div class="card__template-preview__tablet"></div>
-							<div class="card__template-preview__mobile"></div>
-						</div>
-					</a>
-					<p>
-						Un exemple de customisation basique en utilisant juste les variables CSS
-					</p>
-				</article>
-				<article class="card__template">
-					<a href="#" target="_blank" class="link--default-alt link-underline" >
-						<span>LANDING PAGE</span>
-						<div class="card__template-preview">
-							<div class="card__template-preview__desktop"></div>
-							<div class="card__template-preview__tablet"></div>
-							<div class="card__template-preview__mobile"></div>
-						</div>
-					</a>
-					<p>
-						Une simple landing page
-					</p>
-				</article>
-				<article class="card__template">
-					<a href="#" target="_blank" class="link--default-alt link-underline" >
-						<span>ARTICLE DE BLOG</span>
-						<div class="card__template-preview">
-							<div class="card__template-preview__desktop"></div>
-							<div class="card__template-preview__tablet"></div>
-							<div class="card__template-preview__mobile"></div>
-						</div>
-					</a>
-					<p>
-						Un modèle classique, pour un article de blog
-					</p>
-				</article>
-				<article class="card__template">
-					<a href="#" target="_blank" class="link--default-alt link-underline" >
-						<span>SIGN IN / LOGIN</span>
-						<div class="card__template-preview">
-							<div class="card__template-preview__desktop"></div>
-							<div class="card__template-preview__tablet"></div>
-							<div class="card__template-preview__mobile"></div>
-						</div>
-					</a>
-					<p>
-						Une simple page d'inscription et de connexion
-					</p>
-				</article>
-				<article class="card__template">
-					<a href="#" target="_blank" class="link--default-alt link-underline" >
-						<span>ADMIN</span>
-						<div class="card__template-preview">
-							<div class="card__template-preview__desktop"></div>
-							<div class="card__template-preview__tablet"></div>
-							<div class="card__template-preview__mobile"></div>
-						</div>
-					</a>
-					<p>
-						Un exemple de page, pour réaliser une interface d'administration
-					</p>
-				</article>
-
-			</div>
 		</section>
 	</div>
 
 
-	<div class="back-to-top-wrapper">
+	<div class="back-to-top-wrapper" style="bottom:-6.5em;">
 		<a href="#top" aria-label="Scroll to Top"></a>
 	</div>
 
@@ -8482,7 +8607,7 @@
 			<ul role="list" class="grid t:cols-3">
 				<li style="--mt:1em;">
 					<span class="like-h3 text-swing">Liens</span>
-					<ul>
+					<ul role="list">
 						<li><a href="#" class="link--default">Accueil</a></li>
 						<li><a href="documentation/index.html" class="link--default">Documentation</a></li>
 						<!--						<li><a href="../snippets.html" class="link&#45;&#45;default">Exemples</a></li>-->
