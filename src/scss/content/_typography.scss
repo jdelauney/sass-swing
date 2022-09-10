@@ -148,22 +148,6 @@ h6 {
   }
 }
 
-ol,
-ul {
-  padding-left: var(--spacing);
-  margin-left: 1rem;
-}
-
-ul[role='list'],
-ol[role='list'] {
-  &,
-  & li ul {
-    padding-right: 0;
-    padding-left: 0;
-    margin-left: 0;
-  }
-}
-
 p {
   font-size: 1em;
   margin-top: calc(var(--flow-space-ratio) * 1em);
@@ -250,6 +234,7 @@ blockquote {
     font-size: 4em;
     line-height: 0.1em;
     vertical-align: -0.4em;
+    z-index: 500;
   }
 
   p {
@@ -262,8 +247,13 @@ blockquote {
 
   footer {
     margin-right: 0.25em;
+    padding: 0.5em 1em;
     text-align: right;
   }
+}
+
+.blockquote--hide-glyph::before {
+  display: none;
 }
 
 hr {
@@ -335,7 +325,6 @@ samp > kbd {
   font-weight: 700;
   background: initial;
 }
-
 //pre[class*=language-],
 pre {
   // display: grid is a hack. Because if line are too big the overflow not working and all parents elements are over sized

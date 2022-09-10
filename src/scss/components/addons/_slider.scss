@@ -134,6 +134,8 @@
       > img {
         object-fit: cover;
         max-height: var(--slider-max-height);
+        width: 100%;
+        height: 100%;
         z-index: -1;
       }
     }

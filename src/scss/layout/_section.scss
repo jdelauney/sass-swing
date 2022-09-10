@@ -1,5 +1,10 @@
 .section,
 section {
+  --background-color: var(--neutral-color);
+  --color: var(--on-neutral-color);
+  background-color: var(--background-color);
+  color: var(--color);
+
   margin-top: var(--block-spacing);
   //width: 100%;
 
@@ -25,6 +30,11 @@ section {
 
 .article,
 article {
+  --background-color: var(--neutral-color);
+  --color: var(--on-neutral-color);
+  background-color: var(--background-color);
+  color: var(--color);
+
   width: 100%;
   margin-top: var(--block-spacing);
   &:first-child {

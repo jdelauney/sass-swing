@@ -4,6 +4,10 @@
 @use '../abstracts/functions' as *;
 /* common layout settings */
 :root {
+  //--responsive-auto:;
+  //--ON: initial;
+  //--OFF:;
+
   --font-content-line-height: #{$default-line-height};
   --line-height-ratio: #{$default-line-height-ratio};
   --font-family: #{$default-font-family};
@@ -37,6 +41,16 @@
   --control-border-radius: #{$global-border-radius};
   --control-border-width: #{$global-border-width};
   --control-input-height: 2rem;
+
+  --ratio-square: 1;
+  --ratio-letterbox: 4/3;
+  --ratio-portrait: 3/4;
+  --ratio-wide: 16/9;
+  --ratio-ultraWide: 18/5;
+  --ratio-cinemaScope: 2.35/1;
+  --ratio-golden: 1.618/1;
+  --ratio-goldenSquare: 1.272/1;
+  --ratio-tv: 14/9;
 }
 
 /* light theme schema settings */
@@ -184,8 +198,8 @@
   --neutral-color-h: #{hue($neutral-dark-color)};
   --neutral-color-s: #{$neutral-dark-color-s};
   --neutral-color-l: #{$neutral-dark-color-l};
-  //  --neutral-color: hsl(var(--neutral-color-h), var(--neutral-color-s), var(--neutral-color-l));
-  //  --neutral-shadow: #{$neutral-shadow};
+  --neutral-color: hsl(var(--neutral-color-h), var(--neutral-color-s), var(--neutral-color-l));
+  //--neutral-shadow: #{$neutral-shadow};
   //  --neutral-shadow-alt: #{$neutral-shadow-alt};
 
   --on-neutral-color-s: #{$on-neutral-dark-color-s};
@@ -222,7 +236,7 @@
   --primary-color-l: #{$primary-dark-color-l};
 
   /* Primary (brand) color should be used at 10%, principally for your CTA, input elements, links */
-  //--primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
+  --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
 
   --on-primary-color-s: #{$on-primary-dark-color-s};
   --on-primary-color-l: #{$on-primary-dark-color-l};
@@ -262,7 +276,7 @@
   --secondary-color-l: #{$secondary-dark-color-l};
 
   /* Secondary color should be used at 30%  */
-  //--secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
+  --secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
 
   --on-secondary-color-s: #{$on-secondary-dark-color-s};
   --on-secondary-color-l: #{$on-secondary-dark-color-l};

@@ -79,6 +79,18 @@
   }
 }
 
+.flex--left {
+  justify-content: flex-start;
+}
+
+.flex--right {
+  justify-content: flex-end;
+}
+
+.flex--center {
+  justify-content: center;
+}
+
 .flex--center-all {
   align-items: center;
   justify-content: center;
@@ -174,6 +186,10 @@
   -webkit-line-clamp: var(--lc);
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+[style*='--cc:'] {
+  column-count: var(--cc);
 }
 
 [style*='--ta:'] {

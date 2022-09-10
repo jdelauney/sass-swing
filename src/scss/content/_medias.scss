@@ -1,0 +1,66 @@
+figure {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+figcaption {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: var(--half-spacing) var(--spacing);
+}
+
+figcaption.figcaption--top-left,
+figcaption.figcaption--top-center,
+figcaption.figcaption--top-right {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+figcaption.figcaption--center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+}
+
+figcaption.figcaption--bottom-left,
+figcaption.figcaption--bottom-right,
+figcaption.figcaption--bottom-center {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+figcaption.figcaption--top-center,
+figcaption.figcaption--bottom-center {
+  justify-content: center;
+}
+
+figcaption.figcaption--top-right,
+figcaption.figcaption--bottom-right {
+  justify-content: flex-end;
+}
+
+video.fit,
+img.fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+video.contain,
+img.contain {
+  object-fit: contain;
+}
+
+:where(svg):where(:not([fill])) {
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

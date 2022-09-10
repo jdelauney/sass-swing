@@ -37,13 +37,14 @@ nav ul {
 nav {
   $ref: '.navbar';
 
-  --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.85);
+  --background-color: var(--neutral-color-variation-1); //hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.85);
 
   position: relative;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   background-color: var(--background-color);
+  padding: 0.5em;
 
   ul {
     align-items: center;
@@ -131,120 +132,123 @@ nav {
   }
 
   &__item-push-right {
-    margin-right: var(--inner-h-spacing);
+    //margin-right: var(--inner-h-spacing);
     margin-left: auto;
   }
+}
 
-  &__toggler {
-    z-index: 2500;
-    width: 4rem;
-    height: 4rem;
-    margin-top: 0 !important;
-    margin-right: 0.5em;
-    text-align: center;
-    cursor: pointer;
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) label:not(.navbar__toggler),
+.navbar__toggler {
+  z-index: 2500;
+  width: 1em;
+  height: 1em;
+  // margin-top: -.25em !important;
+  margin-right: 0.5em;
+  text-align: center;
+  cursor: pointer;
+}
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) label span:first-child:not(.navbar__toggler__icon),
+.navbar__toggler__icon {
+  --background-color: var(--primary-color);
+  --hover-background-color: var(--primary-color-variation-1);
 
-    &__icon {
-      --background-color: var(--primary-color);
-      --hover-background-color: var(--primary-color-variation-1);
+  display: inline-block;
+  position: relative;
+  width: 2.5rem;
+  height: 2px;
+  //margin-top: 2rem;
+  border: none;
+  background-color: var(--background-color);
+  transition: all 0.2s ease-in-out;
 
-      display: inline-block;
-      position: relative;
-      width: 2.5rem;
-      height: 2px;
-      margin-top: 2rem;
-      border: none;
-      background-color: var(--background-color);
-      transition: all 0.2s ease-in-out;
+  &:before,
+  &:after {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 2.5rem;
+    height: 2px;
+    background-color: var(--background-color);
+    content: '';
+    transition: all 0.2s ease-in-out;
+  }
+  &:before {
+    top: -0.8rem;
+  }
+  &:after {
+    top: 0.8rem;
+  }
+
+  &:hover {
+    & span:first-child,
+    & .navbar__toggler__icon {
+      background-color: var(--hover-background-color);
 
       &:before,
       &:after {
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        width: 2.5rem;
-        height: 2px;
-        background-color: var(--background-color);
-        content: '';
-        transition: all 0.2s ease-in-out;
-      }
-      &:before {
-        top: -0.8rem;
-      }
-      &:after {
-        top: 0.8rem;
-      }
-    }
-
-    &:hover {
-      & .navbar__toggler__icon {
         background-color: var(--hover-background-color);
-
-        &:before,
-        &:after {
-          background-color: var(--hover-background-color);
-        }
       }
     }
   }
+}
 
-  &__menu {
-    --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.7);
-    --box-shadow: var(--neutral-shadow-alt);
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) div:first-of-type,
+.navbar__menu {
+  --background-color: transparent; //var(--neutral-color-variation-1); //hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.7);
+  --box-shadow: var(--neutral-shadow-alt);
 
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding-top: calc(var(--inner-v-spacing) * 0.5);
-    padding-bottom: var(--inner-v-spacing);
-    background-color: var(--background-color);
-    box-shadow: var(--box-shadow);
-    opacity: 0;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: all 0.3s ease-in-out;
+  display: flex;
+  position: absolute;
+  margin: 0;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: calc(var(--inner-v-spacing) * 0.5) 0;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
 
-    ul {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    li:not(:first-child) {
-      margin-top: var(--half-spacing);
-    }
-
-    &__item {
-      display: flex;
-      position: relative;
-      flex-grow: 0;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      padding: 0 0.8rem;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-
-      /*  &:hover + a {
-          background-color: var(--navbar-menu-item-background-hover);
-        }*/
-    }
+  ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  &--vertical {
+  li:not(:first-child) {
+    margin-top: var(--half-spacing);
   }
+}
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) div:first-of-type ul li,
+.navbar__menu__item {
+  display: flex;
+  position: relative;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  /*  &:hover + a {
+        background-color: var(--navbar-menu-item-background-hover);
+      }*/
 }
 
 .navigation > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon,
 .navbar > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon,
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) > input[type='checkbox']:checked ~ label span:first-child,
 nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon {
   background: transparent;
 }
 
 .navigation > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:before,
 .navbar > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:before,
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) > input[type='checkbox']:checked ~ label span:first-child:before,
 nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:before {
   top: 0;
   height: 3px;
@@ -253,6 +257,7 @@ nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:b
 
 .navigation > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:after,
 .navbar > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:after,
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) > input[type='checkbox']:checked ~ label span:first-child:after,
 nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:after {
   top: 0;
   height: 3px;
@@ -262,48 +267,52 @@ nav > input[type='checkbox']:checked ~ .navbar__toggler .navbar__toggler__icon:a
 .navigation > input[type='checkbox']:checked ~ .navbar .navbar__menu,
 .navigation > input[type='checkbox']:checked ~ nav .navbar__menu,
 .navbar > input[type='checkbox']:checked ~ .navbar__menu,
+nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) > input[type='checkbox']:checked ~ div:first-of-type,
 nav > input[type='checkbox']:checked ~ .navbar__menu {
+  --background-color: var(--neutral-color-variation-1);
   transform: scale(1);
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
 @include mq(tablet) {
-  .t\:navigation-toggle {
-    & .navbar__toggler {
-      display: none;
+  .t\:navigation-toggle .navbar__toggler {
+    display: none;
+  }
+  //nav div:first-of-type,
+  .t\:navigation-toggle .navbar__menu {
+    position: inherit;
+    top: 0;
+    left: 0;
+    align-items: flex-end;
+
+    width: auto;
+    //margin-right: var(--inner-h-spacing);
+    padding: 0;
+    transform: scaleY(1);
+    box-shadow: none;
+    opacity: 1;
+
+    ul {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
     }
 
-    & .navbar__menu {
-      position: inherit;
-      top: 0;
-      left: 0;
-      align-items: flex-end;
-      width: auto;
-      margin-right: var(--inner-h-spacing);
-      padding: 0;
-      transform: scaleY(1);
-      box-shadow: none;
-      opacity: 1;
-
-      ul {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-      }
-
-      li:not(:first-child) {
-        margin-top: 0;
-      }
+    li:not(:first-child) {
+      margin-top: 0;
     }
   }
 }
 
 @include mq(tablet-medium) {
-  .md\:navigation-toggle {
-    & .navbar__toggler {
-      display: none;
-    }
+  //, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle ) label,
+  //nav label,
+  nav.md\:navigation-toggle .navbar__toggler,
+  nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle, .navigation--burger) label {
+    display: none !important;
+  }
 
+  .md\:navigation-toggle {
     & nav,
     & .navbar {
       & li.dropdown {
@@ -315,7 +324,7 @@ nav > input[type='checkbox']:checked ~ .navbar__menu {
 
         & > .dropdown__menu,
         & > ul {
-          --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l) / 0.7);
+          --background-color: hsl(var(--neutral-color-h) var(--neutral-color-variation-1-s) var(--neutral-color-variation-1-l));
           --box-shadow: var(--neutral-shadow-alt);
 
           position: absolute;
@@ -342,28 +351,30 @@ nav > input[type='checkbox']:checked ~ .navbar__menu {
         }
       }
     }
+  }
 
-    & .navbar__menu {
-      position: inherit;
-      top: 0;
-      left: 0;
-      align-items: flex-end;
-      width: auto;
-      margin-right: var(--inner-h-spacing);
-      padding: 0;
-      transform: scaleY(1);
-      box-shadow: none;
-      opacity: 1;
+  nav:not(.md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle, .navigation--burger) div:first-of-type,
+  .md\:navigation-toggle .navbar__menu {
+    position: inherit;
+    top: 0;
+    left: 0;
+    align-items: flex-end;
 
-      ul {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-      }
+    width: auto;
+    //margin-right: var(--inner-h-spacing);
+    padding: 0;
+    transform: scaleY(1);
+    box-shadow: none;
+    opacity: 1;
 
-      li:not(:first-child) {
-        margin-top: 0;
-      }
+    ul {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    li:not(:first-child) {
+      margin-top: 0;
     }
   }
 }
@@ -402,8 +413,9 @@ nav > input[type='checkbox']:checked ~ .navbar__menu {
       top: 0;
       left: 0;
       align-items: flex-end;
+
       width: auto;
-      margin-right: var(--inner-h-spacing);
+      //margin-right: var(--inner-h-spacing);
       padding: 0;
       transform: scaleY(1);
       box-shadow: none;
@@ -456,8 +468,9 @@ nav > input[type='checkbox']:checked ~ .navbar__menu {
       top: 0;
       left: 0;
       align-items: flex-end;
+
       width: auto;
-      margin-right: var(--inner-h-spacing);
+      //margin-right: var(--inner-h-spacing);
       padding: 0;
       transform: scaleY(1);
       box-shadow: none;
@@ -510,8 +523,9 @@ nav > input[type='checkbox']:checked ~ .navbar__menu {
       top: 0;
       left: 0;
       align-items: flex-end;
+
       width: auto;
-      margin-right: var(--inner-h-spacing);
+      //margin-right: var(--inner-h-spacing);
       padding: 0;
       transform: scaleY(1);
       box-shadow: none;
@@ -564,8 +578,9 @@ nav > input[type='checkbox']:checked ~ .navbar__menu {
       top: 0;
       left: 0;
       align-items: flex-end;
+
       width: auto;
-      margin-right: var(--inner-h-spacing);
+      //margin-right: var(--inner-h-spacing);
       padding: 0;
       transform: scaleY(1);
       box-shadow: none;
@@ -618,8 +633,9 @@ nav > input[type='checkbox']:checked ~ .navbar__menu {
       top: 0;
       left: 0;
       align-items: flex-end;
+
       width: auto;
-      margin-right: var(--inner-h-spacing);
+      //margin-right: var(--inner-h-spacing);
       padding: 0;
       transform: scaleY(1);
       box-shadow: none;

@@ -39,7 +39,7 @@ $neutral-light-color: $color-neutral-100 !default;
 $on-neutral-light-color-s: saturation($neutral-light-color) !default;
 $on-neutral-light-color-l: 10% !default;
 $neutral-shadow: #{make-shadow('smooth-light')} !default;
-$neutral-shadow-alt: 0 2px 6px rgb(0 0 0 /0.25), 0 10px 12px rgb(0 0 0 /0.15) !default;
+$neutral-shadow-alt: 0 5px 6px rgba(0, 0, 0, 0.15), 0 12px 16px rgba(0, 0, 0, 0.15) !default;
 
 $neutral-light-color-variation-1-s: saturation($neutral-light-color) !default;
 $neutral-light-color-variation-1-l: 97% !default;

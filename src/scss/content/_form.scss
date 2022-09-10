@@ -143,7 +143,7 @@ textarea {
     //--focus-border-color: var(--primary-color);
     --focus-box-shadow: var(--neutral-shadow);
 
-    --hover-background-color: var(--neutral-color-variation-1);
+    --hover-background-color: var(--neutral-color-variation-2);
     --hover-color: var(--primary-color);
     --hover-border-color: var(--primary-color-variation-1);
 
@@ -178,7 +178,7 @@ textarea {
       background-color: var(--hover-background-color);
       color: var(--hover-color);
       border: var(--border-width) solid var(--hover-border-color);
-      box-shadow: var(--hover-box-shadow, inherit);
+      box-shadow: var(--hover-box-shadow);
     }
   }
 }
@@ -210,7 +210,6 @@ textarea {
   &[aria-invalid='false'] {
     --focus-border-color: var(--success-color) !important;
     --border-color: var(--success-color) !important;
-    --focus-border-color: var(--success-color) !important;
     --color: var(--success-color-text) !important;
 
     padding-right: 2.5em !important;
@@ -243,14 +242,16 @@ select:invalid {
 }
 
 select {
+  --arrow-background-color: var(--primary-color);
+  --arrow-color: var(--on-primary-color);
+  --arrow-hover-background-color: var(--primary-color-variation-1);
+  --arrow-hover-color: var(--on-primary-color-variation-1);
   &:not([multiple]):not([size]) {
     max-height: 2.25em;
-    padding-right: calc(var(--input-spacing-h) + 1.5rem);
-    padding-left: var(--input-spacing-h);
-    padding-inline-start: var(--input-spacing-h);
-    padding-inline-end: calc(var(--input-spacing-h) + 1.5rem);
-    background-image: linear-gradient(var(--background-color) 0%, var(--background-color) 100%), linear-gradient(-135deg, transparent 50%, var(--color) 50%), linear-gradient(-225deg, transparent 50%, var(--color) 50%),
-      linear-gradient(var(--color) 42%, var(--background-color) 42%);
+    padding-right: var(--half-spacing);
+    padding-left: var(--half-spacing);
+    background-image: linear-gradient(var(--arrow-color) 0%, var(--arrow-color) 100%), linear-gradient(-135deg, transparent 50%, var(--arrow-background-color) 50%),
+      linear-gradient(-225deg, transparent 50%, var(--arrow-background-color) 50%), linear-gradient(var(--arrow-background-color) 42%, var(--arrow-color) 42%);
     background-position: right 20px center, right bottom, right bottom, right bottom;
     background-size: 0 100%, 20px 30px, 20px 30px, 20px 100%;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
@@ -259,8 +260,8 @@ select {
 
     &:active,
     &:hover {
-      background-image: linear-gradient(var(--primary-color-variation-1) 0%, var(--primary-color-variation-1) 100%), linear-gradient(-135deg, transparent 50%, var(--primary-color-variation-1) 50%),
-        linear-gradient(-225deg, transparent 50%, var(--primary-color-variation-1) 50%), linear-gradient(var(--on-primary-color-variation-1) 42%, var(--on-primary-color-variation-1) 42%);
+      background-image: linear-gradient(var(--arrow-hover-color) 0%, var(--arrow-hover-color) 100%), linear-gradient(-135deg, transparent 50%, var(--arrow-hover-background-color) 50%),
+        linear-gradient(-225deg, transparent 50%, var(--arrow-hover-background-color) 50%), linear-gradient(var(--arrow-hover-background-color) 42%, var(--arrow-hover-color) 42%);
     }
   }
 
@@ -581,6 +582,14 @@ input[type='range'] {
   }
 }
 
+.input-group-focus-within {
+  padding: 1px;
+  border: var(--elem-border-width) solid transparent;
+  &:focus-within {
+    background-color: var(--neutral-color-variation-2);
+    border: var(--elem-border-width) solid var(--neutral-color-variation-2);
+  }
+}
 .input-group-inline {
   display: flex;
   flex-flow: row wrap;
@@ -733,5 +742,5 @@ textarea + small {
   width: 100%;
   margin: calc(var(--spacing) * 0.5) 0.4rem;
   margin-bottom: var(--spacing);
-  color: var(--neutral-color-variation-3);
+  color: var(--on-neutral-color-variation-3);
 }

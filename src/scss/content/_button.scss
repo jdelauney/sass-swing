@@ -1,5 +1,5 @@
 button,
-[role='button'],
+[role*='button'],
 input[type='button'],
 input[type='submit'],
 input[type='reset'],
@@ -44,7 +44,7 @@ input[type='reset'],
 }
 
 button,
-[role='button'],
+[role*='button'],
 input[type='button'],
 input[type='submit'],
 input[type='reset'],
@@ -112,10 +112,10 @@ button[type='reset'],
 }
 
 .btn--outline {
-  --border-color: var(--background-color);
-  --color: var(--background-color);
-  --hover-color: var(--hover-background-color);
-  --hover-border-color: var(--hover-background-color);
+  --border-color: var(--background-color) !important;
+  --color: var(--background-color) !important;
+  --hover-color: var(--hover-background-color) !important;
+  --hover-border-color: var(--hover-background-color) !important;
   background: transparent !important;
 }
 

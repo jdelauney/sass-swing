@@ -107,24 +107,24 @@ h6 {
 
 img,
 video,
-svg,
 picture {
   display: block;
   max-width: 100%;
 }
 
+[role='img'],
 img,
 video {
   width: 100%;
   height: auto;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
+svg {
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
-
 dl dl,
 dl ol,
 dl ul,
@@ -135,6 +135,22 @@ ol ul,
 ul ol,
 ul ul {
   margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+
+  li ul:not([role='list']),
+  li ol:not([role='list']) {
+    list-style: initial;
+  }
+
+  li ul,
+  li ol {
+    margin-left: var(--spacing);
+  }
 }
 
 em {
