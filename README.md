@@ -25,7 +25,7 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/github_username/repo/network/members">
+  <a href="https://github.com/jdelauney/sass-swing/network/members">
     <img alt="Forks" src="https://img.shields.io/github/forks/jdelauney/sass-swing.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/jdelauney/sass-swing/issues">
@@ -40,7 +40,7 @@
 </p>
 <hr />
 <p align="center">
-  <a href="https://github.com/jdelauney/sass-swing"><strong>Explorer la documentation</strong></a>
+  <a href="https://jdelauney.github.io/sass-swing/"><strong>Explorer la documentation</strong></a>
   <br />
   <br />
   <a href="https://github.com/jdelauney/sass-swing/issues">Signaler un Bug</a>
@@ -102,14 +102,26 @@ Utiliser Sass Swing directement dans vos productions via le serveur CDN unpkg ou
 Il s'agit de la version standard avec les fichiers CSS minifiés et non minifiés. Contient également une version de base, contenant juste les composants de base.
 
 ```html
-  <link rel="stylesheet" href="https://unpkg.com/@sassswing/dist/css">
+  <link rel="stylesheet" href="https://unpkg.com/sass-swing@latest/dist/css/sass-swing-basic.min.css">
 ```
-
+Version complète
+```html
+  <link rel="stylesheet" href="https://unpkg.com/sass-swing@latest/dist/css/sass-swing.min.css">
+```
+Inclure le javascript
+```html
+  <script src="https://unpkg.com/sass-swing@latest/dist/js/sass-swing.min.js" defer>
+```
 ### SOLUTION N°2
 Vous pouvez également installer les sources de Sass Swing directement via NPM
 ```sh
   npm install sass-swing
 ```
+
+### Modèle de page
+
+Vous pouvez également cloner le [Starter Kit](https://github.com/jdelauney/sass-swing-starter) pour débuter à utiliser Sass Swing et développer vos pages web.
+
 
 ### SOLUTION N°3
 #### PREREQUIS
@@ -154,6 +166,7 @@ npm run build:docs
 
 <p align="right">(<a href="#top">Aller en haut de la page</a>)</p>
 <hr>
+
 
 ## SOUTENEZ NOUS
 

@@ -229,6 +229,9 @@
 					<pre data-lang="html" class="line-numbers language-markup" data-prismjs-copy="Copier"><code>&lt;head&gt;
    ...
   &lt;script src=&quot;../scripts/vendors/sass-swing.min.js&quot; defer&gt;&lt;/script&gt;
+
+  &lt;!-- via le CDN --&gt;
+  &lt;script src=&quot;https://unpkg.com/sass-swing@latest/dist/js/sass-swing.min.js&quot; defer&gt;&lt;/script&gt;
    ...
 &lt;/head&gt;</code></pre>
 
@@ -244,11 +247,11 @@ const myModalManager = new SassSwing.Modal(&#39;#myModal&#39;);</code></pre>
 					<p>
 						Dans le deuxième cas pour le script au format ESM. Vous devrez simplement importer le script et les objets que vous désirez utiliser.
 					</p>
-					<pre data-lang="javascript" class="line-numbers language-javascript" data-prismjs-copy="Copier"><code>import { notification, Modal } from 'sassSwing';
+					<pre data-lang="javascript" class="line-numbers language-javascript" data-prismjs-copy="Copier"><code>import SassSwing from 'sass-swing';
 
-notify.notify(&#39;Default&#39;, &#39;Notification simple&#39;, &#39;default&#39;);
+SassSwing.notify.notify(&#39;Default&#39;, &#39;Notification simple&#39;, &#39;default&#39;);
 
-const myModalManager = new Modal(&#39;#myModal&#39;);</code></pre>
+const myModalManager = new SassSwing.Modal(&#39;#myModal&#39;);</code></pre>
 				</div>
 			</article>
 			<h2 class="text-swing">Les fonctions utiles</h2>

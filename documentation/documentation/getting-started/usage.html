@@ -225,8 +225,8 @@
 							Il s'agit de la version standard avec les fichiers CSS minifiés et non minifiés. Contient également une version de base, contenant juste les composants de base.
 						</p>
 						<p>Pour les utiliser il vous suffira de lier <code>sass-swing.min.css</code> dans le <code>&lt;<b>head</b>&gt;</code> de votre page <abbr title="HyperText Markup Language">HTML</abbr>. Le fichier <code>sass-swing.min.css</code> et le fichier <code>sass-swing.min.js</code> se trouvent respectivement dans le dossier <code>dist/css</code> et <code>dist/js</code> de l'archive à télécharger</p>
-						<pre data-lang="html"><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"sass-swing.min.css"</u>&gt;</code></pre>
-						<pre data-lang="html"><code>&lt;<b>script</b> <i>src</i>=<u>"sass-swing.min.js"</u>&gt; defer&lt;/script&gt;</code></pre>
+						<pre data-lang="html"><code>&lt;<b>link</b> <i>rel</i>=<u>&quot;stylesheet&quot;</u> <i>href</i>=<u>&quot;sass-swing.min.css&quot;</u>&gt;</code></pre>
+						<pre data-lang="html"><code>&lt;<b>script</b> <i>src</i>=<u>&quot;sass-swing.min.js&quot;</u> <i>defer</i>&lt;<b>/script</b>&gt;</code></pre>
 					</div>
 					<footer style="--px: var(--inner-h-spacing); --pb: var(--inner-v-spacing);">
 						<a href="https://github.com/jdelauney/sass-swing/archive/refs/tags/v1.1.0.zip" role="button" class="btn--swing">TELECHARGER SASS SWING</a>
@@ -247,7 +247,7 @@
 						<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>git </b><i>clone </i><u>https://github.com/jdelauney/sass-swing.git</u></code></pre>
 					</div>
 					<footer style="--px: var(--inner-h-spacing); --pb: var(--inner-v-spacing);">
-						<a href="#" role="button" class="btn--swing" disabled>GENERER MODEL</a><a role="button" href="https://github.com/jdelauney/sass-swing" target="_blank" rel="nofollow" class="btn--swing" style="--ml:.25em;">SOURCE</a>
+						<a href="#" role="button" class="btn--swing">GENERER MODEL</a><a role="button" href="https://github.com/jdelauney/sass-swing-starter/generate" target="_blank" rel="nofollow" class="btn--swing" style="--ml:.25em;">SOURCE</a>
 					</footer>
 				</div>
 			</div>
@@ -267,7 +267,7 @@
 &lt;<b>script</b> <i>src</i>=&quot;https://unpkg.com/sass-swing@latest/dist/js/sass-swing.min.js&quot; <i>defer</i>&gt;&lt;<b>/script</b>&gt;</code></pre>
 			<h3 class="text-swing-alt">NPM</h3>
 			<p>Vous pouvez également installer les sources de Sass Swing via NPM</p>
-			<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>npm </b><i>install </i><u>sass-swing</u> --save-dev</code></pre>
+			<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>npm </b><i>install </i><u>sass-swing</u></code></pre>
 		</section>
 		<section>
 			<div class="heading">
@@ -321,6 +321,17 @@
 
 			&lt;script src=&quot;./scripts/sass-swing.min.js&quot; defer&gt;
 
+			&lt;!-- Ou chargement via le CDN --&gt;
+			&lt;!--
+			&lt;link rel=&quot;preconnect&quot; href=&quot;https://unpkg.com&quot;&gt;
+			&lt;link rel=&quot;preload&quot; href=&quot;https://unpkg.com/sass-swing@latest/dist/css/sass-swing.min.css&quot; as=&quot;style&quot;&gt;
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/sass-swing@latest/dist/css/sass-swing.min.css&quot;&gt;
+
+				&lt;link rel=&quot;stylesheet&quot; href=&quot;your-custom-stylesheet.css&quot;&gt;
+
+			&lt;script src=&quot;https://unpkg.com/sass-swing@latest/dist/js/sass-swing.min.js&quot; defer&gt;&lt;/script&gt;
+			--&gt;
+
 		  &lt;link rel=&quot;shortcut icon&quot; href=&quot;./assets/icons/favicon.svg&quot; type=&quot;image/svg&quot;&gt;
 	  &lt;/head&gt;
 	  &lt;body&gt;
@@ -339,33 +350,37 @@
 			<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>git </b><i>clone </i><u>https://github.com/username/repository</u></code></pre>
 			<p>Après avoir choisi, une des deux versions SASS de Sass Swing, vous devez installer les dépendances NPM pour pouvoir compiler les fichiers SCSS en fichiers CSS exploitables par vos pages HTML avec les commandes adequate ou avec votre bundler préférer (Webpack, Parcel, Vite...)</p>
 			<pre data-lang="shell"><code>&gt;&gt;&nbsp;<b>npm </b><i>install </i></code></pre>
+			<h3>Comment inclure Sass Swing dans votre projet ?</h3>
+			<p>
+				Pour inclure Sass Swing dans votre propre fichier SCSS il vous faudra l'importer comme ceci : <code><b>@use</b><u>"sass-swing"</u>;</code><br>
+				Pour importer les fonctionnalités Javascript, faites comme ceci : <code><b>import</b> <u>* as SassSwing</u> <b>from</b> <u>"sass-swing"</u>;</code>
+
+			</p>
 			<h3>Le modèle de projet</h3>
 			<h4>Structure du projet</h4>
-			<pre>
-						<code>
-	  Mon-site-web/
-	  |--dist/
-	  |
-	  |--src/
-		|  |--assets/
-	  |     |--images/
-		|     |--icons/
-	  |     |--fonts/
-	  |
-	  |--scripts/
-	  |  |--vendors
-		|     |--sass-swing
-	  |  |--index.js
-		|
-	  |--styles
-		|  |--index.scss
-		|  |--vendors
-		|     |--sass-swing
-		|
-	  |  |--index.html
-	          </code>
-					</pre>
-			<p>Les fichiers sources de Sass Swing que vous allez utiliser, se trouvent dans les dossiers vendors/sass-swing.<br>
+<pre><code>
+Mon-site-web/
+ |--dist/
+ |  |--public
+ |     |--assets
+ |     |  |--icons
+ |     |  |--images
+ |     |  |--fonts
+ |     |--styles
+ |     |--scripts
+ |--src
+    |--assets
+    |  |--icons
+    |  |--images
+    |  |--fonts
+    |--styles
+    |   |--scss
+    |      |-index.scss
+    |--scripts
+    |  |-script_index.js
+    |--index.html
+</code></pre>
+			<p>Les fichiers sources de Sass Swing que vous allez utiliser, se trouvent dans les dossiers <code>src/</code>.<br>
 				Le dossier <code>./dist</code> contiendra vos fichiers compilés</p>
 			<h4>Commandes disponibles</h4>
 			<ul>
