@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/jdelauney/sass-swing/issues"
   },
-  "homepage": "https://github.com/jdelauney/sass-swing#readme",
+  "homepage": "https://jdelauney.github.io/sass-swing/",
   "keywords": [
     "sass",
     "scss",
@@ -39,7 +39,10 @@
     "dist/js/**/*.js",
     "src/scss/sass-swing.scss",
     "src/scss/sass-swing-basic.scss",
-    "src/scss/**/*.scss"
+    "src/scss/**/*.scss",
+    "index.scss",
+    "index.css",
+    "index.js"
   ],
   "publishConfig": {
     "access": "public",
