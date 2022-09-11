@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/jdelauney/sass-swing/compare/v1.1.0...v1.2.0) (2022-09-11)
+
+
+### Features
+
+* Add global entry point for scss, css and js ([481bae8](https://github.com/jdelauney/sass-swing/commit/481bae89968dcd3893888a09b331fad27ee22e30))
+
+# [1.2.0](https://github.com/jdelauney/sass-swing/compare/v1.1.0...v1.2.0) (2022-09-11)
+
+
+### Features
+
+* Add global entry point for scss, css and js ([481bae8](https://github.com/jdelauney/sass-swing/commit/481bae89968dcd3893888a09b331fad27ee22e30))
+
 # [1.1.0](https://github.com/jdelauney/sass-swing/compare/v1.0.1...v1.1.0) (2022-09-10)
 
 
