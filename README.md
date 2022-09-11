@@ -117,7 +117,15 @@ Vous pouvez également installer les sources de Sass Swing directement via NPM
 ```sh
   npm install sass-swing
 ```
-
+#### Importations
+Dans votre fichier SCSS 
+```scss
+@use "sass-swing";
+```
+Dans votre code Javascript
+```js
+import * as SassSwing from "sass-swing";
+```
 ### Modèle de page
 
 Vous pouvez également cloner le [Starter Kit](https://github.com/jdelauney/sass-swing-starter) pour débuter à utiliser Sass Swing et développer vos pages web.
