@@ -2,7 +2,7 @@
 
 .flow-container {
   width: 100%;
-  max-width: var(--max-container-char-width);
+  max-width: var(--flow-container-char-width, 85ch);
 
   > * + * {
     margin-block-start: var(--flow-spacing);
