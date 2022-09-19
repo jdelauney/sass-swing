@@ -1,6 +1,6 @@
 name: Package release
 on:
-  push:
+  pull_request:
     branches:
       - main
 env:
