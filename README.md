@@ -5,8 +5,7 @@
 </p>
 <p align="center">
   <img alt="ForTheBadge built-with-love" src="http://ForTheBadge.com/images/badges/built-with-love.svg">
-  <br/>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <br/> 
 </p>
 <hr />
 <p align="center" style="font-size:1.4em">
@@ -14,7 +13,7 @@
 </p>
 <p align="center">
    <a href="https://github.com/jdelauney/sass-swing/releases">
-    <img alt="GitHub release (latest SemVer including pre-releases)" src="https://img.shields.io/github/v/release/jdelauney/sass-swing?include_prereleases&style=for-the-badge">
+    <img alt="GitHub release (latest SemVer including pre-releases)" src="https://img.shields.io/github/release/jdelauney/sass-swing?include_releases&style=for-the-badge">
   </a>  
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jdelauney/sass-swing?style=for-the-badge">  
   <a href="https://github.com/jdelauney/sass-swing/stargazers">
@@ -45,7 +44,7 @@
   <br />
   <a href="https://github.com/jdelauney/sass-swing/issues">Signaler un Bug</a>
   ·
-  <a href="https://github.com/jdelauney/sass-swing/issues">Proposer une Feature</a>
+  <a href="https://github.com/jdelauney/sass-swing/discussions">Proposer une Feature</a>
   <br />
 </p>
 <hr/>
