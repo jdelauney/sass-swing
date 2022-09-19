@@ -4,6 +4,7 @@ import { Slidify } from './components/slidify.js';
 import { Tabify } from './components/tabify.js';
 import { Dropdownify } from './components/dropdownify.js';
 import { Revealify } from './components/revealify.js';
+import { AccesibilityInputSwitch } from './components/accesibilityInputSwitch';
 // import {Modalify} from "./components/modalify.js";
 
 const fixDocumentHeight = () => {
@@ -28,6 +29,7 @@ export { Modalify } from './components/modalify.js';
     Dropdownify.bind();
     Slidify.bind();
     Revealify.bind();
+    AccesibilityInputSwitch.bind();
     fixDocumentHeight();
   });
 })();
