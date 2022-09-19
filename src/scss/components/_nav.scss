@@ -135,6 +135,14 @@ nav {
     //margin-right: var(--inner-h-spacing);
     margin-left: auto;
   }
+
+  &__menu-right {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 0.5em;
+  }
 }
 
 nav:not(.navbar, .md\:navigation-toggle, .d\:navigation-toggle, .dm\:navigation-toggle, .lg\:navigation-toggle, .xlg\:navigation-toggle, .xxlg\:navigation-toggle) label:not(.navbar__toggler),
