@@ -735,6 +735,12 @@ input[type='file']:not([hidden]) {
   }
 }
 
+input + p,
+select + p,
+textarea + p,
+input + span,
+select + span,
+textarea + span,
 input + small,
 select + small,
 textarea + small {
@@ -743,4 +749,9 @@ textarea + small {
   margin: calc(var(--spacing) * 0.5) 0.4rem;
   margin-bottom: var(--spacing);
   color: var(--on-neutral-color-variation-3);
+}
+
+:where(.flex--row) :where(input, select, textarea) {
+  margin-top: 0;
+  margin-bottom: 0;
 }
