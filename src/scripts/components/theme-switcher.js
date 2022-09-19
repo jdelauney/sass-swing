@@ -10,13 +10,15 @@ export class ThemeSwitcher extends CustomComponent {
     this.localStorageThemeModeKey = localStorageThemeModeKey;
     this.htmlRoot = document.querySelector('html');
     this.currentTheme = window.localStorage.getItem(this.localStorageThemeModeKey);
-    this.prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    this.prefersDarkScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     this.switchThemeName = this.element.getAttribute('data-js-themeSwitcher');
+    this.currentDocumentTheme = document.documentElement.hasAttribute('data-theme') && document.documentElement.getAttribute('data-theme');
 
+    const isDefaultDark = this.currentTheme === 'dark' || this.currentDocumentTheme === 'dark' || (this.currentTheme === null && this.currentDocumentTheme === null && this.prefersDarkScheme);
     if (this.currentTheme !== null && this.currentTheme !== 'auto') {
       this._toggleTheme(this.currentTheme);
     } else {
-      if (this.prefersDarkScheme.matches) {
+      if (isDefaultDark) {
         this._toggleTheme('dark');
       }
     }
