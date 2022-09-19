@@ -6,8 +6,9 @@
   justify-content: space-evenly;
   gap: 0.5rem;
   max-width: 90vmin;
-  //width:100%;
-  padding: 1rem;
+  min-width: var(--notification-min-width);
+  width: auto;
+  padding: 1em 1em 1em 2em;
   z-index: 9999;
 
   &--top-right {

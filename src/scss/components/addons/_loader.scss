@@ -56,7 +56,7 @@
 }
 
 [aria-busy='false'] {
-  z-index: inherit;
+  z-index: 0;
   &::after,
   &::before {
     display: none;

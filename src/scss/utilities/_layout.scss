@@ -123,6 +123,36 @@
     .#{$bp}\:hidden {
       display: none;
     }
+    .#{$bp}\:flex {
+      display: flex;
+      flex-direction: column;
+    }
+    .#{$bp}\:flex--row {
+      flex-flow: row wrap;
+
+      &.flex--top {
+        align-items: flex-start;
+      }
+
+      &.flex--bottom {
+        align-items: flex-end;
+      }
+
+      &.flex--left {
+        justify-content: flex-start;
+      }
+
+      &.flex--right {
+        justify-content: flex-end;
+      }
+
+      &.flex--center {
+        justify-content: center;
+      }
+      &.flex--v-center {
+        align-items: center;
+      }
+    }
   }
 }
 //.full-width {

@@ -18,7 +18,7 @@ h5,
 h6,
 .like-h6 {
   display: block;
-  width: 100%;
+  width: auto;
   --font-weight: var(--heading-font-weight);
   // Recommendation courtesy of this brilliant work:
   // @link https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
@@ -35,24 +35,34 @@ h6,
     margin-top: 0 !important;
   }
 }
+:where(.flex--row) h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-h1,
+:where(.flow-container) h1,
 .like-h1 {
   max-width: 40ch;
 }
-h2,
+:where(.flow-container) h2,
 .like-h2 {
   max-width: 45ch;
 }
-h3,
+:where(.flow-container) h3,
 .like-h3 {
   max-width: 60ch;
 }
-h4,
+:where(.flow-container) h4,
 .like-h4 {
   max-width: 75ch;
 }
-h5,
+
+:where(.flow-container) h5,
 .like-h5,
 h6,
 .like-h6 {
@@ -152,7 +162,6 @@ p {
   font-size: 1em;
   margin-top: calc(var(--flow-space-ratio) * 1em);
   line-height: calc(var(--font-content-line-height) * 1em);
-  max-width: 85ch;
 
   & + *:is(:not(h1, h2, h3, h4, h5, h6, section, article, .section, .article)) {
     margin-top: calc(var(--flow-space-ratio) * 1em);
@@ -165,6 +174,10 @@ p {
   &:first-child {
     margin-top: 0;
   }
+}
+
+:where(.flow-container) p {
+  max-width: 85ch;
 }
 
 mark {
